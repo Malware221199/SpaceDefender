@@ -2,6 +2,8 @@
 #include <curses.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+
 
 
 #define	UP			65		/* Cursore sopra */
