@@ -57,8 +57,7 @@ int main(){
         endwin();	    	
 
         /* Termino il gioco*/
-        printf("\n\n\nGAME OVER\n\n\n");	
-        ciao
+        printf("\n\n\nGAME OVER\n\n\n");
     }
 }
 
