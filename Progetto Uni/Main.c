@@ -50,8 +50,8 @@ int main(){
             }
         }
         /* Termino i processi Vespa e Contadino */
-        kill(pidV,1);	
-        kill(pidC,1);	
+        kill(pidA,1);	
+        kill(pidG,1);	
 
         /* Ripristino la modalità di funzionamento usuale */
         endwin();	    	
