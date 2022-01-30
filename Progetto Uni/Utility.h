@@ -31,5 +31,3 @@ struct position {
   int  x;	 /* Coordinata X */
   int  y;	 /* Coordinata Y */
 };
-
-srand(time(NULL)); /* Inizializza generatore di numeri casuali */
