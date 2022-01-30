@@ -11,12 +11,13 @@ int menu(int *nnemici,int *vproiettili){
   refresh();                            /* refresho la pagina */
   wrefresh(menuwin);
   
-  string menu[3] = {"Gioca","Opzioni","Esci"};  /*stringa opzioni */
+  char menu[3] = {"Gioca","Opzioni","Esci"};  /*stringa opzioni */
   int scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
 
   while(1){
-    for(int i=0;i<3;i++){
+    int i;
+    for(i=0;i<3;i++){
 
       if(i == altezza)
         wattron(menuwin,A_REVERSE);
@@ -51,7 +52,7 @@ int menu(int *nnemici,int *vproiettili){
     break;
 
     case Opzioni:
-      opzioni(int &nnemici,int &vproiettili);
+      //opzioni(int &nnemici,int &vproiettili);
     break;
 
     case Esci:

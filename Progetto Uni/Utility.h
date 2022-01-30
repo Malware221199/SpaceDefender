@@ -2,7 +2,6 @@
 #include <curses.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <string.h>
 
 
 
@@ -23,7 +22,7 @@ void Alieni(int pipeout);
 void Giocatore(int pipeout);
 void AreaGioco(int pipein);
 int Menu(int *nnemici,int *vproiettili);
-void Opzioni(int *nnemici,int *vproiettili);
+//void Opzioni(int *nnemici,int *vproiettili);
 int proiettili();
 int nemici();
 
