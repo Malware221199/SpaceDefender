@@ -58,6 +58,7 @@ int main(){
 
         /* Termino il gioco*/
         printf("\n\n\nGAME OVER\n\n\n");	
+        ciao
     }
 }
 
