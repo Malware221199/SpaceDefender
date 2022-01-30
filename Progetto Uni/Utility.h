@@ -2,7 +2,6 @@
 #include <curses.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "Grafica.h"
 
 
 #define	UP			65		/* Cursore sopra */
