@@ -5,7 +5,7 @@ Main.o: Main.c Utility.h
 	cc -c -o Main.o Main.c -lncurses
 
 Menu.o: Menu.c Utility.h
-	cc -c -o Menu.o menu.c -lncurses
+	cc -c -o Menu.o Menu.c -lncurses
 
 Alieni.o: Alieni.c Utility.h
 	cc -c -o Alieni.o Alieni.c -lncurses
