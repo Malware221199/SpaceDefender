@@ -1,18 +1,20 @@
 #include "Grafica.h"
 
-void stampasprite(int larghezza,int altezza,int entita){
-    /*if(entita=='A'){
-        int i;
-        for(i=0;i<altezza;i++){
-        mvaddstr(i,larghezza,sprite.a[i])
-        }
+void stampasprite(int larghezza,int altezza,char entita){
+    if(entita=='A'){
+        //int i;
+        //for(i=0;i<altezza;i++){
+        //mvaddstr(i,larghezza,sprite.a[i])
+        //}
+        /* Visualizzo l'alieno*/
+        mvprintw(MAXY/2,MAXX/2,"#");
     }
 
     else if(entita=='G'){
+        /* Visualizzo il giocatore*/
+            mvprintw(MAXY/2,MAXX/2,"G");
 
-    }*/
-    int i;
-    i=0;
+    }
 
 }
 
