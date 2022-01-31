@@ -19,33 +19,33 @@ int Menu(int *nnemici,int *vproiettili){
       if(i==0){
         if(i == altezza){
         attron(A_REVERSE);
-        mvprintw(i+1,1,"Gioca");
+        mvprintw(i+1,MAXX,"Gioca");
         attroff(A_REVERSE);
         }
         else{
-        mvprintw(i+1,1,"Gioca");
+        mvprintw(i+1,MAXX,"Gioca");
         }
       }
 
       if(i==1){
         if(i == altezza){
         attron(A_REVERSE);
-        mvprintw(i+1,1,"Opzioni");
+        mvprintw(i+1,MAXX,"Opzioni");
         attroff(A_REVERSE);
         }
         else{
-        mvprintw(i+1,1,"Opzioni");
+        mvprintw(i+1,MAXX,"Opzioni");
         }
       }
 
       if(i==2){
         if(i == altezza){
         attron(A_REVERSE);
-        mvprintw(i+1,1,"Esci");
+        mvprintw(i+1,MAXX,"Esci");
         attroff(A_REVERSE);
         }
         else{
-        mvprintw(i+1,1,"Esci");
+        mvprintw(i+1,MAXX,"Esci");
         }
       }
     }
