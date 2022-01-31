@@ -5,6 +5,7 @@
 ---------------------------------------------------------------------- 
 */void Gen_alieni(int pipeout,int nnemici){
       do{
+        pipe(p);
         int pidA;
         pidA = fork();
         if(pidA==0){
