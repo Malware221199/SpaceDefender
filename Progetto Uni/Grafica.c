@@ -4,7 +4,7 @@ void stampasprite(int larghezza,int altezza,char entita){
     if(entita=='A'){
         int i;
         for(i=0;i<altezza+3;i++)
-            mvprintw(larghezza,altezza,"%c",sprite_a[i]);
+            mvprintw(larghezza,altezza,"%s",sprite_a[i]);
 
     }
 
