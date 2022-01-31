@@ -25,6 +25,8 @@ int Menu(int *nnemici,int *vproiettili);
 //void Opzioni(int *nnemici,int *vproiettili);
 int proiettili();
 int nemici();
+void stampasprite(int larghezza,int altezza,char entita);
+void cancellasprite(int larghezza,int altezza);
 
 /* Struttura adoperata per veicolare le coordinate*/
 struct position {
