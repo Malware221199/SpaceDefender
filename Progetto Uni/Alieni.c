@@ -22,7 +22,7 @@ int deltay=1;		/* Spostamento verticale */
   while(1){
 
     /* Movimento Y */
-    Alieni.y += deltay;
+    //Alieni.y += deltay;
 
 
     /* Se supero area X schermo inverte il movimento */
@@ -31,7 +31,7 @@ int deltay=1;		/* Spostamento verticale */
     }
     
     /* Movimento X */
-    //Alieni.x += deltax;
+    Alieni.x += deltax;
 
     /* Comunico le coordinate correnti al processo padre */
     write(pipeout,&Alieni,sizeof(Alieni));
