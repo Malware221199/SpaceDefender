@@ -13,7 +13,7 @@ int Menu(int *nnemici,int *vproiettili){
   int altezza=0;    /* altezza cursore */                          
   bool esci;
   while(esci==false){
-    int i
+    int i;
     for(i=0;i<3;i++){
       if(i==0){
         if(i == altezza){
