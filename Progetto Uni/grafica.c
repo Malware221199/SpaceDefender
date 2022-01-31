@@ -21,6 +21,7 @@ void stampasprite(int larghezza,int altezza,int entita){
 
 
 
+
 void cancellasprite(int larghezza,int altezza){
     int i,j;
     for(i=0;i<larghezza;i++){
