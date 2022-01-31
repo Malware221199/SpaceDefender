@@ -1,17 +1,17 @@
 #include "Grafica.h"
 
-void stampasprite(int larghezza,int altezza,char entita){
-    if(entita=='A'){
+void stampasprite(int y,int x,char c){
+    if(c=='A'){
         int i;
         for(i=0;i<3;i++)
-            mvaddstr(larghezza,altezza+i,sprite_a[i]);
+            mvaddstr(y,x,sprite_a[i]);
 
     }
 
 
-    else if(entita=='G'){
+    else if(c=='G'){
         /* Visualizzo il giocatore*/
-            mvprintw(larghezza,altezza,"Giocatore");
+            mvprintw(y,x,"Giocatore");
 
     }
 
@@ -23,23 +23,21 @@ void stampasprite(int larghezza,int altezza,char entita){
 
 
 
-void cancellasprite(int larghezza,int altezza,char entita){
+void cancellasprite(int y,int x,char c){
     int i,j;
-        if(entita=='A'){
-            for(i=0;i<larghezza+3;i++){
-                for(j=0;j<altezza+3;j++){
+        if(c=='A'){
+            for(i=0;i<y+3;i++){
+                for(j=0;j<x+3;j++){
                     
-                    mvaddch(altezza+3,larghezza+3,'c');
+                    mvaddch(y+3,x+3,'c');
                 }
             }
         }
 
-        else if(entita=='G'){
-            for(i=0;i<larghezza+6;i++){
-                for(j=0;j<altezza+6;j++){
-                    printf("larghezza %d",larghezza);
-                    printf("altezza %d",altezza);
-                    mvaddch(altezza+6,altezza+6,'c');
+        else if(c=='G'){
+            for(i=0;i<y+6;i++){
+                for(j=0;j<x+6;j++){
+                    mvaddch(y+6,x+6,'c');
                 }
             }
         }
