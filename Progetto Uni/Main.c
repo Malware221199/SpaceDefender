@@ -37,9 +37,9 @@ int main(){
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             
-            
-                Alieni(p[1],i); /* invocazione funzione alieni */
                 mvprintw(1,1,"contattore %d",i);
+                Alieni(p[1],i); /* invocazione funzione alieni */
+                
             
         }
         else {		
