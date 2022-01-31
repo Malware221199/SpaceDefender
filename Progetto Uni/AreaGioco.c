@@ -33,17 +33,15 @@ void Area(int pipein){
 
             /* Giocatore */
             else if(dato_letto.c=='G'){
-                int i=0;
-                i++;
-                printf("passi %d",i);
+                /* Cancello il precedente sprite visualizzato */
+                cancellasprite(giocatore.y,giocatore.x);
+
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 giocatore=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
 
-                /* Cancello il precedente sprite visualizzato */
-                cancellasprite(giocatore.y,giocatore.x);
             }
             
             /* Segnalo collisione e tipo*/
