@@ -11,9 +11,9 @@ int Menu(int *nnemici,int *vproiettili){
   char menu[3][7] = {"Gioca","Opzioni","Esci"};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
-
+  bool esci;
   while(esci==false){
-    bool esci;
+    
     int i;
     for(i=0;i<3;i++){
 
