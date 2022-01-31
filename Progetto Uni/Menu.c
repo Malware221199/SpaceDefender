@@ -20,7 +20,8 @@ int Menu(int *nnemici,int *vproiettili){
       if(i == altezza){
         attron(A_REVERSE);
         mvprintw(i+1,1,menu[i]);
-        attroff(A_REVERSE);  
+        attroff(A_REVERSE);
+      }  
     }
     scelta = getch();
 
