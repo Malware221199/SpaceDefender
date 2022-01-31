@@ -1,6 +1,6 @@
 #include "Grafica.h"
 
-void stampasprite(int y,int x,char c){
+void stampasprite(int y,int x,char c,int n){
     if(c=='A'){
         int i;
         for(i=0;i<3;i++)
@@ -25,7 +25,7 @@ void stampasprite(int y,int x,char c){
 
 
 
-void cancellasprite(int y,int x,char c){
+void cancellasprite(int y,int x,char c,int n){
     int i,j;
         if(c=='A'){
             for(i=0;i<3;i++){

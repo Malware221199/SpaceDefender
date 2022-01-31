@@ -22,25 +22,25 @@ void Area(int pipein){
             if(dato_letto.c=='A') {
 
                 /* Cancello il precedente carattere visualizzato */
-                cancellasprite(alieni.y,alieni.x,alieni.c);
+                cancellasprite(alieni.y,alieni.x,alieni.c,alieni.n);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 alieni=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.n);
             }
 
             /* Giocatore */
             else if(dato_letto.c=='G'){
                 /* Cancello il precedente sprite visualizzato */
-                cancellasprite(giocatore.y,giocatore.x,giocatore.c);
+                cancellasprite(giocatore.y,giocatore.x,giocatore.c,giocatore.n);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 giocatore=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.n);
 
             }
             
