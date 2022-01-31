@@ -12,7 +12,7 @@ void Area(int pipein){
     int i=0, vite=3, collision=0;
 
     /* Visualizzo le vite iniziali del Giocatore */
-        mvprintw(0,1,"%3d",vite);
+        mvprintw(0,1,"Vite %d",vite);
 
         do {
             /* Leggo dalla pipe */
