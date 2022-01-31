@@ -1,4 +1,4 @@
-Spacedefender: Main.o Menu.o Alieni.o Giocatore.o AreaGioco.o Grafica.o
+Spacedefender: Main.o Menu.o Opzioni.o Alieni.o Giocatore.o AreaGioco.o Grafica.o
 	cc -o Spacedefender Main.o Menu.o Opzioni.o Alieni.o Giocatore.o AreaGioco.o Grafica.o -lncurses
 
 Main.o: Main.c Utility.h
