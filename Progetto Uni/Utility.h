@@ -12,9 +12,9 @@
 #define SPC			32		/* Cursore spazio */
 #define ENTER		10	  /* Cursore invio */
 #define	MAXX		60		/* Dimensione dello schermo di output (colonne) */
-#define MAXY		40		/* Dimensione dello schermo di output (righe)   */
+#define MAXY		20		/* Dimensione dello schermo di output (righe)   */
 #define DELAYV 	80000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
-#define DELAYM 	100000000	    /* Ritardo nel movimento delle navicelle nemiche medio */
+#define DELAYM 	1000000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	120000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 
 /*Funzioni adoperate */
