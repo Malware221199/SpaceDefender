@@ -30,7 +30,7 @@ int main(){
         for(i=0;i<2;i++){
         /* Creo il primo processo figlio 'Alieni' */
         pidA = fork();
-        printf("Pid creato");
+        mvprintf(1,1,"Pid creato");
         }
         /* Se il pid == 0 -> si tratta del processo 'Alieni' */
         if(pidA==0) {
