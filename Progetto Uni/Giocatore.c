@@ -32,7 +32,6 @@ struct position gpos;
     if(c==SPC){
         
     }
-    usleep(100000);
 
     /* Comunico al processo padre le coordinate del giocatore */
     write(pipeout,&gpos,sizeof(gpos)); 
