@@ -4,7 +4,7 @@ void stampasprite(int y,int x,char c){
     if(c=='A'){
         int i;
         for(i=0;i<3;i++)
-            mvaddstr(y+i,x,sprite_a[i]);
+            mvaddnstr(y+i,x,sprite_a[i],3);
 
     }
 
@@ -13,7 +13,7 @@ void stampasprite(int y,int x,char c){
         /* Visualizzo il giocatore*/
             int i;
             for(i=0;i<6;i++)
-                mvaddstr(y+i,x,sprite_g[i]);
+                mvaddnstr(y+i,x,sprite_g[i],6);
 
     }
 
@@ -31,7 +31,7 @@ void cancellasprite(int y,int x,char c){
             for(i=0;i<3;i++){
                 for(j+0;j<3;j++){
                     
-                    mvaddch(y+i,x+j,'c');
+                    mvaddch(y+i,x+j,' ');
                 }
             }
         }
@@ -39,7 +39,7 @@ void cancellasprite(int y,int x,char c){
         else if(c=='G'){
             for(i=0;i<6;i++){
                 for(j=0;j<6;j++){
-                    mvaddch(y+i,x+j,'c');
+                    mvaddch(y+i,x+j,' ');
                 }
             }
         }
