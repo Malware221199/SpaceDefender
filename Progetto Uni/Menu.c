@@ -13,7 +13,7 @@ int Menu(int *nnemici,int *vproiettili){
   int altezza=0;    /* altezza cursore */                          
   bool esci;
   int i;
-  for(i=0;i<5;i++) mvaddnstr(1,MAXX/2,gameover[i],25);
+  for(i=0;i<5;i++) mvaddnstr(1,MAXX/2,fine[i],25);
   while(esci==false){
     
     for(i=0;i<3;i++){

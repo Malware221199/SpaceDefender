@@ -35,7 +35,7 @@ struct position {
   int  y;	 /* Coordinata Y */
 };
 
-char gameover[5][25] = {
+char fine[5][25] = {
 " _____ ___ _   _ _____  ",
 "|  ___|_ _| \\ | | ____|",
 "| |_   | ||  \\| |  _|  ",
