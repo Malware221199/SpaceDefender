@@ -59,7 +59,7 @@ int main(){
                 Area(p[0]);  /* invocazione funzione area di gioco */  
             }
         }
-        /* Termino i processi Vespa e Contadino */
+        /* Termino i processi Alieni e Giocatore */
         kill(pidA,1);	
         kill(pidG,1);	
 

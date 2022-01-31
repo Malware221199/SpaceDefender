@@ -22,7 +22,7 @@ void Alieni(int pipeout,int contatore);
 void Giocatore(int pipeout);
 void AreaGioco(int pipein);
 int Menu(int *nnemici,int *vproiettili);
-//void Opzioni(int *nnemici,int *vproiettili);
+void Opzioni(int *nnemici,int *vproiettili);
 int proiettili();
 int nemici();
 void stampasprite(int y,int x,char c);
