@@ -10,7 +10,7 @@ Menu.o: Menu.c Utility.h
 Alieni.o: Alieni.c Utility.h
 	cc -c -o Alieni.o Alieni.c -lncurses
 
-Giocatore.o: Giocatoreu.c Utility.h
+Giocatore.o: Giocatore.c Utility.h
 	cc -c -o Giocatore.o Giocatore.c -lncurses
 
 AreaGioco.o: AreaGioco.c Utility.h
