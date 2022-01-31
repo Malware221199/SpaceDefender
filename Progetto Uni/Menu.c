@@ -16,10 +16,10 @@ int menu(int *nnemici,int *vproiettili){
     int i;
     for(i=0;i<3;i++){
 
-      if(i == altezza)
+      /*if(i == altezza)
       wattron(menuwin,A_REVERSE);
       mvwprintw(menuwin, i+1,1,menu[i]);
-      wattroff(menuwin,A_REVERSE);  
+      wattroff(menuwin,A_REVERSE);*/  
     }
     scelta = getch;
 
