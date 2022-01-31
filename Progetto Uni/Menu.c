@@ -42,7 +42,7 @@ int menu(int *nnemici,int *vproiettili){
       break;
   }
 
-  switch (menu[altezza]){
+ /* switch (menu[altezza]){
     
     case Gioca:
       return 1;
@@ -58,6 +58,6 @@ int menu(int *nnemici,int *vproiettili){
   
     default:
     break;
-  }
+  }*/
 
 }
