@@ -48,7 +48,7 @@ void Area(int pipein){
             if(giocatore.x == alieni.x && giocatore.y == alieni.y) vite--;
 
             /* Visualizzo le vite rimaste al contadino */
-            mvprintw(0,1,"%d",vite);
+            mvprintw(0,1,"Vite %d",vite);
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
             refresh();

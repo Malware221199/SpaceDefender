@@ -26,9 +26,9 @@ int deltay=1;		/* Spostamento verticale */
 
 
     /* Se supero area X schermo inverte il movimento */
-    if(Alieni.x + deltax < 1 || Alieni.x + deltax > MAXX){
-        deltax = -deltax;
-    }
+    //if(Alieni.x + deltax < 1 || Alieni.x + deltax > MAXX){
+    //    deltax = -deltax;
+    //}
     
     /* Movimento X */
     Alieni.x += deltax;
