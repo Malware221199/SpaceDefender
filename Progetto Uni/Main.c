@@ -23,7 +23,7 @@ int main(){
             refresh();
             return 0;
             }
-        initscr();
+        clear();
         refresh();
         /* Creo il primo processo figlio 'Alieni' */
         pidA = fork();
