@@ -3,8 +3,8 @@
 void stampasprite(int larghezza,int altezza,char entita){
     if(entita=='A'){
         int i;
-        for(i=0;i<altezza+3;i++)
-            mvaddstr(larghezza,altezza,"%s",sprite_a[i]);
+        for(i=0;i<3;i++)
+            mvaddstr(larghezza,altezza,sprite_a[i]);
 
     }
 
