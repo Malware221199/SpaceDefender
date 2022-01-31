@@ -30,7 +30,6 @@ int main(){
         for(i=0;i<2;i++){
         /* Creo il primo processo figlio 'Alieni' */
         pidA = fork();
-        mvprintw(1,1,"Pid creato");
         }
         /* Se il pid == 0 -> si tratta del processo 'Alieni' */
         if(pidA==0) {
@@ -40,6 +39,7 @@ int main(){
             
             
                 Alieni(p[1],i); /* invocazione funzione alieni */
+                printf("contatore i %d",i);
             
         }
         else {		
