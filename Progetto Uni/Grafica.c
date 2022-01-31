@@ -7,9 +7,7 @@ void stampasprite(int larghezza,int altezza,char entita){
 
     else if(entita=='G'){
         /* Visualizzo il giocatore*/
-            int i=0;
-            i++;
-            mvprintw(larghezza,altezza,"Giocatore %d",i);
+            mvprintw(larghezza,altezza,"Giocatore");
 
     }
 
@@ -26,6 +24,7 @@ void cancellasprite(int larghezza,int altezza,char entita){
         if(entita=='A'){
             for(i=0;i<larghezza+3;i++){
                 for(j=0;j<altezza+3;j++){
+                    printf("larghezza %d altezza %d",larghezza altezza);
                     mvaddch(altezza+3,altezza+3,'c');
                 }
             }
