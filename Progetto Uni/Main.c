@@ -17,10 +17,12 @@ int main(){
         pipe(p);				/* Creazione pipe */
         int nnemici = 5;
         int vproiettili = DELAYM;
-        
-        if ( Menu(&nnemici,&vproiettili) == 0)
+
+        if ( Menu(&nnemici,&vproiettili) == 0){
+            clear();
             return 0;
-        clear;
+            }
+        clear();
         /* Creo il primo processo figlio 'Alieni' */
         pidA = fork();
         /* Se il pid == 0 -> si tratta del processo 'Alieni' */
