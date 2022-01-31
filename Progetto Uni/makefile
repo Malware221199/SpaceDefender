@@ -7,6 +7,9 @@ Main.o: Main.c Utility.h
 Menu.o: Menu.c Utility.h
 	cc -c -o Menu.o Menu.c -lncurses
 
+Opzioni.o: Opzioni.c Utility.h
+	cc -c -o Opzioni.o Opzioni.c -lncurses
+
 Alieni.o: Alieni.c Utility.h
 	cc -c -o Alieni.o Alieni.c -lncurses
 

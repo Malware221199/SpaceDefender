@@ -33,11 +33,11 @@ void Opzioni(int *nnemici,int *vproiettili){
       if(i==2){
         if(i == altezza){
         attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Proietili");
+        mvprintw(i+MAXY/2,MAXX/2,"Proiettili");
         attroff(A_REVERSE);
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Proietili");
+        mvprintw(i+MAXY/2,MAXX/2,"Proiettili");
         }
       }
     }
@@ -72,7 +72,7 @@ void Opzioni(int *nnemici,int *vproiettili){
       
     break;
 
-    case 2: /*Proietili*/
+    case 2: /*Proiettili*/
       
     break;
   
