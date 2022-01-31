@@ -39,7 +39,7 @@ int main(){
             
             
                 Alieni(p[1],i); /* invocazione funzione alieni */
-                printf("contatore i %d",i);
+                mvprintw(1,1,"contattore %d",i);
             
         }
         else {		
