@@ -17,7 +17,7 @@ int deltay=1;		/* Spostamento verticale */
   Alieni.c ='A';	/* Carattere identificativo */
 
   }
-  else(contatore==1){
+  else if(contatore==1){
   Alieni.x = MAXX-2;  /* Coordinata X iniziale */
   Alieni.y = MAXY/3;  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
