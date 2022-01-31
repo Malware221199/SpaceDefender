@@ -7,7 +7,7 @@ void stampasprite(int larghezza,int altezza,char entita){
 
     else if(entita=='G'){
         /* Visualizzo il giocatore*/
-            int i;
+            int i=0;
             i++;
             mvprintw(larghezza,altezza,"Giocatore %d",i);
 
