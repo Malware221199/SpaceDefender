@@ -13,9 +13,9 @@
 #define ENTER		10	  /* Cursore invio */
 #define	MAXX		60		/* Dimensione dello schermo di output (colonne) */
 #define MAXY		20		/* Dimensione dello schermo di output (righe)   */
-#define DELAYV 	80000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
-#define DELAYM 	100000	    /* Ritardo nel movimento delle navicelle nemiche medio */
-#define DELAYL 	120000	    /* Ritardo nel movimento delle navicelle nemiche lento */
+#define DELAYV 	120000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
+#define DELAYM 	160000	    /* Ritardo nel movimento delle navicelle nemiche medio */
+#define DELAYL 	200000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 
 /*Funzioni adoperate */
 void Alieni(int pipeout);
