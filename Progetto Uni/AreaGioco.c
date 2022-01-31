@@ -33,7 +33,9 @@ void Area(int pipein){
 
             /* Giocatore */
             else if(dato_letto.c=='G'){
-
+                int i=0;
+                i++;
+                printf("passi %d",i);
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 giocatore=dato_letto;
 
