@@ -9,7 +9,7 @@ int menu(int *nnemici,int *vproiettili){
   refresh();            /* refresho la pagina */
   
   char menu[3][7] = {"Gioca","Opzioni","Esci"};  /*stringa opzioni */
-  int scelta;       /* variabile scelta */
+  char scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
 
   while(1){
@@ -21,7 +21,7 @@ int menu(int *nnemici,int *vproiettili){
       mvwprintw(menuwin, i+1,1,menu[i]);
       wattroff(menuwin,A_REVERSE);*/  
     }
-    scelta = getch;
+    scelta = getch();
 
     switch(scelta){
 
