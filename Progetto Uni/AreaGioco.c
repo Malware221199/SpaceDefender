@@ -22,7 +22,7 @@ void Area(int pipein){
             if(dato_letto.c=='A') {
 
                 /* Cancello il precedente carattere visualizzato */
-                cancellasprite(alieni.y,alieni.x,alieni.c);
+                //cancellasprite(alieni.y,alieni.x,alieni.c);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 alieni=dato_letto;
@@ -34,7 +34,7 @@ void Area(int pipein){
             /* Giocatore */
             else if(dato_letto.c=='G'){
                 /* Cancello il precedente sprite visualizzato */
-                cancellasprite(giocatore.y,giocatore.x,giocatore.c);
+                //cancellasprite(giocatore.y,giocatore.x,giocatore.c);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 giocatore=dato_letto;
