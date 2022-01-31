@@ -4,7 +4,7 @@ void stampasprite(int y,int x,char c){
     if(c=='A'){
         int i;
         for(i=0;i<3;i++)
-            mvaddstr(y,x,sprite_a[i]);
+            mvaddstr(y+i,x,sprite_a[i]);
 
     }
 
