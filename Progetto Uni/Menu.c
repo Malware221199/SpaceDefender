@@ -13,6 +13,12 @@ int Menu(int *nnemici,int *vproiettili){
   int altezza=0;    /* altezza cursore */                          
   bool esci;
   int i;
+  char fine[5][25] = 
+{{" _____ ___ _   _ _____  "},
+{"|  ___|_ _| \\ | | ____|"},
+{"| |_   | ||  \\| |  _|  "},
+{"|  _|  | || |\\  | |___ "},
+{"|_|   |___|_| \\_|_____|"}};
   for(i=0;i<5;i++) mvaddnstr(1,MAXX/2,fine[i],25);
   while(esci==false){
     
