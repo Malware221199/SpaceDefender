@@ -1,4 +1,5 @@
 #include "Utility.h"
+#include "Grafica.h"
 
 /*
 ----------------------------------------------------------------------
@@ -19,12 +20,13 @@ int main(){
         int vproiettili = DELAYM;
         if ( Menu(&nnemici,&vproiettili) == 0)
             return 0;
+        clear;
         /* Creo il primo processo figlio 'Alieni' */
         pidA = fork();
         /* Se il pid == 0 -> si tratta del processo 'Alieni' */
         if(pidA==0) {
             /* Visualizzo l'alieno nella posizione iniziale */
-            mvprintw(MAXY/2,MAXX/2,"#");
+            stampasprite(1,2,'A');
 
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
@@ -37,7 +39,7 @@ int main(){
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
             if(pidG==0) {
                 /* Visualizzo il giocatore nella posizione iniziale */
-                mvprintw(MAXY/2,MAXX/2,"#");
+                stampasprite(1,2,'G');
 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
