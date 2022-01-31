@@ -34,7 +34,7 @@ int main(){
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             int i;
-            for(i=0;i<2;i++){
+            for(i=0;i<3;i++){
                 Alieni(p[1],i); /* invocazione funzione alieni */
             }
         }
