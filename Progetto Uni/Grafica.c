@@ -4,8 +4,8 @@ void stampasprite(int larghezza,int altezza,char entita){
     if(entita=='A'){
         int i;
         for(i=0;i<3;i++)
-            altezza++;
-            mvaddstr(larghezza,altezza,sprite_a[i]);
+            altezza=altezza+i;
+            mvaddstr(altezza,larghezza,sprite_a[i]);
 
     }
 
@@ -30,7 +30,7 @@ void cancellasprite(int larghezza,int altezza,char entita){
             for(i=0;i<larghezza+3;i++){
                 for(j=0;j<altezza+3;j++){
                     
-                    mvaddch(altezza+3,altezza+3,'c');
+                    mvaddch(altezza+3,larghezza+3,'c');
                 }
             }
         }
