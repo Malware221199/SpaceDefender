@@ -17,7 +17,8 @@ int main(){
         pipe(p);				/* Creazione pipe */
         int nnemici = 5;
         int vproiettili = DELAYM;
-
+        clear();
+        refresh();
         if ( Menu(&nnemici,&vproiettili) == 0){
             clear();
             refresh();
