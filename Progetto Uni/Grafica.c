@@ -7,12 +7,12 @@ void stampasprite(int larghezza,int altezza,char entita){
         //mvaddstr(i,larghezza,sprite.a[i])
         //}
         /* Visualizzo l'alieno*/
-        mvprintw(MAXY/2,MAXX/2,"#");
+        mvprintw(larghezza,altezza,"#");
     }
 
     else if(entita=='G'){
         /* Visualizzo il giocatore*/
-            mvprintw(MAXY/2,MAXX/2,"G");
+            mvprintw(larghezza,altezza,"G");
 
     }
 
