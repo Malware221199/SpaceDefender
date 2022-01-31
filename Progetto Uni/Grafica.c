@@ -24,7 +24,8 @@ void cancellasprite(int larghezza,int altezza,char entita){
         if(entita=='A'){
             for(i=0;i<larghezza+3;i++){
                 for(j=0;j<altezza+3;j++){
-                    printf("larghezza %d altezza %d",larghezza altezza);
+                    printf("larghezza %d",larghezza);
+                    printf("altezza %d",altezza);
                     mvaddch(altezza+3,altezza+3,'c');
                 }
             }
