@@ -8,7 +8,7 @@
 int Menu(int *nnemici,int *vproiettili){
   refresh();            /* refresho la pagina */
   
-  char menu[3][7] = {"Gioca","Opzioni","Esci"};  /*stringa opzioni */
+  int menu[3] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
   bool esci;
@@ -16,12 +16,38 @@ int Menu(int *nnemici,int *vproiettili){
     
     int i;
     for(i=0;i<3;i++){
-      mvprintw(i+1,1,menu[i]);
-      if(i == altezza){
+      if(i==0){
+        if(i == altezza){
         attron(A_REVERSE);
-        mvprintw(i+1,1,menu[i]);
+        mvprintw(i+1,1,"Gioca");
         attroff(A_REVERSE);
-      }  
+        }
+        else{
+        mvprintw(i+1,1,"Gioca");
+        }
+      }
+
+      if(i==1){
+        if(i == altezza){
+        attron(A_REVERSE);
+        mvprintw(i+1,1,"Opzioni");
+        attroff(A_REVERSE);
+        }
+        else{
+        mvprintw(i+1,1,"Opzioni");
+        }
+      }
+
+      if(i==2){
+        if(i == altezza){
+        attron(A_REVERSE);
+        mvprintw(i+1,1,"Esci");
+        attroff(A_REVERSE);
+        }
+        else{
+        mvprintw(i+1,1,"Esci");
+        }
+      }
     }
     scelta = getch();
 
@@ -41,26 +67,25 @@ int Menu(int *nnemici,int *vproiettili){
         esci=true;
       break;
     }
-    
       
   }
 
- /* switch (menu[altezza]){
+  switch (altezza){
     
-    case Gioca:
+    case 0: /*Gioca */
       return 1;
     break;
 
-    case Opzioni:
+    case 1: /*Opzioni*/
       //opzioni(int &nnemici,int &vproiettili);
     break;
 
-    case Esci:
+    case 2: /*Esci*/
       return 0;
     break;
   
     default:
     break;
-  }*/
+  }
 
 }
