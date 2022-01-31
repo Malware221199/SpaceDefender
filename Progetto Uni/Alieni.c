@@ -11,13 +11,13 @@ void Alieni(int pipeout, int contatore)
 struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
-  if(contatore==1){
+  if(contatore==0){
   Alieni.x = MAXX-2;  /* Coordinata X iniziale */
-  Alieni.y = 1;  /* Coordinata Y iniziale */
+  Alieni.y = MAXX/2;  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
   printf("hallo");
   }
-  else if(contatore==0){
+  else if(contatore==1){
   Alieni.x = MAXX-2;  /* Coordinata X iniziale */
   Alieni.y = 5;  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
