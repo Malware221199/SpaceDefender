@@ -19,7 +19,7 @@ int main(){
         int vproiettili = DELAYM;
 
         if ( Menu(&nnemici,&vproiettili) == 0){
-            clear;
+            clear();
             refresh();
             return 0;
             }
