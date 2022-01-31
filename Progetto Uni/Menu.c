@@ -6,12 +6,9 @@
 ----------------------------------------------------------------------
 */
 int menu(int *nnemici,int *vproiettili){
-  WINDOWS * menuwin = (6,MAXX,MAXY,5);  /* creo finestra */
-  box(menuwin,0,0);
-  refresh();                            /* refresho la pagina */
-  wrefresh(menuwin);
+  refresh();            /* refresho la pagina */
   
-  char menu[3] = {"Gioca","Opzioni","Esci"};  /*stringa opzioni */
+  char menu[3][7] = {"Gioca","Opzioni","Esci"};  /*stringa opzioni */
   int scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
 
@@ -20,11 +17,11 @@ int menu(int *nnemici,int *vproiettili){
     for(i=0;i<3;i++){
 
       if(i == altezza)
-        wattron(menuwin,A_REVERSE);
-      mvwprintw(menuwin, i+1,1,menu[i].c_str());
+      wattron(menuwin,A_REVERSE);
+      mvwprintw(menuwin, i+1,1,menu[i]);
       wattroff(menuwin,A_REVERSE);  
     }
-    scelta = wgetch(menuwin);
+    scelta = getch;
 
     switch(scelta){
 
