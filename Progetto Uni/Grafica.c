@@ -7,7 +7,7 @@ void stampasprite(int larghezza,int altezza,char entita){
 
     else if(entita=='G'){
         /* Visualizzo il giocatore*/
-            mvprintw(larghezza,altezza,"G");
+            mvprintw(larghezza,altezza,"Giocatore");
 
     }
 
@@ -19,12 +19,22 @@ void stampasprite(int larghezza,int altezza,char entita){
 
 
 
-void cancellasprite(int larghezza,int altezza){
+void cancellasprite(int larghezza,int altezza,char entita){
     int i,j;
-    //for(i=0;i<larghezza;i++){
-        //for(j=0;j<altezza;j++){
-            //mvaddch(j,i,' ');
-        //}
-    //}
-    mvaddch(larghezza,altezza,' ');
+        if(entita=='A'){
+            for(i=0;i<larghezza+3;i++){
+                for(j=0;j<altezza+3;j++){
+                    mvaddch(altezza+3,altezza+3,' ');
+                }
+            }
+        }
+
+        else if(entita=='G'){
+            for(i=0;i<larghezza+6;i++){
+                for(j=0;j<altezza+6;j++){
+                    mvaddch(altezza+6,altezza+6,' ');
+                }
+            }
+        }
+
 }
