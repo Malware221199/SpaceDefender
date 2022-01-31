@@ -11,7 +11,9 @@ void stampasprite(int y,int x,char c){
 
     else if(c=='G'){
         /* Visualizzo il giocatore*/
-            mvprintw(y,x,"Giocatore");
+            int i;
+            for(i=0;i<6;i++)
+                mvaddstr(y+i,x,sprite_g[i]);
 
     }
 
