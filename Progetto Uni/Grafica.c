@@ -29,7 +29,7 @@ void cancellasprite(int y,int x,char c){
     int i,j;
         if(c=='A'){
             for(i=0;i<3;i++){
-                for(j+0;j<3;j++){
+                for(j=0;j<3;j++){
                     
                     mvaddch(y+i,x+j,' ');
                 }
