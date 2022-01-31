@@ -6,14 +6,16 @@
 */
 void Giocatore(int pipeout)
 {
-struct position gpos;
+struct position giocatore;
 
-  gpos.x = 2;       /* Coordinata X iniziale */
-  gpos.y = MAXY/2;   /* Coordinata Y iniziale */
-  gpos.c='G';	    /* Carattere identificativo giocatore*/
+  giocatore.x = 2;       /* Coordinata X iniziale */
+  giocatore.y = MAXY/2;   /* Coordinata Y iniziale */
+  giocatore.c='G';	    /* Carattere identificativo giocatore*/
+  giocatore.n=1;   /* Numero dell elemento */
+
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */
-  write(pipeout,&gpos,sizeof(gpos));
+  write(pipeout,&giocatore,sizeof(giocatore));
 
   /* Lettura dei tasti cursore */
   while(1)
@@ -21,12 +23,12 @@ struct position gpos;
   		char c;
     c = getch();
 
-    if (c==UP && gpos.y > 0){
-      gpos.y-=1;				
+    if (c==UP && giocatore.y > 0){
+      giocatore.y-=1;				
     }
 
-    if(c==DW  && gpos.y < MAXY - 1){
-      gpos.y+=1;		
+    if(c==DW  && giocatore.y < MAXY - 1){
+      giocatore.y+=1;		
     }
 
     if(c==SPC){
@@ -34,7 +36,7 @@ struct position gpos;
     }
 
     /* Comunico al processo padre le coordinate del giocatore */
-    write(pipeout,&gpos,sizeof(gpos)); 
+    write(pipeout,&giocatore,sizeof(giocatore)); 
 
   }
 }

@@ -8,7 +8,7 @@
 int main(){
     while (1){
         int p[2];				/* Descrittori pipe */
-        int pidA;   		/* Pid processo figlio 'Alieni' */
+        int pidGA;   		/* Pid processo figlio 'Alieni' */
         int pidG;	      /* Pid processo figlio 'Giocatore' */
 
         initscr();			/* Inizializza schermo di output */
@@ -26,21 +26,16 @@ int main(){
             }
         clear();
         refresh();
-        int i;
-        //for(i=0;i<2;i++){
         /* Creo il primo processo figlio 'Alieni' */
-        pidA = fork();
-        //}
-        /* Se il pid == 0 -> si tratta del processo 'Alieni' */
-        if(pidA==0) {
+        pidGA = fork();
+        /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
+        if(pidGA==0) {
             
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             
-                mvprintw(1,1,"contattore %d",i);
-                Alieni(p[1],i); /* invocazione funzione alieni */
+            Gen_alieni(p[1]); /* invocazione funzione alieni */
                 
-            
         }
         else {		
             /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
@@ -60,7 +55,7 @@ int main(){
             }
         }
         /* Termino i processi Alieni e Giocatore */
-        kill(pidA,1);	
+        kill(pidGA,1);	
         kill(pidG,1);	
 
         /* Ripristino la modalità di funzionamento usuale */

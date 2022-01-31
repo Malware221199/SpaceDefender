@@ -18,7 +18,8 @@
 #define DELAYL 	200000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 
 /*Funzioni adoperate */
-void Alieni(int pipeout,int contatore);
+void Alieni(int pipeout,int nnemici);
+void Gen_alieni(int pipeout);
 void Giocatore(int pipeout);
 void AreaGioco(int pipein);
 int Menu(int *nnemici,int *vproiettili);
@@ -33,4 +34,5 @@ struct position {
   char c; 	/* Identificatore dell'entità che invia i dati */
   int  x;	 /* Coordinata X */
   int  y;	 /* Coordinata Y */
+  int  n;  /* Numero dell elemento */
 };

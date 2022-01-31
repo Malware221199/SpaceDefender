@@ -1,4 +1,19 @@
 #include "Utility.h"
+/*
+----------------------------------------------------------------------
+ Funzione 'Generatore Alieni'
+---------------------------------------------------------------------- 
+*/void Gen_alieni(int pipeout,int nnemici){
+      do{
+        int pidA;
+        pidA = fork();
+        if(pidA==0){
+            
+            Alieni(p[1],nnemici); /* invocazione funzione alieni */
+            nnemici--;    
+        }
+      }while(nnemici>0);
+}
 
 /*
 ----------------------------------------------------------------------
@@ -6,8 +21,7 @@
 ---------------------------------------------------------------------- 
 */
 
-void Alieni(int pipeout, int contatore)
-{
+void Alieni(int pipeout, int nnemici){
 struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
@@ -15,6 +29,7 @@ int deltay=1;		/* Spostamento verticale */
   Alieni.x = MAXX-2;  /* Coordinata X iniziale */
   Alieni.y = MAXX/2;  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
+  Alieni.n =nnemici; /* Numero dell elemento */
   
    /* Comunico le coordinate iniziali al processo padre */
   write(pipeout,&Alieni,sizeof(Alieni));
