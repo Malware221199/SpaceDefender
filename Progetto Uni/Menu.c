@@ -16,10 +16,10 @@ int Menu(int *nnemici,int *vproiettili){
     int i;
     for(i=0;i<3;i++){
 
-      /*if(i == altezza)
-      wattron(menuwin,A_REVERSE);
-      mvwprintw(menuwin, i+1,1,menu[i]);
-      wattroff(menuwin,A_REVERSE);*/  
+      if(i == altezza)
+      //wattron(menuwin,A_REVERSE);
+      mvprintw(i+1,1,menu[i]);
+      //wattroff(menuwin,A_REVERSE);*/  
     }
     scelta = getch();
 
@@ -35,11 +35,13 @@ int Menu(int *nnemici,int *vproiettili){
         if(altezza == 3)
           altezza = 2;
         break;
+      case ENTER
+      break;
       default:
       break;  
     }
-    if(scelta == ENTER)
-      break;
+    
+      
   }
 
  /* switch (menu[altezza]){
