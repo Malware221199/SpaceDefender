@@ -26,17 +26,19 @@ int main(){
             }
         clear();
         refresh();
+        for(i=0;i<2;i++){
         /* Creo il primo processo figlio 'Alieni' */
         pidA = fork();
+        }
         /* Se il pid == 0 -> si tratta del processo 'Alieni' */
         if(pidA==0) {
             
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             int i;
-            for(i=0;i<3;i++){
+            
                 Alieni(p[1],i); /* invocazione funzione alieni */
-            }
+            
         }
         else {		
             /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
