@@ -17,8 +17,8 @@ int Menu(int *nnemici,int *vproiettili){
     int i;
     for(i=0;i<3;i++){
       mvprintw(i+1,1,menu[i]);
-      if(i == altezza)
-      //wattron(menuwin,A_REVERSE);
+      if(i == altezza){}
+        //wattron(menuwin,A_REVERSE);
       //mvprintw(i+1,1,menu[i]);
       //wattroff(menuwin,A_REVERSE);*/  
     }
