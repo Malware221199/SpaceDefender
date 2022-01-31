@@ -28,18 +28,18 @@ void stampasprite(int y,int x,char c){
 void cancellasprite(int y,int x,char c){
     int i,j;
         if(c=='A'){
-            for(i=0;i<y+3;i++){
-                for(j=0;j<x+3;j++){
+            for(i=0;i<3;i++){
+                for(j+0;j<3;j++){
                     
-                    mvaddch(y+3,x+3,'c');
+                    mvaddch(y=i,x+j,' ');
                 }
             }
         }
 
         else if(c=='G'){
-            for(i=0;i<y+6;i++){
-                for(j=0;j<x+6;j++){
-                    mvaddch(y+6,x+6,'c');
+            for(i=0;i<6;i++){
+                for(j=0;j<6;j++){
+                    mvaddch(y+i,x+j,' ');
                 }
             }
         }
