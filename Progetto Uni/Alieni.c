@@ -15,12 +15,13 @@ int deltay=1;		/* Spostamento verticale */
   Alieni.x = MAXX-2;  /* Coordinata X iniziale */
   Alieni.y = MAXY/2;  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
-
+  printf("hallo");
   }
   else if(contatore==1){
   Alieni.x = MAXX-2;  /* Coordinata X iniziale */
-  Alieni.y = MAXY/3;  /* Coordinata Y iniziale */
+  Alieni.y = 1;  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
+  printf("ciao");
   }
    /* Comunico le coordinate iniziali al processo padre */
   write(pipeout,&Alieni,sizeof(Alieni));
