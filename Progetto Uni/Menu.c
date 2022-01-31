@@ -5,7 +5,7 @@
  Funzione 'Menu'
 ----------------------------------------------------------------------
 */
-int menu(int *nnemici,int *vproiettili){
+int Menu(int *nnemici,int *vproiettili){
   refresh();            /* refresho la pagina */
   
   char menu[3][7] = {"Gioca","Opzioni","Esci"};  /*stringa opzioni */
