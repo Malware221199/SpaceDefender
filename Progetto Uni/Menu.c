@@ -12,7 +12,8 @@ int Menu(int *nnemici,int *vproiettili){
   char scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
 
-  while(1){
+  while(esci==false){
+    bool esci;
     int i;
     for(i=0;i<3;i++){
 
@@ -35,10 +36,9 @@ int Menu(int *nnemici,int *vproiettili){
         if(altezza == 3)
           altezza = 2;
         break;
-      case ENTER
+      case ENTER:
+        esci=true;
       break;
-      default:
-      break;  
     }
     
       
