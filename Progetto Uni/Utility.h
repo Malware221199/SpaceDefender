@@ -14,7 +14,7 @@
 #define	MAXX		60		/* Dimensione dello schermo di output (colonne) */
 #define MAXY		20		/* Dimensione dello schermo di output (righe)   */
 #define DELAYV 	80000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
-#define DELAYM 	1000000	    /* Ritardo nel movimento delle navicelle nemiche medio */
+#define DELAYM 	100000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	120000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 
 /*Funzioni adoperate */
