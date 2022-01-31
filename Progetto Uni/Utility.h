@@ -18,7 +18,7 @@
 #define DELAYL 	200000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 
 /*Funzioni adoperate */
-void Alieni(int pipeout);
+void Alieni(int pipeout,int contatore);
 void Giocatore(int pipeout);
 void AreaGioco(int pipein);
 int Menu(int *nnemici,int *vproiettili);

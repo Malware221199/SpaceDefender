@@ -6,16 +6,22 @@
 ---------------------------------------------------------------------- 
 */
 
-void Alieni(int pipeout)
+void Alieni(int pipeout, int contatore)
 {
 struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
-
+  if(contatore==0){
   Alieni.x = MAXX-2;  /* Coordinata X iniziale */
   Alieni.y = MAXY/2;  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
 
+  }
+  else(contatore==1){
+  Alieni.x = MAXX-2;  /* Coordinata X iniziale */
+  Alieni.y = MAXY/3;  /* Coordinata Y iniziale */
+  Alieni.c ='A';	/* Carattere identificativo */
+  }
    /* Comunico le coordinate iniziali al processo padre */
   write(pipeout,&Alieni,sizeof(Alieni));
 

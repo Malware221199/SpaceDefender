@@ -33,7 +33,9 @@ int main(){
             
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
-            Alieni(p[1]); /* invocazione funzione alieni */    
+            for(i=0;i<2;i++){
+                Alieni(p[1],i); /* invocazione funzione alieni */
+            }
         }
         else {		
             /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
