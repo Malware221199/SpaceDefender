@@ -30,7 +30,7 @@ int main(){
         /* Se il pid == 0 -> si tratta del processo 'Alieni' */
         if(pidA==0) {
             /* Visualizzo l'alieno nella posizione iniziale */
-            stampasprite(1,2,'A');
+            //stampasprite(1,2,'A');
 
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
@@ -43,7 +43,7 @@ int main(){
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
             if(pidG==0) {
                 /* Visualizzo il giocatore nella posizione iniziale */
-                stampasprite(1,2,'G');
+                //stampasprite(1,2,'G');
 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
