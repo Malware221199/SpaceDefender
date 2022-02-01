@@ -15,7 +15,6 @@ void Gen_alieni(int pipeout,int nnemici){
             nnemici--;
         }
       }while(nnemici>0);
-      kill(pidA,1);
 }
 
 /*
