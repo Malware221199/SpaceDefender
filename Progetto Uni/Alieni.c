@@ -10,10 +10,10 @@ void Gen_alieni(int pipeout,int nnemici){
         int pidA;
         pidA = fork();
         mvprintw(0,1,"PID %d",pidA);
-        if(pidA==0){
+        //if(pidA==0){
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
             nnemici--;
-        }
+        //}
       }while(0>1);
 }
 
