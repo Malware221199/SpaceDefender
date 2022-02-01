@@ -20,7 +20,7 @@
 int p[2];				/* Descrittori pipe */
 /*Funzioni adoperate */
 void Alieni(int pipeout,int nnemici);
-void Gen_alieni(int pipeout,int nnemici);
+void Gen_alieni(int nnemici);
 void Giocatore(int pipeout);
 void AreaGioco(int pipein);
 int Menu(int *nnemici,int *vproiettili);
