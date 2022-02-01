@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 
-getmaxyx(stdscr, MAXY, MAXX);
+
 #define	UP			65		/* Cursore sopra */
 #define DW			66		/* Cursore sotto */
 #define	SX 			68		/* Cursore sinistra */
