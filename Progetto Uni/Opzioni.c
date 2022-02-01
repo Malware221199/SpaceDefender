@@ -67,11 +67,11 @@ void Opzioni(int *nnemici,int *vproiettili){
   switch (altezza){
     
     case 0: /*Indietro */
-      
+      return;
     break;
 
     case 1: /*Nemici*/
-      
+      &nnemici==nemici();
     break;
 
     case 2: /*Proiettili*/
@@ -85,10 +85,28 @@ void Opzioni(int *nnemici,int *vproiettili){
 }
 
 int nemici(){
+  int s,n
+  while(1){
+    mvprintw(MAXY/2,MAXX/2,"Numero nemici: %d",n);
+    s = getch();
+    switch(s){
+      case DW:
+        n--;
+        if(n == 0)
+          n = 1;
+        break;
+      case UP:
+        n++;
+        if(n == 11)
+          n = 10;
+        break;
+      case ENTER:
+        return n;
+      break;
+    }
 
 
-
-
+  }
 
 }
 
