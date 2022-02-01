@@ -7,14 +7,14 @@
 */
 int main(){
     while (1){
-        int p[2];				/* Descrittori pipe */
+            				/* Descrittori pipe */
         int pidGA;   		/* Pid processo figlio 'Alieni' */
         int pidG;	      /* Pid processo figlio 'Giocatore' */
 
         initscr();			/* Inizializza schermo di output */
         noecho();				/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
-        pipe(p);				/* Creazione pipe */
+            				/* Creazione pipe */
         int nnemici = 5;
         int vproiettili = DELAYM;
         clear();
