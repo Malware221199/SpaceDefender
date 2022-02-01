@@ -4,7 +4,7 @@
  Funzione 'Generatore Alieni'
 ---------------------------------------------------------------------- 
 */
-void Gen_alieni(int pipeout,int nnemici){
+/*void Gen_alieni(int pipeout,int nnemici){
       int pidA;
       int i,nn;
       nn=nnemici;
@@ -13,11 +13,11 @@ void Gen_alieni(int pipeout,int nnemici){
         pidA = fork();
         mvprintw(0,1,"PID %d",pidA);
             
-            Alieni(p[1],nn); /* invocazione funzione alieni */
+            Alieni(p[1],nn); /* invocazione funzione alieni 
             nn--;
       }
       
-}
+}*/
 
 /*
 ----------------------------------------------------------------------
