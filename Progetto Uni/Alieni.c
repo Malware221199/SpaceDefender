@@ -10,10 +10,10 @@ void Gen_alieni(int pipeout,int nnemici){
         int pidA;
         pidA = fork();
         mvprintw(0,1,"PID %d",pidA);
-        //if(pidA==0){
+        
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
             nnemici--;
-        //}
+      
       }while(nnemici>0);
 }
 
@@ -53,6 +53,6 @@ int deltay=1;		/* Spostamento verticale */
     write(pipeout,&Alieni,sizeof(Alieni));
 
 		/* Inserisco una pausa per rallentare il movimento */
-    usleep(3000000);
+    usleep(DELAYL);
   }
 }
