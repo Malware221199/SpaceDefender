@@ -10,7 +10,7 @@ struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
   Alieni.x = (MAXX-2);  /* Coordinata X iniziale */
-  Alieni.y = (MAXY/2);  /* Coordinata Y iniziale */
+  Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
 
