@@ -24,8 +24,6 @@ int main(){
         int i;
         int nnemici=1;
         int vproiettili = DELAYM;
-        clear();
-        refresh();
         if ( Menu(&nnemici,&vproiettili) == 0){
             clear();
             refresh();
