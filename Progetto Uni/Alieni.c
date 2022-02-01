@@ -8,11 +8,11 @@ void Gen_alieni(int nnemici){
       //do{
         int pidA;
         pidA = fork();
+        mvprintw(0,1,"PID %d",pidA);
         if(pidA==0){
             
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
-            nnemici--; 
-            mvprintw(0,4,"numero nemici %d",nnemici);   
+            //nnemici--;   
         }
       //}while(nnemici>0);
 }
