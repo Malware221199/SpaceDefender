@@ -27,7 +27,7 @@ int deltay=1;		/* Spostamento verticale */
       Alieni.x = MAXX-2;  /* Coordinata X iniziale */
       Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
       }
-    if(Alieni.y + deltay < 1 || Alieni.y + deltay > MAXY){
+    if(Alieni.y + deltay < 1 || Alieni.y + deltay > MAXY-3){
       deltay = -deltay;
     }
     
