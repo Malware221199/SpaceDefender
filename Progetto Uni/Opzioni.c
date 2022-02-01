@@ -67,7 +67,7 @@ void Opzioni(int *nnemici,int *vproiettili){
   switch (altezza){
     
     case 0: /*Indietro */
-      return ;
+      
     break;
 
     case 1: /*Nemici*/
@@ -81,5 +81,25 @@ void Opzioni(int *nnemici,int *vproiettili){
     default:
     break;
   }
+
+}
+
+void nemici(){
+
+
+
+
+
+}
+
+
+void proiettili() {
+
+
+
+
+
+
+
 
 }
