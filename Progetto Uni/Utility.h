@@ -18,7 +18,7 @@
 #define DELAYL 	200000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 
 int p[2];				/* Descrittori pipe */
-pipe(p);				/* Creazione pipe */
+				/* Creazione pipe */
 /*Funzioni adoperate */
 void Alieni(int pipeout,int nnemici);
 void Gen_alieni(int pipeout,int nnemici);

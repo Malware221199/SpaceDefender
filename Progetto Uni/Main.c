@@ -14,7 +14,7 @@ int main(){
         initscr();			/* Inizializza schermo di output */
         noecho();				/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
-            				/* Creazione pipe */
+        pipe(p);    			/* Creazione pipe */
         int nnemici = 5;
         int vproiettili = DELAYM;
         clear();
