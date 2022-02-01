@@ -11,12 +11,10 @@
 #define DX			67		/* Cursore destra */
 #define SPC			32		/* Cursore spazio */
 #define ENTER		10	  /* Cursore invio */
-//#define	MAXX		80		/* Dimensione dello schermo di output (colonne) */
-//#define MAXY		20		/* Dimensione dello schermo di output (righe)   */
 #define DELAYV 	120000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
 #define DELAYM 	160000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	200000	    /* Ritardo nel movimento delle navicelle nemiche lento */
-int MAXX,MAXY;
+int MAXX,MAXY;/* Dimensione dello schermo di output (colonne) e (righe)  */
 /*Funzioni adoperate */
 void Alieni(int pipeout,int nn);
 void Gen_alieni(int pipeout,int nnemici);
