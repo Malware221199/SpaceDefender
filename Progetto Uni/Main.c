@@ -12,9 +12,11 @@ int main(){
         int pidG;	      /* Pid processo figlio 'Giocatore' */
 
         initscr();			/* Inizializza schermo di output */
+        start_color();
         noecho();				/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         pipe(p);    			/* Creazione pipe */
+        bkgd(COLOR_PAIR(1));
         int i;
         int nnemici = 3;
         int vproiettili = DELAYM;
