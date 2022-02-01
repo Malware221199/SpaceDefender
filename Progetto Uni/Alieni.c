@@ -10,7 +10,7 @@ void Gen_alieni(int pipeout,int nnemici){
         pidA = fork();
         mvprintw(0,1,"PID %d",pidA);
         if(pidA==0){
-            
+            close(p[0]);
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
             nnemici--;
             kill(pidA,1);
