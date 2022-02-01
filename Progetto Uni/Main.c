@@ -40,7 +40,6 @@ int main(){
             close(p[0]); /* chiusura del descrittore di lettura */
             
             Alieni(p[1],i); /* invocazione funzione alieni */
-            nn--;
 
                 
         }
