@@ -1,6 +1,7 @@
 #include "Utility.h"
 
 void Opzioni(int *nnemici,int *vproiettili){
+  clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
   int Opzioni[3] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
