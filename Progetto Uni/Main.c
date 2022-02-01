@@ -18,7 +18,6 @@ int main(){
         int i;
         int nnemici = 3;
         int vproiettili = DELAYM;
-        nn=nnemici;
         clear();
         refresh();
         if ( Menu(&nnemici,&vproiettili) == 0){
