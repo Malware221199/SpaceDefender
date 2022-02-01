@@ -23,7 +23,7 @@ void Area(int pipein){
             if(dato_letto.c=='A') {
 
                 /* Cancello il precedente carattere visualizzato */
-                cancellasprite(alieni[dato_letto.id].x,alieni[dato_letto.id].y,dato_letto.c,alieni[dato_letto.id].id);
+                cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c,alieni[dato_letto.id].id);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 alieni[dato_letto.id].id=dato_letto.id;
