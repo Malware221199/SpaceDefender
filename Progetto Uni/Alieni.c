@@ -23,7 +23,7 @@ int deltay=1;		/* Spostamento verticale */
     Alieni.y += deltay;
 
     /* Se supero area X schermo inverte il movimento */
-    if(Alieni.x + deltax < 1 || Alieni.x + deltax > MAXX){
+    if(Alieni.x + deltax < 7 || Alieni.x + deltax > MAXX){
       Alieni.x = MAXX-2;  /* Coordinata X iniziale */
       Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
       }
