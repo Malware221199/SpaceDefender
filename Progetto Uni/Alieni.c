@@ -10,7 +10,8 @@
         if(pidA==0){
             
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
-            nnemici--;    
+            nnemici--; 
+            mvprintw(0,4,"numero nemici %d",nnemici);   
         }
       }while(nnemici>0);
 }
@@ -25,7 +26,6 @@ void Alieni(int pipeout, int nnemici){
 struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
-  mvprintw(0,4,"numero nemici %d",nnemici);
   Alieni.x = (MAXX-2)+nnemici;  /* Coordinata X iniziale */
   Alieni.y = (MAXY/2);  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
