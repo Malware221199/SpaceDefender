@@ -85,10 +85,10 @@ void Opzioni(int *nnemici,int *vproiettili){
 }
 
 int nemici(){
-  clear();              /* cancello la pagina */
-  refresh();            /* refresho la pagina */
-  int s,n;
+  int s,n=5;
   while(1){
+    clear();              /* cancello la pagina */
+    refresh();            /* refresho la pagina */
     mvprintw(MAXY/2,MAXX/2,"Numero nemici: %d",n);
     s = getch();
     switch(s){
