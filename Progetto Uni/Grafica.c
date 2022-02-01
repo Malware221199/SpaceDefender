@@ -31,7 +31,7 @@ void cancellasprite(int y,int x,char c,int n){
             for(i=0;i<3;i++){
                 for(j=0;j<3;j++){
                     
-                    mvaddch(y+i,x+j,' ');
+                    mvaddch(y+i,x+j,'o');
                 }
             }
         }
