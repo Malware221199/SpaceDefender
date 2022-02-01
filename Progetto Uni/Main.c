@@ -15,7 +15,7 @@ int main(){
         noecho();				/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         pipe(p);    			/* Creazione pipe */
-        int i,nn,nnemici = 2;
+        int i,nn,nnemici = 3;
         int vproiettili = DELAYM;
         nn=nnemici;
         clear();
