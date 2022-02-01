@@ -36,3 +36,11 @@ struct position {
   int  y;	 /* Coordinata Y */
   int  id;  /* Numero dell elemento */
 };
+
+typedef struct alien
+{
+  int x;
+  int y;
+  int id;
+};
+
