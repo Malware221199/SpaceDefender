@@ -33,6 +33,7 @@ int main(){
             }
         clear();
         refresh();
+        mvprintw(0,10,"Numero nemici: %d",nnemici);
         for(i=0;i<nnemici;i++){
             /* Creo il primo processo figlio 'Alieni' */
             pidA = fork();
