@@ -71,7 +71,7 @@ void Opzioni(int *nnemici,int *vproiettili){
     break;
 
     case 1: /*Nemici*/
-      nnemici=nemici();
+      &nnemici=nemici();
     break;
 
     case 2: /*Proiettili*/
@@ -85,6 +85,8 @@ void Opzioni(int *nnemici,int *vproiettili){
 }
 
 int nemici(){
+  clear();              /* cancello la pagina */
+  refresh();            /* refresho la pagina */
   int s,n;
   while(1){
     mvprintw(MAXY/2,MAXX/2,"Numero nemici: %d",n);
@@ -112,6 +114,8 @@ int nemici(){
 
 
 int proiettili() {
+  clear();              /* cancello la pagina */
+  refresh();            /* refresho la pagina */
 
 
 
