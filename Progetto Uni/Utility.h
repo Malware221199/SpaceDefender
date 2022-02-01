@@ -37,10 +37,10 @@ struct position {
   int  id;  /* Numero dell elemento */
 };
 
-typedef struct alien
+typedef struct 
 {
   int x;
   int y;
   int id;
-};
+}alien;
 
