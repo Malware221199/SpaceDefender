@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------- 
 */
 void Gen_alieni(int nnemici){
-      do{
+      //do{
         int pidA;
         pidA = fork();
         if(pidA==0){
@@ -14,7 +14,7 @@ void Gen_alieni(int nnemici){
             nnemici--; 
             mvprintw(0,4,"numero nemici %d",nnemici);   
         }
-      }while(nnemici>0);
+      //}while(nnemici>0);
 }
 
 /*
