@@ -16,6 +16,8 @@ int main(){
         noecho();				/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         getmaxyx(stdscr, MAXY, MAXX);
+        clear();
+        refresh();
         pipe(p);    			/* Creazione pipe */
         //bkgd(COLOR_PAIR(1));
         //init_pair(1,COLOR_RED,COLOR_BLACK);  /* Colore vespa */
@@ -31,7 +33,6 @@ int main(){
             }
         clear();
         refresh();
-        mvprintw(0,10,"Numero nemici: %d",nnemici);
         for(i=0;i<nnemici;i++){
             /* Creo il primo processo figlio 'Alieni' */
             pidA = fork();

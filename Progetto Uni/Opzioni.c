@@ -71,6 +71,7 @@ void Opzioni(int *nnemici,int *vproiettili){
     break;
 
     case 1: /*Nemici*/
+    mvprintw(0,10,"Numero nemici: %d",*nnemici);
       *nnemici=nemici();
     break;
 
