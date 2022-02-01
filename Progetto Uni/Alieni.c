@@ -13,7 +13,6 @@ void Gen_alieni(int pipeout,int nnemici){
         mvprintw(0,1,"PID %d",pidA);
         
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
-            nnemici--;
       }
       
 }
