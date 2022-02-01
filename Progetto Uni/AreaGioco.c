@@ -12,7 +12,7 @@ void Area(int pipein){
     int i=0, vite=3, collision=0;
 
     /* Visualizzo le vite iniziali del Giocatore */
-        //mvprintw(0,1,"Vite %d",vite);
+        mvprintw(0,1,"Vite %d",vite);
 
         do {
             /* Leggo dalla pipe */
@@ -50,7 +50,7 @@ void Area(int pipein){
             }
 
             /* Visualizzo le vite rimaste al contadino */
-            //mvprintw(0,1,"Vite %d",vite);
+            mvprintw(0,1,"Vite %d",vite);
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
             refresh();
