@@ -46,8 +46,8 @@ void Area(int pipein){
             
             /* Segnalo collisione e tipo*/
             if(giocatore.x == alieni.x && giocatore.y == alieni.y) {
-                    mvprintw(0,10,"collisione %d",vite);
                     vite--;
+                    mvprintw(0,10,"collisione %d",vite);
             }
 
             /* Visualizzo le vite rimaste al contadino */
