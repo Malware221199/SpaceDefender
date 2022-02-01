@@ -23,12 +23,12 @@ void Area(int pipein){
             if(dato_letto.c=='A') {
 
                 /* Cancello il precedente carattere visualizzato */
-                cancellasprite(alieni[dato_letto.id+1],alieni[dato_letto.id+2],dato_letto.c,alieni[dato_letto.id]);
+                cancellasprite(alieni[(dato_letto.id*3)-1],alieni[(dato_letto.id*3)-2],dato_letto.c,alieni[dato_letto.id*3]);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
-                alieni[dato_letto.id]=dato_letto.id;
-                alieni[dato_letto.id+1]=dato_letto.y;
-                alieni[dato_letto.id+2]=dato_letto.x;
+                alieni[dato_letto.id*3]=dato_letto.id;
+                alieni[(dato_letto.id*3)-1]=dato_letto.y;
+                alieni[(dato_letto.id*3)-2]=dato_letto.x;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
@@ -48,7 +48,7 @@ void Area(int pipein){
             }
             
             /* Segnalo collisione e tipo*/
-            if(giocatore.x == alieni[dato_letto.id+2] && giocatore.y == alieni[dato_letto.id+1]) {
+            if(giocatore.x == alieni[dato_letto.id*3)-2] && giocatore.y == alieni[dato_letto.id*3)-1]) {
                     vite--;
             }
 
