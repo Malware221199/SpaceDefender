@@ -7,7 +7,7 @@
 void Gen_alieni(int pipeout,int nnemici){
       int pidA;
       int i,nn;
-      nn=nnemici
+      nn=nnemici;
       for(i=0;i<nnemici;i++){
         int pidA;
         pidA = fork();
@@ -29,7 +29,7 @@ void Alieni(int pipeout, int nn){
 struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
-  Alieni.x = (MAXX-2)+nnemici;  /* Coordinata X iniziale */
+  Alieni.x = (MAXX-2)+nn;  /* Coordinata X iniziale */
   Alieni.y = (MAXY/2);  /* Coordinata Y iniziale */
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.n =nn; /* Numero dell elemento */
