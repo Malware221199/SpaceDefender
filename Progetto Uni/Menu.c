@@ -5,7 +5,7 @@
  Funzione 'Menu'
 ----------------------------------------------------------------------
 */
-int Menu(int &nnemici,int &vproiettili){
+int Menu(int *nnemici,int *vproiettili){
   while(1){
   int menu[3] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
