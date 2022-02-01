@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------- 
 */
 void Gen_alieni(int pipeout,int nnemici){
-      //do{
+      do{
         int pidA;
         pidA = fork();
         mvprintw(0,1,"PID %d",pidA);
@@ -14,7 +14,7 @@ void Gen_alieni(int pipeout,int nnemici){
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
             //nnemici--;   
         }
-      //}while(nnemici>0);
+      }while(nnemici>0);
 }
 
 /*
