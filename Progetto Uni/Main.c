@@ -15,7 +15,7 @@ int main(){
         noecho();				/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         pipe(p);    			/* Creazione pipe */
-        int i,nn,nnemici = 5;
+        int i,nn,nnemici = 2;
         int vproiettili = DELAYM;
         nn=nnemici;
         clear();
@@ -39,7 +39,7 @@ int main(){
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             
-            Alieni(p[1],nn); /* invocazione funzione alieni */
+            Alieni(p[1],i); /* invocazione funzione alieni */
             nn--;
 
                 

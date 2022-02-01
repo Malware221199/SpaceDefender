@@ -35,5 +35,5 @@ struct position {
   char c; 	/* Identificatore dell'entità che invia i dati */
   int  x;	 /* Coordinata X */
   int  y;	 /* Coordinata Y */
-  int  n;  /* Numero dell elemento */
+  int  id;  /* Numero dell elemento */
 };

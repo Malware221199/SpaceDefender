@@ -8,7 +8,8 @@
 
 void Area(int pipein){
 
-    struct position alieni, giocatore, dato_letto;
+    struct position giocatore, dato_letto;
+    int alieni[100];
     int i=0, vite=3, collision=0;
 
     /* Visualizzo le vite iniziali del Giocatore */
@@ -22,25 +23,27 @@ void Area(int pipein){
             if(dato_letto.c=='A') {
 
                 /* Cancello il precedente carattere visualizzato */
-                cancellasprite(alieni.y,alieni.x,alieni.c,alieni.n);
+                cancellasprite(alieni[dato_letto.id],alieni[dato_letto.id+1],dato_letto.c,alieni[dato_letto.id+2]);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
-                alieni=dato_letto;
+                alieni[dato_letto.id]=dato_letto.id;
+                alieni[dato_letto.id+1]=dato_letto.y;
+                alieni[dato_letto.id+2]=dato_letto.x;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.n);
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
             }
 
             /* Giocatore */
             else if(dato_letto.c=='G'){
                 /* Cancello il precedente sprite visualizzato */
-                cancellasprite(giocatore.y,giocatore.x,giocatore.c,giocatore.n);
+                cancellasprite(giocatore.y,giocatore.x,giocatore.c,giocatore.id);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 giocatore=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.n);
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
 
             }
             
