@@ -9,6 +9,7 @@ void Opzioni(int *nnemici,int *vproiettili){
   bool esci;
   while(esci==false){
     int i;
+    mvprintw(0,10,"Numero nemici: %d",*nnemici);
     for(i=0;i<3;i++){
       if(i==0){
         if(i == altezza){
@@ -71,7 +72,6 @@ void Opzioni(int *nnemici,int *vproiettili){
     break;
 
     case 1: /*Nemici*/
-    mvprintw(0,10,"Numero nemici: %d",*nnemici);
       *nnemici=nemici();
     break;
 
