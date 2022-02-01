@@ -5,7 +5,6 @@ void stampasprite(int y,int x,char c,int n){
         int i;
         y=y+n;
         x=x+n;
-        //usleep(3000000);
         mvprintw(0,6,"N %d",n);
         for(i=0;i<3;i++)
             mvaddnstr(y+i,x,sprite_a[i],3);
