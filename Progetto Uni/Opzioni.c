@@ -84,7 +84,7 @@ void Opzioni(int *nnemici,int *vproiettili){
 
 }
 
-void nemici(){
+int nemici(){
 
 
 
@@ -93,7 +93,7 @@ void nemici(){
 }
 
 
-void proiettili() {
+int proiettili() {
 
 
 
