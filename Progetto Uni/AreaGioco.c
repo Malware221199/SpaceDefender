@@ -48,7 +48,7 @@ void Area(int pipein){
             }
             
             /* Segnalo collisione e tipo*/
-            if(giocatore.x == alieni.x && giocatore.y == alieni.y) {
+            if(giocatore.x == alieni[dato_letto.id+2] && giocatore.y == alieni[dato_letto.id+1]) {
                     vite--;
             }
 
