@@ -4,15 +4,15 @@
 #include <unistd.h>
 
 
-
+getmaxyx(stdscr, MAXY, MAXX);
 #define	UP			65		/* Cursore sopra */
 #define DW			66		/* Cursore sotto */
 #define	SX 			68		/* Cursore sinistra */
 #define DX			67		/* Cursore destra */
 #define SPC			32		/* Cursore spazio */
 #define ENTER		10	  /* Cursore invio */
-#define	MAXX		80		/* Dimensione dello schermo di output (colonne) */
-#define MAXY		20		/* Dimensione dello schermo di output (righe)   */
+//#define	MAXX		80		/* Dimensione dello schermo di output (colonne) */
+//#define MAXY		20		/* Dimensione dello schermo di output (righe)   */
 #define DELAYV 	120000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
 #define DELAYM 	160000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	200000	    /* Ritardo nel movimento delle navicelle nemiche lento */
