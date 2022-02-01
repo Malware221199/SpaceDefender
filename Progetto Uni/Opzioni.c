@@ -85,7 +85,7 @@ void Opzioni(int *nnemici,int *vproiettili){
 }
 
 int nemici(){
-  int s,n
+  int s,n;
   while(1){
     mvprintw(MAXY/2,MAXX/2,"Numero nemici: %d",n);
     s = getch();
