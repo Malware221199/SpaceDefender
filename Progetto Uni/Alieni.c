@@ -14,7 +14,7 @@ void Gen_alieni(int pipeout,int nnemici){
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
             nnemici--;
         }
-      }while(nnemici>0);
+      }while(0>1);
 }
 
 /*
