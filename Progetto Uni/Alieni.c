@@ -55,6 +55,6 @@ int deltay=1;		/* Spostamento verticale */
     write(pipeout,&Alieni,sizeof(Alieni));
 
 		/* Inserisco una pausa per rallentare il movimento */
-    usleep(DELAYL);
+    usleep(DELAYV);
   }
 }

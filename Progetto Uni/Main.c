@@ -27,9 +27,12 @@ int main(){
             }
         clear();
         refresh();
-    for(i=0;i<nnemici;i++){
-        /* Creo il primo processo figlio 'Alieni' */
-        pidA = fork();
+        for(i=0;i<nnemici;i++){
+            /* Creo il primo processo figlio 'Alieni' */
+            pidA = fork();
+            if(!pidA)
+                break; 
+        }
         /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
         if(pidA==0) {
             
@@ -38,6 +41,7 @@ int main(){
             
             Alieni(p[1],nn); /* invocazione funzione alieni */
             nn--;
+
                 
         }
         else {		
@@ -57,7 +61,6 @@ int main(){
                 Area(p[0]);  /* invocazione funzione area di gioco */  
             }
         }
-    }
         /* Termino i processi Alieni e Giocatore */
         kill(pidA,1);	
         kill(pidG,1);	
