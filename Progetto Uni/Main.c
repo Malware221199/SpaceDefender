@@ -34,7 +34,7 @@ int main(){
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             
-            Gen_alieni(nnemici); /* invocazione funzione alieni */
+            Gen_alieni(p[1],nnemici); /* invocazione funzione alieni */
                 
         }
         else {		
