@@ -3,7 +3,8 @@
 ----------------------------------------------------------------------
  Funzione 'Generatore Alieni'
 ---------------------------------------------------------------------- 
-*/void Gen_alieni(int pipeout,int nnemici){
+*/
+void Gen_alieni(int pipeout,int nnemici){
       do{
         int pidA;
         pidA = fork();
