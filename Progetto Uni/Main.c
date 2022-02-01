@@ -12,14 +12,14 @@ int main(){
         int pidG;	      /* Pid processo figlio 'Giocatore' */
 
         initscr();			/* Inizializza schermo di output */
-        start_color();
+        //start_color();
         noecho();				/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         pipe(p);    			/* Creazione pipe */
         //bkgd(COLOR_PAIR(1));
-        init_pair(1,COLOR_RED,COLOR_BLACK);  /* Colore vespa */
-        init_pair(2,COLOR_GREEN,COLOR_BLACK);   /* Colore contadino */
-        init_pair(3,COLOR_RED,COLOR_BLACK);   /* Colore trappola */
+        //init_pair(1,COLOR_RED,COLOR_BLACK);  /* Colore vespa */
+        //init_pair(2,COLOR_GREEN,COLOR_BLACK);   /* Colore contadino */
+        //init_pair(3,COLOR_RED,COLOR_BLACK);   /* Colore trappola */
         int i;
         int nnemici = 3;
         int vproiettili = DELAYM;
