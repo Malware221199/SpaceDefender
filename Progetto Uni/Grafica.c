@@ -3,8 +3,6 @@
 void stampasprite(int y,int x,char c,int n){
     if(c=='A'){
         int i;
-        y=y+n;
-        x=x+n;
         mvprintw(0,6,"N %d",n);
         for(i=0;i<3;i++)
             mvaddnstr(y+i,x,sprite_a[i],3);
@@ -34,7 +32,7 @@ void cancellasprite(int y,int x,char c,int n){
             for(i=0;i<3;i++){
                 for(j=0;j<3;j++){
                     
-                    mvaddch(y+i,x+j,'o');
+                    mvaddch(y+i,x+j,' ');
                 }
             }
         }
