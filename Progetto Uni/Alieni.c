@@ -20,13 +20,16 @@ int deltay=1;		/* Spostamento verticale */
   while(1){
 
     /* Movimento Y */
-    //Alieni.y += deltay;
+    Alieni.y += deltay;
 
     /* Se supero area X schermo inverte il movimento */
     if(Alieni.x + deltax < 1 || Alieni.x + deltax > MAXX){
       Alieni.x = MAXX-2;  /* Coordinata X iniziale */
       Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
       }
+    if(Alieni.y + deltay < 1 || Alieni.y + deltay > MAXY){
+      deltay = -deltay;
+    }
     
     /* Movimento X */
     Alieni.x -= deltax;

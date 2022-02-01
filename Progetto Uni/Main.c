@@ -7,7 +7,7 @@
 */
 int main(){
     while (1){
-            				/* Descrittori pipe */
+        int p[2];				/* Descrittori pipe */  
         int pidA;   		/* Pid processo figlio 'Alieni' */
         int pidG;	      /* Pid processo figlio 'Giocatore' */
 
@@ -15,7 +15,8 @@ int main(){
         noecho();				/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         pipe(p);    			/* Creazione pipe */
-        int i,nn,nnemici = 3;
+        int i;
+        int nnemici = 3;
         int vproiettili = DELAYM;
         nn=nnemici;
         clear();
@@ -53,7 +54,7 @@ int main(){
 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
-                Giocatore(p[1]); /* invocazione funzione contadino */  
+                Giocatore(p[1]); /* invocazione funzione giocatore */  
             }
             else {
                 /* Sono ancora nel processo padre */
@@ -66,10 +67,7 @@ int main(){
         kill(pidG,1);	
 
         /* Ripristino la modalità di funzionamento usuale */
-        endwin();	    	
-
-        /* Termino il gioco*/
-        printf("\n\n\nGAME OVER\n\n\n");
+        endwin();
     }
 }
 
