@@ -40,7 +40,7 @@ int deltay=1;		/* Spostamento verticale */
   while(1){
 
     /* Movimento Y */
-    //Alieni.y += deltay;
+    Alieni.y += deltay;
 
     /* Se supero area X schermo inverte il movimento */
     if(Alieni.x + deltax < 1 || Alieni.x + deltax > MAXX){
