@@ -26,7 +26,7 @@ void Opzioni(int *nnemici,int *vproiettili){
         attroff(A_REVERSE);
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Nemici");
+        mvprintw(i+MAXY/2,MAXX/2,"Nemicio");
         }
       }
 
