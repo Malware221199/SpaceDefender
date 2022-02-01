@@ -22,7 +22,7 @@ int main(){
         //init_pair(2,COLOR_GREEN,COLOR_BLACK);   /* Colore contadino */
         //init_pair(3,COLOR_RED,COLOR_BLACK);   /* Colore trappola */
         int i;
-        int nnemici = 3;
+        int nnemici;
         int vproiettili = DELAYM;
         clear();
         refresh();
