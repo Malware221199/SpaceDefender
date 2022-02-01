@@ -6,6 +6,7 @@
 ----------------------------------------------------------------------
 */
 int Menu(int *nnemici,int *vproiettili){
+  while(1){
   refresh();            /* refresho la pagina */
   
   int menu[3] = {0,1,2};  /*stringa opzioni */
@@ -86,5 +87,5 @@ int Menu(int *nnemici,int *vproiettili){
     default:
     break;
   }
-
+  }
 }
