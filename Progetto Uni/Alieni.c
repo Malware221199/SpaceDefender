@@ -6,15 +6,16 @@
 */
 void Gen_alieni(int pipeout,int nnemici){
       int pidA;
-      do{
+      int i;
+      for(i=0;i<nnemici;i++){
         int pidA;
         pidA = fork();
         mvprintw(0,1,"PID %d",pidA);
         
             Alieni(p[1],nnemici); /* invocazione funzione alieni */
             nnemici--;
+      }
       
-      }while(nnemici>0);
 }
 
 /*
