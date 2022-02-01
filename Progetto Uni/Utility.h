@@ -19,7 +19,7 @@
 
 int p[2];				/* Descrittori pipe */
 /*Funzioni adoperate */
-void Alieni(int pipeout,int nnemici);
+void Alieni(int pipeout,int nn);
 void Gen_alieni(int pipeout,int nnemici);
 void Giocatore(int pipeout);
 void AreaGioco(int pipein);
