@@ -11,7 +11,7 @@ struct position giocatore;
   giocatore.x = 2;       /* Coordinata X iniziale */
   giocatore.y = MAXY/2;   /* Coordinata Y iniziale */
   giocatore.c='G';	    /* Carattere identificativo giocatore*/
-  giocatore.n=1;   /* Numero dell elemento */
+  giocatore.id=1;   /* Numero dell elemento */
 
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */
