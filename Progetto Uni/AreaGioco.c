@@ -70,8 +70,7 @@ void area(int pipein){
 
             
             /* Segnalo collisione e tipo*/
-            //if(giocatore.x == alieni[dato_letto.id].x && giocatore.y == alieni[dato_letto.id].y) vite--;
-            if(alieni[dato_letto.id].x<9) vite--;
+            if(bullet[dato_letto.id].x == alieni[dato_letto.id].x && bullet[dato_letto].y == alieni[dato_letto.id].y) vite--;
             
 
             /* Visualizzo le vite rimaste al contadino */
