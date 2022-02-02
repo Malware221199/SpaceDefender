@@ -23,21 +23,25 @@ void bullet(int pipeout,int id,int cgy,int cgx){
         if(id%2==0){
             /* Movimento Y */
             Bullet.y += deltay;
+            /* Se supero area Y schermo inverte il movimento */
+            if(Bullet.y + deltay < 1 || Bullet.y + deltay > MAXY-1){
+                deltay = -deltay;
+            }
         }
         else{
             /* Movimento Y */
             Bullet.y -= deltay;
+            /* Se supero area Y schermo inverte il movimento */
+            if(Bullet.y + deltay < 1 || Bullet.y + deltay > MAXY-1){
+            deltay = +deltay;
+            }
         }
 
         /* Se supero area Y schermo inverte il movimento */
         if(Bullet.y + deltay < 1 || Bullet.y + deltay > MAXY-1){
             deltay = -deltay;
-        //Alieni.x = MAXX-2;  /* Coordinata X iniziale */
-        //Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
         }
-        //if(Alieni.y + deltay < 1 || Alieni.y + deltay > MAXY-3){
-        //deltay = -deltay;
-        //}
+        
         
         /* Movimento X */
         Bullet.x += deltax;
