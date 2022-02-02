@@ -17,8 +17,8 @@ int main(){
         curs_set(0);		/* Nasconde il cursore */
         getmaxyx(stdscr, MAXY, MAXX);
         pipe(p);    			/* Creazione pipe */
-        clear();
-        refresh();
+        //clear();
+        //refresh();
         //bkgd(COLOR_PAIR(1));
         //init_pair(1,COLOR_RED,COLOR_BLACK);  /* Colore vespa */
         //init_pair(2,COLOR_GREEN,COLOR_BLACK);   /* Colore contadino */
