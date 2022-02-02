@@ -13,7 +13,7 @@ int main(){
 
         initscr();			/* Inizializza schermo di output */
         //start_color();
-        noecho();				/* Imposta modalità della tastiera */
+        noecho();			/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         getmaxyx(stdscr, MAXY, MAXX);
         clear();
@@ -26,7 +26,7 @@ int main(){
         //init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
         //attron(COLOR_PAIR(4));
         int i;
-        int nnemici=1;
+        int nnemici=2;
         int difficolta = DELAYM;
         if ( Menu(&nnemici,&difficolta) == 0){
             clear();
