@@ -62,11 +62,16 @@ void area(int pipein){
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
             }
 
+            /*
+            ----------------------------------------------------------------------
+            Collisioni
+            ---------------------------------------------------------------------- 
+            */  
 
             
             /* Segnalo collisione e tipo*/
-            if(giocatore.x == alieni[dato_letto.id].x && giocatore.y == alieni[dato_letto.id].y) vite--;
-            //else if(alieni[dato_letto.id].x<9) vite--;
+            //if(giocatore.x == alieni[dato_letto.id].x && giocatore.y == alieni[dato_letto.id].y) vite--;
+            if(alieni[dato_letto.id].x<9) vite--;
             
 
             /* Visualizzo le vite rimaste al contadino */
