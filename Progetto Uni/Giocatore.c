@@ -36,7 +36,10 @@ void giocatore(int pipeout)
       pidB=fork();
       if(pidB==0) {
         idb++;
-        mvprintw(0,10,"idb %d",idb);
+        attron(COLOR_PAIR(4));
+            mvprintw(0,10,"idb %d",idb);
+            attroff(COLOR_PAIR(4));
+        
         close(p[0]); /* chiusura del descrittore di lettura */
             
         bullet(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
