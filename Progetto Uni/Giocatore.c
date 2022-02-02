@@ -4,10 +4,9 @@
  Funzione 'giocatore' - Movimento tramite i tasti cursore 
 ----------------------------------------------------------------------
 */
-void giocatore(int pipeout)
+void giocatore(int pipeout,int idb)
 {
   struct position giocatore;
-  int i=0;
   giocatore.x = 2;       /* Coordinata X iniziale */
   giocatore.y = MAXY/2;   /* Coordinata Y iniziale */
   giocatore.c='G';	    /* Carattere identificativo giocatore*/
@@ -36,10 +35,10 @@ void giocatore(int pipeout)
       
       pidB=fork();
       if(pidB==0) {
-        i++;
+        idb++;
         close(p[0]); /* chiusura del descrittore di lettura */
             
-        bullet(p[1],i,giocatore.y,giocatore.x); /* invocazione funzione bullet */
+        bullet(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
       }
     }
 

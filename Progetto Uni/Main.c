@@ -21,7 +21,7 @@ int main(){
         init_pair(3,COLOR_RED,COLOR_BLACK);   /* Colore trappola */
         init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
         attron(COLOR_PAIR(4));
-        int i;
+        int ida,idb;
         int nnemici=2;
         int difficolta = DELAYM;
         if ( menu(&nnemici,&difficolta) == 0){
@@ -31,7 +31,7 @@ int main(){
             }
         clear();
         refresh();
-        for(i=0;i<nnemici;i++){
+        for(ida=0;ida<nnemici;ida++){
             /* Creo il primo processo figlio 'Alieni' */
             pidA = fork();
             if(!pidA)
@@ -43,7 +43,7 @@ int main(){
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             
-            alieni(p[1],i); /* invocazione funzione alieni */
+            alieni(p[1],ida); /* invocazione funzione alieni */
 
                 
         }
@@ -56,7 +56,7 @@ int main(){
 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
-                giocatore(p[1]); /* invocazione funzione giocatore */  
+                giocatore(p[1],idb); /* invocazione funzione giocatore */  
             }
             else {
                 /* Sono ancora nel processo padre */
