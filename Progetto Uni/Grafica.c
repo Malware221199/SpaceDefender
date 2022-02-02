@@ -22,7 +22,7 @@ void stampasprite(int y,int x,char c,int n){
     else if(c=='B'){
         /* Visualizzo il giocatore*/
             attron(COLOR_PAIR(4));
-            mvprintw(y,x,">");
+            mvprintw(y,x,"O");
             attroff(COLOR_PAIR(4));
 
     }
@@ -58,7 +58,7 @@ void cancellasprite(int y,int x,char c,int n){
 
         else if(c=='B'){
             
-            mvprintw(y,x," ");
+            mvprintw(y,x,".");
     
 
     }
