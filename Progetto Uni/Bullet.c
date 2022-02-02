@@ -8,8 +8,8 @@ void bullet(int pipeout,int id,int cgy,int cgx){
     struct position Bullet;
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
-    Bullet.x = cgx;  /* Coordinata X iniziale */
-    Bullet.y = cgy-2;  /* Coordinata Y iniziale */
+    Bullet.x = cgx+7;  /* Coordinata X iniziale */
+    Bullet.y = cgy+2;  /* Coordinata Y iniziale */
     Bullet.c ='B';	/* Carattere identificativo */
     Bullet.id =id; /* Numero dell elemento */
 
