@@ -80,7 +80,7 @@ void Opzioni(int *nnemici,int *vproiettili){
     break;
 
     case 2: /*Proiettili*/
-      
+      proiettili();
     break;
   
     default:
