@@ -1,5 +1,9 @@
 #include "Utility.h"
-
+/*
+----------------------------------------------------------------------
+ Funzione 'Opzioni'
+----------------------------------------------------------------------
+*/
 void Opzioni(int *nnemici,int *vproiettili){
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
@@ -84,7 +88,11 @@ void Opzioni(int *nnemici,int *vproiettili){
   }
 
 }
-
+/*
+----------------------------------------------------------------------
+ Funzione 'Nemici'
+----------------------------------------------------------------------
+*/
 int nemici(){
   int s,n=5;
   while(1){
@@ -112,11 +120,106 @@ int nemici(){
   }
 
 }
-
-
+/*
+----------------------------------------------------------------------
+ Funzione 'Menu'
+----------------------------------------------------------------------
+*/
 int proiettili() {
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
+  int proiettili[4] = {0,1,2,4};  /*stringa opzioni */
+  char scelta;       /* variabile scelta */
+  int i,altezza=0;    /* altezza cursore */                          
+  bool esci;
+  while(esci==false){
+    for(i=0;i<4;i++){
+      if(i==0){
+        if(i == altezza){
+        attron(A_REVERSE);
+        mvprintw(i+MAXY/2,MAXX/2,"Indietro");
+        attroff(A_REVERSE);
+        }
+        else{
+        mvprintw(i+MAXY/2,MAXX/2,"Indietro");
+        }
+      }
+
+      if(i==1){
+        if(i == altezza){
+        attron(A_REVERSE);
+        mvprintw(i+MAXY/2,MAXX/2,"Difficile");
+        attroff(A_REVERSE);
+        }
+        else{
+        mvprintw(i+MAXY/2,MAXX/2,"Difficile");
+        }
+      }
+
+      if(i==2){
+        if(i == altezza){
+        attron(A_REVERSE);
+        mvprintw(i+MAXY/2,MAXX/2,"Medio");
+        attroff(A_REVERSE);
+        }
+        else{
+        mvprintw(i+MAXY/2,MAXX/2,"Medio");
+        }
+      }
+
+      if(i==3){
+        if(i == altezza){
+        attron(A_REVERSE);
+        mvprintw(i+MAXY/2,MAXX/2,"Facile");
+        attroff(A_REVERSE);
+        }
+        else{
+        mvprintw(i+MAXY/2,MAXX/2,"Facile");
+        }
+      }
+    }
+    scelta = getch();
+
+    switch(scelta){
+
+      case UP:
+        altezza--;
+        if(altezza == -1)
+          altezza = 0;
+        break;
+      case DW:
+        altezza++;
+        if(altezza == 4)
+          altezza = 2;
+        break;
+      case ENTER:
+        esci=true;
+      break;
+    }
+      
+  }
+
+  switch (altezza){
+    
+    case 0: /*Indietro */
+      return;
+    break;
+
+    case 1: /*Difficile*/
+      
+    break;
+
+    case 2: /*Medio*/
+      
+    break;
+
+    case 3: /*Facile*/
+      
+    break;
+  
+    default:
+    break;
+  }
 
 
 
