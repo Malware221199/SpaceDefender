@@ -1,4 +1,4 @@
-#include "Utility.h"
+#include "Utility.h" 
 /*
 ----------------------------------------------------------------------
  Funzione 'Giocatore' - Movimento tramite i tasti cursore 
@@ -32,7 +32,15 @@ struct position giocatore;
     }
 
     if(c==SPC){
-        
+      int i=0,pidB;
+      i++;
+      pidB=fork();
+      if(pidB==0) {
+          
+        close(p[0]); /* chiusura del descrittore di lettura */
+            
+        bullet(p[1],i); /* invocazione funzione alieni */
+      }
     }
 
     /* Comunico al processo padre le coordinate del giocatore */

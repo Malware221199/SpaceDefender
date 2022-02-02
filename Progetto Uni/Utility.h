@@ -16,9 +16,10 @@
 #define DELAYL 	500000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 int MAXX,MAXY;/* Dimensione dello schermo di output (colonne) e (righe)  */
 /*Funzioni adoperate */
-void Alieni(int pipeout,int nn);
+void Alieni(int pipeout,int id);
 void Gen_alieni(int pipeout,int nnemici);
 void Giocatore(int pipeout);
+void Bullet(int pipeout);
 void AreaGioco(int pipein);
 int Menu(int *nnemici,int *difficolta);
 void Opzioni(int *nnemici,int *difficolta);
