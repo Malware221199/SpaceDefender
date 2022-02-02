@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------- 
 */
 
-void Alieni(int pipeout, int id){
+void alieni(int pipeout, int id){
 struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */

@@ -6,7 +6,7 @@
 ---------------------------------------------------------------------- 
 */
 
-void Area(int pipein){
+void area(int pipein){
 
     struct position giocatore, dato_letto;
     alien alieni[99];

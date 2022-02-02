@@ -24,7 +24,7 @@ int main(){
         int i;
         int nnemici=2;
         int difficolta = DELAYM;
-        if ( Menu(&nnemici,&difficolta) == 0){
+        if ( menu(&nnemici,&difficolta) == 0){
             clear();
             refresh();
             return 0;
@@ -43,7 +43,7 @@ int main(){
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             
-            Alieni(p[1],i); /* invocazione funzione alieni */
+            alieni(p[1],i); /* invocazione funzione alieni */
 
                 
         }
@@ -56,12 +56,12 @@ int main(){
 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
-                Giocatore(p[1]); /* invocazione funzione giocatore */  
+                giocatore(p[1]); /* invocazione funzione giocatore */  
             }
             else {
                 /* Sono ancora nel processo padre */
                 close(p[1]); /* chiusura del descrittore di scrittura */
-                Area(p[0]);  /* invocazione funzione area di gioco */  
+                area(p[0]);  /* invocazione funzione area di gioco */  
             }
         }
         /* Termino i processi Alieni e Giocatore */

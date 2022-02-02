@@ -34,12 +34,12 @@ int pidB;	      /* Pid processo figlio 'Bullet' */
  Funzioni
 ----------------------------------------------------------------------
 */
-void Alieni(int pipeout,int id);
-void Giocatore(int pipeout);
+void alieni(int pipeout,int id);
+void giocatore(int pipeout);
 void bullet(int pipeout,int id);
-void AreaGioco(int pipein);
-int Menu(int *nnemici,int *difficolta);
-void Opzioni(int *nnemici,int *difficolta);
+void areaGioco(int pipein);
+int menu(int *nnemici,int *difficolta);
+void opzioni(int *nnemici,int *difficolta);
 int difficulty(int *difficolta);
 int nemici();
 void stampasprite(int y,int x,char c,int n);

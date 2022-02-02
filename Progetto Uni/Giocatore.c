@@ -1,10 +1,10 @@
 #include "Utility.h" 
 /*
 ----------------------------------------------------------------------
- Funzione 'Giocatore' - Movimento tramite i tasti cursore 
+ Funzione 'giocatore' - Movimento tramite i tasti cursore 
 ----------------------------------------------------------------------
 */
-void Giocatore(int pipeout)
+void giocatore(int pipeout)
 {
 struct position giocatore;
 

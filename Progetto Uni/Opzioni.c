@@ -4,7 +4,7 @@
  Funzione 'Opzioni'
 ----------------------------------------------------------------------
 */
-void Opzioni(int *nnemici,int *difficolta){
+void opzioni(int *nnemici,int *difficolta){
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
   int Opzioni[3] = {0,1,2};  /*stringa opzioni */
