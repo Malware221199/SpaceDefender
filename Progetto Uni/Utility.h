@@ -28,7 +28,7 @@ int p[2];				/* Descrittori pipe */
 int pidA;   		/* Pid processo figlio 'Alieni' */
 int pidG;	      /* Pid processo figlio 'Giocatore' */
 int pidB;	      /* Pid processo figlio 'Bullet' */
-int idb=0;
+int idb;
 
 /*
 ----------------------------------------------------------------------
