@@ -22,7 +22,7 @@ void stampasprite(int y,int x,char c,int n){
     else if(c=='B'){
         /* Visualizzo il giocatore*/
             attron(COLOR_PAIR(4));
-            mvprintw(y,x,"%d",n);
+            mvprintw(y,x,">");
             attroff(COLOR_PAIR(4));
 
     }
