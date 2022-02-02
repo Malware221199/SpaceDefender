@@ -15,7 +15,7 @@ void giocatore(int pipeout)
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */
   write(pipeout,&giocatore,sizeof(giocatore));
-
+  int idb;
   /* Lettura dei tasti cursore */
   while(1)
   {
