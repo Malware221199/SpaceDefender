@@ -31,14 +31,23 @@ void giocatore(int pipeout)
     }
 
     if(c==SPC){
-        idb++;
+      idb++;
+      pidB1=fork();
       
-        pidB=fork();
-        if(pidB==0) {
-        
+      if(pidB1==0) {
         close(p[0]); /* chiusura del descrittore di lettura */
-            
         bullet(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
+      }
+      else {		
+        /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
+        pidB2=fork();
+                            
+        /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
+        if(pidB2==0) {
+          /* ed eseguo quindi la relativa funzione di gestione */
+          close(p[0]); /* chiusura del descrittore di lettura */
+          bullet(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */ 
+        }
       }
     }
 
