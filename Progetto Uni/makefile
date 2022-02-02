@@ -1,5 +1,5 @@
-Spacedefender: Main.o Menu.o Opzioni.o Alieni.o Giocatore.o AreaGioco.o Grafica.o
-	cc -o Spacedefender Main.o Menu.o Opzioni.o Alieni.o Giocatore.o AreaGioco.o Grafica.o -lncurses
+Spacedefender: Main.o Menu.o Opzioni.o Alieni.o Giocatore.o Bullet.o AreaGioco.o Grafica.o
+	cc -o Spacedefender Main.o Menu.o Opzioni.o Alieni.o Giocatore.o Bullet.o AreaGioco.o Grafica.o -lncurses
 
 Main.o: Main.c Utility.h
 	cc -c -o Main.o Main.c -lncurses
@@ -15,6 +15,9 @@ Alieni.o: Alieni.c Utility.h
 
 Giocatore.o: Giocatore.c Utility.h
 	cc -c -o Giocatore.o Giocatore.c -lncurses
+
+Bullet.o: Bullet.c Utility.h
+	cc -c -o Bullet.o Bullet.c -lncurses	
 
 AreaGioco.o: AreaGioco.c Utility.h
 	cc -c -o AreaGioco.o AreaGioco.c -lncurses
