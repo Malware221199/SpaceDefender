@@ -15,7 +15,7 @@ int main(){
         noecho();			/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         attron(A_UNDERLINE);
-        mvprintw(0,24,"NCURSES ALTCHARSET CHARACTERS\n");
+        mvprintw(0,7,"NCURSES EXTENDED CHARACTERS\n");
         attroff(A_UNDERLINE);
         getmaxyx(stdscr, MAXY, MAXX);
         pipe(p);    			/* Creazione pipe */
