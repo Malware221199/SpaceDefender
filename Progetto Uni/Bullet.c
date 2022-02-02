@@ -32,7 +32,7 @@ void bullet(int pipeout,int id,int cgy,int cgx){
             /* Movimento Y */
             Bullet.y -= deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(Bullet.y - deltay < 0 || Bullet.y + deltay < MAXY-1){
+            if(Bullet.y - deltay < 0 || Bullet.y + deltay > MAXY-1){
             deltay = -deltay;
             }
         }
