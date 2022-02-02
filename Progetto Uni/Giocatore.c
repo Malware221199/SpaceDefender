@@ -4,7 +4,7 @@
  Funzione 'giocatore' - Movimento tramite i tasti cursore 
 ----------------------------------------------------------------------
 */
-void giocatore(int pipeout,int idb)
+void giocatore(int pipeout)
 {
   struct position giocatore;
   giocatore.x = 2;       /* Coordinata X iniziale */
