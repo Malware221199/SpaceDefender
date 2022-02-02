@@ -25,8 +25,8 @@ int main(){
         //init_pair(3,COLOR_RED,COLOR_BLACK);   /* Colore trappola */
         int i;
         int nnemici=1;
-        int vproiettili = DELAYM;
-        if ( Menu(&nnemici,&vproiettili) == 0){
+        int difficolta = DELAYM;
+        if ( Menu(&nnemici,&difficolta) == 0){
             clear();
             refresh();
             return 0;

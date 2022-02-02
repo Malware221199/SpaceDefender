@@ -4,7 +4,7 @@
  Funzione 'Opzioni'
 ----------------------------------------------------------------------
 */
-void Opzioni(int *nnemici,int *vproiettili){
+void Opzioni(int *nnemici,int *difficolta){
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
   int Opzioni[3] = {0,1,2};  /*stringa opzioni */
@@ -80,7 +80,7 @@ void Opzioni(int *nnemici,int *vproiettili){
     break;
 
     case 2: /*Proiettili*/
-      proiettili();
+      difficulty(&difficolta);
     break;
   
     default:
@@ -122,10 +122,10 @@ int nemici(){
 }
 /*
 ----------------------------------------------------------------------
- Funzione 'Menu'
+ Funzione 'Difficolta'
 ----------------------------------------------------------------------
 */
-int proiettili() {
+int difficulty(int *difficolta) {
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
   int proiettili[4] = {0,1,2,4};  /*stringa opzioni */
@@ -206,15 +206,15 @@ int proiettili() {
     break;
 
     case 1: /*Difficile*/
-      
+        *difficolta=DELAYV;  
     break;
 
     case 2: /*Medio*/
-      
+        *difficolta=DELAYM; 
     break;
 
     case 3: /*Facile*/
-      
+        *difficolta=DELAYL; 
     break;
   
     default:
