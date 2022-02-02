@@ -73,7 +73,7 @@ void area(int pipein){
             /* Segnalo collisione e tipo*/
             int i,j,k;
             /*for(i=0;i<11;i++){
-                for(i=0;i<3;i++){
+                for(j=0;j<3;j++){
                     for(k=0;k<3;k++){
                         if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j) vite--;
                     }
