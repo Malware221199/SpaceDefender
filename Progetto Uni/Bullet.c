@@ -12,14 +12,22 @@ void bullet(int pipeout,int id,int cgy,int cgx){
     Bullet.y = cgy+2;  /* Coordinata Y iniziale */
     Bullet.c ='B';	/* Carattere identificativo */
     Bullet.id =id; /* Numero dell elemento */
+    
+
+    
 
     /* Comunico le coordinate iniziali al processo padre */
     write(pipeout,&Bullet,sizeof(Bullet));
 
     while(1){
-
-        /* Movimento Y */
-        Bullet.y += deltay;
+        if(id%2==0){
+            /* Movimento Y */
+            Bullet.y += deltay;
+        }
+        else{
+            /* Movimento Y */
+            Bullet.y -= deltay;
+        }
 
         /* Se supero area Y schermo inverte il movimento */
         if(Bullet.y + deltay < 1 || Bullet.y + deltay > MAXY-1){
