@@ -36,7 +36,7 @@ struct position giocatore;
       
       pidB=fork();
       if(pidB==0) {
-        i++;
+        i=i+1;
         close(p[0]); /* chiusura del descrittore di lettura */
             
         bullet(p[1],i,giocatore.y,giocatore.x); /* invocazione funzione bullet */
