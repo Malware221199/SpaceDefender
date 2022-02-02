@@ -28,11 +28,11 @@ int main(){
         int i;
         int nnemici=2;
         int difficolta = DELAYM;
-        //if ( Menu(&nnemici,&difficolta) == 0){
-            //clear();
-            //refresh();
-            //return 0;
-           // }
+        if ( Menu(&nnemici,&difficolta) == 0){
+            clear();
+            refresh();
+            return 0;
+            }
         clear();
         refresh();
         for(i=0;i<nnemici;i++){
