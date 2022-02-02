@@ -1,9 +1,9 @@
 #include "Grafica.h"
 
 void stampasprite(int y,int x,char c,int n){
+    int i;
     if(c=='A'){
         attron(COLOR_PAIR(1));
-        int i;
         for(i=0;i<3;i++)
             mvaddnstr(y+i,x,sprite_a[i],3);
         attroff(COLOR_PAIR(1));
@@ -13,12 +13,21 @@ void stampasprite(int y,int x,char c,int n){
     else if(c=='G'){
         /* Visualizzo il giocatore*/
             attron(COLOR_PAIR(2));
-            int i;
             for(i=0;i<6;i++)
             mvaddnstr(y+i,x,sprite_g[i],6);
             attroff(COLOR_PAIR(2));
 
     }
+
+    else if(c=='B'){
+        /* Visualizzo il giocatore*/
+            attron(COLOR_PAIR(4));
+            mvprintw(y,x,"0");
+            attroff(COLOR_PAIR(4));
+
+    }
+
+
 
 }
 
@@ -46,5 +55,12 @@ void cancellasprite(int y,int x,char c,int n){
                 }
             }
         }
+
+        else if(c=='B'){
+            
+            mvprintw(y,x," ");
+    
+
+    }
 
 }
