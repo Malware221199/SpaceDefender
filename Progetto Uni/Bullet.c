@@ -19,7 +19,7 @@ void bullet(int pipeout,int id){
     while(1){
 
         /* Movimento Y */
-         Alieni.y += deltay;
+         Bullet.y += deltay;
 
         /* Se supero area X schermo inverte il movimento */
         //if(Alieni.x + deltax < 10 || Alieni.x + deltax > MAXX){
@@ -31,10 +31,10 @@ void bullet(int pipeout,int id){
         //}
         
         /* Movimento X */
-        Alieni.x -= deltax;
+        Bullet.x -= deltax;
 
         /* Comunico le coordinate correnti al processo padre */
-        write(pipeout,&Alieni,sizeof(Alieni));
+        write(pipeout,&Bullet,sizeof(Bullet));
 
             /* Inserisco una pausa per rallentare il movimento */
         usleep(DELAYL);
