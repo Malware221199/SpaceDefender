@@ -16,9 +16,9 @@ int main(){
         noecho();			/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         getmaxyx(stdscr, MAXY, MAXX);
+        pipe(p);    			/* Creazione pipe */
         clear();
         refresh();
-        pipe(p);    			/* Creazione pipe */
         //bkgd(COLOR_PAIR(1));
         //init_pair(1,COLOR_RED,COLOR_BLACK);  /* Colore vespa */
         //init_pair(2,COLOR_GREEN,COLOR_BLACK);   /* Colore contadino */
@@ -28,11 +28,11 @@ int main(){
         int i;
         int nnemici=2;
         int difficolta = DELAYM;
-        if ( Menu(&nnemici,&difficolta) == 0){
-            clear();
-            refresh();
-            return 0;
-            }
+        //if ( Menu(&nnemici,&difficolta) == 0){
+            //clear();
+            //refresh();
+            //return 0;
+           // }
         clear();
         refresh();
         for(i=0;i<nnemici;i++){
