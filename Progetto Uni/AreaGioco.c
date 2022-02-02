@@ -50,7 +50,8 @@ void area(int pipein){
 
             /* Bullet */
             else if(dato_letto.c=='B'){
-                b--;
+                if (dato_letto.id==10) collision=1;
+
                 /* Cancello il precedente carattere visualizzato */
                 cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,dato_letto.c,bullet[dato_letto.id].id);
 
@@ -84,7 +85,7 @@ void area(int pipein){
             refresh();
 
             /* Esce quando terminano le vite del Giocatore */
-            if(b < 1) collision=1;
+            //if(b < 1) collision=1;
             if(vite < 1) collision=1; 
 
     /* Il ciclo si ripete finchè le vite del contadino terminano */
