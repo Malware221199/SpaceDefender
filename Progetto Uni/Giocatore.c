@@ -6,8 +6,8 @@
 */
 void giocatore(int pipeout)
 {
-struct position giocatore;
-
+  struct position giocatore;
+  int i=0;
   giocatore.x = 2;       /* Coordinata X iniziale */
   giocatore.y = MAXY/2;   /* Coordinata Y iniziale */
   giocatore.c='G';	    /* Carattere identificativo giocatore*/
@@ -32,11 +32,11 @@ struct position giocatore;
     }
 
     if(c==SPC){
-      int i=0;
+     
       
       pidB=fork();
       if(pidB==0) {
-        i=i+1;
+        i++;
         close(p[0]); /* chiusura del descrittore di lettura */
             
         bullet(p[1],i,giocatore.y,giocatore.x); /* invocazione funzione bullet */
