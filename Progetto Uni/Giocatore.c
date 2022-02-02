@@ -15,7 +15,7 @@ void giocatore(int pipeout)
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */
   write(pipeout,&giocatore,sizeof(giocatore));
-  int idb;
+  int idb=2;
   /* Lettura dei tasti cursore */
   while(1)
   {
@@ -37,8 +37,8 @@ void giocatore(int pipeout)
       if(pidB==0) {
         idb++;
         attron(COLOR_PAIR(4));
-            mvprintw(0,10,"idb %d",idb);
-            attroff(COLOR_PAIR(4));
+        mvprintw(0,10,"idb %d",idb);
+        attroff(COLOR_PAIR(4));
         
         close(p[0]); /* chiusura del descrittore di lettura */
             
