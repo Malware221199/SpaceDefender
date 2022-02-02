@@ -28,6 +28,7 @@ int p[2];				/* Descrittori pipe */
 int pidA;   		/* Pid processo figlio 'Alieni' */
 int pidG;	      /* Pid processo figlio 'Giocatore' */
 int pidB;	      /* Pid processo figlio 'Bullet' */
+int idb=0;
 
 /*
 ----------------------------------------------------------------------
@@ -35,7 +36,7 @@ int pidB;	      /* Pid processo figlio 'Bullet' */
 ----------------------------------------------------------------------
 */
 void alieni(int pipeout,int id);
-void giocatore(int pipeout,int idb);
+void giocatore(int pipeout);
 void bullet(int pipeout,int id,int cgy,int cgx);
 void areaGioco(int pipein);
 int menu(int *nnemici,int *difficolta);

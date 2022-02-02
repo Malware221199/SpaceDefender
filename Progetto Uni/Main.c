@@ -21,7 +21,7 @@ int main(){
         init_pair(3,COLOR_RED,COLOR_BLACK);   /* Colore trappola */
         init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
         attron(COLOR_PAIR(4));
-        int ida,idb;
+        int ida;
         int nnemici=2;
         int difficolta = DELAYM;
         if ( menu(&nnemici,&difficolta) == 0){
@@ -56,7 +56,7 @@ int main(){
 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
-                giocatore(p[1],idb); /* invocazione funzione giocatore */  
+                giocatore(p[1]); /* invocazione funzione giocatore */  
             }
             else {
                 /* Sono ancora nel processo padre */
