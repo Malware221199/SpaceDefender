@@ -33,10 +33,10 @@ struct position giocatore;
 
     if(c==SPC){
       int i=0;
-      i++;
+      
       pidB=fork();
       if(pidB==0) {
-          
+        i++;
         close(p[0]); /* chiusura del descrittore di lettura */
             
         bullet(p[1],i,giocatore.y,giocatore.x); /* invocazione funzione bullet */
