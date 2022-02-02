@@ -7,9 +7,6 @@
 */
 int main(){
     while (1){
-        int p[2];				/* Descrittori pipe */  
-        int pidA;   		/* Pid processo figlio 'Alieni' */
-        int pidG;	      /* Pid processo figlio 'Giocatore' */
         initscr();			/* Inizializza schermo di output */
         start_color();
         noecho();			/* Imposta modalità della tastiera */
