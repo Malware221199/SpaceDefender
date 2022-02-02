@@ -22,7 +22,7 @@ void bullet(int pipeout,int id,int cgy,int cgx){
         Bullet.y += deltay;
 
         /* Se supero area Y schermo inverte il movimento */
-        if(Bullet.y + deltay < 1 || Alieni.y + deltay > MAXY){
+        if(Bullet.y + deltay < 1 || Bullet.y + deltay > MAXY){
             deltay = -deltay;
         //Alieni.x = MAXX-2;  /* Coordinata X iniziale */
         //Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
