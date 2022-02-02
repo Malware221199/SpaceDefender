@@ -31,11 +31,10 @@ void giocatore(int pipeout)
     }
 
     if(c==SPC){
-     
+        idb++;
       
       pidB=fork();
       if(pidB==0) {
-        idb++;
         attron(COLOR_PAIR(4));
         mvprintw(0,10,"idb %d",idb);
         attroff(COLOR_PAIR(4));
