@@ -39,7 +39,7 @@ struct position giocatore;
           
         close(p[0]); /* chiusura del descrittore di lettura */
             
-        bullet(p[1],i); /* invocazione funzione bullet */
+        bullet(p[1],i,giocatore.y,giocatore.x); /* invocazione funzione bullet */
       }
     }
 
