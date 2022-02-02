@@ -4,7 +4,7 @@
  Funzione 'Bullet'
 ---------------------------------------------------------------------- 
 */
-void Bullet(int pipeout,int id){
+void bullet(int pipeout,int id){
 
 
 

@@ -36,7 +36,7 @@ int pidB;	      /* Pid processo figlio 'Bullet' */
 */
 void Alieni(int pipeout,int id);
 void Giocatore(int pipeout);
-void Bullet(int pipeout,int id);
+void bullet(int pipeout,int id);
 void AreaGioco(int pipein);
 int Menu(int *nnemici,int *difficolta);
 void Opzioni(int *nnemici,int *difficolta);
