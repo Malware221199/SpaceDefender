@@ -2,9 +2,9 @@
 
 void stampasprite(int y,int x,char c,int n){
     if(c=='A'){
+        attron(COLOR_PAIR(1));
         int i;
         for(i=0;i<3;i++)
-        attron(COLOR_PAIR(1));
             mvaddnstr(y+i,x,sprite_a[i],3);
         attroff(COLOR_PAIR(1));
     }
@@ -12,10 +12,10 @@ void stampasprite(int y,int x,char c,int n){
 
     else if(c=='G'){
         /* Visualizzo il giocatore*/
+            attron(COLOR_PAIR(2));
             int i;
             for(i=0;i<6;i++)
-            attron(COLOR_PAIR(2));
-                mvaddnstr(y+i,x,sprite_g[i],6);
+            mvaddnstr(y+i,x,sprite_g[i],6);
             attroff(COLOR_PAIR(2));
 
     }
