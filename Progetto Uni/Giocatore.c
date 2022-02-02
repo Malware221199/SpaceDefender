@@ -36,6 +36,7 @@ void giocatore(int pipeout)
       pidB=fork();
       if(pidB==0) {
         idb++;
+        mvprintw(0,10,"idb %d",idb);
         close(p[0]); /* chiusura del descrittore di lettura */
             
         bullet(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
