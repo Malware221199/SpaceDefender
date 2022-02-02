@@ -11,7 +11,7 @@ void area(int pipein){
     struct position giocatore, dato_letto;
     save alieni[11];
     save bullet[99];
-    int i=0, vite=3, collision=0;
+    int i=0, vite=3, collision=0, b=10;
 
     /* Visualizzo le vite iniziali del Giocatore */
         mvprintw(0,1,"Vite %d",vite);
@@ -50,6 +50,7 @@ void area(int pipein){
 
             /* Bullet */
             else if(dato_letto.c=='B'){
+                b--;
                 /* Cancello il precedente carattere visualizzato */
                 cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,dato_letto.c,bullet[dato_letto.id].id);
 
@@ -83,6 +84,7 @@ void area(int pipein){
             refresh();
 
             /* Esce quando terminano le vite del Giocatore */
+            if(b < 1) collision=1;
             if(vite < 1) collision=1; 
 
     /* Il ciclo si ripete finchè le vite del contadino terminano */
