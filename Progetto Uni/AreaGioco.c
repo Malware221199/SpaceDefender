@@ -9,7 +9,8 @@
 void area(int pipein){
 
     struct position giocatore, dato_letto;
-    alien alieni[99];
+    save alieni[99];
+    save bullet[99];
     int i=0, vite=3, collision=0;
 
     /* Visualizzo le vite iniziali del Giocatore */
@@ -46,6 +47,22 @@ void area(int pipein){
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
 
             }
+
+            /* Bullet */
+            else if(dato_letto.c=='B'){
+                /* Cancello il precedente carattere visualizzato */
+                cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,dato_letto.c,bullet[dato_letto.id].id);
+
+                /* Aggiorno le coordinate relative alla nuova posizione */
+                bullet[dato_letto.id].id=dato_letto.id;
+                bullet[dato_letto.id].y=dato_letto.y;
+                bullet[dato_letto.id].x=dato_letto.x;
+
+                /* Visualizzo il carattere dell'entità sulle nuove coordinate */
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
+            }
+
+
             
             /* Segnalo collisione e tipo*/
             if(giocatore.x == alieni[dato_letto.id].x && giocatore.y == alieni[dato_letto.id].y) vite--;

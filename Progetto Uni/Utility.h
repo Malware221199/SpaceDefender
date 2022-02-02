@@ -57,11 +57,11 @@ struct position {
   int  y;	 /* Coordinata Y */
   int  id;  /* Numero dell elemento */
 };
-
+/* Struttura adoperata per salvare le coordinate*/
 typedef struct 
 {
   int x;
   int y;
   int id;
-}alien;
+}save;
 
