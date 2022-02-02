@@ -32,7 +32,7 @@ struct position giocatore;
     }
 
     if(c==SPC){
-      int i=0,pidB;
+      int i=0;
       i++;
       pidB=fork();
       if(pidB==0) {
