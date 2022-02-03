@@ -24,7 +24,7 @@ int main(){
         int ida;
         int nnemici=2;
         int difficolta = DELAYM;
-        if ( menu(&nnemici,&difficolta) == 0){
+        if ( menu(nnemici,difficolta) == 0){
             clear();
             refresh();
             return 0;
