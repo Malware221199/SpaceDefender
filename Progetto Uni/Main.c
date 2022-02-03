@@ -18,7 +18,7 @@ int main(){
         bkgd(COLOR_PAIR(1));
         init_pair(1,COLOR_RED,COLOR_BLACK);  /* Colore vespa */
         init_pair(2,COLOR_GREEN,COLOR_BLACK);   /* Colore contadino */
-        init_pair(3,COLOR_RED,COLOR_BLACK);   /* Colore trappola */
+        init_pair(3,COLOR_MAGENTA,COLOR_BLACK);   /* Colore trappola */
         init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
         attron(COLOR_PAIR(4));
         int ida;
