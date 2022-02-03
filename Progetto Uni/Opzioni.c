@@ -76,7 +76,7 @@ void opzioni(int *nnemici,int *difficolta){
     break;
 
     case 1: /*Nemici*/
-      &nnemici=nemici();
+      nemici(nnemici);
     break;
 
     case 2: /*Proiettili*/
@@ -93,7 +93,7 @@ void opzioni(int *nnemici,int *difficolta){
  Funzione 'Nemici'
 ----------------------------------------------------------------------
 */
-int nemici(){
+void nemici(int *nnemici){
   int s,n=5;
   while(1){
     clear();              /* cancello la pagina */
@@ -112,7 +112,7 @@ int nemici(){
           n = 10;
         break;
       case ENTER:
-        return n;
+        *nnemici=n;
       break;
     }
 
