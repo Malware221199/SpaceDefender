@@ -12,7 +12,7 @@ int deltay=1;		/* Spostamento verticale */
 switch (nnemici){
 case 1:
   Alieni.x = MAXX-DA-GSA;  /* Coordinata X iniziale */
-  Alieni.y = MAXY/2-GSA;  /* Coordinata Y iniziale */
+  Alieni.y = MAXY/2-1;  /* Coordinata Y iniziale */
   break;
 
 default:
