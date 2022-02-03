@@ -17,36 +17,40 @@ int menu(int *nnemici,int *difficolta){
       if(i==0){
         if(i == altezza){
         attron(COLOR_PAIR(1));
-        stampasprite(MAXY/2-4,MAXX/2-13,'S',21);
+        stampasprite(MAXY/2-4,MAXX/2-13,'S',26);
         attroff(COLOR_PAIR(1));
         ;
         }
         else{
         attron(COLOR_PAIR(2));
-        stampasprite(MAXY/2-4,MAXX/2-13,'S',21);;
+        stampasprite(MAXY/2-4,MAXX/2-13,'S',26);;
         attroff(COLOR_PAIR(2));
         }
       }
 
       if(i==1){
         if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Opzioni");
-        attroff(A_REVERSE);
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY/2+2,MAXX/2-18,'S',37);
+        attroff(COLOR_PAIR(1));
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Opzioni");
+        attron(COLOR_PAIR(2));
+        stampasprite(MAXY/2+2,MAXX/2-18,'S',37);;
+        attroff(COLOR_PAIR(2))
         }
       }
 
       if(i==2){
         if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Esci");
-        attroff(A_REVERSE);
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY/2+8,MAXX/2-10,'S',21);
+        attroff(COLOR_PAIR(1));
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Esci");
+        attron(COLOR_PAIR(2));
+        stampasprite(MAXY/2+8,MAXX/2-10,'S',21);;
+        attroff(COLOR_PAIR(2))
         }
       }
     }
