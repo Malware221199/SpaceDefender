@@ -91,7 +91,7 @@ void area(int pipein){
                 clear();
                 stampasprite(MAXY/2-2,MAXX/2-25,'S',2);
                 refresh();
-                usleep(5000);
+                usleep(50000);
             }
 
     /* Il ciclo si ripete finchè le vite del contadino terminano */
