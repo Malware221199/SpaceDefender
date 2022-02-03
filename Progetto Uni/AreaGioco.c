@@ -36,7 +36,7 @@ void area(int pipein){
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
 
-                if(alieni[dato_letto.id].x<10){
+                if(alieni[dato_letto.id].x<11){
                      vite--;
                     kill(alieni[dato_letto.id].pid,1);
                     cancellasprite(alieni[dato_letto].y,alieni[dato_letto].x,'A',alieni[dato_letto].id);
