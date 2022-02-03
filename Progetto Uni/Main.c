@@ -12,7 +12,7 @@ int main(){
         start_color();
         noecho();			/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
-        //getmaxyx(stdscr, MAXY, MAXX);
+        getmaxyx(stdscr, MAXY, MAXX);
         pipe(p);    			/* Creazione pipe */
         clear();
         refresh();

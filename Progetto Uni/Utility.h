@@ -19,8 +19,8 @@
 #define ENTER		10	  /* Cursore invio */
 #define GSA 	  3     /* Grandezza sprite alieno*/
 #define DA 	    2     /* Distanza alieni*/
-#define MAXX 	  80    /* Distanza alieni*/
-#define MAXY 	  25    /* Distanza alieni*/
+//#define MAXX 	  80    /* Distanza alieni*/
+//#define MAXY 	  25    /* Distanza alieni*/
 
 
 #define DELAYL 	500000
@@ -33,7 +33,7 @@
  Variabili
 ----------------------------------------------------------------------
 */
-//int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
+int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
 int p[2];				/* Descrittori pipe */  
 int pidA;   		/* Pid processo figlio 'Alieni' */
 int pidG;	      /* Pid processo figlio 'Giocatore' */
