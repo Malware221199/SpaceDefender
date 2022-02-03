@@ -1,31 +1,32 @@
 #include "Grafica.h"
 
-void stampasprite(int y,int x,char c,int n){
+void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
     int i;
-    if(c=='A'){
-        attron(COLOR_PAIR(1));
-        for(i=0;i<3;i++)
-            mvaddnstr(y+i,x,sprite_a[i],3);
-        attroff(COLOR_PAIR(1));
-    }
+    switch(c){
+        case 'A':
+            attron(COLOR_PAIR(1));
+            for(i=0;i<3;i++)
+                mvaddnstr(y+i,x,sprite_alieno[i],3);
+            attroff(COLOR_PAIR(1));
+    
 
 
-    else if(c=='G'){
-        /* Visualizzo il giocatore*/
+        case 'G':/* Visualizzo il giocatore*/
             attron(COLOR_PAIR(2));
             for(i=0;i<6;i++)
-            mvaddnstr(y+i,x,sprite_g[i],6);
+                mvaddnstr(y+i,x,sprite_giocatore[i],6);
             attroff(COLOR_PAIR(2));
 
-    }
+    
 
-    else if(c=='B'){
-        /* Visualizzo il giocatore*/
+        case 'B':/* Visualizzo il proiettile*/
             attron(COLOR_PAIR(4));
             mvprintw(y,x,"O");
             attroff(COLOR_PAIR(4));
 
     }
+
+
 
 
 
