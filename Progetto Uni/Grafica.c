@@ -29,13 +29,18 @@ void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
 
         case 'S':/* Visualizzo il giocatore*/
             switch (n){
-            case 21:
-                for(i=0;i<4;i++)
-                mvaddnstr(y+i,x,sprite_gioca[i],n);
-            break;
-            
-
-
+                case 26:
+                    for(i=0;i<4;i++)
+                    mvaddnstr(y+i,x,sprite_gioca[i],n);
+                break;
+                case 37:
+                    for(i=0;i<4;i++)
+                    mvaddnstr(y+i,x,sprite_opzioni[i],n);
+                break;
+                case 21:
+                    for(i=0;i<4;i++)
+                    mvaddnstr(y+i,x,sprite_esci[i],n);
+                break;
             }
         break;
 
