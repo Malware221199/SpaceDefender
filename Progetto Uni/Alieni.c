@@ -43,10 +43,10 @@ default:
     Alieni.y += deltay;
 
     /* Se supero area X schermo inverte il movimento */
-    if(Alieni.x + deltax < 10 || Alieni.x + deltax > MAXX){
-      Alieni.x = MAXX-2;  /* Coordinata X iniziale */
-      Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
-      }
+    //if(Alieni.x + deltax < 10 || Alieni.x + deltax > MAXX){
+    //  Alieni.x = MAXX-2;  /* Coordinata X iniziale */
+    //  Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
+    //  }
     if(Alieni.y + deltay < 1 || Alieni.y + deltay > MAXY-3){
       deltay = -deltay;
     }

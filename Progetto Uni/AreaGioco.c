@@ -64,32 +64,21 @@ void area(int pipein){
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
             
-
-            /*
-            ----------------------------------------------------------------------
-            Collisioni
-            ---------------------------------------------------------------------- 
-            */  
-
-            
-            /* Segnalo collisione e tipo*/
-            int i,j,k;
-            for(i=0;i<11;i++){
-                for(j=0;j<3;j++){
-                    for(k=0;k<3;k++){
-                        if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j){
-                            kill(bullet[dato_letto.id].pid,1);
-                            kill(alieni[alieni[i].id].pid,1);
-                            cancellasprite(alieni[i].y,alieni[i].x,'A',alieni[i].id);
-
-                             
+                 /* Collisioni proiettili*/
+                int i,j,k;
+                for(i=0;i<11;i++){
+                    for(j=0;j<3;j++){
+                        for(k=0;k<3;k++){
+                            if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j){
+                                kill(bullet[dato_letto.id].pid,1);
+                                kill(alieni[alieni[i].id].pid,1);
+                                cancellasprite(alieni[i].y,alieni[i].x,'A',alieni[i].id);
+                            }
                         }
-
                     }
                 }
             }
-            }
-
+            if(alieni[dato_letto.id].x == giocatore.x && alieni[dato_letto.id].y == giocatore.y) vite--;
             /* Visualizzo le vite rimaste al contadino */
             mvprintw(0,1,"Vite %d",vite);
 
@@ -97,7 +86,13 @@ void area(int pipein){
             refresh();
 
             /* Esce quando terminano le vite del Giocatore */
-            if(vite < 1) collision=1; 
+            if(vite < 1) {
+                collision=1;
+                clear();
+                stampasprite(MAXY/2,MAXX/2,'G',2);
+                refresh();
+                usleep(50000);
+            }
 
     /* Il ciclo si ripete finchè le vite del contadino terminano */
     } while(!collision);
