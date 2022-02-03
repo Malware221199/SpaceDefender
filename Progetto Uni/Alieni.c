@@ -23,6 +23,9 @@ case 2:
     case 2:
     Alieni.y = MAXY/2+DA-GSA;  /* Coordinata Y iniziale */
     break;
+    default:
+    break;
+  }
 break;
 default:
   break;
