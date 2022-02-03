@@ -78,9 +78,9 @@ void area(int pipein){
                 for(j=0;j<3;j++){
                     for(k=0;k<3;k++){
                         if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j){
-                             kill(alieni[i].pid,SIGTERM);
-                             sleep(5);
-                             kill(alieni[i].pid,SIGKILL);
+                             kill(bullet[dato_letto.id].pid,1);
+
+                             
                         }
 
                     }
