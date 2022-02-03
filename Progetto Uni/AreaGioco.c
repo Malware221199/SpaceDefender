@@ -25,6 +25,8 @@ void area(int pipein){
 
                 /* Cancello il precedente carattere visualizzato */
                 cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c,alieni[dato_letto.id].id);
+                
+                if(alieni[dato_letto.id].x<9) vite--;
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 alieni[dato_letto.id].id=dato_letto.id;
@@ -35,7 +37,7 @@ void area(int pipein){
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
 
-                if(alieni[dato_letto.id].x<8) vite--;
+                
             }
 
             /* Giocatore */
