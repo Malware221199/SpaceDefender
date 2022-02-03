@@ -206,7 +206,7 @@ int difficulty(int *difficolta) {
     break;
 
     case 1: /*Difficile*/
-        //*difficolta=DELAYV;  
+        difficolta=DELAYV;  
     break;
 
     case 2: /*Medio*/
