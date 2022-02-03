@@ -37,7 +37,7 @@ int menu(int *nnemici,int *difficolta){
         else{
         attron(COLOR_PAIR(2));
         stampasprite(MAXY/2+2,MAXX/2-18,'S',37);;
-        attroff(COLOR_PAIR(2))
+        attroff(COLOR_PAIR(2));
         }
       }
 
@@ -50,7 +50,7 @@ int menu(int *nnemici,int *difficolta){
         else{
         attron(COLOR_PAIR(2));
         stampasprite(MAXY/2+8,MAXX/2-10,'S',21);;
-        attroff(COLOR_PAIR(2))
+        attroff(COLOR_PAIR(2));
         }
       }
     }
