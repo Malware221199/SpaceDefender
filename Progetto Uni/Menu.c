@@ -47,12 +47,12 @@ int menu(int *nnemici,int *difficolta){
       if(i==2){
         if(i == altezza){
         attron(COLOR_PAIR(1));
-        stampasprite(MAXY/2+8,MAXX/2-10,'S',21);
+        stampasprite(MAXY-1,MAXX/2-10,'S',21);
         attroff(COLOR_PAIR(1));
         }
         else{
         attron(COLOR_PAIR(2));
-        stampasprite(MAXY/2+8,MAXX/2-10,'S',21);;
+        stampasprite(MAXY-1,MAXX/2-10,'S',21);;
         attroff(COLOR_PAIR(2));
         }
       }
