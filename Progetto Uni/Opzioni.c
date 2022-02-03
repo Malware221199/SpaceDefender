@@ -80,7 +80,7 @@ void opzioni(int *nnemici,int *difficolta){
     break;
 
     case 2: /*Proiettili*/
-      difficulty(&difficolta);
+      difficulty(difficolta);
     break;
   
     default:
