@@ -6,7 +6,6 @@
 ----------------------------------------------------------------------
 */
 int menu(int *nnemici,int *difficolta){
-  while(1){
   int menu[3] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
@@ -76,7 +75,6 @@ int menu(int *nnemici,int *difficolta){
 
     case 1: /*Opzioni*/
       opzioni(nnemici,difficolta);
-      return 1;
 
     break;
 
@@ -86,6 +84,5 @@ int menu(int *nnemici,int *difficolta){
   
     default:
     break;
-  }
   }
 }
