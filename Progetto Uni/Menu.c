@@ -26,7 +26,7 @@ int menu(int *nnemici,int *difficolta){
         }
         else{
         attron(COLOR_PAIR(2));
-        stampasprite(MAXY/2-4,MAXX/2-13,'S',26);;
+        stampasprite(MAXY-14,MAXX/2-13,'S',26);;
         attroff(COLOR_PAIR(2));
         }
       }
@@ -34,12 +34,12 @@ int menu(int *nnemici,int *difficolta){
       if(i==1){
         if(i == altezza){
         attron(COLOR_PAIR(1));
-        stampasprite(MAXY/2+2,MAXX/2-18,'S',37);
+        stampasprite(MAXY-9,MAXX/2-18,'S',37);
         attroff(COLOR_PAIR(1));
         }
         else{
         attron(COLOR_PAIR(2));
-        stampasprite(MAXY/2+2,MAXX/2-18,'S',37);;
+        stampasprite(MAXY-9,MAXX/2-18,'S',37);;
         attroff(COLOR_PAIR(2));
         }
       }
@@ -47,7 +47,7 @@ int menu(int *nnemici,int *difficolta){
       if(i==2){
         if(i == altezza){
         attron(COLOR_PAIR(1));
-        stampasprite(MAXY-1,MAXX/2-10,'S',21);
+        stampasprite(MAXY-4,MAXX/2-10,'S',21);
         attroff(COLOR_PAIR(1));
         }
         else{
