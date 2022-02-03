@@ -69,23 +69,23 @@ void opzioni(int *nnemici,int *difficolta){
       
   }
 
-  //switch (altezza){
+  switch (altezza){
     
-   // case 0: /*Indietro */
-      //return;
-    //break;
+   case 0: /*Indietro */
+      return;
+    break;
 
-    //case 1: /*Nemici*/
-      //*nnemici=nemici();
-    //break;
+    case 1: /*Nemici*/
+      *nnemici=nemici();
+    break;
 
-    //case 2: /*Proiettili*/
-      //difficulty(difficolta);
-    //break;
+    case 2: /*Proiettili*/
+      difficulty(difficolta);
+    break;
   
-    //default:
-    //break;
-  //}
+    default:
+    break;
+  }
 
 }
 /*
