@@ -52,7 +52,7 @@ int menu(int *nnemici,int *difficolta){
         }
         else{
         attron(COLOR_PAIR(2));
-        stampasprite(MAXY-1,MAXX/2-10,'S',21);;
+        stampasprite(MAXY-4,MAXX/2-10,'S',21);;
         attroff(COLOR_PAIR(2));
         }
       }
