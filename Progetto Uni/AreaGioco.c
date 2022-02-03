@@ -78,7 +78,7 @@ void area(int pipein){
                     }
                 }
             }
-            if(alieni[dato_letto.id].x == giocatore.x && alieni[dato_letto.id].y == giocatore.y) vite--;
+            if(alieni[dato_letto.id].x<8) vite--;
             /* Visualizzo le vite rimaste al contadino */
             mvprintw(0,1,"Vite %d",vite);
 
