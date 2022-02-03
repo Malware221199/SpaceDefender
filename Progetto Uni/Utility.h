@@ -19,11 +19,9 @@
 #define ENTER		10	  /* Cursore invio */
 #define GSA 	  3     /* Grandezza sprite alieno*/
 #define DA 	    2     /* Distanza alieni*/
-//#define MAXX 	  80    /* Distanza alieni*/
-//#define MAXY 	  25    /* Distanza alieni*/
 
-
-#define DELAYL 	500000
+#define DEADY 	-10         /*Coordinata morta y */
+#define DEADX 	-10         /*Coordinata morta x */
 #define DELAYV 	120000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
 #define DELAYM 	160000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	500000	    /* Ritardo nel movimento delle navicelle nemiche lento */
