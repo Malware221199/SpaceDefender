@@ -20,7 +20,7 @@
 #define GSA 	  3     /* Grandezza sprite alieno*/
 #define DA 	    2     /* Distanza alieni*/
 #define MAXX 	  80    /* Distanza alieni*/
-#define MAXX 	  25    /* Distanza alieni*/
+#define MAXY 	  25    /* Distanza alieni*/
 
 
 #define DELAYL 	500000
