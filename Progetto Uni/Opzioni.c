@@ -7,16 +7,16 @@
 void opzioni(int *nnemici,int *difficolta){
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
-  //int Opzioni[3] = {0,1,2};  /*stringa opzioni */
-  //char scelta;       /* variabile scelta */
-  //int altezza=0;    /* altezza cursore */                          
-  //bool esci;
-  //while(esci==false){
-    //int i;
+  int Opzioni[3] = {0,1,2};  /*stringa opzioni */
+  char scelta;       /* variabile scelta */
+  int altezza=0;    /* altezza cursore */                          
+  bool esci;
+  while(esci==false){
+    int i;
     mvprintw(0,10,"Numero nemici:");
-    //for(i=0;i<3;i++){
-      //if(i==0){
-        /*if(i == altezza){
+    for(i=0;i<3;i++){
+      if(i==0){
+        if(i == altezza){
         attron(A_REVERSE);
         mvprintw(i+MAXY/2,MAXX/2,"Indietro");
         attroff(A_REVERSE);
@@ -67,7 +67,7 @@ void opzioni(int *nnemici,int *difficolta){
       break;
     }
       
-  }*/
+  }
 
   //switch (altezza){
     
