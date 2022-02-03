@@ -14,7 +14,16 @@ case 1:
   Alieni.x = MAXX-DA-GSA;  /* Coordinata X iniziale */
   Alieni.y = MAXY/2-1;  /* Coordinata Y iniziale */
   break;
-
+case 2:
+  Alieni.x = MAXX-DA-GSA;  /* Coordinata X iniziale */
+  switch(id){
+    case 1:
+    Alieni.y = MAXY/2-DA-GSA;  /* Coordinata Y iniziale */
+    break;
+    case 2:
+    Alieni.y = MAXY/2+DA-GSA;  /* Coordinata Y iniziale */
+    break;
+break;
 default:
   break;
 }
