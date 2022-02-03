@@ -15,6 +15,7 @@ int menu(int *nnemici,int *difficolta){
     int i;
     attron(COLOR_PAIR(1));
     stampasprite(1,MAXX/2-20,'S',76);
+    stampasprite(9,MAXX/2-29,'S',5);
     attroff(COLOR_PAIR(1));
     for(i=0;i<3;i++){
       if(i==0){
