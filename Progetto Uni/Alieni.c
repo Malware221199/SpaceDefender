@@ -5,12 +5,21 @@
 ---------------------------------------------------------------------- 
 */
 
-void alieni(int pipeout, int id){
+void alieni(int pipeout, int id,int nnemici){
 struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
-  Alieni.x = (MAXX-2);  /* Coordinata X iniziale */
-  Alieni.y = (MAXY/2)+(5*id);  /* Coordinata Y iniziale */
+switch (nnemici)
+{
+case 1
+  Alieni.x = MAXX-DA-GSA;  /* Coordinata X iniziale */
+  Alieni.y = MAXY-GSA;  /* Coordinata Y iniziale */
+  break;
+
+default:
+  break;
+}
+  
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
 

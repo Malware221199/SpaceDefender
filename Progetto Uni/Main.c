@@ -22,7 +22,7 @@ int main(){
         init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
         attron(COLOR_PAIR(4));
         int ida;
-        int nnemici=2;
+        int nnemici=1;
         int difficolta = DELAYM;
         if ( menu(&nnemici,&difficolta) == 0){
             clear();
@@ -43,7 +43,7 @@ int main(){
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             
-            alieni(p[1],ida); /* invocazione funzione alieni */
+            alieni(p[1],ida,nnemici); /* invocazione funzione alieni */
 
                 
         }

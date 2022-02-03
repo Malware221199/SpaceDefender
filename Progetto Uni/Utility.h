@@ -14,6 +14,9 @@
 #define DX			67		/* Cursore destra */
 #define SPC			32		/* Cursore spazio */
 #define ENTER		10	  /* Cursore invio */
+#define GSA 	  3     /* Grandezza sprite alieno*/
+#define DA 	    2     /* Distanza alieni*/
+#define DELAYL 	500000
 #define DELAYV 	120000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
 #define DELAYM 	160000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	500000	    /* Ritardo nel movimento delle navicelle nemiche lento */
@@ -36,7 +39,7 @@ int idb;
  Funzioni
 ----------------------------------------------------------------------
 */
-void alieni(int pipeout,int id);
+void alieni(int pipeout,int id,int nnemici);
 void giocatore(int pipeout);
 void bullet(int pipeout,int id,int cgy,int cgx);
 void areaGioco(int pipein);
