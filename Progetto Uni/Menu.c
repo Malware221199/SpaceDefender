@@ -17,7 +17,7 @@ int menu(int *nnemici,int *difficolta){
       if(i==0){
         if(i == altezza){
         attron(A_REVERSE);
-        //stampasprite(i+MAXY/2,MAXX/2,"S",1);
+        stampasprite(i+MAXY/2,MAXX/2,"S",1);
         attroff(A_REVERSE);
         }
         else{
