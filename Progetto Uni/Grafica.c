@@ -30,7 +30,7 @@ void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
         case 'S':/* Visualizzo il giocatore*/
             attron(COLOR_PAIR(2));
             for(i=0;i<4;i++)
-                mvaddnstr(y+i,x,sprite_giocatore[i],4);
+                mvaddnstr(y+i,x,sprite_gioca[i],4);
             attroff(COLOR_PAIR(2));
         break;
 
