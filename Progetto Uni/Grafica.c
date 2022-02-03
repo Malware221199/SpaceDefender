@@ -49,6 +49,10 @@ void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
                     for(i=0;i<7;i++)
                     mvaddstr(y+i,x,sprite_defender[i]);
                 break;
+                case 2:
+                    for(i=0;i<5;i++)
+                    mvaddstr(y+i,x,sprite_gameover[i]);
+                break;
 
             }
         break;
