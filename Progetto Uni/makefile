@@ -29,5 +29,8 @@ clean:
 	rm Spacedefender
 	rm *.o
 
+dependencies:
+	sudo -S apt-get -y install libncursesw5-dev
+
 
 
