@@ -7,6 +7,7 @@
 */
 int main(){
     while (1){
+        setlocale(LC_ALL, "");
         initscr();			/* Inizializza schermo di output */
         start_color();
         noecho();			/* Imposta modalità della tastiera */
