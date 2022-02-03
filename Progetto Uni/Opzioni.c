@@ -76,7 +76,7 @@ void opzioni(int *nnemici,int *difficolta){
     break;
 
     case 1: /*Nemici*/
-      nnemici=nemici();
+      &nnemici=nemici();
     break;
 
     case 2: /*Proiettili*/
