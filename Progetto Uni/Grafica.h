@@ -4,7 +4,7 @@ char sprite_alieno[3][3]={{"^^^"}
                          ,{"| |"}
                          ,{"==="}};
 
-char sprite_giocatore[5][6]={{"178"}
+char sprite_giocatore[5][6]={{'178'}
                             ,{"####  "}
                             ,{"##===>"}
                             ,{"####  "}
