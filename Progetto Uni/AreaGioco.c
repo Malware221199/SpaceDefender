@@ -34,6 +34,8 @@ void area(int pipein){
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
+
+                if(alieni[dato_letto.id].x<8) vite--;
             }
 
             /* Giocatore */
@@ -78,7 +80,7 @@ void area(int pipein){
                     }
                 }
             }
-            if(alieni[dato_letto.id].x<8) vite--;
+            
             /* Visualizzo le vite rimaste al contadino */
             mvprintw(0,1,"Vite %d",vite);
 
