@@ -16,12 +16,15 @@ int menu(int *nnemici,int *difficolta){
     for(i=0;i<3;i++){
       if(i==0){
         if(i == altezza){
-        
+        attron(COLOR_PAIR(1));
         stampasprite(MAXY/2-4,MAXX/2-13,'S',1);
+        attroff(COLOR_PAIR(1));
         ;
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Gioca");
+        attron(COLOR_PAIR(2));
+        stampasprite(MAXY/2-4,MAXX/2-13,'S',1);;
+        attroff(COLOR_PAIR(2));
         }
       }
 
