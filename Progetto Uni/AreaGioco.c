@@ -63,7 +63,7 @@ void area(int pipein){
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
-            }
+            
 
             /*
             ----------------------------------------------------------------------
@@ -88,7 +88,7 @@ void area(int pipein){
                     }
                 }
             }
-            
+            }
 
             /* Visualizzo le vite rimaste al contadino */
             mvprintw(0,1,"Vite %d",vite);
