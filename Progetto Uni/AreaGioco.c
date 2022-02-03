@@ -30,6 +30,7 @@ void area(int pipein){
                 alieni[dato_letto.id].id=dato_letto.id;
                 alieni[dato_letto.id].y=dato_letto.y;
                 alieni[dato_letto.id].x=dato_letto.x;
+                alieni[dato_letto.id].pid=dato_letto.pid;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
@@ -58,6 +59,7 @@ void area(int pipein){
                 bullet[dato_letto.id].id=dato_letto.id;
                 bullet[dato_letto.id].y=dato_letto.y;
                 bullet[dato_letto.id].x=dato_letto.x;
+                bullet[dato_letto.id].pid=dato_letto.pid;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
