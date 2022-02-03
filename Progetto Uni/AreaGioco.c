@@ -80,7 +80,7 @@ void area(int pipein){
                         if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j){
                             kill(bullet[dato_letto.id].pid,1);
                             kill(alieni[alieni[i].id].pid,1);
-                            
+                            cancellasprite(alieni[i].y,alieni[i].x,A,alieni[i].id);
 
                              
                         }
