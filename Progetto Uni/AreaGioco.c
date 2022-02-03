@@ -40,6 +40,7 @@ void area(int pipein){
                     vite--;
                     cancellasprite(alieni[dato_letto].y,alieni[dato_letto].x,'A',alieni[dato_letto].id);
                     kill(alieni[dato_letto.id].pid,1);
+                    refresh();
                     
                     
                 }
