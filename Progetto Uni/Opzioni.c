@@ -113,6 +113,7 @@ void nemici(int *nnemici){
         break;
       case ENTER:
         nnemici=n;
+        return;
       break;
     }
 
