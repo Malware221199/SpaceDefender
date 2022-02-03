@@ -1,8 +1,8 @@
 #include "Utility.h"
 
-char sprite_alieno[3][3]={{"^^^"}
-                         ,{"| |"}
-                         ,{"==="}};
+char *sprite_alieno[3]={{" ▓▓"}
+                       ,{"▒▓ "}
+                       ,{" ▓▓"}};
 
 char *sprite_giocatore[6]={{"  ▓▓▓▓▓"}
                           ,{"   ▓▓  "}
