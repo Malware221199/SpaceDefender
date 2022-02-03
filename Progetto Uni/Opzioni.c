@@ -112,7 +112,7 @@ void nemici(int *nnemici){
           n = 10;
         break;
       case ENTER:
-        *nnemici=n;
+        nnemici=n;
       break;
     }
 
