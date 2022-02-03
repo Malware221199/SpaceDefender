@@ -43,7 +43,11 @@ void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
                 break;
                 case 76:
                     for(i=0;i<7;i++)
-                    mvaddstr(y+i,x,sprite_spacedefender[i]);
+                    mvaddstr(y+i,x,sprite_space[i]);
+                break;
+                case 5:
+                    for(i=0;i<7;i++)
+                    mvaddstr(y+i,x,sprite_defender[i]);
                 break;
 
             }
