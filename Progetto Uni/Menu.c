@@ -76,6 +76,8 @@ int menu(int *nnemici,int *difficolta){
 
     case 1: /*Opzioni*/
       opzioni(nnemici,difficolta);
+      return 1;
+
     break;
 
     case 2: /*Esci*/
