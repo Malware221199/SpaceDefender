@@ -12,7 +12,7 @@ void bullet(int pipeout,int id,int cgy,int cgx){
     Bullet.y = cgy+2;  /* Coordinata Y iniziale */
     Bullet.c ='B';	/* Carattere identificativo */
     Bullet.id =id; /* Numero dell elemento */
-    Bullet.pid=getpid(); /*Pid processo*/
+    //Bullet.pid=getpid(); /*Pid processo*/
     
 
     

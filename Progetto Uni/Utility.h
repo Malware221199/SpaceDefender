@@ -61,7 +61,7 @@ struct position {
   int  x;	 /* Coordinata X */
   int  y;	 /* Coordinata Y */
   int  id;  /* Numero dell elemento */
-  int pid;  /*Pid processo*/
+  //int pid;  /*Pid processo*/
 };
 /* Struttura adoperata per salvare le coordinate*/
 typedef struct 
@@ -69,6 +69,6 @@ typedef struct
   int x;    /* Coordinata X */
   int y;    /* Coordinata Y */
   int id;   /* Numero dell elemento */
-  int pid;  /*Pid processo*/
+  //int pid;  /*Pid processo*/
 }save;
 

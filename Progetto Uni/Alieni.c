@@ -32,7 +32,7 @@ default:
 }
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
-  Alieni.pid= getpid();
+  //Alieni.pid= getpid();
 
   /* Comunico le coordinate iniziali al processo padre */
   write(pipeout,&Alieni,sizeof(Alieni));

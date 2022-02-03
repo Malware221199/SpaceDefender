@@ -30,7 +30,7 @@ void area(int pipein){
                 alieni[dato_letto.id].id=dato_letto.id;
                 alieni[dato_letto.id].y=dato_letto.y;
                 alieni[dato_letto.id].x=dato_letto.x;
-                alieni[dato_letto.id].pid=dato_letto.pid;
+                //alieni[dato_letto.id].pid=dato_letto.pid;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
@@ -59,7 +59,7 @@ void area(int pipein){
                 bullet[dato_letto.id].id=dato_letto.id;
                 bullet[dato_letto.id].y=dato_letto.y;
                 bullet[dato_letto.id].x=dato_letto.x;
-                bullet[dato_letto.id].pid=dato_letto.pid;
+                //bullet[dato_letto.id].pid=dato_letto.pid;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
@@ -77,7 +77,7 @@ void area(int pipein){
             for(i=0;i<11;i++){
                 for(j=0;j<3;j++){
                     for(k=0;k<3;k++){
-                        if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j) kill(alieni[i].pid,1);;
+                        //if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j) kill(alieni[i].pid,1);;
                     }
                 }
             }
