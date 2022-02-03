@@ -81,7 +81,7 @@ void area(int pipein){
                              kill(alieni[i].pid,SIGTERM);
                              sleep(5);
                              kill(alieni[i].pid,SIGKILL);
-
+                        }
 
                     }
                 }
