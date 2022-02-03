@@ -19,6 +19,10 @@
 #define ENTER		10	  /* Cursore invio */
 #define GSA 	  3     /* Grandezza sprite alieno*/
 #define DA 	    2     /* Distanza alieni*/
+#define MAXX 	  80    /* Distanza alieni*/
+#define MAXX 	  25    /* Distanza alieni*/
+
+
 #define DELAYL 	500000
 #define DELAYV 	120000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
 #define DELAYM 	160000	    /* Ritardo nel movimento delle navicelle nemiche medio */
@@ -29,7 +33,7 @@
  Variabili
 ----------------------------------------------------------------------
 */
-int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
+//int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
 int p[2];				/* Descrittori pipe */  
 int pidA;   		/* Pid processo figlio 'Alieni' */
 int pidG;	      /* Pid processo figlio 'Giocatore' */
