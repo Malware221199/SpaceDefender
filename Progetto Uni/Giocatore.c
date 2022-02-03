@@ -11,6 +11,7 @@ void giocatore(int pipeout)
   giocatore.y = MAXY/2;   /* Coordinata Y iniziale */
   giocatore.c='G';	    /* Carattere identificativo giocatore*/
   giocatore.id=1;   /* Numero dell elemento */
+  giocatore.pid=getpid();  /*Pid processo*/
 
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */
