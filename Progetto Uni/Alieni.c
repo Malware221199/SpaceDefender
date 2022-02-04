@@ -30,7 +30,7 @@ break;
 default:
   break;
 }
-  Alieni.c ='Alieno';	/* Carattere identificativo */
+  Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
   Alieni.pid= getpid();
 
