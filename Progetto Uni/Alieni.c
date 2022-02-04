@@ -41,7 +41,7 @@ default:
 
     /* Movimento Y */
     Alieni.y += deltay;
-    int AP;
+    deltay++
     
 
     if(deltay < 1 || deltay > 3){
