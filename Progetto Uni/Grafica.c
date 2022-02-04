@@ -86,8 +86,8 @@ void cancellasprite(int y,int x,char c,int n){
         }
 
         else if(c=='G'){
-            for(i=0;i<7;i++){
-                for(j=0;j<6;j++){
+            for(i=0;i<6;i++){
+                for(j=0;j<7;j++){
                     mvaddch(y+i,x+j,' ');
                 }
             }
