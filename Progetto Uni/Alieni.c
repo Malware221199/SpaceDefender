@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------- 
 */
 
-void alieni(int pipeout, int id,int nnemici){
+void alieni(int pipeout, int id,int nnemici, int difficolta){
 struct position Alieni;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
@@ -58,6 +58,6 @@ default:
     write(pipeout,&Alieni,sizeof(Alieni));
 
 		/* Inserisco una pausa per rallentare il movimento */
-    usleep(DELAYL);
+    usleep(difficolta);
   }
 }

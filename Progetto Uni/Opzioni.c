@@ -215,15 +215,15 @@ int difficulty(int *difficolta) {
     break;
 
     case 1: /*Difficile*/
-        difficolta=DELAYV;  
+        *difficolta=DELAYV;  
     break;
 
     case 2: /*Medio*/
-        //*difficolta=DELAYM; 
+        *difficolta=DELAYM; 
     break;
 
     case 3: /*Facile*/
-        //*difficolta=DELAYL; 
+        *difficolta=DELAYL; 
     break;
   
     default:

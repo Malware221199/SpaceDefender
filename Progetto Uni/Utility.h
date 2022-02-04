@@ -44,7 +44,7 @@ int idb;
  Funzioni
 ----------------------------------------------------------------------
 */
-void alieni(int pipeout,int id,int nnemici);
+void alieni(int pipeout,int id,int nnemici,int difficolta);
 void giocatore(int pipeout);
 void bullet(int pipeout,int id,int cgy,int cgx);
 void areaGioco(int pipein,int nnemici);

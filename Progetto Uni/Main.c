@@ -44,7 +44,7 @@ int main(){
             /* ed eseguo quindi la relativa funzione di gestione */
             close(p[0]); /* chiusura del descrittore di lettura */
             
-            alieni(p[1],ida,nnemici); /* invocazione funzione alieni */
+            alieni(p[1],ida,nnemici,difficolta); /* invocazione funzione alieni */
 
                 
         }
