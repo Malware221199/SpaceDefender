@@ -14,7 +14,7 @@ void area(int pipein,int nnemici){
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
     /* Visualizzo le vite iniziali del Giocatore */
-        for(i=0;i<vite;i++) mvaddstr(0,1+i,"❤");
+        //for(i=0;i<vite;i++) mvaddstr(0,1+i,"❤");
 
         do {
             /* Leggo dalla pipe */
