@@ -17,7 +17,7 @@ void stampasprite(int y,int x,char c){//da trasformare in switch case
             attroff(COLOR_PAIR(2));
         break;
 
-        case 'B':/* Visualizzo il proiettile*/
+        case 'B':/* Visualizzo il proiettile alleato*/
             attron(COLOR_PAIR(4));
             mvprintw(y,x,"O");
             attroff(COLOR_PAIR(4));
@@ -28,7 +28,7 @@ void stampasprite(int y,int x,char c){//da trasformare in switch case
                 mvaddstr(y+i,x,sprite_gioca[i]);
         break;
 
-        case 'I':/* stampo sprite 'opzioni' */
+        case 'Z':/* stampo sprite 'opzioni' */
             for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_opzioni[i]);
         break;
@@ -36,6 +36,21 @@ void stampasprite(int y,int x,char c){//da trasformare in switch case
         case 'E':/* stampo sprite 'esci' */
             for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_esci[i]);
+        break;
+
+        case 'I':/* stampo sprite 'indietro' */
+            for(i=0;i<2;i++)
+                mvaddstr(y+i,x,sprite_indietro[i]);
+        break;
+
+        case 'N':/* stampo sprite 'nemici' */
+            for(i=0;i<2;i++)
+                mvaddstr(y+i,x,sprite_nemici[i]);
+        break;
+
+        case 'P':/* stampo sprite 'proiettili' */
+            for(i=0;i<2;i++)
+                mvaddstr(y+i,x,sprite_proiettili[i]);
         break;
 
         case 'S':/* stampo sprite 'space' */
