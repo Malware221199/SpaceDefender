@@ -117,7 +117,7 @@ void area(int pipein,int nnemici){
             }
             
             /* Visualizzo le vite rimaste al contadino */
-            cancellasprite(0,1,'B');
+            cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"♥");
             //mvprintw(0,25,"Alieni iniziali %d",nnemici);
 
