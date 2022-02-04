@@ -76,11 +76,11 @@ void opzioni(int *nnemici,int *difficolta){
     break;
 
     case 1: /*Nemici*/
-      nemici(&nnemici);
+      nemici(nnemici);
     break;
 
     case 2: /*Proiettili*/
-      difficulty(&difficolta);
+      difficulty(difficolta);
     break;
   
     default:
