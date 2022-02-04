@@ -53,7 +53,7 @@ void opzioni(int *nnemici,int *difficolta);
 int difficulty(int *difficolta);
 void nemici(int *nnemici);
 void stampasprite(int y,int x,char c);
-void cancellasprite(int y,int x,char c,int n);
+void cancellasprite(int y,int x,char c);
 
 /*
 ----------------------------------------------------------------------
