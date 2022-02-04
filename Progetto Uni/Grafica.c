@@ -18,43 +18,52 @@ void stampasprite(int y,int x,char c){//da trasformare in switch case
         break;
 
         case 'B':/* Visualizzo il proiettile*/
-            attron(COLOR_PAIR(3));
+            attron(COLOR_PAIR(4));
             mvprintw(y,x,"O");
-            attroff(COLOR_PAIR(3));
+            attroff(COLOR_PAIR(4));
         break;
 
-        case 'U':/* Visualizzo il proiettile*/
+        case 'U':/* stampo sprite 'gioca' */
             for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_gioca[i]);
         break;
 
-        case 'I':/* Visualizzo il proiettile*/
+        case 'I':/* stampo sprite 'opzioni' */
             for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_opzioni[i]);
         break;
 
-        case 'E':/* Visualizzo il proiettile*/
+        case 'E':/* stampo sprite 'esci' */
             for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_esci[i]);
         break;
 
-        case 'S':/* Visualizzo il proiettile*/
+        case 'S':/* stampo sprite 'space' */
             attron(COLOR_PAIR(1));
             for(i=0;i<7;i++)
                 mvaddstr(y+i,x,sprite_space[i]);
             attroff(COLOR_PAIR(1));
         break;
 
-        case 'D':/* Visualizzo il proiettile*/
+        case 'D':/* stampo sprite 'defender' */
             attron(COLOR_PAIR(1));
             for(i=0;i<7;i++)
                 mvaddstr(y+i,x,sprite_defender[i]);
             attroff(COLOR_PAIR(1));
         break;
 
-        case 'O':/* Visualizzo il proiettile*/
+        case 'O':/* stampo sprite 'game over' */
+            attron(COLOR_PAIR(1));
             for(i=0;i<5;i++)
                 mvaddstr(y+i,x,sprite_gameover[i]);
+            attroff(COLOR_PAIR(1));
+        break;
+
+        case 'W':/* stampo sprite 'you win' */
+            attron(COLOR_PAIR(2));
+            for(i=0;i<5;i++)
+                mvaddstr(y+i,x,sprite_youwin[i]);
+            attroff(COLOR_PAIR(2));
         break;
 
         default:
