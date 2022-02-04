@@ -23,9 +23,9 @@ void opzioni(int *nnemici,int *difficolta){
         attroff(COLOR_PAIR(1));
         }
         else{
-        attron(COLOR_PAIR(1));
+        attron(COLOR_PAIR(3));
         stampasprite(MAXY-9,MAXX/2-14,'I');
-        attroff(COLOR_PAIR(1));
+        attroff(COLOR_PAIR(3));
         }
       }
 
@@ -36,9 +36,9 @@ void opzioni(int *nnemici,int *difficolta){
         attroff(COLOR_PAIR(1));
         }
         else{
-        attron(COLOR_PAIR(1));
+        attron(COLOR_PAIR(3));
         stampasprite(MAXY-6,MAXX/2-11,'N');
-        attroff(COLOR_PAIR(1));
+        attroff(COLOR_PAIR(3));
         }
       }
 
@@ -49,9 +49,9 @@ void opzioni(int *nnemici,int *difficolta){
         attroff(COLOR_PAIR(1));
         }
         else{
-        attron(COLOR_PAIR(1));
+        attron(COLOR_PAIR(3));
         stampasprite(MAXY-3,MAXX/2-16,'P');
-        attroff(COLOR_PAIR(1));
+        attroff(COLOR_PAIR(3));
         }
       }
     }
