@@ -45,7 +45,7 @@ default:
     ciao++;
     
 
-    if(ciao < 1 || ciao > 3){
+    if(ciao < 1 || ciao > 4){
       ciao = -ciao;
       deltay = -deltay;
     }
