@@ -14,7 +14,7 @@ void area(int pipein,int nnemici){
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
     /* Visualizzo le vite iniziali del Giocatore */
-        mvprintw(0,1,"Vite %d",vite);
+        for(i=0;i<vite;i++) mvaddstr(0,1+i,"❤");
 
         do {
             /* Leggo dalla pipe */
@@ -117,9 +117,7 @@ void area(int pipein,int nnemici){
             }
             
             /* Visualizzo le vite rimaste al contadino */
-            for(i=0;i<vite;i++)
-            mvaddstr(0,1+i,"❤");
-            //mvprintw(0,1,"Vite %d",vite);
+            for(i=0;i<vite;i++) mvaddstr(0,1+i,"❤");
             mvprintw(0,25,"Alieni iniziali %d",nnemici);
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
