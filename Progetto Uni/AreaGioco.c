@@ -84,6 +84,10 @@ void area(int pipein){
                                 kill(bullet[dato_letto.id].pid,1);
                                 kill(alieni[alieni[i].id].pid,1);
                                 cancellasprite(alieni[i].y,alieni[i].x,'A',alieni[i].id);
+                                bullet[dato_letto.id].y=DEADY;
+                                bullet[dato_letto.id].x=DEADX;
+                                alieni[i].y=DEADY;
+                                alieni[i].x=DEADX;
                             }
                         }
                     }
