@@ -3,7 +3,7 @@
 void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
     int i;
     switch(c){
-        case Alieno:
+        case 'A':
             attron(COLOR_PAIR(1));
             for(i=0;i<3;i++)
                 mvaddstr(y+i,x,sprite_alieno[i]);
@@ -86,7 +86,7 @@ void cancellasprite(int y,int x,char c,int n){
         }
 
         else if(c=='G'){
-            for(i=0;i<6;i++){
+            for(i=0;i<7;i++){
                 for(j=0;j<6;j++){
                     mvaddch(y+i,x+j,' ');
                 }
