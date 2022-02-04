@@ -13,10 +13,10 @@ int menu(int *nnemici,int *difficolta){
   bool esci;
   while(esci==false){
     int i;
-    attron(COLOR_PAIR(1));
-    stampasprite(1,MAXX/2-20,'S');
-    stampasprite(8,MAXX/2-29,'D');
-    attroff(COLOR_PAIR(1));
+    //attron(COLOR_PAIR(1));
+    stampasprite(1,MAXX/2-20,'S');  /* stampo sprite 'space' */
+    stampasprite(8,MAXX/2-29,'D');  /* stampo sprite 'defender' */
+    //attroff(COLOR_PAIR(1));
     for(i=0;i<3;i++){
       if(i==0){
         if(i == altezza){
