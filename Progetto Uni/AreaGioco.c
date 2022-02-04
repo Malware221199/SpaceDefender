@@ -21,7 +21,7 @@ void area(int pipein){
         read(pipein,&dato_letto,sizeof(dato_letto));
 
             /* Alieni */
-            if(dato_letto.c=='A') {
+            if(dato_letto.c=='Alieno') {
 
                 /* Cancello il precedente carattere visualizzato */
                 cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c,alieni[dato_letto.id].id);
@@ -39,7 +39,7 @@ void area(int pipein){
                 if(alieni[dato_letto.id].x<10){
                     vite--;
                     kill(alieni[dato_letto.id].pid,1);
-                    cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,'A',alieni[dato_letto.id].id);
+                    cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,'Alieno',alieni[dato_letto.id].id);
                     alieni[dato_letto.id].y=DEADY;
                     alieni[dato_letto.id].x=DEADX;
                     
