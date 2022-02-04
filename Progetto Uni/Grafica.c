@@ -29,12 +29,12 @@ void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
         break;
 
         case 'I':/* Visualizzo il proiettile*/
-            for(i=0;i<4;i++)
+            for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_opzioni[i]);
         break;
 
         case 'E':/* Visualizzo il proiettile*/
-            for(i=0;i<4;i++)
+            for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_esci[i]);
         break;
 
