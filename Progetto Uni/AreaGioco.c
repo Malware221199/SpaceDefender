@@ -34,7 +34,7 @@ void area(int pipein){
                 alieni[dato_letto.id].pid=dato_letto.pid;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
 
                 /* Collisioni Alieni*/
                 if(alieni[dato_letto.id].x<10){
@@ -57,7 +57,7 @@ void area(int pipein){
                 giocatore=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
 
             }
 
@@ -74,7 +74,7 @@ void area(int pipein){
                 bullet[dato_letto.id].pid=dato_letto.pid;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c,dato_letto.id);
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
             
                  /* Collisioni proiettili*/
                 int i,j,k;
@@ -105,7 +105,7 @@ void area(int pipein){
             if(vite < 1) {
                 collision=1;
                 clear();
-                stampasprite(MAXY/2-2,MAXX/2-25,'O',2);
+                stampasprite(MAXY/2-2,MAXX/2-25,'O');
                 refresh();
                 usleep(4000000);
             }
