@@ -1,6 +1,6 @@
 #include "Grafica.h"
 
-void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
+void stampasprite(int y,int x,char c){//da trasformare in switch case
     int i;
     switch(c){
         case 'A':
@@ -52,35 +52,6 @@ void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
             for(i=0;i<5;i++)
                 mvaddstr(y+i,x,sprite_gameover[i]);
         break;
-        /*case 'S':
-            switch (n){
-                case 26:
-                    for(i=0;i<2;i++)
-                    mvaddstr(y+i,x,sprite_gioca[i]);
-                break;
-                case 37:
-                    for(i=0;i<4;i++)
-                    mvaddstr(y+i,x,sprite_opzioni[i]);
-                break;
-                case 21:
-                    for(i=0;i<4;i++)
-                    mvaddstr(y+i,x,sprite_esci[i]);
-                break;
-                case 76:
-                    for(i=0;i<7;i++)
-                    mvaddstr(y+i,x,sprite_space[i]);
-                break;
-                case 5:
-                    for(i=0;i<7;i++)
-                    mvaddstr(y+i,x,sprite_defender[i]);
-                break;
-                case 2:
-                    for(i=0;i<5;i++)
-                    mvaddstr(y+i,x,sprite_gameover[i]);
-                break;
-
-            }*/
-        //break;
 
         default:
         break;
