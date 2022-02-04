@@ -41,8 +41,10 @@ default:
 
     /* Movimento Y */
     Alieni.y += deltay;
+    int AP;
+    
 
-    if(Alieni.y + deltay < 1 || Alieni.y + deltay > MAXY-3){
+    if(deltay < 1 || deltay > 3){
       deltay = -deltay;
     }
     

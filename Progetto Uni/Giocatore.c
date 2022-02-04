@@ -7,6 +7,9 @@
 void giocatore(int pipeout)
 {
   struct position giocatore;
+  int idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
+
+  
   giocatore.x = 2;       /* Coordinata X iniziale */
   giocatore.y = MAXY/2-2;   /* Coordinata Y iniziale */
   giocatore.c='G';	    /* Carattere identificativo giocatore*/
@@ -16,7 +19,7 @@ void giocatore(int pipeout)
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */
   write(pipeout,&giocatore,sizeof(giocatore));
-  int idb=0; /*ID proiettile*/
+  
   /* Lettura dei tasti cursore */
   while(1)
   {
