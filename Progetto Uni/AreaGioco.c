@@ -18,9 +18,13 @@ void area(int pipein){
 
         do {
             /* Leggo dalla pipe */
-        read(pipein,&dato_letto,sizeof(dato_letto));
+            read(pipein,&dato_letto,sizeof(dato_letto));
 
-            /* Alieni */
+            /*
+            ----------------------------------------------------------------------
+            Gesione Alieni
+            ---------------------------------------------------------------------- 
+            */
             if(dato_letto.c=='A') {
 
                 /* Cancello il precedente carattere visualizzato */
@@ -48,7 +52,11 @@ void area(int pipein){
                 }
             }
 
-            /* Giocatore */
+             /*
+            ----------------------------------------------------------------------
+            Gesione Giocatore
+            ---------------------------------------------------------------------- 
+            */
             else if(dato_letto.c=='G'){
                 /* Cancello il precedente sprite visualizzato */
                 cancellasprite(giocatore.y,giocatore.x,giocatore.c,giocatore.id);
@@ -61,7 +69,11 @@ void area(int pipein){
 
             }
 
-            /* Bullet */
+             /*
+            ----------------------------------------------------------------------
+            Gesione Proiettili
+            ---------------------------------------------------------------------- 
+            */
             else if(dato_letto.c=='B'){
 
                 /* Cancello il precedente carattere visualizzato */
@@ -78,6 +90,12 @@ void area(int pipein){
             
                  /* Collisioni proiettili*/
                 int i,j,k;
+                if (bullet[dato_letto.id].x>MAXX-3){
+                    kill(bullet[dato_letto.id].pid,1);
+                    cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,'A',bullet[dato_letto.id].id);
+                    bullet[dato_letto.id].x=DEADX;
+                    bullet[dato_letto.id].y=DEADY;
+                }
                 for(i=0;i<11;i++){
                     for(j=0;j<3;j++){
                         for(k=0;k<3;k++){
