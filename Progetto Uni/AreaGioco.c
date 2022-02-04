@@ -11,7 +11,7 @@ void area(int pipein){
     struct position giocatore, dato_letto;
     save alieni[11];
     save bullet[99];
-    int i=0, vite=3, collision=0;
+    int i=0, vite=2, collision=0;
 
     /* Visualizzo le vite iniziali del Giocatore */
         mvprintw(0,1,"Vite %d",vite);
