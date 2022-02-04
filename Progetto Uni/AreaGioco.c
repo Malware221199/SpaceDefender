@@ -117,8 +117,9 @@ void area(int pipein,int nnemici){
             }
             
             /* Visualizzo le vite rimaste al contadino */
+            for(i=0;i<vite;i++)
+            mvprintw(0,1+i,"V");
             mvprintw(0,1,"Vite %d",vite);
-            mvprintw(0,5,"Alieni morti %d",alienimorti);
             mvprintw(0,25,"Alieni iniziali %d",nnemici);
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
