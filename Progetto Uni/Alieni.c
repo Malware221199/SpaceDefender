@@ -41,10 +41,11 @@ default:
 
     /* Movimento Y */
     Alieni.y += deltay;
-    deltay++;
+    int ciao;
+    ciao++;
     
 
-    if(deltay < 1 || deltay > 3){
+    if(ciao < 1 || ciao > 3){
       deltay = -deltay;
     }
     
