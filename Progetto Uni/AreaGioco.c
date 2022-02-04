@@ -28,7 +28,7 @@ void area(int pipein,int nnemici){
             if(dato_letto.c=='A') {
 
                 /* Cancello il precedente carattere visualizzato */
-                cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c,alieni[dato_letto.id].id);
+                cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c);
 
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
@@ -44,7 +44,7 @@ void area(int pipein,int nnemici){
                 if(alieni[dato_letto.id].x<10){
                     vite--;
                     kill(alieni[dato_letto.id].pid,1);
-                    cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c,alieni[dato_letto.id].id);
+                    cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c);
                     alieni[dato_letto.id].y=DEADY;
                     alieni[dato_letto.id].x=DEADX;
                     alienimorti++;
@@ -60,7 +60,7 @@ void area(int pipein,int nnemici){
             */
             else if(dato_letto.c=='G'){
                 /* Cancello il precedente sprite visualizzato */
-                cancellasprite(giocatore.y,giocatore.x,giocatore.c,giocatore.id);
+                cancellasprite(giocatore.y,giocatore.x,giocatore.c);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 giocatore=dato_letto;
@@ -78,7 +78,7 @@ void area(int pipein,int nnemici){
             else if(dato_letto.c=='B'){
 
                 /* Cancello il precedente carattere visualizzato */
-                cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,dato_letto.c,bullet[dato_letto.id].id);
+                cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,dato_letto.c);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 bullet[dato_letto.id].id=dato_letto.id;
@@ -93,7 +93,7 @@ void area(int pipein,int nnemici){
                 /* Collisioni proiettili con MAXX*/
                 if (bullet[dato_letto.id].x>MAXX){
                     kill(bullet[dato_letto.id].pid,1);
-                    cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,'A',bullet[dato_letto.id].id);
+                    cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,'A');
                     bullet[dato_letto.id].x=DEADX;
                     bullet[dato_letto.id].y=DEADY;
                 }
@@ -104,7 +104,7 @@ void area(int pipein,int nnemici){
                             if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j){
                                 kill(bullet[dato_letto.id].pid,1);
                                 kill(alieni[alieni[i].id].pid,1);
-                                cancellasprite(alieni[i].y,alieni[i].x,'A',alieni[i].id);
+                                cancellasprite(alieni[i].y,alieni[i].x,'A');
                                 bullet[dato_letto.id].y=DEADY;
                                 bullet[dato_letto.id].x=DEADX;
                                 alieni[i].y=DEADY;
@@ -117,8 +117,9 @@ void area(int pipein,int nnemici){
             }
             
             /* Visualizzo le vite rimaste al contadino */
+            cancellasprite
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"❤");
-            mvprintw(0,25,"Alieni iniziali %d",nnemici);
+            //mvprintw(0,25,"Alieni iniziali %d",nnemici);
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
             refresh();
