@@ -13,7 +13,8 @@ void opzioni(int *nnemici,int *difficolta){
   bool esci;
   while(esci==false){
     int i;
-    mvprintw(0,10,"Numero nemici:");
+    stampasprite(1,MAXX/2-20,'S');  /* stampo sprite 'space' */
+    stampasprite(8,MAXX/2-29,'D');  /* stampo sprite 'defender' */
     for(i=0;i<3;i++){
       if(i==0){
         if(i == altezza){
