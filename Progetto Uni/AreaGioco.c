@@ -38,8 +38,9 @@ void area(int pipein){
 
                 if(alieni[dato_letto.id].x<10){
                     vite--;
-                    cancellasprite(alieni[dato_letto].y,alieni[dato_letto].x,'A',alieni[dato_letto].id);
+                    
                     kill(alieni[dato_letto.id].pid,1);
+                    cancellasprite(alieni[dato_letto].y,alieni[dato_letto].x,'A',alieni[dato_letto].id);
                     refresh();
                     
                     
