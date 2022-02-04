@@ -43,6 +43,7 @@ default:
     Alieni.y += deltay;
     int ciao;
     ciao++;
+    mvprintw(0,60,"ciao %d",ciao);
     
 
     if(ciao < 0 || ciao > 4){
