@@ -4,7 +4,7 @@ char *sprite_alieno[3]={{" ▓▓"}
                        ,{"▒▓ "}
                        ,{" ▓▓"}};
 
-char *sprite_giocatore[6]={{"  ❤▓▓▓▓"}
+char *sprite_giocatore[6]={{"  ▓▓▓▓▓"}
                           ,{"   ▓▓  "}
                           ,{"▓▓▓▓▓▒"}
                           ,{"   ▓▓  "}
