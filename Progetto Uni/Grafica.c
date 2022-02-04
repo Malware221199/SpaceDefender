@@ -98,7 +98,7 @@ void stampasprite(int y,int x,char c){//da trasformare in switch case
 
 
 
-void cancellasprite(int y,int x,char c,int n){
+void cancellasprite(int y,int x,char c){
     int i,j;
         if(c=='A'){
             for(i=0;i<3;i++){
