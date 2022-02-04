@@ -41,7 +41,7 @@ default:
 
     /* Movimento Y */
     Alieni.y += deltay;
-    int ciao;
+    int ciao=2;
     ciao++;
     
 
