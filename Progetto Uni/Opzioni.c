@@ -4,7 +4,7 @@
  Funzione 'Opzioni'
 ----------------------------------------------------------------------
 */
-void opzioni(int *nnemici,int *difficolta){
+int opzioni(int *nnemici,int *difficolta){
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
   int Opzioni[3] = {0,1,2};  /*stringa opzioni */
@@ -79,7 +79,7 @@ void opzioni(int *nnemici,int *difficolta){
   switch (altezza){
     
    case 0: /*Indietro */
-      return;
+      return 1;
     break;
 
     case 1: /*Nemici*/
@@ -134,7 +134,7 @@ void nemici(int *nnemici){
  Funzione 'Difficolta'
 ----------------------------------------------------------------------
 */
-int difficulty(int *difficolta) {
+void difficulty(int *difficolta) {
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
   int proiettili[4] = {0,1,2,4};  /*stringa opzioni */
