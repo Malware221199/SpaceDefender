@@ -102,7 +102,8 @@ void nemici(int *nnemici){
     s = getch();
     switch(s){
       case DW:
-        n-=2
+        n-=2;
+        
         if(n == 0)
           n = 2;
         break;
