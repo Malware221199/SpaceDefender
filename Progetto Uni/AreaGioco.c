@@ -105,7 +105,7 @@ void area(int pipein){
             if(vite < 1) {
                 collision=1;
                 clear();
-                stampasprite(MAXY/2-2,MAXX/2-25,'S',2);
+                stampasprite(MAXY/2-2,MAXX/2-25,'O',2);
                 refresh();
                 usleep(4000000);
             }
