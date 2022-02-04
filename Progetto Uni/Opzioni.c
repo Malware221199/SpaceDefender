@@ -18,34 +18,40 @@ void opzioni(int *nnemici,int *difficolta){
     for(i=0;i<3;i++){
       if(i==0){
         if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Indietro");
-        attroff(A_REVERSE);
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-9,MAXX/2-14,'I');
+        attroff(COLOR_PAIR(1));
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Indietro");
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-9,MAXX/2-14,'I');
+        attroff(COLOR_PAIR(1));
         }
       }
 
       if(i==1){
         if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Nemici");
-        attroff(A_REVERSE);
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-6,MAXX/2-11,'N');
+        attroff(COLOR_PAIR(1));
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Nemici");
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-6,MAXX/2-11,'N');
+        attroff(COLOR_PAIR(1));
         }
       }
 
       if(i==2){
         if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Proiettili");
-        attroff(A_REVERSE);
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-3,MAXX/2-16,'P');
+        attroff(COLOR_PAIR(1));
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Proiettili");
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-3,MAXX/2-16,'P');
+        attroff(COLOR_PAIR(1));
         }
       }
     }
