@@ -45,12 +45,12 @@ int opzioni(int *nnemici,int *difficolta){
       if(i==2){
         if(i == altezza){
         attron(COLOR_PAIR(1));
-        stampasprite(MAXY-3,MAXX/2-16,'P');
+        stampasprite(MAXY-3,MAXX/2-17,'P');
         attroff(COLOR_PAIR(1));
         }
         else{
         attron(COLOR_PAIR(3));
-        stampasprite(MAXY-3,MAXX/2-16,'P');
+        stampasprite(MAXY-3,MAXX/2-17,'P');
         attroff(COLOR_PAIR(3));
         }
       }
@@ -86,7 +86,7 @@ int opzioni(int *nnemici,int *difficolta){
       nemici(nnemici);
     break;
 
-    case 2: /*Proiettili*/
+    case 2: /*Difficolta*/
       difficulty(difficolta);
     break;
   
