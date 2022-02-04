@@ -132,13 +132,13 @@ void area(int pipein,int nnemici){
                 usleep(4000000);
             }
 
-            if(alienimorti>=nnemici) {
+            /*if(alienimorti>=nnemici) {
                 collision=1;
                 clear();
                 stampasprite(MAXY/2-2,MAXX/2-18,'W');
                 refresh();
                 usleep(4000000);
-            }
+            }*/
 
 
 
