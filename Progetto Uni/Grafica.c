@@ -23,7 +23,7 @@ void stampasprite(int y,int x,char c,int n){//da trasformare in switch case
             attroff(COLOR_PAIR(4));
         break;
 
-        case 'A':/* Visualizzo il proiettile*/
+        case 'U':/* Visualizzo il proiettile*/
             for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_gioca[i]);
         break;
