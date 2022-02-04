@@ -47,7 +47,7 @@ int idb;
 void alieni(int pipeout,int id,int nnemici);
 void giocatore(int pipeout);
 void bullet(int pipeout,int id,int cgy,int cgx);
-void areaGioco(int pipein);
+void areaGioco(int pipein,int nnemici);
 int menu(int *nnemici,int *difficolta);
 void opzioni(int *nnemici,int *difficolta);
 int difficulty(int *difficolta);

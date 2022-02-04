@@ -6,12 +6,12 @@
 ---------------------------------------------------------------------- 
 */
 
-void area(int pipein){
+void area(int pipein,int nnemici){
 
     struct position giocatore, dato_letto;
     save alieni[11];
     save bullet[99];
-    int i=0, vite=3, collision=0;
+    int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
     /* Visualizzo le vite iniziali del Giocatore */
         mvprintw(0,1,"Vite %d",vite);
@@ -47,6 +47,7 @@ void area(int pipein){
                     cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c,alieni[dato_letto.id].id);
                     alieni[dato_letto.id].y=DEADY;
                     alieni[dato_letto.id].x=DEADX;
+                    alienimorti++;
                     
                     
                 }
@@ -88,14 +89,15 @@ void area(int pipein){
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
             
-                 /* Collisioni proiettili*/
-                int i,j,k;
-                if (bullet[dato_letto.id].x>MAXX-3){
+                
+                /* Collisioni proiettili con MAXX*/
+                if (bullet[dato_letto.id].x>MAXX){
                     kill(bullet[dato_letto.id].pid,1);
                     cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,'A',bullet[dato_letto.id].id);
                     bullet[dato_letto.id].x=DEADX;
                     bullet[dato_letto.id].y=DEADY;
                 }
+                /* Collisioni proiettili con alieni*/
                 for(i=0;i<11;i++){
                     for(j=0;j<3;j++){
                         for(k=0;k<3;k++){
@@ -107,6 +109,7 @@ void area(int pipein){
                                 bullet[dato_letto.id].x=DEADX;
                                 alieni[i].y=DEADY;
                                 alieni[i].x=DEADX;
+                                alienimorti++;
                             }
                         }
                     }
@@ -127,6 +130,16 @@ void area(int pipein){
                 refresh();
                 usleep(4000000);
             }
+
+            if(alienimorti==nnemici) {
+                collision=1;
+                clear();
+                stampasprite(MAXY/2-2,MAXX/2-25,'W');
+                refresh();
+                usleep(4000000);
+            }
+
+
 
     /* Il ciclo si ripete finchè le vite del contadino terminano */
     } while(!collision);
