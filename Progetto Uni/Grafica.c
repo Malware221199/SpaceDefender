@@ -18,9 +18,9 @@ void stampasprite(int y,int x,char c){//da trasformare in switch case
         break;
 
         case 'B':/* Visualizzo il proiettile*/
-            attron(COLOR_PAIR(4));
+            attron(COLOR_PAIR(3));
             mvprintw(y,x,"O");
-            attroff(COLOR_PAIR(4));
+            attroff(COLOR_PAIR(3));
         break;
 
         case 'U':/* Visualizzo il proiettile*/
