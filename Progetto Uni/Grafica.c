@@ -48,9 +48,9 @@ void stampasprite(int y,int x,char c){//da trasformare in switch case
                 mvaddstr(y+i,x,sprite_nemici[i]);
         break;
 
-        case 'P':/* stampo sprite 'proiettili' */
+        case 'P':/* stampo sprite 'difficolta' */
             for(i=0;i<2;i++)
-                mvaddstr(y+i,x,sprite_proiettili[i]);
+                mvaddstr(y+i,x,sprite_difficolta[i]);
         break;
 
         case 'S':/* stampo sprite 'space' */
