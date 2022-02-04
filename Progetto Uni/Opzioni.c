@@ -102,13 +102,13 @@ void nemici(int *nnemici){
     s = getch();
     switch(s){
       case DW:
-        n--;
+        n-=2
         if(n == 0)
-          n = 1;
+          n = 2;
         break;
       case UP:
-        n++;
-        if(n == 11)
+        n+=2;
+        if(n == 12)
           n = 10;
         break;
       case ENTER:
