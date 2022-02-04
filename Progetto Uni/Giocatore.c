@@ -8,7 +8,7 @@ void giocatore(int pipeout)
 {
   struct position giocatore;
   giocatore.x = 2;       /* Coordinata X iniziale */
-  giocatore.y = MAXY/2;   /* Coordinata Y iniziale */
+  giocatore.y = MAXY/2-2;   /* Coordinata Y iniziale */
   giocatore.c='G';	    /* Carattere identificativo giocatore*/
   giocatore.id=1;   /* Numero dell elemento */
   giocatore.pid=getpid();  /*Pid processo*/
@@ -16,7 +16,7 @@ void giocatore(int pipeout)
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */
   write(pipeout,&giocatore,sizeof(giocatore));
-  int idb=2;
+  int idb=0; /*ID proiettile*/
   /* Lettura dei tasti cursore */
   while(1)
   {
