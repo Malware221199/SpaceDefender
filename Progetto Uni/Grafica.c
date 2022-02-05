@@ -82,38 +82,38 @@ void stampasprite(int y,int x,char c){
         break;
 
         case 'Q':/* stampo sprite 'due' */
-            attron(COLOR_PAIR(2));
+            attron(COLOR_PAIR(1));
             for(i=0;i<6;i++)
                 mvaddstr(y+i,x,sprite_due[i]);
-            attroff(COLOR_PAIR(2));
+            attroff(COLOR_PAIR(1));
         break;
 
         case 'X':/* stampo sprite 'quattro' */
-            attron(COLOR_PAIR(2));
+            attron(COLOR_PAIR(1));
             for(i=0;i<6;i++)
                 mvaddstr(y+i,x,sprite_quattro[i]);
-            attroff(COLOR_PAIR(2));
+            attroff(COLOR_PAIR(1));
         break;
 
         case 'V':/* stampo sprite 'sei' */
-            attron(COLOR_PAIR(2));
+            attron(COLOR_PAIR(1));
             for(i=0;i<6;i++)
                 mvaddstr(y+i,x,sprite_sei[i]);
-            attroff(COLOR_PAIR(2));
+            attroff(COLOR_PAIR(1));
         break;
 
         case 'R':/* stampo sprite 'otto' */
-            attron(COLOR_PAIR(2));
+            attron(COLOR_PAIR(1));
             for(i=0;i<6;i++)
                 mvaddstr(y+i,x,sprite_otto[i]);
-            attroff(COLOR_PAIR(2));
+            attroff(COLOR_PAIR(1));
         break;
 
         case 'Y':/* stampo sprite 'dieci' */
-            attron(COLOR_PAIR(2));
+            attron(COLOR_PAIR(1));
             for(i=0;i<6;i++)
                 mvaddstr(y+i,x,sprite_dieci[i]);
-            attroff(COLOR_PAIR(2));
+            attroff(COLOR_PAIR(1));
         break;
 
 
