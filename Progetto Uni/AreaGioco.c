@@ -117,7 +117,7 @@ void area(int pipein,int nnemici){
                         }
                         if(exit=1) break;
                     }
-                    if(exit=1) break;
+                    
                 }
             }
             //for(i=0;i<11;i++){
