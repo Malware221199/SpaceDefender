@@ -78,14 +78,4 @@ void bulletn(int pipeout,int id,int ay,int ax){
             /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
   }
-
-
-
-
-
-
-
-
-
-
 }
