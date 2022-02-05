@@ -101,7 +101,7 @@ int opzioni(int *nnemici,int *difficolta){
 ----------------------------------------------------------------------
 */
 void nemici(int *nnemici){
-  int s,n=6;
+  int s,n=2;
   while(1){
     clear();              /* cancello la pagina */
     refresh();            /* refresho la pagina */
