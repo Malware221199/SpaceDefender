@@ -81,7 +81,7 @@ void stampasprite(int y,int x,char c){
             attroff(COLOR_PAIR(2));
         break;
 
-        case '2':/* stampo sprite 'due' */
+        case 'Q':/* stampo sprite 'due' */
             attron(COLOR_PAIR(2));
             for(i=0;i<6;i++)
                 mvaddstr(y+i,x,sprite_due[i]);
