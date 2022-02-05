@@ -11,8 +11,10 @@ int r=1;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
 if(id==0||id==1) Alieni.x= MAXX-5;
-
 if(id==2||id==3) Alieni.x= MAXX-10;
+if(id==4||id==5) Alieni.x= MAXX-15;
+if(id==6||id==7) Alieni.x= MAXX-20;
+if(id==8||id==9) Alieni.x= MAXX-25;
   if(id%2==0){
     Alieni.y=(MAXY/4);
     r++;
