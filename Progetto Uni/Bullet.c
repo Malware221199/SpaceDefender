@@ -45,7 +45,8 @@ void bulletg(int pipeout,int id,int cgy,int cgx){
 
             /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
-  }
+    }
+}
 /*
 ----------------------------------------------------------------------
  Funzione 'Bullet nemico'
