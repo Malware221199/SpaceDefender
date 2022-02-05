@@ -126,7 +126,7 @@ void area(int pipein,int nnemici){
             else if(dato_letto.c=='H'){
                 /*Cancello il precedente carattere visualizzato */
                 //cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
-                mvprintw(bulletg->y,bulletg->x"O");
+                mvprintw(bulletg->y,bulletg->x,"O");
                 /*Aggiorno le coordinate relative alla nuova posizione */
                 //bulletn[dato_letto.id].id=dato_letto.id;
                 //bulletn[dato_letto.id].y=dato_letto.y;
