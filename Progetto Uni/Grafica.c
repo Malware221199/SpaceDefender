@@ -178,7 +178,7 @@ void cancellasprite(int y,int x,char c){
 
         else if(c=='V'){
             
-            mvprintw(y,x," ");
+            mvprintw(y,x,"      ");
         }
 
 
