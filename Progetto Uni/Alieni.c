@@ -48,7 +48,7 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
     if (random() < RAND_MAX/2){
       idbn++;
       pidBN=fork();
-      bulletn(p[1],idbn,alieni.y,alieni.x);
+      bulletn(p[1],idbn,Alieni.y,Alieni.x);
     }
     /* Comunico le coordinate correnti al processo padre */
     write(pipeout,&Alieni,sizeof(Alieni));
