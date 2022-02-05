@@ -23,7 +23,7 @@ int main(){
         init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
         attron(COLOR_PAIR(4));
         int ida;
-        int nnemici=4;
+        int nnemici=2;
         int difficolta = DELAYM;
         if ( menu(&nnemici,&difficolta) == 0){
             clear();
