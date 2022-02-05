@@ -182,6 +182,13 @@ void cancellasprite(int y,int x,char c){
             mvprintw(y,x," ");
         }
 
+        
+        else if(c=='H'){
+            
+            mvprintw(y,x," ");
+        }
+
+
         else if(c=='V'){
             
             mvprintw(y,x,"      ");
