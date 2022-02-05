@@ -110,6 +110,7 @@ void area(int pipein,int nnemici){
                                 alieni[i].y=DEADY;
                                 alieni[i].x=DEADX;
                                 alienimorti++;
+                                mvprintw(0,25,"Alieni morti %d",alienimorti);
                                 break;
                             }
                         }
@@ -123,7 +124,7 @@ void area(int pipein,int nnemici){
             /* Visualizzo le vite rimaste al contadino */
             cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"♥");
-            //mvprintw(0,25,"Alieni iniziali %d",nnemici);
+            
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
             refresh();
