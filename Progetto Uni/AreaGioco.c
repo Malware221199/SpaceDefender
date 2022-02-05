@@ -111,13 +111,14 @@ void area(int pipein,int nnemici){
                                 alieni[i].y=DEADY;
                                 alieni[i].x=DEADX;
                                 alienimorti++;
+                                exit=1;
                                 mvprintw(0,25,"Alieni morti %d",alienimorti);
                                 break;
                             }
                         }
                         if(exit=1) break;
                     }
-                    
+                    if(exit=1) break;
                 }
             }
             //for(i=0;i<11;i++){
