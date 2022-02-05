@@ -11,7 +11,7 @@ void area(int pipein,int nnemici){
     struct position giocatore, dato_letto;
     save alieni[11];
     save bulletg[99];
-    save bulletn[99];
+    save bulletn[20];
 
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
@@ -123,7 +123,7 @@ void area(int pipein,int nnemici){
             Gesione proiettili nemico
             ---------------------------------------------------------------------- 
             /* Cancello il precedente carattere visualizzato */
-            else if(dato_letto.c=='B'){
+            else if(dato_letto.c=='H'){
                 cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
 
                 /*Aggiorno le coordinate relative alla nuova posizione */
