@@ -11,7 +11,7 @@ void area(int pipein,int nnemici){
     struct position giocatore, dato_letto;
     save alieni[11];
     save bulletg[99];
-    save bulletn[99];
+    save bulletn[98];
 
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
@@ -125,8 +125,8 @@ void area(int pipein,int nnemici){
             */
             else if(dato_letto.c=='H'){
                 /*Cancello il precedente carattere visualizzato */
-                //cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
-                mvprintw(bulletg->y,bulletg->x,"O");
+                cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
+                
                 /*Aggiorno le coordinate relative alla nuova posizione */
                 //bulletn[dato_letto.id].id=dato_letto.id;
                 //bulletn[dato_letto.id].y=dato_letto.y;
