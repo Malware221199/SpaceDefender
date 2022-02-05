@@ -16,7 +16,7 @@ int deltay=1;		/* Spostamento verticale */
   }
 
   else Alieni.y=MAXY-(MAXY/4);
-  Alieni.x==MAXX-((2+3)*r);
+  Alieni.x=MAXX-((2+3)*r);
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
   Alieni.pid= getpid();
