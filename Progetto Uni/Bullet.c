@@ -69,12 +69,12 @@ void bulletn(int pipeout,int id,int ay,int ax){
 
     //while(1){
         /* Movimento X */
-       // Bulletn.x -= deltax;
+        Bulletn.x -= deltax;
 
         /* Comunico le coordinate correnti al processo padre */
-       // write(pipeout,&Bulletn,sizeof(Bulletn));
+        write(pipeout,&Bulletn,sizeof(Bulletn));
 
             /* Inserisco una pausa per rallentare il movimento */
-       // usleep(50000);
-    //}
+        usleep(50000);
+    }
 }
