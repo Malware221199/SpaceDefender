@@ -45,6 +45,8 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
     /* Movimento X */
     Alieni.x -= deltax;
 
+    
+
     /* Comunico le coordinate correnti al processo padre */
     write(pipeout,&Alieni,sizeof(Alieni));
 

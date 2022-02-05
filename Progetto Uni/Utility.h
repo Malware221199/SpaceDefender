@@ -20,8 +20,10 @@
 #define GSA 	  3     /* Grandezza sprite alieno*/
 #define DA 	    2     /* Distanza alieni*/
 
-#define DEADY 	-10         /*Coordinata morta y */
-#define DEADX 	-10         /*Coordinata morta x */
+#define DEADYA 	-10         /*Coordinata morta y alieno*/
+#define DEADXA 	-10         /*Coordinata morta x alieno*/
+#define DEADYB 	-15        /*Coordinata morta y proiettile*/
+#define DEADXB 	-15         /*Coordinata morta x proiettile */
 #define DELAYV 	200000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
 #define DELAYM 	400000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	500000	    /* Ritardo nel movimento delle navicelle nemiche lento */
@@ -46,7 +48,8 @@ int idb;
 */
 void alieni(int pipeout,int id,int nnemici,int difficolta);
 void giocatore(int pipeout);
-void bullet(int pipeout,int id,int cgy,int cgx);
+void bulletg(int pipeout,int id,int cgy,int cgx);
+void bulletn(int pipeout,int id,int ay,int ax)
 void areaGioco(int pipein,int nnemici);
 int menu(int *nnemici,int *difficolta);
 int opzioni(int *nnemici,int *difficolta);

@@ -45,8 +45,8 @@ void area(int pipein,int nnemici){
                     vite--;
                     kill(alieni[dato_letto.id].pid,1);
                     cancellasprite(alieni[dato_letto.id].y,alieni[dato_letto.id].x,dato_letto.c);
-                    alieni[dato_letto.id].y=DEADY;
-                    alieni[dato_letto.id].x=DEADX;
+                    alieni[dato_letto.id].y=DEADYA;
+                    alieni[dato_letto.id].x=DEADXA;
                     alienimorti++;
                     
                     
@@ -94,8 +94,8 @@ void area(int pipein,int nnemici){
                 if (bullet[dato_letto.id].x>MAXX){
                     kill(bullet[dato_letto.id].pid,1);
                     cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,'A');
-                    bullet[dato_letto.id].x=DEADX-10;
-                    bullet[dato_letto.id].y=DEADY-10;
+                    bullet[dato_letto.id].x=DEADXB;
+                    bullet[dato_letto.id].y=DEADYB;
                 }
                 /* Collisioni proiettili con alieni*/
                 int exit=0;
@@ -106,18 +106,14 @@ void area(int pipein,int nnemici){
                                 kill(bullet[dato_letto.id].pid,1);
                                 kill(alieni[alieni[i].id].pid,1);
                                 cancellasprite(alieni[i].y,alieni[i].x,'A');
-                                bullet[dato_letto.id].y=DEADY;
-                                bullet[dato_letto.id].x=DEADX;
-                                alieni[i].y=DEADY;
-                                alieni[i].x=DEADX;
+                                bullet[dato_letto.id].y=DEADYB;
+                                bullet[dato_letto.id].x=DEADXB;
+                                alieni[i].y=DEADYA;
+                                alieni[i].x=DEADXA;
                                 if(exit==0){
                                     alienimorti++;
                                     exit=1;
-                                }
-                                mvprintw(0,25,"Alieni morti %d",alienimorti);
-                                
-                                
-                                   
+                                }      
                             }
                         }
                     }

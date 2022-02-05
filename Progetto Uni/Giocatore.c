@@ -40,7 +40,7 @@ void giocatore(int pipeout)
       
       if(pidB1==0) {
         close(p[0]); /* chiusura del descrittore di lettura */
-        bullet(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
+        bulletg(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
       }	
       idb++;
       /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
@@ -49,7 +49,7 @@ void giocatore(int pipeout)
       if(pidB2==0) {
         /* ed eseguo quindi la relativa funzione di gestione */
         close(p[0]); /* chiusura del descrittore di lettura */
-        bullet(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */ 
+        bulletg(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */ 
         }
       
     }

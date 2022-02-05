@@ -1,10 +1,10 @@
 #include "Utility.h"
 /*
 ----------------------------------------------------------------------
- Funzione 'Bullet'
+ Funzione 'Bullet giocatore'
 ---------------------------------------------------------------------- 
 */
-void bullet(int pipeout,int id,int cgy,int cgx){
+void bulletg(int pipeout,int id,int cgy,int cgx){
     struct position Bullet;
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
@@ -39,6 +39,37 @@ void bullet(int pipeout,int id,int cgy,int cgx){
         
         /* Movimento X */
         Bullet.x += deltax;
+
+        /* Comunico le coordinate correnti al processo padre */
+        write(pipeout,&Bullet,sizeof(Bullet));
+
+            /* Inserisco una pausa per rallentare il movimento */
+        usleep(50000);
+  }
+/*
+----------------------------------------------------------------------
+ Funzione 'Bullet nemico'
+---------------------------------------------------------------------- 
+*/
+void bulletn(int pipeout,int id,int ay,int ax){
+    struct position Bullet;
+    int deltax=1;		/* Spostamento orizzontale */
+    int deltay=1;		/* Spostamento verticale */
+    Bullet.x = ax-1;  /* Coordinata X iniziale */
+    Bullet.y = ay+1;  /* Coordinata Y iniziale */
+    Bullet.c ='H';	/* Carattere identificativo */
+    Bullet.id =id; /* Numero dell elemento */
+    Bullet.pid=getpid(); /*Pid processo*/
+    
+
+    
+
+    /* Comunico le coordinate iniziali al processo padre */
+    write(pipeout,&Bullet,sizeof(Bullet));
+
+    while(1){
+        /* Movimento X */
+        Bullet.x -= deltax;
 
         /* Comunico le coordinate correnti al processo padre */
         write(pipeout,&Bullet,sizeof(Bullet));
