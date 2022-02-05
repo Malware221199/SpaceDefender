@@ -31,7 +31,7 @@ if(id==8||id==9) Alieni.x= MAXX-25;
   while(1){
 
     /* Movimento Y */
-    /*Alieni.y += deltay;
+    Alieni.y += deltay;
     int ciao;
     ciao++;
     mvprintw(0,60,"ciao %d",ciao);
@@ -40,7 +40,7 @@ if(id==8||id==9) Alieni.x= MAXX-25;
     if(ciao < 0 || ciao > 4){
       ciao = -ciao;
       deltay = -deltay;
-    }*/
+    }
     
     /* Movimento X */
     Alieni.x -= deltax;

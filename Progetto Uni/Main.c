@@ -26,19 +26,21 @@ int main(){
         init_pair(3,COLOR_MAGENTA,COLOR_BLACK);   /* Colore trappola */
         init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
         attron(COLOR_PAIR(4));
-        if ( menu(&nnemici,&difficolta) == 0){
+
+        if ( menu(&nnemici,&difficolta) == 0){   /* Entro nella funzione Menu*/
             clear();
             refresh();
-            return 0;
+            return 0;        /*Esce dal programma se nella funzione 'Menu' si seleziona 'Esci'*/
             }
         clear();
         refresh();
         for(ida=0;ida<nnemici;ida++){
-            /* Creo il primo processo figlio 'Alieni' */
-            pidA = fork();
+
+            pidA = fork();/* Creo il primo processo figlio 'Alieni' */
             if(!pidA)
                 break; 
         }
+        
         /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
         if(pidA==0) {
             
