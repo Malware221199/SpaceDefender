@@ -67,7 +67,7 @@ void bulletn(int pipeout,int id,int ay,int ax){
     /* Comunico le coordinate iniziali al processo padre */
     write(pipeout,&Bulletn,sizeof(Bulletn));
 
-    //while(1){
+    while(1){
         /* Movimento X */
         Bulletn.x -= deltax;
 
