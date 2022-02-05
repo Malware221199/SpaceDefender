@@ -12,11 +12,11 @@ int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
   Alieni.x= MAXX-5;/*MAXX-((2+3)*r*/
   if(id%2==0){
-    Alieni.y=MAXY/4;
-    r++;
+    Alieni.y=10;
+    //r++;
   }
 
-  else Alieni.y=MAXY-(MAXY/4);
+  else if (id%2==1) Alieni.y=MAXY-10;
   
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
