@@ -7,29 +7,16 @@
 
 void alieni(int pipeout, int id,int nnemici, int difficolta){
 struct position Alieni;
+int r=1;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
-switch (nnemici){
-case 1:
-  Alieni.x = MAXX-DA-GSA;  /* Coordinata X iniziale */
-  Alieni.y = MAXY/2-1;  /* Coordinata Y iniziale */
-  break;
-case 2:
-  Alieni.x = MAXX-DA-GSA;  /* Coordinata X iniziale */
-  switch(id){
-    case 0:
-    Alieni.y = (MAXY/2)-DA-(2*GSA);  /* Coordinata Y iniziale */
-    break;
-    case 1:
-    Alieni.y = MAXY/2+DA;  /* Coordinata Y iniziale */
-    break;
-    default:
-    break;
+  if(id%2==0){
+    Alieni.y=MAXY/4;
+    r++;
   }
-break;
-default:
-  break;
-}
+
+  else Alieni.y=MAXY-(MAXY/4);
+  Alieni.x==MAXX-((2+3)*r);
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
   Alieni.pid= getpid();
