@@ -94,8 +94,8 @@ void area(int pipein,int nnemici){
                 if (bullet[dato_letto.id].x>MAXX){
                     kill(bullet[dato_letto.id].pid,1);
                     cancellasprite(bullet[dato_letto.id].y,bullet[dato_letto.id].x,'A');
-                    bullet[dato_letto.id].x=DEADX;
-                    bullet[dato_letto.id].y=DEADY;
+                    bullet[dato_letto.id].x=DEADX-10;
+                    bullet[dato_letto.id].y=DEADY-10;
                 }
                 /* Collisioni proiettili con alieni*/
                 for(i=0;i<11;i++){
