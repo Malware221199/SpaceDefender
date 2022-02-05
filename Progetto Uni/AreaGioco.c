@@ -109,7 +109,7 @@ void area(int pipein,int nnemici){
                                 bullet[dato_letto.id].x=DEADX;
                                 alieni[i].y=DEADY;
                                 alieni[i].x=DEADX;
-                                alienimorti++;
+                                //alienimorti++;
                             }
                         }
                     }
