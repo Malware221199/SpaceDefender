@@ -116,6 +116,13 @@ void stampasprite(int y,int x,char c){
             attroff(COLOR_PAIR(1));
         break;
 
+        case 'C':/* stampo sprite 'Numero nemici' */
+            attron(COLOR_PAIR(1));
+            for(i=0;i<2;i++)
+                mvaddstr(y+i,x,sprite_num_nemici[i]);
+            attroff(COLOR_PAIR(1));
+        break;
+
 
 
         default:
