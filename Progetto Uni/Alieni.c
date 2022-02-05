@@ -10,13 +10,14 @@ struct position Alieni;
 int r=1;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
+  Alieni.x=MAXX-((2+3)*r);
   if(id%2==0){
     Alieni.y=MAXY/4;
     r++;
   }
 
   else Alieni.y=MAXY-(MAXY/4);
-  Alieni.x=MAXX-((2+3)*r);
+  
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
   Alieni.pid= getpid();
