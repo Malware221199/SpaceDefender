@@ -99,8 +99,9 @@ void area(int pipein,int nnemici){
                 }
                 /* Collisioni proiettili con alieni*/
                 for(i=0;i<11;i++){
+                    if(bullet[dato_letto.id].x == (alieni[i].x) && bullet[dato_letto.id].y == (alieni[i].y)){
                     alienimorti++;
-                    mvprintw(0,25,"Alieni morti %d",alienimorti);
+                    mvprintw(0,25,"Alieni morti %d",alienimorti);}
                     for(j=0;j<3;j++){
                         for(k=0;k<3;k++){
                             if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j){
