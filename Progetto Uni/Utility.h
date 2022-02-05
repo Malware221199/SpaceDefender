@@ -22,8 +22,8 @@
 
 #define DEADY 	-10         /*Coordinata morta y */
 #define DEADX 	-10         /*Coordinata morta x */
-#define DELAYV 	120000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
-#define DELAYM 	160000	    /* Ritardo nel movimento delle navicelle nemiche medio */
+#define DELAYV 	200000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
+#define DELAYM 	400000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	500000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 
 /*
