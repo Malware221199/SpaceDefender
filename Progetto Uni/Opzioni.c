@@ -109,33 +109,23 @@ void nemici(int *nnemici){
     
     switch(n){
       case 2:
-        attron(COLOR_PAIR(1));
         stampasprite(MAXY-9,MAXX/2-4,'Q');
-        attroff(COLOR_PAIR(1));
       break;
       
       case 4:
-        attron(COLOR_PAIR(1));
-        stampasprite(MAXY-9,MAXX/2-4,'4');
-        attroff(COLOR_PAIR(1));
+        stampasprite(MAXY-9,MAXX/2-4,'X');
       break;
       
       case 6:
-        attron(COLOR_PAIR(1));
-        stampasprite(MAXY-9,MAXX/2-4,'6');
-        attroff(COLOR_PAIR(1));
+        stampasprite(MAXY-9,MAXX/2-4,'V');
       break;
 
       case 8:
-        attron(COLOR_PAIR(1));
-        stampasprite(MAXY-9,MAXX/2-4,'8');
-        attroff(COLOR_PAIR(1));
+        stampasprite(MAXY-9,MAXX/2-4,'R');
       break;
       
       case 10:
-        attron(COLOR_PAIR(1));
-        stampasprite(MAXY-9,MAXX/2-8,'1');
-        attroff(COLOR_PAIR(1));
+        stampasprite(MAXY-9,MAXX/2-8,'Y');
       break;
     }
 
