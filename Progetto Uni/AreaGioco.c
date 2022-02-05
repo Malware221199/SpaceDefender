@@ -12,7 +12,7 @@ void area(int pipein,int nnemici){
     save bulletg[99];
     save alieni[11];
     save bulletn[99];
-    save prova[99];
+    save prova[90];
 
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
