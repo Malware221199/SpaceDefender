@@ -12,6 +12,7 @@ void area(int pipein,int nnemici){
     save bulletg[99];
     save alieni[11];
     save bulletn[99];
+    save prova[99];
 
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
@@ -123,9 +124,9 @@ void area(int pipein,int nnemici){
             Gesione proiettili nemico
             ---------------------------------------------------------------------- 
             */
-            else if(dato_letto.c=='K'){
+            else if(dato_letto.c=='H'){
                 /*Cancello il precedente carattere visualizzato */
-                cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
+                //cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
                 
                 /*Aggiorno le coordinate relative alla nuova posizione */
                 //bulletn[dato_letto.id].id=dato_letto.id;
@@ -136,7 +137,11 @@ void area(int pipein,int nnemici){
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 //stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
             }
-
+            
+            prova[dato_letto.id].id=dato_letto.id;
+            prova[dato_letto.id].x=dato_letto.x;
+            prova[dato_letto.id].y=dato_letto.y;
+            prova[dato_letto.id].pid=dato_letto.pid;
 
 
 
