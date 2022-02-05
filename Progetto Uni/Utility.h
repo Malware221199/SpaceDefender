@@ -39,7 +39,7 @@ int pidA;   		/* Pid processo figlio 'Alieni' */
 int pidG;	      /* Pid processo figlio 'Giocatore' */
 int pidB1;	      /* Pid processo figlio 'Bullet uno' */
 int pidB2;	      /* Pid processo figlio 'Bullet due' */
-int idb;
+int pidBN;	      /* Pid processo figlio 'Bullet due' */
 
 /*
 ----------------------------------------------------------------------

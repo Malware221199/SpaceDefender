@@ -13,6 +13,7 @@ int main(){
         noecho();			/* Imposta modalità della tastiera */
         curs_set(0);		/* Nasconde il cursore */
         getmaxyx(stdscr, MAXY, MAXX);
+        srand(time(NULL));
         int ida;
         int nnemici=2;
         int difficolta = DELAYM;
@@ -40,7 +41,7 @@ int main(){
             if(!pidA)
                 break; 
         }
-        
+
         /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
         if(pidA==0) {
             

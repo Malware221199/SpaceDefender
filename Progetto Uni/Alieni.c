@@ -7,7 +7,7 @@
 
 void alieni(int pipeout, int id,int nnemici, int difficolta){
 struct position Alieni;
-int r=1;
+int r=1,idbn=0;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
 if(id==0||id==1) Alieni.x= MAXX-(GSA+DA);
@@ -45,8 +45,11 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
     /* Movimento X */
     Alieni.x -= deltax;
 
-    
-
+    if (random() < RAND_MAX/2){
+      idbn++;
+      pidBN=fork();
+      bulletn(p[1],idbn,alieni.y,alieni.x);
+    }
     /* Comunico le coordinate correnti al processo padre */
     write(pipeout,&Alieni,sizeof(Alieni));
 

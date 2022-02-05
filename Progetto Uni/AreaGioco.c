@@ -11,10 +11,9 @@ void area(int pipein,int nnemici){
     struct position giocatore, dato_letto;
     save alieni[11];
     save bulletg[99];
-    int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
+    save bulletn[99];
 
-    /* Visualizzo le vite iniziali del Giocatore */
-        //for(i=0;i<vite;i++) mvaddstr(0,1+i,"❤");
+    int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
         do {
             /* Leggo dalla pipe */
@@ -72,7 +71,7 @@ void area(int pipein,int nnemici){
 
              /*
             ----------------------------------------------------------------------
-            Gesione Proiettili
+            Gesione proiettili giocatore
             ---------------------------------------------------------------------- 
             */
             else if(dato_letto.c=='B'){
@@ -119,8 +118,28 @@ void area(int pipein,int nnemici){
                     }
                 }
             }
+             /*
+            ----------------------------------------------------------------------
+            Gesione proiettili nemico
+            ---------------------------------------------------------------------- 
+            /* Cancello il precedente carattere visualizzato */
+            else if(dato_letto.c=='H'){
+                cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,'B');
 
-            /* Visualizzo le vite rimaste al contadino */
+                /* Aggiorno le coordinate relative alla nuova posizione */
+                bulletn[dato_letto.id].id=dato_letto.id;
+                bulletn[dato_letto.id].y=dato_letto.y;
+                bulletn[dato_letto.id].x=dato_letto.x;
+                bulletn[dato_letto.id].pid=dato_letto.pid;
+
+                /* Visualizzo il carattere dell'entità sulle nuove coordinate */
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+            }
+
+
+
+
+            /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
             
