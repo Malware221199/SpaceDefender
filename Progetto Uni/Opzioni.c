@@ -110,7 +110,7 @@ void nemici(int *nnemici){
     switch(n){
       case 2:
         attron(COLOR_PAIR(1));
-        stampasprite(MAXY-9,MAXX/2-4,'2');
+        stampasprite(MAXY-9,MAXX/2-4,'Q');
         attroff(COLOR_PAIR(1));
       break;
       
