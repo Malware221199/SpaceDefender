@@ -106,24 +106,7 @@ void nemici(int *nnemici){
     clear();              /* cancello la pagina */
     refresh();            /* refresho la pagina */
     mvprintw(MAXY/2,MAXX/2,"Numero nemici: %d",n);
-    s = getch();
-    switch(s){
-      case DW:
-        n-=2;
-
-        if(n == 0)
-          n = 2;
-        break;
-      case UP:
-        n+=2;
-        if(n == 12)
-          n = 10;
-        break;
-      case ENTER:
-        *nnemici=n;
-        return;
-      break;
-    }
+    
     switch(n){
       case 2:
         attron(COLOR_PAIR(1));
@@ -153,6 +136,25 @@ void nemici(int *nnemici){
         attron(COLOR_PAIR(1));
         stampasprite(MAXY-9,MAXX/2-8,'1');
         attroff(COLOR_PAIR(1));
+      break;
+    }
+
+    s = getch();
+    switch(s){
+      case DW:
+        n-=2;
+
+        if(n == 0)
+          n = 2;
+        break;
+      case UP:
+        n+=2;
+        if(n == 12)
+          n = 10;
+        break;
+      case ENTER:
+        *nnemici=n;
+        return;
       break;
     }
   }
