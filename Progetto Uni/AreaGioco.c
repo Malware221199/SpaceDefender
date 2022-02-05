@@ -100,7 +100,6 @@ void area(int pipein,int nnemici){
                 /* Collisioni proiettili con alieni*/
                 int exit=0;
                 for(i=0;i<11;i++){
-                    mvprintw(0,25,"Alieni morti %d",alienimorti);}
                     for(j=0;j<GSA;j++){
                         for(k=0;k<GSA;k++){
                             if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j){
@@ -115,6 +114,7 @@ void area(int pipein,int nnemici){
                                     alienimorti++;
                                     exit=1;
                                 }
+                                mvprintw(0,25,"Alieni morti %d",alienimorti);}
                                 
                                 
                                 
