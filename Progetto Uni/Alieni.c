@@ -28,7 +28,7 @@ int deltay=1;		/* Spostamento verticale */
   while(1){
 
     /* Movimento Y */
-    Alieni.y += deltay;
+    /*Alieni.y += deltay;
     int ciao;
     ciao++;
     mvprintw(0,60,"ciao %d",ciao);
@@ -37,7 +37,7 @@ int deltay=1;		/* Spostamento verticale */
     if(ciao < 0 || ciao > 4){
       ciao = -ciao;
       deltay = -deltay;
-    }
+    }*/
     
     /* Movimento X */
     Alieni.x -= deltax;
