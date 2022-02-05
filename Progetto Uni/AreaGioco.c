@@ -123,9 +123,9 @@ void area(int pipein,int nnemici){
             Gesione proiettili nemico
             ---------------------------------------------------------------------- 
             /* Cancello il precedente carattere visualizzato */
-            /*else if(dato_letto.c=='H'){
+            else if(dato_letto.c=='H'){
                 cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,'B');
-
+                
                 /* Aggiorno le coordinate relative alla nuova posizione */
               /*  bulletn[dato_letto.id].id=dato_letto.id;
                 bulletn[dato_letto.id].y=dato_letto.y;
@@ -134,7 +134,7 @@ void area(int pipein,int nnemici){
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                // stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
-            //}
+            }
 
 
 
