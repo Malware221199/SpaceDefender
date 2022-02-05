@@ -1,6 +1,6 @@
 #include "Grafica.h"
 
-void stampasprite(int y,int x,char c){//da trasformare in switch case
+void stampasprite(int y,int x,char c){
     int i;
     switch(c){
         case 'A':
@@ -80,6 +80,43 @@ void stampasprite(int y,int x,char c){//da trasformare in switch case
                 mvaddstr(y+i,x,sprite_youwin[i]);
             attroff(COLOR_PAIR(2));
         break;
+
+        case '2':/* stampo sprite 'due' */
+            attron(COLOR_PAIR(2));
+            for(i=0;i<6;i++)
+                mvaddstr(y+i,x,sprite_due[i]);
+            attroff(COLOR_PAIR(2));
+        break;
+
+        case '4':/* stampo sprite 'quattro' */
+            attron(COLOR_PAIR(2));
+            for(i=0;i<6;i++)
+                mvaddstr(y+i,x,sprite_quattro[i]);
+            attroff(COLOR_PAIR(2));
+        break;
+
+        case '6':/* stampo sprite 'sei' */
+            attron(COLOR_PAIR(2));
+            for(i=0;i<6;i++)
+                mvaddstr(y+i,x,sprite_sei[i]);
+            attroff(COLOR_PAIR(2));
+        break;
+
+        case '8':/* stampo sprite 'otto' */
+            attron(COLOR_PAIR(2));
+            for(i=0;i<6;i++)
+                mvaddstr(y+i,x,sprite_otto[i]);
+            attroff(COLOR_PAIR(2));
+        break;
+
+        case '1':/* stampo sprite 'dieci' */
+            attron(COLOR_PAIR(2));
+            for(i=0;i<6;i++)
+                mvaddstr(y+i,x,sprite_dieci[i]);
+            attroff(COLOR_PAIR(2));
+        break;
+
+
 
         default:
         break;
