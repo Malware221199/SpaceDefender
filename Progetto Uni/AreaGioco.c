@@ -114,10 +114,10 @@ void area(int pipein,int nnemici){
                                     alienimorti++;
                                     exit=1;
                                 }
-                                mvprintw(0,25,"Alieni morti %d",alienimorti);}
+                                mvprintw(0,25,"Alieni morti %d",alienimorti);
                                 
                                 
-                                
+                                   
                             }
                         }
                     }
