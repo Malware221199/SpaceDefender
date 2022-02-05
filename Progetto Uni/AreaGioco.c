@@ -9,9 +9,9 @@
 void area(int pipein,int nnemici){
 
     struct position giocatore, dato_letto;
-    save bulletg[90];
+    save bulletg[95];
     save alieni[11];
-    save bulletn[99];
+    save bulletn[95];
 
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
