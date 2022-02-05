@@ -53,6 +53,21 @@ void stampasprite(int y,int x,char c){
                 mvaddstr(y+i,x,sprite_difficolta[i]);
         break;
 
+        case 'L':/* stampo sprite 'difficile' */
+            for(i=0;i<2;i++)
+                mvaddstr(y+i,x,sprite_difficile[i]);
+        break;
+
+        case 'M':/* stampo sprite 'medio' */
+            for(i=0;i<2;i++)
+                mvaddstr(y+i,x,sprite_medio[i]);
+        break;
+
+        case 'F':/* stampo sprite 'facile' */
+            for(i=0;i<2;i++)
+                mvaddstr(y+i,x,sprite_facile[i]);
+        break;
+
         case 'S':/* stampo sprite 'space' */
             attron(COLOR_PAIR(1));
             for(i=0;i<7;i++)
