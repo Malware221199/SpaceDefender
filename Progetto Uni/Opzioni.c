@@ -157,53 +157,52 @@ void nemici(int *nnemici){
 void difficulty(int *difficolta) {
   clear();              /* cancello la pagina */
   refresh();            /* refresho la pagina */
-  int proiettili[4] = {0,1,2,4};  /*stringa opzioni */
+  int proiettili[4] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
   int i,altezza=0;    /* altezza cursore */                          
   bool esci;
   while(esci==false){
-    for(i=0;i<4;i++){
+    stampasprite(1,MAXX/2-20,'S');  /* stampo sprite 'space' */
+    stampasprite(8,MAXX/2-29,'D');  /* stampo sprite 'defender' */
+
+    for(i=0;i<3;i++){
+
       if(i==0){
         if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Indietro");
-        attroff(A_REVERSE);
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-9,MAXX/2-14,'L');
+        attroff(COLOR_PAIR(1));
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Indietro");
+        attron(COLOR_PAIR(3));
+        stampasprite(MAXY-9,MAXX/2-14,'L');
+        attroff(COLOR_PAIR(3));
         }
       }
 
       if(i==1){
         if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Difficile");
-        attroff(A_REVERSE);
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-6,MAXX/2-11,'M');
+        attroff(COLOR_PAIR(1));
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Difficile");
+        attron(COLOR_PAIR(3));
+        stampasprite(MAXY-6,MAXX/2-11,'M');
+        attroff(COLOR_PAIR(3));
         }
       }
 
       if(i==2){
         if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Medio");
-        attroff(A_REVERSE);
+        attron(COLOR_PAIR(1));
+        stampasprite(MAXY-3,MAXX/2-17,'F');
+        attroff(COLOR_PAIR(1));
         }
         else{
-        mvprintw(i+MAXY/2,MAXX/2,"Medio");
-        }
-      }
-
-      if(i==3){
-        if(i == altezza){
-        attron(A_REVERSE);
-        mvprintw(i+MAXY/2,MAXX/2,"Facile");
-        attroff(A_REVERSE);
-        }
-        else{
-        mvprintw(i+MAXY/2,MAXX/2,"Facile");
+        attron(COLOR_PAIR(3));
+        stampasprite(MAXY-3,MAXX/2-17,'F');
+        attroff(COLOR_PAIR(3));
         }
       }
     }
@@ -218,7 +217,7 @@ void difficulty(int *difficolta) {
         break;
       case DW:
         altezza++;
-        if(altezza == 4)
+        if(altezza == 3)
           altezza = 2;
         break;
       case ENTER:
@@ -229,20 +228,16 @@ void difficulty(int *difficolta) {
   }
 
   switch (altezza){
-    
-    case 0: /*Indietro */
-      return;
-    break;
 
-    case 1: /*Difficile*/
+    case 0: /*Difficile*/
         *difficolta=DELAYV;  
     break;
 
-    case 2: /*Medio*/
+    case 1: /*Medio*/
         *difficolta=DELAYM; 
     break;
 
-    case 3: /*Facile*/
+    case 2: /*Facile*/
         *difficolta=DELAYL; 
     break;
   
