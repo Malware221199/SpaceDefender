@@ -105,7 +105,7 @@ void nemici(int *nnemici){
   while(1){
     clear();              /* cancello la pagina */
     refresh();            /* refresho la pagina */
-    stampasprite(10,MAXX/2-26,'Q');
+    stampasprite(8,MAXX/2-26,'C');
     
     switch(n){
       case 2:
