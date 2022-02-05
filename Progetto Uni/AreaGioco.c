@@ -124,7 +124,7 @@ void area(int pipein,int nnemici){
             ---------------------------------------------------------------------- 
             /* Cancello il precedente carattere visualizzato */
             else if(dato_letto.c=='H'){
-                //cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,'B');
+                cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
               /*  bulletn[dato_letto.id].id=dato_letto.id;
