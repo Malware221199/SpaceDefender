@@ -12,9 +12,9 @@ int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
 if(id==0||id==1) Alieni.x= MAXX-(GSA+DA);
 if(id==2||id==3) Alieni.x= MAXX-(GSA+DA)*2;
-if(id==4||id==5) Alieni.x= MAXX-15;
-if(id==6||id==7) Alieni.x= MAXX-20;
-if(id==8||id==9) Alieni.x= MAXX-25;
+if(id==4||id==5) Alieni.x= MAXX-(GSA+DA)*3;
+if(id==6||id==7) Alieni.x= MAXX-(GSA+DA)*4;
+if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
   if(id%2==0){
     Alieni.y=(MAXY/4);
     r++;
@@ -31,7 +31,7 @@ if(id==8||id==9) Alieni.x= MAXX-25;
   while(1){
 
     /* Movimento Y */
-    Alieni.y += deltay;
+    /*Alieni.y += deltay;
     int ciao;
     ciao++;
     mvprintw(0,60,"ciao %d",ciao);
@@ -40,7 +40,7 @@ if(id==8||id==9) Alieni.x= MAXX-25;
     if(ciao < 0 || ciao > 4){
       ciao = -ciao;
       deltay = -deltay;
-    }
+    }*/
     
     /* Movimento X */
     Alieni.x -= deltax;

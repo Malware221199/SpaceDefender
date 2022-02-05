@@ -115,6 +115,9 @@ void area(int pipein,int nnemici){
                     }
                 }
             }
+            for(i=0;i<11;i++){
+                if(bullet[dato_letto.id].x == (alieni[i].x) && bullet[dato_letto.id].y == (alieni[i].y)) alienimorti++;
+            }
             
             /* Visualizzo le vite rimaste al contadino */
             cancellasprite(0,1,'V');
