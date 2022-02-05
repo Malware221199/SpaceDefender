@@ -107,7 +107,7 @@ void nemici(int *nnemici){
     refresh();            /* refresho la pagina */
     mvprintw(MAXY/2,MAXX/2,"Numero nemici: %d",n);
     
-    /*switch(n){
+    switch(n){
       case 2:
         attron(COLOR_PAIR(1));
         stampasprite(MAXY-9,MAXX/2-4,'Q');
@@ -137,7 +137,7 @@ void nemici(int *nnemici){
         stampasprite(MAXY-9,MAXX/2-8,'1');
         attroff(COLOR_PAIR(1));
       break;
-    }*/
+    }
 
     s = getch();
     switch(s){
