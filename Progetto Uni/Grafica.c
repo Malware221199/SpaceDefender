@@ -23,6 +23,12 @@ void stampasprite(int y,int x,char c){
             attroff(COLOR_PAIR(4));
         break;
 
+        case 'H':/* Visualizzo il proiettile alleato*/
+            attron(COLOR_PAIR(4));
+            mvprintw(y,x,"-");
+            attroff(COLOR_PAIR(4));
+        break;
+
         case 'U':/* stampo sprite 'gioca' */
             for(i=0;i<2;i++)
                 mvaddstr(y+i,x,sprite_gioca[i]);
