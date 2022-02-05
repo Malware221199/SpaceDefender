@@ -74,7 +74,7 @@ void area(int pipein,int nnemici){
             Gesione proiettili giocatore
             ---------------------------------------------------------------------- 
             */
-            else if(dato_letto.c=='H'){
+            else if(dato_letto.c=='B'){
 
                 /* Cancello il precedente carattere visualizzato */
                 cancellasprite(bulletg[dato_letto.id].y,bulletg[dato_letto.id].x,dato_letto.c);
@@ -123,7 +123,7 @@ void area(int pipein,int nnemici){
             Gesione proiettili nemico
             ---------------------------------------------------------------------- 
             */
-            else if(dato_letto.c=='B'){
+            else if(dato_letto.c=='K'){
                 /*Cancello il precedente carattere visualizzato */
                 cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
                 
