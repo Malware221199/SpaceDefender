@@ -13,7 +13,7 @@ int deltay=1;		/* Spostamento verticale */
   Alieni.x= MAXX-((2+3)*r);
   if(id%2==0){
     Alieni.y=(MAXY/4);
-    //r++;
+    r++;
   }
   else if (id%2==1) Alieni.y=MAXY-(MAXY/4)-3;
   
