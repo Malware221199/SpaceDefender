@@ -12,7 +12,7 @@ int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
   Alieni.x= MAXX-5;/*MAXX-((2+3)*r*/
   if(id%2==0){
-    Alieni.y=0+MAXY/4;
+    Alieni.y=0+(MAXY/4);
     //r++;
   }
 
