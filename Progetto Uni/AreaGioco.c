@@ -98,12 +98,11 @@ void area(int pipein,int nnemici){
                     bullet[dato_letto.id].y=DEADY-10;
                 }
                 /* Collisioni proiettili con alieni*/
+                int exit=0;
                 for(i=0;i<11;i++){
-                    if(bullet[dato_letto.id].x == (alieni[i].x) && bullet[dato_letto.id].y == (alieni[i].y)){
-                    alienimorti++;
                     mvprintw(0,25,"Alieni morti %d",alienimorti);}
-                    for(j=0;j<3;j++){
-                        for(k=0;k<3;k++){
+                    for(j=0;j<GSA;j++){
+                        for(k=0;k<GSA;k++){
                             if(bullet[dato_letto.id].x == (alieni[i].x)+k && bullet[dato_letto.id].y == (alieni[i].y)+j){
                                 kill(bullet[dato_letto.id].pid,1);
                                 kill(alieni[alieni[i].id].pid,1);
@@ -112,6 +111,10 @@ void area(int pipein,int nnemici){
                                 bullet[dato_letto.id].x=DEADX;
                                 alieni[i].y=DEADY;
                                 alieni[i].x=DEADX;
+                                if(exit==0){
+                                    alienimorti++;
+                                    exit=1;
+                                }
                                 
                                 
                                 
@@ -120,9 +123,6 @@ void area(int pipein,int nnemici){
                     }
                 }
             }
-            //for(i=0;i<11;i++){
-            //    if(bullet[dato_letto.id].x == (alieni[i].x) && bullet[dato_letto.id].y == (alieni[i].y)) alienimorti++;
-            //}
 
             /* Visualizzo le vite rimaste al contadino */
             cancellasprite(0,1,'V');
