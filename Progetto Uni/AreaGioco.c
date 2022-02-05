@@ -123,17 +123,17 @@ void area(int pipein,int nnemici){
             Gesione proiettili nemico
             ---------------------------------------------------------------------- 
             /* Cancello il precedente carattere visualizzato */
-            else if(dato_letto.c=='H'){
-                //cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
+            else if(dato_letto.c=='B'){
+                cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
 
-                /* Aggiorno le coordinate relative alla nuova posizione */
+                /*Aggiorno le coordinate relative alla nuova posizione */
                 bulletn[dato_letto.id].id=dato_letto.id;
-                //bulletn[dato_letto.id].y=dato_letto.y;
-                //bulletn[dato_letto.id].x=dato_letto.x;
-               //bulletn[dato_letto.id].pid=dato_letto.pid;
+                bulletn[dato_letto.id].y=dato_letto.y;
+                bulletn[dato_letto.id].x=dato_letto.x;
+                bulletn[dato_letto.id].pid=dato_letto.pid;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-               // stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
             }
 
 
