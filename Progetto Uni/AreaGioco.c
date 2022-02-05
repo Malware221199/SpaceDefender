@@ -127,7 +127,7 @@ void area(int pipein,int nnemici){
                 //cancellasprite(bulletn[dato_letto.id].y,bulletn[dato_letto.id].x,dato_letto.c);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
-                //bulletn[dato_letto.id].id=dato_letto.id;
+                bulletn[dato_letto.id].id=dato_letto.id;
                 //bulletn[dato_letto.id].y=dato_letto.y;
                 //bulletn[dato_letto.id].x=dato_letto.x;
                //bulletn[dato_letto.id].pid=dato_letto.pid;
