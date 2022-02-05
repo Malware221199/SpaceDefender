@@ -10,7 +10,9 @@ struct position Alieni;
 int r=1;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
-  Alieni.x= MAXX-((2+3)*r);
+if(id==1||id==2) Alieni.x= MAXX-5);
+
+if(id==3||id==4) Alieni.x= MAXX-10);
   if(id%2==0){
     Alieni.y=(MAXY/4);
     r++;
