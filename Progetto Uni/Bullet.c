@@ -44,7 +44,7 @@ void bullet(int pipeout,int id,int cgy,int cgx){
         write(pipeout,&Bullet,sizeof(Bullet));
 
             /* Inserisco una pausa per rallentare il movimento */
-        usleep(10000);
+        usleep(100000);
   }
 
 
