@@ -53,27 +53,27 @@ void bulletg(int pipeout,int id,int cgy,int cgx){
 ---------------------------------------------------------------------- 
 */
 void bulletn(int pipeout,int id,int ay,int ax){
-    struct position Bullet;
+    struct position Bulletn;
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
-    Bullet.x = ax-1;  /* Coordinata X iniziale */
-    Bullet.y = ay+1;  /* Coordinata Y iniziale */
-    Bullet.c ='H';	/* Carattere identificativo */
-    Bullet.id =id; /* Numero dell elemento */
-    Bullet.pid=getpid(); /*Pid processo*/
+    Bulletn.x = ax-1;  /* Coordinata X iniziale */
+    Bulletn.y = ay+1;  /* Coordinata Y iniziale */
+    Bulletn.c ='H';	/* Carattere identificativo */
+    Bulletn.id =id; /* Numero dell elemento */
+    Bulletn.pid=getpid(); /*Pid processo*/
     
 
     
 
     /* Comunico le coordinate iniziali al processo padre */
-    write(pipeout,&Bullet,sizeof(Bullet));
+    write(pipeout,&Bulletn,sizeof(Bulletn));
 
     while(1){
         /* Movimento X */
-        Bullet.x -= deltax;
+        Bulletn.x -= deltax;
 
         /* Comunico le coordinate correnti al processo padre */
-        write(pipeout,&Bullet,sizeof(Bullet));
+        write(pipeout,&Bulletn,sizeof(Bulletn));
 
             /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
