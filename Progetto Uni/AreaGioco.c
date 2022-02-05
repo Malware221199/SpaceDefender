@@ -98,7 +98,6 @@ void area(int pipein,int nnemici){
                     bullet[dato_letto.id].y=DEADY;
                 }
                 /* Collisioni proiettili con alieni*/
-                int exit=0;
                 for(i=0;i<11;i++){
                     for(j=0;j<3;j++){
                         for(k=0;k<3;k++){
@@ -111,14 +110,11 @@ void area(int pipein,int nnemici){
                                 alieni[i].y=DEADY;
                                 alieni[i].x=DEADX;
                                 alienimorti++;
-                                exit=1;
                                 mvprintw(0,25,"Alieni morti %d",alienimorti);
-                                break;
+                                
                             }
                         }
-                        if(exit=1) break;
                     }
-                    if(exit=1) break;
                 }
             }
             //for(i=0;i<11;i++){
