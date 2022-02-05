@@ -45,7 +45,7 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
     /* Movimento X */
     Alieni.x -= deltax;
 
-    if (random() < RAND_MAX/2){
+    if (random() < RAND_MAX/10){
       idbn++;
       pidBN=fork();
       if(pidBN==0) {
