@@ -92,7 +92,7 @@ void area(int pipein,int nnemici){
                 /* Collisioni proiettili con MAXX*/
                 if (bulletg[dato_letto.id].x>MAXX){
                     kill(bulletg[dato_letto.id].pid,1);
-                    cancellasprite(bulletg[dato_letto.id].y,bulletg[dato_letto.id].x,'A');
+                    cancellasprite(bulletg[dato_letto.id].y,bulletg[dato_letto.id].x,'B');
                     bulletg[dato_letto.id].x=DEADXB;
                     bulletg[dato_letto.id].y=DEADYB;
                 }
