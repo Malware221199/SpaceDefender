@@ -92,7 +92,14 @@ void *giocatore(void *arg)
         if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
         endwin();
         exit;
-        }   
+        }
+        idbg++;
+      /* Creo il thread bullet giocatore */
+        if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
+        endwin();
+        exit;
+        }
+
     }
 
   }
