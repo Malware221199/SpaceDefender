@@ -11,7 +11,7 @@
 int main(){
     pthread_t talieni;
     pthread_t tgiocatore;
-    int nnemici=2;
+    int nnemici=2,i;
     int difficolta=DELAYM;
     setlocale(LC_ALL, "");
     initscr();			/* Inizializza schermo di output */
