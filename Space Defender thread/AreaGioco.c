@@ -197,13 +197,27 @@ void area(void){
             cancellasprite(BN[Bulletn.id].x,BN[Bulletn.id].x,Bulletn.c);
             stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
 
+            /*
+            ----------------------------------------------------------------------
+            Collisioni
+            ---------------------------------------------------------------------- 
+            */
 
-
-
-
-
-
-
+            /* Collisioni Alieni*/
+            if(Alieni.x<10){
+                vite--;
+                cancellasprite(Alieni.y,Alieni.x,Alieni.c);
+                Alieni.y=DEADYA;
+                Alieni.x=DEADXA;
+                alienimorti++;
+            }
+                
+            /* Collisioni proiettili con MAXX*/
+            if (Bulletg.x>MAXX){
+                cancellasprite(Bulletg.y,Bulletg.x,Bulletg.c);
+                Bulletg.x=DEADXB;
+                Bulletg.y=DEADYB;
+            }
             
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
