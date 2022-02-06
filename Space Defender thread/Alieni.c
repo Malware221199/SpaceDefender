@@ -37,7 +37,7 @@ while(!collision){
     
   if (random() < RAND_MAX/10){
     idbn++;
-    bulletn();
+    bulletn;
     }
   }
     
