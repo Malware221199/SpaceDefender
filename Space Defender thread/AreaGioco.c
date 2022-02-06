@@ -75,8 +75,8 @@ void *giocatore(void *arg)
   
   
   while(!collision){
-      G.x=Giocatore.x;
-      G.y=Giocatore.y;
+      G.old_cord.x=Giocatore.x;
+      G.old_cord.y=Giocatore.y;
       G.id=Giocatore.id;
 
 
@@ -126,8 +126,8 @@ void *bulletg(void *arg){
     
 
     while(!collision){
-        BG[Bulletg.id].x=Bulletg.x;
-        BG[Bulletg.id].y=Bulletg.y;
+        BG[Bulletg.id].old_cord.x=Bulletg.x;
+        BG[Bulletg.id].old_cord.y=Bulletg.y;
         BG[Bulletg.id].id=Bulletg.id;
 
     
@@ -169,8 +169,8 @@ void *bulletn(void *arg){
     Bulletn.id =idbn; /* Numero dell elemento */
     
     while(!collision){
-        BN[Bulletg.id].x=Bulletn.x;
-        BN[Bulletg.id].y=Bulletn.y;
+        BN[Bulletg.id].old_cord.x=Bulletn.x;
+        BN[Bulletg.id].old_cord.y=Bulletn.y;
         BN[Bulletg.id].id=Bulletn.id;
 
         /* Movimento X */
@@ -205,16 +205,22 @@ void area(void){
             pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
+            pthread_mutex_lock(&mgiocatore);
             cancellasprite(G.y,G.x,Giocatore.c);
             stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
+            pthread_mutex_unlock(&mgiocatore);
 
             /*Bullet giocatore*/
+            pthread_mutex_lock(&mbulletg);
             cancellasprite(BG[Bulletg.id].y,BG[Bulletg.id].x,Bulletg.c);
             stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
+            pthread_mutex_unlock(&mbulletg);
 
             /*Bullet nemici*/
+            pthread_mutex_lock(&mbulletn);
             cancellasprite(BN[Bulletn.id].y,BN[Bulletn.id].x,Bulletn.c);
             stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
+            pthread_mutex_unlock(&mbulletn);
 
             /*
             ----------------------------------------------------------------------
