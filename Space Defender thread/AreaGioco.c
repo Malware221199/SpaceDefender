@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <curses.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <locale.h>
-#include <pthread.h>
+#include "Utility.h"
 
 /*
 ----------------------------------------------------------------------

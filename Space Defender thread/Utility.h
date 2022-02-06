@@ -36,12 +36,12 @@
 ----------------------------------------------------------------------
 */
 int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
-int idbg=0;     /* id proiettili giocatore*/
-int idbn=0;     /* id proiettili nemici*/
-int ida=0;
-int nnemici=2;
-int difficolta = DELAYM;
-int collision=0;
+extern int idbg;     /* id proiettili giocatore*/
+extern int idbn;     /* id proiettili nemici*/
+extern int ida;
+extern int nnemici;
+extern int difficolta;
+extern int collision;
 
 
 
