@@ -4,8 +4,7 @@ pthread_t tbulletn;
 int idbg=0;     /* id proiettili giocatore*/
 int idbn=0;     /* id proiettili nemici*/
 int ida=0;
-int nnemici=2;
-int difficolta=DELAYM;
+
 int collision=0;
 save A[11];
 save BG[30];
@@ -18,35 +17,36 @@ save G;
 */
 
 void *alieni(void *arg){
-int deltax=1;		/* Spostamento orizzontale */
-int deltay=1;		/* Spostamento verticale */
-if(Alieni.id==0||Alieni.id==1) Alieni.x= MAXX-(GSA+DA);
-if(Alieni.id==2||Alieni.id==3) Alieni.x= MAXX-(GSA+DA)*2;
-if(Alieni.id==4||Alieni.id==5) Alieni.x= MAXX-(GSA+DA)*3;
-if(Alieni.id==6||Alieni.id==7) Alieni.x= MAXX-(GSA+DA)*4;
-if(Alieni.id==8||Alieni.id==9) Alieni.x= MAXX-(GSA+DA)*5;
-if(Alieni.id%2==0) Alieni.y=(MAXY/4);
-else if (Alieni.id%2==1) Alieni.y=MAXY-(MAXY/4)-3;
-  
-Alieni.c ='A';	/* Carattere identificativo */
-Alieni.id =ida; /* Numero dell elemento */
+    ida++;
+    int deltax=1;		/* Spostamento orizzontale */
+    int deltay=1;		/* Spostamento verticale */
+    if(Alieni.id==0||Alieni.id==1) Alieni.x= MAXX-(GSA+DA);
+    if(Alieni.id==2||Alieni.id==3) Alieni.x= MAXX-(GSA+DA)*2;
+    if(Alieni.id==4||Alieni.id==5) Alieni.x= MAXX-(GSA+DA)*3;
+    if(Alieni.id==6||Alieni.id==7) Alieni.x= MAXX-(GSA+DA)*4;
+    if(Alieni.id==8||Alieni.id==9) Alieni.x= MAXX-(GSA+DA)*5;
+    if(Alieni.id%2==0) Alieni.y=(MAXY/4);
+    else if (Alieni.id%2==1) Alieni.y=MAXY-(MAXY/4)-3;
+    
+    Alieni.c ='A';	/* Carattere identificativo */
+    Alieni.id =ida; /* Numero dell elemento */
 
-while(!collision){
-    A[Alieni.id].x=Alieni.x;
-    A[Alieni.id].y=Alieni.y;
-    A[Alieni.id].id=Alieni.id;
+    while(!collision){
+        A[Alieni.id].x=Alieni.x;
+        A[Alieni.id].y=Alieni.y;
+        A[Alieni.id].id=Alieni.id;
 
-    /* Movimento X */
-    Alieni.x -= deltax;
-	
-    //if (random() < RAND_MAX/10){
-    //idbn++;
-    //bulletn;
-    //}
-  
-    /* Inserisco una pausa per rallentare il movimento */
-    usleep(difficolta);
-    }
+        /* Movimento X */
+        Alieni.x -= deltax;
+        
+        //if (random() < RAND_MAX/10){
+        //idbn++;
+        //bulletn;
+        //}
+    
+        /* Inserisco una pausa per rallentare il movimento */
+        usleep(DELAYM);
+        }
 }
 
 
@@ -124,13 +124,13 @@ void *bulletg(void *arg){
         BG[Bulletg.id].y=Bulletg.y;
         BG[Bulletg.id].id=Bulletg.id;
 
-
+        pthread_mutex_lock(&mstampa);
         //if(Bulletg.id%2==0){
             /* Movimento Y */
             Bulletg.y += deltay;
             /* Se supero area Y schermo inverte il movimento */
             if(Bulletg.y + deltay < 0 || Bulletg.y + deltay > MAXY-1) deltay = -deltay;
-            
+         pthread_mutex_unlock(&mstampa);   
         //}
         //else{
             /* Movimento Y */

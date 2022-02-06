@@ -11,6 +11,8 @@
 int main(){
     pthread_t talieni;
     pthread_t tgiocatore;
+    int nnemici=2;
+    int difficolta=DELAYM;
     setlocale(LC_ALL, "");
     initscr();			/* Inizializza schermo di output */
     start_color();
@@ -34,20 +36,21 @@ int main(){
 
         
 
-    //if ( menu(&nnemici,&difficolta) == 0){   /* Entro nella funzione Menu*/
-       // clear();
-        //refresh();
-       // return 0;        /*Esce dal programma se nella funzione 'Menu' si seleziona 'Esci'*/
-   // }
+    if ( menu(&nnemici,&difficolta) == 0){   /* Entro nella funzione Menu*/
+        clear();
+        refresh();
+        return 0;        /*Esce dal programma se nella funzione 'Menu' si seleziona 'Esci'*/
+    }
     clear();
     refresh();
         
     /* Creo il thread alieni */
-    if(pthread_create(&talieni, NULL, alieni, NULL)){
-        endwin();
-        exit;
+    for(i=0;i<nnemici;i++){
+        if(pthread_create(&talieni, NULL, alieni, NULL)){
+            endwin();
+            exit;
+        }
     }
-
      /* Creo il thread giocatore */
     if(pthread_create(&tgiocatore, NULL, giocatore, NULL)){
         endwin();
