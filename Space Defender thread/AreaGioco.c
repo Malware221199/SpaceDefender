@@ -31,13 +31,16 @@ void *alieni(void *arg){
     Alieni.id =ida; /* Numero dell elemento */
 
     while(!collision){
+        pthread_mutex_lock(&malieni);
         A[Alieni.id].x=Alieni.x;
         A[Alieni.id].y=Alieni.y;
         A[Alieni.id].id=Alieni.id;
+        pthread_mutex_unlock(&malieni);
 
+        pthread_mutex_lock(&malieni);
         /* Movimento X */
         Alieni.x -= deltax;
-        
+        pthread_mutex_unlock(&malieni);
         //if (random() < RAND_MAX/10){
         //idbn++;
         //bulletn;
@@ -191,9 +194,11 @@ void area(void){
 
         do {
             /*Alieni*/
+            pthread_mutex_lock(&malieni);
             cancellasprite(A[Alieni.id].y,A[Alieni.id].x,Alieni.c);
             stampasprite(Alieni.y,Alieni.x,Alieni.c);
-
+            pthread_mutex_unlock(&malieni);
+            
             /*Giocatore*/
             cancellasprite(G.y,G.x,Giocatore.c);
             stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);

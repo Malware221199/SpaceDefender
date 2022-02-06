@@ -31,8 +31,12 @@ int main(){
     attron(COLOR_PAIR(4));
         
     /* Inizializzo mutex */
-    pthread_mutex_init(&mstampa, NULL); 
-    pthread_mutex_init(&mcancella, NULL); 
+    pthread_mutex_init(&malieni, NULL); 
+    pthread_mutex_init(&mgiocatore, NULL); 
+    pthread_mutex_init(&mbulletg, NULL); 
+    pthread_mutex_init(&mbulletn, NULL); 
+    //pthread_mutex_init(&mstampa, NULL); 
+    
 
         
 
@@ -65,8 +69,10 @@ int main(){
 	pthread_join (tgiocatore, NULL);	
 
 	/* Elimino mutex */
-    pthread_mutex_destroy (&mstampa);
-    pthread_mutex_destroy (&mcancella);				
+    pthread_mutex_destroy (&malieni);
+    pthread_mutex_destroy (&mgiocatore);
+    pthread_mutex_destroy (&mbulletg); 
+    pthread_mutex_destroy (&mbulletn); 				
 
     /* Ripristino la modalità di funzionamento usuale */
     endwin();
