@@ -60,8 +60,8 @@ int main(){
     /* Attendo la terminazione dei thread */
     pthread_join (talieni, NULL);		
 	pthread_join (tgiocatore, NULL);
-    //pthread_join (tbulletg, NULL);
-    //pthread_join (tbulletn, NULL);		
+    pthread_join (tbulletg, NULL);
+    pthread_join (tbulletn, NULL);		
 
 	/* Elimino mutex */
     pthread_mutex_destroy (&mstampa);
