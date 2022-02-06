@@ -206,20 +206,20 @@ void area(void){
             }
             /*Giocatore*/
             pthread_mutex_lock(&mgiocatore);
-            cancellasprite(G.y,G.x,Giocatore.c);
-            stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
+            cancellasprite(G.old_cord.y,G.old_cord.x,Giocatore.c);
+            stampasprite(G.cord.y,G.cord.x,Giocatore.c);
             pthread_mutex_unlock(&mgiocatore);
 
             /*Bullet giocatore*/
             pthread_mutex_lock(&mbulletg);
-            cancellasprite(BG[Bulletg.id].y,BG[Bulletg.id].x,Bulletg.c);
-            stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
+            cancellasprite(BG[Bulletg.id].old_cord.y,BG[Bulletg.id].old_cord.x,Bulletg.c);
+            stampasprite(BG[Bulletg.id].cord.y,BG[Bulletg.id].cord.x,Bulletg.c);
             pthread_mutex_unlock(&mbulletg);
 
             /*Bullet nemici*/
             pthread_mutex_lock(&mbulletn);
-            cancellasprite(BN[Bulletn.id].y,BN[Bulletn.id].x,Bulletn.c);
-            stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
+            cancellasprite(BN[Bulletn.id].old_cord.y,BN[Bulletn.id].old_cord.x,Bulletn.c);
+            stampasprite(BN[Bulletn.id].cord.y,BN[Bulletn.id].cord.x,Bulletn.c);
             pthread_mutex_unlock(&mbulletn);
 
             /*
