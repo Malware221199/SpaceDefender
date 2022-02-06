@@ -7,8 +7,8 @@
 void *bulletg(void *arg){
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
-    Bulletg.x = giocatore.x+7;  /* Coordinata X iniziale */
-    Bulletg.y = giocatore.y+2;  /* Coordinata Y iniziale */
+    Bulletg.x = Giocatore.x+7;  /* Coordinata X iniziale */
+    Bulletg.y = Giocatore.y+2;  /* Coordinata Y iniziale */
     Bulletg.c ='B';	/* Carattere identificativo */
     Bulletg.id =idb; /* Numero dell elemento */
     
