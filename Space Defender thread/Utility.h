@@ -36,7 +36,8 @@
 ----------------------------------------------------------------------
 */
 int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
-
+extern int nnemici;
+extern int difficolta;
 
 
 /*

@@ -196,6 +196,7 @@ void area(void){
         do {
             /*Alieni*/
             pthread_mutex_lock(&malieni);
+            for(i=0;i<2;i++){
             cancellasprite(A[Alieni.id].y,A[Alieni.id].x,Alieni.c);
             stampasprite(Alieni.y,Alieni.x,Alieni.c);
             pthread_mutex_unlock(&malieni);
