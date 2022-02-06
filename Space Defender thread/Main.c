@@ -1,7 +1,7 @@
 #include "Utility.h"
 
-int nnemici=2,i;
-    int difficolta=DELAYM;
+int nnemici=1,i;
+int difficolta=DELAYM;
 
 /*
 ----------------------------------------------------------------------
