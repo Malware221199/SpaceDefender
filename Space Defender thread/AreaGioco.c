@@ -209,7 +209,7 @@ void area(void){
                 cancellasprite(Alieni.y,Alieni.x,Alieni.c);
                 Alieni.y=DEADYA;
                 Alieni.x=DEADXA;
-                alienimorti++;
+                //alienimorti++;
             }
                 
             
