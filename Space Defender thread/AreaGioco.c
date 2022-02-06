@@ -48,7 +48,7 @@ void *alieni(void *arg){
         //}
     
         /* Inserisco una pausa per rallentare il movimento */
-        //usleep(DELAYM);
+        usleep(DELAYM);
         }
 }
 
