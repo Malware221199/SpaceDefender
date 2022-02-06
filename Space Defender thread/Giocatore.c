@@ -4,7 +4,7 @@
  Funzione 'giocatore' - Movimento tramite i tasti cursore 
 ----------------------------------------------------------------------
 */
-void giocatore(void *arg)
+void *giocatore(void *arg)
 {
   int maxb=10; /*massimo proiettili disponibili*/
 

@@ -4,7 +4,7 @@
  Funzione 'Bullet giocatore'
 ---------------------------------------------------------------------- 
 */
-void bulletg(void *arg){
+void *bulletg(void *arg){
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
     Bulletg.x = giocatore.x+7;  /* Coordinata X iniziale */
@@ -49,7 +49,7 @@ void bulletg(void *arg){
  Funzione 'Bullet nemico'
 ---------------------------------------------------------------------- 
 */
-void bulletn(void *arg){
+void *bulletn(void *arg){
     int deltax=1;		/* Spostamento orizzontale */
     Bulletn.x = Alieni.x-1;  /* Coordinata X iniziale */
     Bulletn.y = Alieni.y+1;  /* Coordinata Y iniziale */
