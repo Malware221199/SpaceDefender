@@ -203,7 +203,7 @@ void area(void){
             //pthread_mutex_lock(&malieni);
             //for(i=0;i<nnemici;i++){
             //cancellasprite(A[0].old_cord.y,A[0].old_cord.x,'A');
-            stampasprite(MAXY/2,MAXX,'A');
+            stampasprite(MAXY/2,MAXX-5,'A');
             //pthread_mutex_unlock(&malieni);
             //}
             /*Giocatore*/
