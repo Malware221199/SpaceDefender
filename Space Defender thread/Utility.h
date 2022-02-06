@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
+#include <pthread.h>
+
 
 
 
@@ -34,23 +36,20 @@
 ----------------------------------------------------------------------
 */
 int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
-int p[2];				/* Descrittori pipe */  
-int pidA;   		/* Pid processo figlio 'Alieni' */
-int pidG;	      /* Pid processo figlio 'Giocatore' */
-int pidB1;	      /* Pid processo figlio 'Bullet uno' */
-int pidB2;	      /* Pid processo figlio 'Bullet due' */
-int pidBN;	      /* Pid processo figlio 'Bullet nemico' */
+int idbg=0;     /* id proiettili giocatore*/
+int idbn=0;     /* id proiettili nemici*/
+int collision=0;
 
 /*
 ----------------------------------------------------------------------
  Funzioni
 ----------------------------------------------------------------------
 */
-void alieni(int pipeout,int id,int nnemici,int difficolta);
-void giocatore(int pipeout);
-void bulletg(int pipeout,int id,int cgy,int cgx);
-void bulletn(int pipeout,int id,int ay,int ax);
-void areaGioco(int pipein,int nnemici);
+void alieni(void *arg);
+void giocatore(void *arg);
+void bulletg(void *arg);
+void bulletn(void *arg);
+void areaGioco(void *arg);
 int menu(int *nnemici,int *difficolta);
 int opzioni(int *nnemici,int *difficolta);
 void difficulty(int *difficolta);
@@ -69,14 +68,10 @@ struct position {
   int  x;	 /* Coordinata X */
   int  y;	 /* Coordinata Y */
   int  id;  /* Numero dell elemento */
-  int pid;  /*Pid processo*/
+  
 };
-/* Struttura adoperata per salvare le coordinate*/
-typedef struct 
-{
-  int x;    /* Coordinata X */
-  int y;    /* Coordinata Y */
-  int id;   /* Numero dell elemento */
-  int pid;  /*Pid processo*/
-}save;
 
+struct position Alieni;
+struct position giocatore;
+struct position Bulletg;
+struct position Bulletn;

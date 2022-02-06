@@ -4,25 +4,25 @@
  Funzione 'giocatore' - Movimento tramite i tasti cursore 
 ----------------------------------------------------------------------
 */
-void giocatore(int pipeout)
+void giocatore(void *arg)
 {
-  struct position giocatore;
-  int idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
+  int maxb=10; /*massimo proiettili disponibili*/
 
   
   giocatore.x = 2;       /* Coordinata X iniziale */
   giocatore.y = MAXY/2-2;   /* Coordinata Y iniziale */
   giocatore.c='G';	    /* Carattere identificativo giocatore*/
   giocatore.id=1;   /* Numero dell elemento */
-  giocatore.pid=getpid();  /*Pid processo*/
 
-
-  /* Comunico al processo padre le coordinate iniziali del giocatore */
-  write(pipeout,&giocatore,sizeof(giocatore));
   
   /* Lettura dei tasti cursore */
-  while(1)
-  {
+  while(!collision){
+    /* Blocco mutex, cancello ultimo carattere e sblocco mutex */
+	  pthread_mutex_lock(&mtx);			
+    cancellasprite(Alieni.y,Alieni.x,Alieni.c);
+	  pthread_mutex_unlock(&mtx);
+
+
   		char c;
     c = getch();
 
@@ -36,26 +36,17 @@ void giocatore(int pipeout)
 
     if(c==SPC){
       idb++;
-      pidB1=fork();
-      
-      if(pidB1==0) {
-        close(p[0]); /* chiusura del descrittore di lettura */
-        bulletg(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
-      }	
+        bulletg(); /* invocazione funzione bullet */
       idb++;
-      /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
-      pidB2=fork();
-      /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
-      if(pidB2==0) {
-        /* ed eseguo quindi la relativa funzione di gestione */
-        close(p[0]); /* chiusura del descrittore di lettura */
-        bulletg(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */ 
-        }
+        bulletg(); /* invocazione funzione bullet */ 
       
     }
 
-    /* Comunico al processo padre le coordinate del giocatore */
-    write(pipeout,&giocatore,sizeof(giocatore)); 
+  /* Blocco mutex, disegno carattere, aggiorno schermo e sblocco mutex */
+	pthread_mutex_lock(&mtx);			
+  stampasprite(Alieni.y,Alieni.x,Alieni.c);
+	refresh();																							
+	pthread_mutex_unlock(&mtx); 
 
   }
 }
