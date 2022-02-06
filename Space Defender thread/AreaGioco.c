@@ -67,9 +67,9 @@ void *giocatore(void *arg)
   
   
   while(!collision){
-      G.x=Giocatore.x
-      G.y=Giocatore.y
-      G.id=Giocatore.id
+      G.x=Giocatore.x;
+      G.y=Giocatore.y;
+      G.id=Giocatore.id;
 
 
     /* Lettura dei tasti cursore */
