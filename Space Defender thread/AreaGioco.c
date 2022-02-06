@@ -200,7 +200,7 @@ void area(void){
             cancellasprite(A[Alieni.id].y,A[Alieni.id].x,Alieni.c);
             stampasprite(Alieni.y,Alieni.x,Alieni.c);
             pthread_mutex_unlock(&malieni);
-
+            }
             /*Giocatore*/
             cancellasprite(G.y,G.x,Giocatore.c);
             stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
