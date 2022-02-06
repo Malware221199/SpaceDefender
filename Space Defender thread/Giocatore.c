@@ -35,7 +35,7 @@ void *giocatore(void *arg)
     }
 
     if(c==SPC){
-      idb++;
+      idbg++;
         bulletg; /* invocazione funzione bullet */
       idb++;
         bulletg; /* invocazione funzione bullet */ 
