@@ -49,12 +49,14 @@ int main(){
     refresh();
         
     /* Creo il thread alieni */
+    pthread_mutex_lock(&malieni);
     for(i=0;i<nnemici;i++){
         if(pthread_create(&talieni, NULL, alieni, NULL)){
             endwin();
             exit;
         }
     }
+    pthread_mutex_unlock(&malieni);
      /* Creo il thread giocatore */
     if(pthread_create(&tgiocatore, NULL, giocatore, NULL)){
         endwin();
