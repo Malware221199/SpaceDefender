@@ -57,7 +57,6 @@ void difficulty(int *difficolta);
 void nemici(int *nnemici);
 void stampasprite(int y,int x,char c);
 void cancellasprite(int y,int x,char c);
-void gen_bullet(int y,int x,int id);
 
 /*
 ----------------------------------------------------------------------
