@@ -50,7 +50,7 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
       pidBN=fork();
       if(pidBN==0) {
       close(p[0]);
-      bulletn(p[1],idbn,MAXY/2,MAXX-3);
+      bulletn(p[1],idbn,MAXY/2,Alieni.x);
       }
     }
     /* Comunico le coordinate correnti al processo padre */
