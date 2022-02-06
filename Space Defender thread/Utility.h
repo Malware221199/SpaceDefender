@@ -40,6 +40,7 @@ int idbg=0;     /* id proiettili giocatore*/
 int idbn=0;     /* id proiettili nemici*/
 int collision=0;
 
+
 /*
 ----------------------------------------------------------------------
  Funzioni
@@ -75,3 +76,6 @@ struct position Alieni;
 struct position Giocatore;
 struct position Bulletg;
 struct position Bulletn;
+
+/* Mutex per la gestione dei thread */
+pthread_mutex_t	mtx;
