@@ -185,7 +185,7 @@ void cancellasprite(int y,int x,char c){
         
         else if(c=='H'){
             
-            mvprintw(y,x,"x");
+            mvprintw(y,x," ");
         }
 
 
