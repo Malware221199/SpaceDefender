@@ -75,6 +75,6 @@ void bulletn(int pipeout,int id,int ay,int ax){
         write(pipeout,&Bulletn,sizeof(Bulletn));
 
             /* Inserisco una pausa per rallentare il movimento */
-        usleep(5000000);
+        usleep(100000);
     }
 }
