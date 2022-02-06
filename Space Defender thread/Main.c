@@ -21,7 +21,6 @@ int main(){
     curs_set(0);		/* Nasconde il cursore */
     getmaxyx(stdscr, MAXY, MAXX);
     srand(time(NULL));
-    int ida;
     int nnemici=2;
     int difficolta = DELAYM;
     while (1){

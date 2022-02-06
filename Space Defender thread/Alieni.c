@@ -39,7 +39,7 @@ while(!collision){
     idbn++;
     bulletn;
     }
-  }
+  
     
   /* Inserisco una pausa per rallentare il movimento */
   usleep(difficolta);
