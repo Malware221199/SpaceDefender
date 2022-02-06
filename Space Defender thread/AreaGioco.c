@@ -41,13 +41,14 @@ void *alieni(void *arg){
         /* Movimento X */
         Alieni.x -= deltax;
         pthread_mutex_unlock(&malieni);
+
         //if (random() < RAND_MAX/10){
         //idbn++;
         //bulletn;
         //}
     
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(DELAYM);
+        //usleep(DELAYM);
         }
 }
 
