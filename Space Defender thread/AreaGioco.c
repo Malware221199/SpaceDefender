@@ -85,11 +85,11 @@ void *giocatore(void *arg)
     }
 
     if(c==SPC){
-      idbg++;
-        //bulletg; /* invocazione funzione bullet */
-      idbg++;
-        //bulletg; /* invocazione funzione bullet */ 
-      
+      /* Creo il thread bullet giocatore */
+        if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
+        endwin();
+        exit;
+        }   
     }
 
   }
