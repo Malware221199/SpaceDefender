@@ -1,4 +1,9 @@
-#include "Utility.h" 
+#include <stdio.h>
+#include <curses.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <locale.h>
+#include <pthread.h>
 /*
 ----------------------------------------------------------------------
  Funzione 'giocatore' - Movimento tramite i tasti cursore 
