@@ -16,7 +16,7 @@ save G;
 */
 
 void *alieni(void *arg){
-    ida++;
+    //ida++;
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
     
