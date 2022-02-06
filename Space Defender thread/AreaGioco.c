@@ -212,12 +212,7 @@ void area(void){
                 alienimorti++;
             }
                 
-            /* Collisioni proiettili con MAXX*/
-            if (Bulletg.x>MAXX){
-                cancellasprite(Bulletg.y,Bulletg.x,Bulletg.c);
-                Bulletg.x=DEADXB;
-                Bulletg.y=DEADYB;
-            }
+            
             
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
