@@ -204,11 +204,11 @@ void area(void){
             */
 
             /* Collisioni Alieni*/
-            if(A[Alieni.id].x<10){
+            if(Alieni.x<10){
                 //vite--;
                 cancellasprite(Alieni.y,Alieni.x,Alieni.c);
-                A[Alieni.id].y=DEADYA;
-                A[Alieni.id].x=DEADXA;
+                Alieni.y=DEADYA;
+                Alieni.x=DEADXA;
                 //alienimorti++;
             }
                 
