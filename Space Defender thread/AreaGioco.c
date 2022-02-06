@@ -207,22 +207,22 @@ void area(void){
             pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
-            pthread_mutex_lock(&mgiocatore);
-            cancellasprite(G.old_cord.y,G.old_cord.x,Giocatore.c);
-            stampasprite(G.cord.y,G.cord.x,Giocatore.c);
-            pthread_mutex_unlock(&mgiocatore);
+            //pthread_mutex_lock(&mgiocatore);
+            //cancellasprite(G.old_cord.y,G.old_cord.x,Giocatore.c);
+            //stampasprite(G.cord.y,G.cord.x,Giocatore.c);
+            //pthread_mutex_unlock(&mgiocatore);
 
             /*Bullet giocatore*/
-            pthread_mutex_lock(&mbulletg);
-            cancellasprite(BG[Bulletg.id].old_cord.y,BG[Bulletg.id].old_cord.x,Bulletg.c);
-            stampasprite(BG[Bulletg.id].cord.y,BG[Bulletg.id].cord.x,Bulletg.c);
-            pthread_mutex_unlock(&mbulletg);
+            //pthread_mutex_lock(&mbulletg);
+            //cancellasprite(BG[Bulletg.id].old_cord.y,BG[Bulletg.id].old_cord.x,Bulletg.c);
+            //stampasprite(BG[Bulletg.id].cord.y,BG[Bulletg.id].cord.x,Bulletg.c);
+            //pthread_mutex_unlock(&mbulletg);
 
             /*Bullet nemici*/
-            pthread_mutex_lock(&mbulletn);
-            cancellasprite(BN[Bulletn.id].old_cord.y,BN[Bulletn.id].old_cord.x,Bulletn.c);
-            stampasprite(BN[Bulletn.id].cord.y,BN[Bulletn.id].cord.x,Bulletn.c);
-            pthread_mutex_unlock(&mbulletn);
+            //pthread_mutex_lock(&mbulletn);
+            //cancellasprite(BN[Bulletn.id].old_cord.y,BN[Bulletn.id].old_cord.x,Bulletn.c);
+            //stampasprite(BN[Bulletn.id].cord.y,BN[Bulletn.id].cord.x,Bulletn.c);
+            //pthread_mutex_unlock(&mbulletn);
 
             /*
             ----------------------------------------------------------------------
