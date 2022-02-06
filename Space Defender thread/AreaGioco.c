@@ -40,7 +40,7 @@ void *alieni(void *arg){
         pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
-        A[ida].cord.x=-1
+        A[ida].cord.x=-1;
         
         /* Movimento X */
         //Alieni.x -= deltax;
