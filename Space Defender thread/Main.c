@@ -20,7 +20,7 @@ int main(){
     curs_set(0);		/* Nasconde il cursore */
     getmaxyx(stdscr, MAXY, MAXX);
     srand(time(NULL));
-    while (1){
+    //while (1){
     clear();
     refresh();
     bkgd(COLOR_PAIR(1));
@@ -83,7 +83,7 @@ int main(){
 
     /* Ripristino la modalità di funzionamento usuale */
     endwin();
-    }
+    //}
 }
 
 
