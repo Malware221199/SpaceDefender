@@ -137,7 +137,7 @@ void *bulletg(void *arg){
         Bulletg.x += deltax;
 
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(50000);
+        usleep(500000000);
     }
 }
 
@@ -163,7 +163,7 @@ void *bulletn(void *arg){
         Bulletn.x -= deltax;
 
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(100000);
+        usleep(1000000000);
     }
 }
 
@@ -255,6 +255,8 @@ void area(void){
                 stampasprite(MAXY/2-2,MAXX/2-25,'O');
                 refresh();
                 usleep(4000000);
+                pthread_join (tbulletg, NULL);
+                pthread_join (tbulletn, NULL);	
             }
 
             if(alienimorti>=nnemici) {
