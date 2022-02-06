@@ -47,7 +47,7 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
 
     if (random() < RAND_MAX/10){
       idbn++;
-      gen_bullet(MAXY/2,MAXX/2,idbn);
+      gen_bullet(MAXY/2,MAXX-3,idbn);
       }
     
     /* Comunico le coordinate correnti al processo padre */
