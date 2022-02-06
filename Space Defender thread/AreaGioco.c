@@ -19,30 +19,31 @@ void *alieni(void *arg){
     ida++;
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
-    if(Alieni.id==0||Alieni.id==1) Alieni.x= MAXX-(GSA+DA);
-    if(Alieni.id==2||Alieni.id==3) Alieni.x= MAXX-(GSA+DA)*2;
-    if(Alieni.id==4||Alieni.id==5) Alieni.x= MAXX-(GSA+DA)*3;
-    if(Alieni.id==6||Alieni.id==7) Alieni.x= MAXX-(GSA+DA)*4;
-    if(Alieni.id==8||Alieni.id==9) Alieni.x= MAXX-(GSA+DA)*5;
-    if(Alieni.id%2==0) Alieni.y=(MAXY/4);
-    else if (Alieni.id%2==1) Alieni.y=MAXY-(MAXY/4)-3;
     
     Alieni.c ='A';	/* Carattere identificativo */
-    Alieni.id =ida; /* Numero dell elemento */
+    A[ida].id =ida; /* Numero dell elemento */
 
+    if(A[ida].id==0||A[ida].id==1) A[ida].cord.x= MAXX-(GSA+DA);
+    if(A[ida].id==2||A[ida].id==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
+    if(A[ida].id==4||A[ida].id==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
+    if(A[ida].id==6||A[ida].id==7) A[ida].cord.x= MAXX-(GSA+DA)*4;
+    if(A[ida].id==8||A[ida].id==9) A[ida].cord.x= MAXX-(GSA+DA)*5;
+    
+    if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
+    else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
+    
     while(!collision){
         pthread_mutex_lock(&malieni);
-        A[Alieni.id].old_cord.x=Alieni.x;
-        A[Alieni.id].old_cord.y=Alieni.y;
-        A[Alieni.id].id=Alieni.id;
+        A[Alieni.id].old_cord.x=A[Alieni.id].cord.x;
+        A[Alieni.id].old_cord.y=A[Alieni.id].cord.x;
         pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
         A[Alieni.id].cord.x=A[Alieni.id].old_cord.x-deltax;
         A[Alieni.id].cord.y=A[Alieni.id].old_cord.y;
-        A[Alieni.id].id=Alieni.id;
+
         /* Movimento X */
-        Alieni.x -= deltax;
+        //Alieni.x -= deltax;
         pthread_mutex_unlock(&malieni);
 
         //if (random() < RAND_MAX/10){
