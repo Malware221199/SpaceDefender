@@ -62,8 +62,8 @@ void gen_bullet(int y,int x,int id){
       pidBN=fork();
       if(pidBN==0) {
       close(p[0]);
-      bulletn(p[1],idbn,Alieni.y,Alieni.x);
-      usleep(500000)
+      bulletn(p[1],id,y,x);
+      usleep(500000);
 
 
 }
