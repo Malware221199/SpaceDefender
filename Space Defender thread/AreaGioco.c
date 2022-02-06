@@ -37,10 +37,10 @@ while(!collision){
     /* Movimento X */
     Alieni.x -= deltax;
 	
-    if (random() < RAND_MAX/10){
-    idbn++;
-    bulletn;
-    }
+    //if (random() < RAND_MAX/10){
+    //idbn++;
+    //bulletn;
+    //}
   
     /* Inserisco una pausa per rallentare il movimento */
     usleep(difficolta);
@@ -67,6 +67,10 @@ void *giocatore(void *arg)
   
   
   while(!collision){
+      G.x=Giocatore.x
+      G.y=Giocatore.y
+      G.id=Giocatore.id
+
 
     /* Lettura dei tasti cursore */
   		char c;
@@ -82,9 +86,9 @@ void *giocatore(void *arg)
 
     if(c==SPC){
       idbg++;
-        bulletg; /* invocazione funzione bullet */
+        //bulletg; /* invocazione funzione bullet */
       idbg++;
-        bulletg; /* invocazione funzione bullet */ 
+        //bulletg; /* invocazione funzione bullet */ 
       
     }
 
@@ -175,16 +179,16 @@ void area(void){
             stampasprite(Alieni.y,Alieni.x,Alieni.c);
 
             /*Giocatore*/
-            cancellasprite(Giocatore.y,Giocatore.x,Giocatore.c);
+            cancellasprite(G.y,G.x,Giocatore.c);
             stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
 
             /*Bullet giocatore*/
-            cancellasprite(Bulletg.y,Bulletg.x,Bulletg.c);
-            stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
+            //cancellasprite(Bulletg.y,Bulletg.x,Bulletg.c);
+            //stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
 
             /*Bullet nemici*/
-            cancellasprite(Bulletn.y,Bulletn.x,Bulletn.c);
-            stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
+            //cancellasprite(Bulletn.y,Bulletn.x,Bulletn.c);
+            //stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
 
 
 
