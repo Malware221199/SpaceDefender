@@ -23,11 +23,11 @@ void *alieni(void *arg){
     Alieni.c ='A';	/* Carattere identificativo */
     A[ida].id =ida; /* Numero dell elemento */
 
-    if(A[ida].id==0||A[ida].id==1) A[ida].cord.x= MAXX-(GSA+DA);
-    if(A[ida].id==2||A[ida].id==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
-    if(A[ida].id==4||A[ida].id==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
-    if(A[ida].id==6||A[ida].id==7) A[ida].cord.x= MAXX-(GSA+DA)*4;
-    if(A[ida].id==8||A[ida].id==9) A[ida].cord.x= MAXX-(GSA+DA)*5;
+    if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
+    if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
+    if(ida==4||ida==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
+    if(ida==6||ida==7) A[ida].cord.x= MAXX-(GSA+DA)*4;
+    if(ida==8||ida==9) A[ida].cord.x= MAXX-(GSA+DA)*5;
     
     if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
     else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
@@ -35,7 +35,7 @@ void *alieni(void *arg){
     while(!collision){
         pthread_mutex_lock(&malieni);
         A[Alieni.id].old_cord.x=A[Alieni.id].cord.x;
-        A[Alieni.id].old_cord.y=A[Alieni.id].cord.x;
+        A[Alieni.id].old_cord.y=A[Alieni.id].cord.y;
         pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
