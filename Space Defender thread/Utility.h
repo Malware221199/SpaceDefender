@@ -21,6 +21,9 @@
 #define ENTER		10	  /* Cursore invio */
 #define GSA 	  3     /* Grandezza sprite alieno*/
 #define DA 	    2     /* Distanza alieni*/
+#define MAXX	    80
+#define MAXY 	    20
+
 
 #define DEADYA 	-10         /*Coordinata morta y alieno*/
 #define DEADXA 	-10         /*Coordinata morta x alieno*/
@@ -35,7 +38,7 @@
  Variabili
 ----------------------------------------------------------------------
 */
-int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
+//int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
 extern int nnemici;
 extern int difficolta;
 
