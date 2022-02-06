@@ -199,8 +199,8 @@ void area(void){
             /*Alieni*/
             pthread_mutex_lock(&malieni);
             for(i=0;i<nnemici;i++){
-            cancellasprite(A[Alieni.id].old_cord.y,A[Alieni.id].old_cord.x,Alieni.c);
-            stampasprite(A[Alieni.id].cord.y,A[Alieni.id].cord.y,Alieni.c);
+            cancellasprite(A[i].old_cord.y,A[i].old_cord.x,Alieni.c);
+            stampasprite(A[i].cord.y,A[i].cord.y,Alieni.c);
             pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
