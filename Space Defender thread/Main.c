@@ -54,14 +54,6 @@ int main(){
         exit;
     }
 
-     
-
-     /* Creo il thread bullet nemici */
-    if(pthread_create(&tbulletn, NULL, bulletn, NULL)){
-        endwin();
-        exit;
-    }
-
 	/* Avvio la funzione Area */
     area();	
 
