@@ -36,12 +36,6 @@
 ----------------------------------------------------------------------
 */
 int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
-extern int idbg;     /* id proiettili giocatore*/
-extern int idbn;     /* id proiettili nemici*/
-extern int ida;
-extern int nnemici;
-extern int difficolta;
-extern int collision;
 
 
 

@@ -1,5 +1,10 @@
 #include "Utility.h"
-
+int idbg=0;     /* id proiettili giocatore*/
+int idbn=0;     /* id proiettili nemici*/
+int ida=0;
+int nnemici=2;
+int difficolta=DELAYM;
+int collision=0;
 /*
 ----------------------------------------------------------------------
  Funzione 'Alieni'

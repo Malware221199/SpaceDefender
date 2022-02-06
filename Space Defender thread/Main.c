@@ -36,11 +36,11 @@ int main(){
 
         
 
-    if ( menu(&nnemici,&difficolta) == 0){   /* Entro nella funzione Menu*/
-        clear();
-        refresh();
-        return 0;        /*Esce dal programma se nella funzione 'Menu' si seleziona 'Esci'*/
-    }
+    //if ( menu(&nnemici,&difficolta) == 0){   /* Entro nella funzione Menu*/
+       // clear();
+        //refresh();
+       // return 0;        /*Esce dal programma se nella funzione 'Menu' si seleziona 'Esci'*/
+   // }
     clear();
     refresh();
         
