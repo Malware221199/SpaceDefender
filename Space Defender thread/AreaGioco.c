@@ -23,7 +23,7 @@ void *alieni(void *arg){
     Alieni.c ='A';	/* Carattere identificativo */
     A[ida].id =ida; /* Numero dell elemento */
 
-    A[0].cord.x= MAXX-(GSA+DA);
+    A[0].cord.x= MAXX;
     A[0].cord.y= MAXY/2;
     //if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
     //if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
