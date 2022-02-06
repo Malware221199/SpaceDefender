@@ -93,12 +93,12 @@ void *giocatore(void *arg)
         endwin();
         exit;
         }
-        idbg++;
+        //idbg++;
       /* Creo il thread bullet giocatore */
-        if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
-        endwin();
-        exit;
-        }
+        //if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
+        //endwin();
+        //exit;
+       // }
 
     }
 
@@ -125,20 +125,20 @@ void *bulletg(void *arg){
         BG[Bulletg.id].id=Bulletg.id;
 
 
-        if(Bulletg.id%2==0){
+        //if(Bulletg.id%2==0){
             /* Movimento Y */
             Bulletg.y += deltay;
             /* Se supero area Y schermo inverte il movimento */
             if(Bulletg.y + deltay < 0 || Bulletg.y + deltay > MAXY-1) deltay = -deltay;
             
-        }
-        else{
+        //}
+        //else{
             /* Movimento Y */
-            Bulletg.y -= deltay;
+           // Bulletg.y -= deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(Bulletg.y - deltay < 0 || Bulletg.y - deltay > MAXY-1) deltay = -deltay;
+            //if(Bulletg.y - deltay < 0 || Bulletg.y - deltay > MAXY-1) deltay = -deltay;
             
-        }
+        //}
         
         
         /* Movimento X */
