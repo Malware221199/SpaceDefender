@@ -5,6 +5,10 @@ int ida=0;
 int nnemici=2;
 int difficolta=DELAYM;
 int collision=0;
+save A[11];
+save BG[30];
+save BN[95];
+save G;
 /*
 ----------------------------------------------------------------------
  Funzione 'Alieni'
@@ -26,7 +30,10 @@ Alieni.c ='A';	/* Carattere identificativo */
 Alieni.id =ida; /* Numero dell elemento */
 
 while(!collision){
-    
+    A[Alieni.id].x=Alieni.x;
+    A[Alieni.id].y=Alieni.y;
+    A[Alieni.id].id=Alieni.id;
+
     /* Movimento X */
     Alieni.x -= deltax;
 	
@@ -164,7 +171,7 @@ void area(void){
 
         do {
             /*Alieni*/
-            cancellasprite(Alieni.y,Alieni.x,Alieni.c);
+            cancellasprite(A[Alieni.id].y,A[Alieni.id].x,Alieni.c);
             stampasprite(Alieni.y,Alieni.x,Alieni.c);
 
             /*Giocatore*/

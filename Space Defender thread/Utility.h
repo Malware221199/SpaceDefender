@@ -69,6 +69,12 @@ struct position {
   int  id;  /* Numero dell elemento */
   
 };
+typedef struct 
+{
+  int x;    /* Coordinata X */
+  int y;    /* Coordinata Y */
+  int id;   /* Numero dell elemento */
+}save;
 
 struct position Alieni;
 struct position Giocatore;
