@@ -48,7 +48,7 @@ int main(){
     refresh();
         
     /* Creo il thread alieni */
-    if(pthread_create(&talieni, NULL, alieni, NULL)){
+    if(pthread_create(&talieni, NULL, alieni(), NULL)){
         endwin();
         exit;
     }
