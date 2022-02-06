@@ -64,6 +64,5 @@ void gen_bullet(int y,int x,int id){
       close(p[0]);
       bulletn(p[1],id,y,x);
       usleep(500000);
-
-
+      }
 }
