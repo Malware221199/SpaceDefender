@@ -70,17 +70,15 @@ void *giocatore(void *arg)
   int maxb=10; /*massimo proiettili disponibili*/
 
   
-  Giocatore.x = 2;       /* Coordinata X iniziale */
-  Giocatore.y = MAXY/2-2;   /* Coordinata Y iniziale */
-  Giocatore.c='G';	    /* Carattere identificativo giocatore*/
-  Giocatore.id=1;   /* Numero dell elemento */
+  G.cord.x = 2;       /* Coordinata X iniziale */
+  G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
+  G.id=1;   /* Numero dell elemento */
 
   
   
   while(!collision){
-      G.old_cord.x=Giocatore.x;
-      G.old_cord.y=Giocatore.y;
-      G.id=Giocatore.id;
+      G.old_cord.x=G.cord.x;
+      G.old_cord.y=G.cord.y;
 
 
     /* Lettura dei tasti cursore */
@@ -88,11 +86,11 @@ void *giocatore(void *arg)
     c = getch();
 
     if (c==UP && Giocatore.y > 0){
-      Giocatore.y-=1;				
+      G.cord.y-=1;				
     }
 
     if(c==DW  && Giocatore.y < MAXY - 1){
-      Giocatore.y+=1;		
+      G.cord.y+=1;		
     }
 
     if(c==SPC){
