@@ -26,30 +26,18 @@ Alieni.c ='A';	/* Carattere identificativo */
 Alieni.id =ida; /* Numero dell elemento */
 
 while(!collision){
-  /* Blocco mutex, cancello ultimo carattere e sblocco mutex */
-	pthread_mutex_lock(&mcancella);			
-  cancellasprite(Alieni.y,Alieni.x,Alieni.c);
-	pthread_mutex_unlock(&mcancella);
     
-  /* Movimento X */
-  Alieni.x -= deltax;
-
-  /* Blocco mutex, disegno carattere, aggiorno schermo e sblocco mutex */
-	pthread_mutex_lock(&mstampa);			
-  stampasprite(Alieni.y,Alieni.x,Alieni.c);
-	refresh();																							
-	pthread_mutex_unlock(&mstampa); 
-
-    
-  if (random() < RAND_MAX/10){
+    /* Movimento X */
+    Alieni.x -= deltax;
+	
+    if (random() < RAND_MAX/10){
     idbn++;
     bulletn;
     }
   
-    
-  /* Inserisco una pausa per rallentare il movimento */
-  usleep(difficolta);
-  }
+    /* Inserisco una pausa per rallentare il movimento */
+    usleep(difficolta);
+    }
 }
 
 
@@ -70,14 +58,10 @@ void *giocatore(void *arg)
   Giocatore.id=1;   /* Numero dell elemento */
 
   
-  /* Lettura dei tasti cursore */
+  
   while(!collision){
-    /* Blocco mutex, cancello ultimo carattere e sblocco mutex */
-	  pthread_mutex_lock(&mtx);			
-    cancellasprite(Giocatore.y,Giocatore.x,Giocatore.c);
-	  pthread_mutex_unlock(&mtx);
 
-
+    /* Lettura dei tasti cursore */
   		char c;
     c = getch();
 
@@ -97,12 +81,6 @@ void *giocatore(void *arg)
       
     }
 
-  /* Blocco mutex, disegno carattere, aggiorno schermo e sblocco mutex */
-	pthread_mutex_lock(&mtx);			
-  stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
-	refresh();																							
-	pthread_mutex_unlock(&mtx); 
-
   }
 }
 
@@ -121,8 +99,6 @@ void *bulletg(void *arg){
     
 
     while(!collision){
-        /* Cancello il precedente carattere visualizzato */
-        cancellasprite(Bulletg.y,Bulletg.x,Bulletg.c);
 
         if(Bulletg.id%2==0){
             /* Movimento Y */
@@ -143,10 +119,6 @@ void *bulletg(void *arg){
         /* Movimento X */
         Bulletg.x += deltax;
 
-        /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-        stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
-            
-
         /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
     }
@@ -166,14 +138,9 @@ void *bulletn(void *arg){
     Bulletn.id =idbn; /* Numero dell elemento */
     
     while(!collision){
-        /* Cancello il precedente carattere visualizzato */
-        cancellasprite(Bulletn.y,Bulletn.x,Bulletn.c);
 
         /* Movimento X */
         Bulletn.x -= deltax;
-
-        /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-        stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
 
         /* Inserisco una pausa per rallentare il movimento */
         usleep(100000);
@@ -196,6 +163,29 @@ void area(void){
     int i=0, j=0, k=0, vite=3, alienimorti=0;
 
         do {
+            /*Alieni*/
+            cancellasprite(Alieni.y,Alieni.x,Alieni.c);
+            stampasprite(Alieni.y,Alieni.x,Alieni.c);
+
+            /*Giocatore*/
+            cancellasprite(Giocatore.y,Giocatore.x,Giocatore.c);
+            stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
+
+            /*Bullet giocatore*/
+            cancellasprite(Bulletg.y,Bulletg.x,Bulletg.c);
+            stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
+
+            /*Bullet nemici*/
+            cancellasprite(Bulletn.y,Bulletn.x,Bulletn.c);
+            stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
+
+
+
+
+
+
+
+
             /* Collisioni Alieni*/
             if(Alieni.x<10){
                 vite--;
