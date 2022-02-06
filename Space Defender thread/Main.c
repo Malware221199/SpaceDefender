@@ -48,25 +48,25 @@ int main(){
     refresh();
         
     /* Creo il thread alieni */
-    if(pthread_create(&talieni, NULL, alieni(), NULL)){
+    if(pthread_create(&talieni, NULL, alieni(void), NULL)){
         endwin();
         exit;
     }
 
      /* Creo il thread giocatore */
-    if(pthread_create(&tgiocatore, NULL, giocatore(), NULL)){
+    if(pthread_create(&tgiocatore, NULL, giocatore(void), NULL)){
         endwin();
         exit;
     }
 
      /* Creo il thread bullet giocatore */
-    if(pthread_create(&tbulletg, NULL, bulletg(), NULL)){
+    if(pthread_create(&tbulletg, NULL, bulletg(void), NULL)){
         endwin();
         exit;
     }
 
      /* Creo il thread bullet nemici */
-    if(pthread_create(&tbulletn, NULL, bulletn(), NULL)){
+    if(pthread_create(&tbulletn, NULL, bulletn(void), NULL)){
         endwin();
         exit;
     }
