@@ -34,13 +34,15 @@ void *alieni(void *arg){
     
     while(!collision){
         pthread_mutex_lock(&malieni);
-        A[A[ida].id].old_cord.x=A[A[ida].id].cord.x;
-        A[A[ida].id].old_cord.y=A[A[ida].id].cord.y;
+        A[ida].old_cord.x=A[ida].cord.x;
+        A[ida].old_cord.y=A[ida].cord.y;
+        A[ida].id =ida;
         pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
-        A[A[ida].id].cord.x=A[A[ida].id].old_cord.x-deltax;
-        A[A[ida].id].cord.y=A[A[ida].id].old_cord.y;
+        A[ida].cord.x=A[ida].old_cord.x-deltax;
+        A[ida].cord.y=A[ida].old_cord.y;
+        A[ida].id =ida;
 
         /* Movimento X */
         //Alieni.x -= deltax;
