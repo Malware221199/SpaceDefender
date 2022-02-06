@@ -110,6 +110,10 @@ void *bulletg(void *arg){
     
 
     while(!collision){
+        BG[Bulletg.id].x=Bulletg.x;
+        BG[Bulletg.id].y=Bulletg.y;
+        BG[Bulletg.id].id=Bulletg.id;
+
 
         if(Bulletg.id%2==0){
             /* Movimento Y */
@@ -149,6 +153,9 @@ void *bulletn(void *arg){
     Bulletn.id =idbn; /* Numero dell elemento */
     
     while(!collision){
+        BN[Bulletg.id].x=Bulletn.x;
+        BN[Bulletg.id].y=Bulletn.y;
+        BN[Bulletg.id].id=Bulletn.id;
 
         /* Movimento X */
         Bulletn.x -= deltax;
@@ -183,12 +190,12 @@ void area(void){
             stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
 
             /*Bullet giocatore*/
-            //cancellasprite(Bulletg.y,Bulletg.x,Bulletg.c);
-            //stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
+            cancellasprite(BG[Bulletg.id].x,BG[Bulletg.id].y,Bulletg.c);
+            stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
 
             /*Bullet nemici*/
-            //cancellasprite(Bulletn.y,Bulletn.x,Bulletn.c);
-            //stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
+            cancellasprite(BN[Bulletn.id].x,BN[Bulletn.id].x,Bulletn.c);
+            stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
 
 
 
@@ -216,11 +223,11 @@ void area(void){
             }
 
             if(alienimorti>=nnemici) {
-                //collision=1;
-                //clear();
-                //stampasprite(MAXY/2-2,MAXX/2-18,'W');
-                //refresh();
-                //usleep(4000000);
+                collision=1;
+                clear();
+                stampasprite(MAXY/2-2,MAXX/2-18,'W');
+                refresh();
+                usleep(4000000);
             }
 
 
