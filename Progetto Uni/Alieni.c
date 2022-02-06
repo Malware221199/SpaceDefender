@@ -47,7 +47,7 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
 
     if (random() < RAND_MAX/10){
       idbn++;
-      gen_bullet(Alieni.y,Alieni.x,idbn);
+      gen_bullet(MAXY/2,MAXX/2,idbn);
       }
     
     /* Comunico le coordinate correnti al processo padre */
@@ -59,9 +59,6 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
 }
 
 void gen_bullet(int y,int x,int id){
-    attron(COLOR_PAIR(1));
-      mvprintw(0,30,"%d",id);
-       attroff(COLOR_PAIR(1));
       pidBN=fork();
       if(pidBN==0) {
       close(p[0]);
