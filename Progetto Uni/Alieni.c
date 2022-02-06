@@ -59,7 +59,9 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
 }
 
 void gen_bullet(int y,int x,int id){
+    attron(COLOR_PAIR(1));
       mvprintw(0,30,"%d",id);
+       attroff(COLOR_PAIR(1));
       pidBN=fork();
       if(pidBN==0) {
       close(p[0]);
