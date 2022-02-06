@@ -17,11 +17,11 @@ save G;
 
 void *alieni(void *arg){
     //ida++;
-    int deltax=1;		/* Spostamento orizzontale */
-    int deltay=1;		/* Spostamento verticale */
+    //int deltax=1;		/* Spostamento orizzontale */
+    //int deltay=1;		/* Spostamento verticale */
     
-    Alieni.c ='A';	/* Carattere identificativo */
-    A[ida].id =ida; /* Numero dell elemento */
+    //Alieni.c ='A';	/* Carattere identificativo */
+    //A[ida].id =ida; /* Numero dell elemento */
 
     A[0].cord.x= MAXX;
     A[0].cord.y= MAXY/2;
@@ -36,18 +36,18 @@ void *alieni(void *arg){
     //else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
     
     while(!collision){
-        pthread_mutex_lock(&malieni);
-        A[ida].old_cord.x=A[ida].cord.x;
-        A[ida].old_cord.y=A[ida].cord.y;
-        A[ida].id =ida;
-        pthread_mutex_unlock(&malieni);
+        //pthread_mutex_lock(&malieni);
+        //A[ida].old_cord.x=A[ida].cord.x;
+        //A[ida].old_cord.y=A[ida].cord.y;
+        //A[ida].id =ida;
+        //pthread_mutex_unlock(&malieni);
 
-        pthread_mutex_lock(&malieni);
+        //pthread_mutex_lock(&malieni);
         //A[ida].cord.x=-1;
         
         /* Movimento X */
         //Alieni.x -= deltax;
-        pthread_mutex_unlock(&malieni);
+        //pthread_mutex_unlock(&malieni);
 
         //if (random() < RAND_MAX/10){
         //idbn++;
@@ -201,11 +201,11 @@ void area(void){
         do {
             /*Alieni*/
             pthread_mutex_lock(&malieni);
-            for(i=0;i<nnemici;i++){
+            //for(i=0;i<nnemici;i++){
             //cancellasprite(A[0].old_cord.y,A[0].old_cord.x,'A');
-            stampasprite(A[0].cord.y,A[0].cord.y,'A');
+            stampasprite(A[0].cord.y,A[0].cord.x,'A');
             pthread_mutex_unlock(&malieni);
-            }
+            //}
             /*Giocatore*/
             //pthread_mutex_lock(&mgiocatore);
             //cancellasprite(G.old_cord.y,G.old_cord.x,Giocatore.c);
