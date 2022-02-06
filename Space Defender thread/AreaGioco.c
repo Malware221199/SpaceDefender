@@ -207,7 +207,7 @@ void area(void){
             }
             /*Giocatore*/
             pthread_mutex_lock(&mgiocatore);
-            //cancellasprite(G.old_cord.y,G.old_cord.x,Giocatore.c);
+            cancellasprite(G.old_cord.y,G.old_cord.x,Giocatore.c);
             stampasprite(G.cord.y,G.cord.x,Giocatore.c);
             pthread_mutex_unlock(&mgiocatore);
 
@@ -229,40 +229,7 @@ void area(void){
             ---------------------------------------------------------------------- 
             */
 
-            /* Collisioni Alieni*/
-            if(Alieni.x<10){
-                //vite--;
-                cancellasprite(Alieni.y,Alieni.x,Alieni.c);
-                Alieni.y=DEADYA;
-                Alieni.x=DEADXA;
-                //alienimorti++;
-            }
-
-            /* Collisioni proiettili con MAXX*/
-            if (Bulletg.x>MAXX){
-                cancellasprite(Bulletg.y,Bulletg.x,Bulletg.c);
-                Bulletg.x=DEADXB;
-                Bulletg.y=DEADYB;
-            }
-            /* Collisioni proiettili con alieni*/
-            int exit=0;
-            
-                for(j=0;j<GSA;j++){
-                    for(k=0;k<GSA;k++){
-                        if(Bulletg.x == (Alieni.x)+k && Bulletg.y == (Alieni.y)+j){
-                            cancellasprite(Alieni.y,Alieni.x,Alieni.c);
-                            Bulletg.y=DEADYB;
-                            Bulletg.x=DEADXB;
-                            Alieni.y=DEADYA;
-                            Alieni.x=DEADXA;
-                            if(exit==0){
-                                alienimorti++;
-                                exit=1;
-                            }      
-                        }
-                    }
-                }    
-            
+           
             
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
