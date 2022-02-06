@@ -23,8 +23,8 @@ void *alieni(void *arg){
     Alieni.c ='A';	/* Carattere identificativo */
     A[ida].id =ida; /* Numero dell elemento */
 
-    A[ida].cord.x= MAXX-(GSA+DA);
-    A[ida].cord.y= MAXY/2;
+    A[0].cord.x= MAXX-(GSA+DA);
+    A[0].cord.y= MAXY/2;
     //if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
     //if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
     //if(ida==4||ida==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
@@ -202,8 +202,8 @@ void area(void){
             /*Alieni*/
             pthread_mutex_lock(&malieni);
             for(i=0;i<nnemici;i++){
-            cancellasprite(A[i].old_cord.y,A[i].old_cord.x,Alieni.c);
-            stampasprite(A[i].cord.y,A[i].cord.y,Alieni.c);
+            cancellasprite(A[0].old_cord.y,A[0].old_cord.x,Alieni.c);
+            stampasprite(A[0].cord.y,A[0].cord.y,Alieni.c);
             pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
