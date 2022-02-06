@@ -72,6 +72,6 @@ struct position {
 };
 
 struct position Alieni;
-struct position giocatore;
+struct position Giocatore;
 struct position Bulletg;
 struct position Bulletn;

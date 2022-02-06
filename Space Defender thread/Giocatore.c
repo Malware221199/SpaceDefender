@@ -9,29 +9,29 @@ void giocatore(void *arg)
   int maxb=10; /*massimo proiettili disponibili*/
 
   
-  giocatore.x = 2;       /* Coordinata X iniziale */
-  giocatore.y = MAXY/2-2;   /* Coordinata Y iniziale */
-  giocatore.c='G';	    /* Carattere identificativo giocatore*/
-  giocatore.id=1;   /* Numero dell elemento */
+  Giocatore.x = 2;       /* Coordinata X iniziale */
+  Giocatore.y = MAXY/2-2;   /* Coordinata Y iniziale */
+  Giocatore.c='G';	    /* Carattere identificativo giocatore*/
+  Giocatore.id=1;   /* Numero dell elemento */
 
   
   /* Lettura dei tasti cursore */
   while(!collision){
     /* Blocco mutex, cancello ultimo carattere e sblocco mutex */
 	  pthread_mutex_lock(&mtx);			
-    cancellasprite(Alieni.y,Alieni.x,Alieni.c);
+    cancellasprite(Giocatore.y,Giocatore.x,Giocatore.c);
 	  pthread_mutex_unlock(&mtx);
 
 
   		char c;
     c = getch();
 
-    if (c==UP && giocatore.y > 0){
-      giocatore.y-=1;				
+    if (c==UP && Giocatore.y > 0){
+      Giocatore.y-=1;				
     }
 
-    if(c==DW  && giocatore.y < MAXY - 1){
-      giocatore.y+=1;		
+    if(c==DW  && Giocatore.y < MAXY - 1){
+      Giocatore.y+=1;		
     }
 
     if(c==SPC){
@@ -44,7 +44,7 @@ void giocatore(void *arg)
 
   /* Blocco mutex, disegno carattere, aggiorno schermo e sblocco mutex */
 	pthread_mutex_lock(&mtx);			
-  stampasprite(Alieni.y,Alieni.x,Alieni.c);
+  stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
 	refresh();																							
 	pthread_mutex_unlock(&mtx); 
 
