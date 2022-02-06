@@ -22,7 +22,7 @@
 #define GSA 	  3     /* Grandezza sprite alieno*/
 #define DA 	    2     /* Distanza alieni*/
 #define MAXX	    80
-#define MAXY 	    20
+#define MAXY 	    24
 
 
 #define DEADYA 	-10         /*Coordinata morta y alieno*/
