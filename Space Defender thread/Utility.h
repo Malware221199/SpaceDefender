@@ -46,10 +46,10 @@ int collision=0;
  Funzioni
 ----------------------------------------------------------------------
 */
-void alieni(void *arg);
-void giocatore(void *arg);
-void bulletg(void *arg);
-void bulletn(void *arg);
+void *alieni(void *arg);
+void *giocatore(void *arg);
+void *bulletg(void *arg);
+void *bulletn(void *arg);
 void areaGioco(void *arg);
 int menu(int *nnemici,int *difficolta);
 int opzioni(int *nnemici,int *difficolta);
