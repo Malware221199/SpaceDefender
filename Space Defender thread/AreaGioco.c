@@ -32,12 +32,15 @@ void *alieni(void *arg){
 
     while(!collision){
         pthread_mutex_lock(&malieni);
-        A[Alieni.id].x=Alieni.x;
-        A[Alieni.id].y=Alieni.y;
+        A[Alieni.id].old_cord.x=Alieni.x;
+        A[Alieni.id].old_cord.y=Alieni.y;
         A[Alieni.id].id=Alieni.id;
         pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
+        A[Alieni.id].cord.x=A[Alieni.id].old_cord.x-deltax;
+        A[Alieni.id].corda.y=A[Alieni.id].old_cord.y;
+        A[Alieni.id].id=Alieni.id;
         /* Movimento X */
         Alieni.x -= deltax;
         pthread_mutex_unlock(&malieni);
@@ -197,8 +200,8 @@ void area(void){
             /*Alieni*/
             pthread_mutex_lock(&malieni);
             for(i=0;i<nnemici;i++){
-            cancellasprite(A[Alieni.id].y,A[Alieni.id].x,Alieni.c);
-            stampasprite(Alieni.y,Alieni.x,Alieni.c);
+            cancellasprite(A[Alieni.id].old_cord.y,A[Alieni.id].old_cord.x,Alieni.c);
+            stampasprite(A[Alieni.id].cord.y,A[Alieni.id].cord.y,Alieni.c);
             pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/

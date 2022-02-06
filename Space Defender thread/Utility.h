@@ -74,6 +74,11 @@ typedef struct
 {
   int x;    /* Coordinata X */
   int y;    /* Coordinata Y */
+}cord;
+typedef struct 
+{
+  cord cord;
+  cord old_cord;
   int id;   /* Numero dell elemento */
 }save;
 
