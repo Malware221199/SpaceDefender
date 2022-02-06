@@ -51,7 +51,7 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
       pidBN=fork();
       if(pidBN==0) {
       close(p[0]);
-      prova==Alieni.y;
+      prova=Alieni.y;
       bulletn(p[1],idbn,prova,Alieni.x);
       }
     }
