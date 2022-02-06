@@ -11,8 +11,6 @@
 int main(){
     pthread_t talieni;
     pthread_t tgiocatore;
-    pthread_t tbulletg;
-    pthread_t tbulletn;
     setlocale(LC_ALL, "");
     initscr();			/* Inizializza schermo di output */
     start_color();
