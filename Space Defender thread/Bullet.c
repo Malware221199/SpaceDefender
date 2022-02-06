@@ -10,7 +10,7 @@ void *bulletg(void *arg){
     Bulletg.x = Giocatore.x+7;  /* Coordinata X iniziale */
     Bulletg.y = Giocatore.y+2;  /* Coordinata Y iniziale */
     Bulletg.c ='B';	/* Carattere identificativo */
-    Bulletg.id =idb; /* Numero dell elemento */
+    Bulletg.id =idbg; /* Numero dell elemento */
     
 
     while(!collision){
