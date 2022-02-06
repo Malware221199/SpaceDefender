@@ -137,7 +137,7 @@ void *bulletg(void *arg){
         Bulletg.x += deltax;
 
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(500000000);
+        usleep(50000);
     }
 }
 
@@ -163,7 +163,7 @@ void *bulletn(void *arg){
         Bulletn.x -= deltax;
 
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(1000000000);
+        usleep(100000);
     }
 }
 
@@ -192,11 +192,11 @@ void area(void){
             stampasprite(Giocatore.y,Giocatore.x,Giocatore.c);
 
             /*Bullet giocatore*/
-            cancellasprite(BG[Bulletg.id].x,BG[Bulletg.id].y,Bulletg.c);
+            cancellasprite(BG[Bulletg.id].y,BG[Bulletg.id].x,Bulletg.c);
             stampasprite(Bulletg.y,Bulletg.x,Bulletg.c);
 
             /*Bullet nemici*/
-            cancellasprite(BN[Bulletn.id].x,BN[Bulletn.id].x,Bulletn.c);
+            cancellasprite(BN[Bulletn.id].y,BN[Bulletn.id].x,Bulletn.c);
             stampasprite(Bulletn.y,Bulletn.x,Bulletn.c);
 
             /*
