@@ -54,19 +54,19 @@ int main(){
     }
 
      /* Creo il thread giocatore */
-    if(pthread_create(&tcontadino, NULL, giocatore, NULL)){
+    if(pthread_create(&tgiocatore, NULL, giocatore(), NULL)){
         endwin();
         exit;
     }
 
      /* Creo il thread bullet giocatore */
-    if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
+    if(pthread_create(&tbulletg, NULL, bulletg(), NULL)){
         endwin();
         exit;
     }
 
      /* Creo il thread bullet nemici */
-    if(pthread_create(&tbulletn, NULL, bulletn, NULL)){
+    if(pthread_create(&tbulletn, NULL, bulletn(), NULL)){
         endwin();
         exit;
     }
