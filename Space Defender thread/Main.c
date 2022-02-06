@@ -56,11 +56,7 @@ int main(){
         exit;
     }
 
-     /* Creo il thread bullet giocatore */
-    if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
-        endwin();
-        exit;
-    }
+     
 
      /* Creo il thread bullet nemici */
     if(pthread_create(&tbulletn, NULL, bulletn, NULL)){
