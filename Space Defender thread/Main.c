@@ -9,6 +9,11 @@
 */
 
 
+
+
+
+
+
 int main(){
     pthread_t talieni;
     pthread_t tgiocatore;
@@ -21,8 +26,6 @@ int main(){
     curs_set(0);		/* Nasconde il cursore */
     getmaxyx(stdscr, MAXY, MAXX);
     srand(time(NULL));
-    int nnemici=2;
-    int difficolta = DELAYM;
     while (1){
     clear();
     refresh();
