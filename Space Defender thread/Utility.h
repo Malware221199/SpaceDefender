@@ -82,4 +82,5 @@ struct position Bulletg;
 struct position Bulletn;
 
 /* Mutex per la gestione dei thread */
-pthread_mutex_t	mtx;
+pthread_mutex_t	mcancella;
+pthread_mutex_t	mstampa;

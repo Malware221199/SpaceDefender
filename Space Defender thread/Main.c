@@ -31,7 +31,8 @@ int main(){
     attron(COLOR_PAIR(4));
         
     /* Inizializzo mutex */
-    pthread_mutex_init(&mtx, NULL); 
+    pthread_mutex_init(&mstampa, NULL); 
+    pthread_mutex_init(&mcancella, NULL); 
 
         
 
@@ -77,7 +78,8 @@ int main(){
     pthread_join (tbulletn, NULL);		
 
 	/* Elimino mutex */
-    pthread_mutex_destroy (&mtx);		
+    pthread_mutex_destroy (&mstampa);
+    pthread_mutex_destroy (&mcancella);				
 
     /* Ripristino la modalità di funzionamento usuale */
     endwin();
