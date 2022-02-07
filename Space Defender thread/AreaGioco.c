@@ -23,7 +23,7 @@ void *alieni(void *arg){
     int deltay=1;		/* Spostamento verticale */
     
     Alieni.c ='A';	/* Carattere identificativo */
-    A[c].id =ida; /* Numero dell elemento */
+    A[ida].id =ida; /* Numero dell elemento */
 
     pthread_mutex_lock(&malieni);
     if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
