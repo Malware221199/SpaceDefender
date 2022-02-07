@@ -16,6 +16,7 @@ save G;
 */
 
 void *alieni(void *arg){
+    pthread_mutex_unlock(&malieni);
     ida++;
     mvprintw(0,15,"%d",ida);
     mvprintw(0,30,"%d",nnemici);
@@ -36,6 +37,7 @@ void *alieni(void *arg){
     if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
     else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
     pthread_mutex_unlock(&malieni);
+
     while(!collision){
         //pthread_mutex_lock(&malieni);
         //A[ida].old_cord.x=A[ida].cord.x;
