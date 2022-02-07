@@ -44,7 +44,7 @@ void *alieni(void *arg){
         //pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
-        A[0].cord.x-=1;
+        A[1].cord.x-=1;
         
         pthread_mutex_unlock(&malieni);
 
