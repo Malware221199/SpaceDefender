@@ -16,18 +16,18 @@ save G;
 */
 
 void *alieni(void *arg){
-    //ida++;
-    //int deltax=1;		/* Spostamento orizzontale */
-    //int deltay=1;		/* Spostamento verticale */
+    ida++;
+    int deltax=1;		/* Spostamento orizzontale */
+    int deltay=1;		/* Spostamento verticale */
     
-    //Alieni.c ='A';	/* Carattere identificativo */
-    //A[ida].id =ida; /* Numero dell elemento */
+    Alieni.c ='A';	/* Carattere identificativo */
+    A[ida].id =ida; /* Numero dell elemento */
 
-    pthread_mutex_lock(&malieni);
-    A[0].cord.x = MAXX-5;
-    A[0].cord.y = MAXY/2;
-    pthread_mutex_unlock(&malieni);
-    //if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
+    //pthread_mutex_lock(&malieni);
+    //A[0].cord.x = MAXX-5;
+    //A[0].cord.y = MAXY/2;
+    //pthread_mutex_unlock(&malieni);
+    if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
     //if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
     //if(ida==4||ida==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
     //if(ida==6||ida==7) A[ida].cord.x= MAXX-(GSA+DA)*4;
