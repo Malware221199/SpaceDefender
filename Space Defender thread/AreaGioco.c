@@ -180,7 +180,7 @@ void *bulletn(void *arg){
 
         /* Inserisco una pausa per rallentare il movimento */
         usleep(100000);
-    }
+    //}
 }
 
 
