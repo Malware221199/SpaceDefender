@@ -91,7 +91,7 @@ void *giocatore(void *arg)
   	char c;
     c = getch();
 
-    if (c==UP && /*Giocatore.y > 0*/){
+    if (c==UP && ){/*Giocatore.y > 0*/
         pthread_mutex_lock(&mgiocatore);
         G.cord.y-=1;
         pthread_mutex_unlock(&mgiocatore);				
