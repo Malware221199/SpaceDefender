@@ -199,7 +199,7 @@ void *bulletn(void *arg){
 void area(void){
 
     int i=0, j=0, k=0, vite=3, alienimorti=0;
-
+        clear();
         do {
             
             /*Alieni*/
