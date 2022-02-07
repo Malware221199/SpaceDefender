@@ -171,7 +171,7 @@ void cancellasprite(int y,int x,char c){
 
         else if(c=='G'){
             for(i=0;i<6;i++){
-                for(j=0;j<6;j++){
+                for(j=0;j<7;j++){
                     mvaddch(y+i,x+j,'o');
                 }
             }
