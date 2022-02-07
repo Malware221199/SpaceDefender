@@ -25,10 +25,7 @@ void *alieni(void *arg){
     Alieni.c ='A';	/* Carattere identificativo */
     A[ida].id =ida; /* Numero dell elemento */
 
-    //pthread_mutex_lock(&malieni);
-    //A[0].cord.x = MAXX-5;
-    //A[0].cord.y = MAXY/2;
-    //pthread_mutex_unlock(&malieni);
+    pthread_mutex_lock(&malieni);
     if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
     if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
     if(ida==4||ida==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
@@ -38,7 +35,7 @@ void *alieni(void *arg){
 
     if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
     else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
-    
+    pthread_mutex_unlock(&malieni);
     while(!collision){
         //pthread_mutex_lock(&malieni);
         //A[ida].old_cord.x=A[ida].cord.x;

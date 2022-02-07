@@ -36,7 +36,7 @@ int main(){
     pthread_mutex_init(&mbulletg, NULL); 
     pthread_mutex_init(&mbulletn, NULL); 
     //pthread_mutex_init(&mstampa, NULL); 
-    pthread_mutex_lock(&malieni);
+    
 
         
 
@@ -64,6 +64,7 @@ int main(){
     }
 
 	/* Avvio la funzione Area */
+    //pthread_mutex_lock(&malieni);
     area();	
     /* Attendo la terminazione dei thread */
     pthread_join (talieni, NULL);		
