@@ -46,10 +46,8 @@ void *alieni(void *arg){
         //pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
-        A[ida].cord.x-=1;
+        A[1].cord.x-=1;
         
-        /* Movimento X */
-        //Alieni.x -= deltax;
         pthread_mutex_unlock(&malieni);
 
         //if (random() < RAND_MAX/10){
