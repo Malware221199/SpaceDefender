@@ -154,7 +154,7 @@ void *bulletg(void *arg){
 
         /* Inserisco una pausa per rallentare il movimento */
         //usleep(50000);
-    }
+    //}
 }
 
 
