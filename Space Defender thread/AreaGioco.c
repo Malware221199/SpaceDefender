@@ -91,13 +91,13 @@ void *giocatore(void *arg)
   	char c;
     c = getch();
 
-    if (c==UP ){/*Giocatore.y > 0*/
+    if (c==UP && G.cord.y > 0){
         pthread_mutex_lock(&mgiocatore);
         G.cord.y-=1;
         pthread_mutex_unlock(&mgiocatore);				
     }
 
-    if(c==DW  && Giocatore.y < MAXY - 1){
+    if(c==DW  && G.cord.y < MAXY - 1){
         pthread_mutex_lock(&mgiocatore);
         G.cord.y+=1;
         pthread_mutex_unlock(&mgiocatore);		
