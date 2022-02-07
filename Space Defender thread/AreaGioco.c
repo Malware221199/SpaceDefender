@@ -35,8 +35,8 @@ void *alieni(void *arg){
     //if(ida==8||ida==9) A[ida].cord.x= MAXX-(GSA+DA)*5;
     
 
-    //if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
-    //else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
+    if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
+    else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
     
     while(!collision){
         //pthread_mutex_lock(&malieni);
