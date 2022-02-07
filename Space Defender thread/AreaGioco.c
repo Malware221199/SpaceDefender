@@ -119,25 +119,25 @@ void *giocatore(void *arg)
 ---------------------------------------------------------------------- 
 */
 void *bulletg(void *arg){
-    int deltax=1;		/* Spostamento orizzontale */
-    int deltay=1;		/* Spostamento verticale */
-    Bulletg.x = Giocatore.x+7;  /* Coordinata X iniziale */
-    Bulletg.y = Giocatore.y+2;  /* Coordinata Y iniziale */
-    Bulletg.c ='B';	/* Carattere identificativo */
-    Bulletg.id =idbg; /* Numero dell elemento */
+    //int deltax=1;		/* Spostamento orizzontale */
+    //int deltay=1;		/* Spostamento verticale */
+    //Bulletg.x = Giocatore.x+7;  /* Coordinata X iniziale */
+    //Bulletg.y = Giocatore.y+2;  /* Coordinata Y iniziale */
+    //Bulletg.c ='B';	/* Carattere identificativo */
+    //Bulletg.id =idbg; /* Numero dell elemento */
     
 
-    while(!collision){
-        BG[Bulletg.id].old_cord.x=Bulletg.x;
-        BG[Bulletg.id].old_cord.y=Bulletg.y;
-        BG[Bulletg.id].id=Bulletg.id;
+    //while(!collision){
+        //BG[Bulletg.id].old_cord.x=Bulletg.x;
+        //BG[Bulletg.id].old_cord.y=Bulletg.y;
+       // BG[Bulletg.id].id=Bulletg.id;
 
     
         //if(Bulletg.id%2==0){
             /* Movimento Y */
-            Bulletg.y += deltay;
+            //Bulletg.y += deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(Bulletg.y + deltay < 0 || Bulletg.y + deltay > MAXY-1) deltay = -deltay;
+            //if(Bulletg.y + deltay < 0 || Bulletg.y + deltay > MAXY-1) deltay = -deltay;
            
         //}
         //else{
@@ -150,10 +150,10 @@ void *bulletg(void *arg){
         
         
         /* Movimento X */
-        Bulletg.x += deltax;
+        //Bulletg.x += deltax;
 
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(50000);
+        //usleep(50000);
     }
 }
 
@@ -164,19 +164,19 @@ void *bulletg(void *arg){
 ---------------------------------------------------------------------- 
 */
 void *bulletn(void *arg){
-    int deltax=1;		/* Spostamento orizzontale */
-    Bulletn.x = Alieni.x-1;  /* Coordinata X iniziale */
-    Bulletn.y = Alieni.y+1;  /* Coordinata Y iniziale */
-    Bulletn.c ='H';	/* Carattere identificativo */
-    Bulletn.id =idbn; /* Numero dell elemento */
+    //int deltax=1;		/* Spostamento orizzontale */
+    //Bulletn.x = Alieni.x-1;  /* Coordinata X iniziale */
+    //Bulletn.y = Alieni.y+1;  /* Coordinata Y iniziale */
+    //Bulletn.c ='H';	/* Carattere identificativo */
+    //Bulletn.id =idbn; /* Numero dell elemento */
     
-    while(!collision){
-        BN[Bulletg.id].old_cord.x=Bulletn.x;
-        BN[Bulletg.id].old_cord.y=Bulletn.y;
-        BN[Bulletg.id].id=Bulletn.id;
+    //while(!collision){
+        //BN[Bulletg.id].old_cord.x=Bulletn.x;
+        //BN[Bulletg.id].old_cord.y=Bulletn.y;
+        //BN[Bulletg.id].id=Bulletn.id;
 
         /* Movimento X */
-        Bulletn.x -= deltax;
+        //Bulletn.x -= deltax;
 
         /* Inserisco una pausa per rallentare il movimento */
         usleep(100000);
