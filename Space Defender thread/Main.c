@@ -65,7 +65,6 @@ int main(){
 
 	/* Avvio la funzione Area */
     area();	
-    clear();
     /* Attendo la terminazione dei thread */
     pthread_join (talieni, NULL);		
 	pthread_join (tgiocatore, NULL);	
