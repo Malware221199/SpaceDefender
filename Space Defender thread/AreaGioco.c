@@ -44,7 +44,7 @@ void *alieni(void *arg){
         pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
-        A[2].cord.x-=1;
+        A[1].cord.x-=1;
         
         pthread_mutex_unlock(&malieni);
 
@@ -210,7 +210,7 @@ void area(void){
             /*Alieni*/
             pthread_mutex_lock(&malieni);
             for(i=0;i<nnemici;i++){
-            //cancellasprite(A[0].old_cord.y,A[0].old_cord.x,'A');
+            /cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
             stampasprite(A[i].cord.y,A[i].cord.x,'A');
             pthread_mutex_unlock(&malieni);
             }
