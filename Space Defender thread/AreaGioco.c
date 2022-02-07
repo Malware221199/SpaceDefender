@@ -3,7 +3,6 @@ pthread_t tbulletg;
 pthread_t tbulletn;
 int idbg=0;     /* id proiettili giocatore*/
 int idbn=0;     /* id proiettili nemici*/
-int ida=0;
 int collision=0;
 save A[11];
 save BG[30];
