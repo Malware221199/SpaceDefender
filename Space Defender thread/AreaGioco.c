@@ -50,7 +50,7 @@ void *alieni(void *arg){
         
         /* Movimento X */
         //Alieni.x -= deltax;
-        //pthread_mutex_unlock(&malieni);
+        pthread_mutex_unlock(&malieni);
 
         //if (random() < RAND_MAX/10){
         //idbn++;
