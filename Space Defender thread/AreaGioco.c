@@ -199,7 +199,7 @@ void area(void){
     int i=0, j=0, k=0, vite=3, alienimorti=0;
 
         do {
-            clear();
+            
             /*Alieni*/
             //pthread_mutex_lock(&malieni);
             //for(i=0;i<nnemici;i++){
