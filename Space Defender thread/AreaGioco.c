@@ -16,7 +16,7 @@ save G;
 */
 
 void *alieni(void *arg){
-    pthread_mutex_unlock(&malieni);
+    //pthread_mutex_unlock(&malieni);
     ida++;
     mvprintw(0,15,"%d",ida);
     mvprintw(0,30,"%d",nnemici);
@@ -71,7 +71,7 @@ void *alieni(void *arg){
 */
 void *giocatore(void *arg)
 {
-    pthread_mutex_unlock(&mgiocatore);
+   // pthread_mutex_unlock(&mgiocatore);
   int maxb=10; /*massimo proiettili disponibili*/
 
   pthread_mutex_lock(&mgiocatore);
