@@ -200,7 +200,6 @@ void area(void){
 
         do {
             clear();
-            refresh();
             /*Alieni*/
             //pthread_mutex_lock(&malieni);
             //for(i=0;i<nnemici;i++){
