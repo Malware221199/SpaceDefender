@@ -38,11 +38,10 @@ void *alieni(void *arg){
     pthread_mutex_unlock(&malieni);
 
     while(!collision){
-        //pthread_mutex_lock(&malieni);
-        //A[ida].old_cord.x=A[ida].cord.x;
-        //A[ida].old_cord.y=A[ida].cord.y;
-        //A[ida].id =ida;
-        //pthread_mutex_unlock(&malieni);
+        pthread_mutex_lock(&malieni);
+        A[1].old_cord.x=A[1].cord.x;
+        A[1].old_cord.y=A[1].cord.y;
+        pthread_mutex_unlock(&malieni);
 
         pthread_mutex_lock(&malieni);
         A[2].cord.x-=1;
