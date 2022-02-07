@@ -29,7 +29,7 @@ void *alieni(void *arg){
     //A[0].cord.y = MAXY/2;
     //pthread_mutex_unlock(&malieni);
     if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
-    //if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
+    if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
     //if(ida==4||ida==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
     //if(ida==6||ida==7) A[ida].cord.x= MAXX-(GSA+DA)*4;
     //if(ida==8||ida==9) A[ida].cord.x= MAXX-(GSA+DA)*5;
