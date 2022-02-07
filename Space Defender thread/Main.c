@@ -3,6 +3,7 @@
 int nnemici=2,i;
 int difficolta=DELAYM;
 
+
 /*
 ----------------------------------------------------------------------
  Funzione 'Main'
@@ -51,6 +52,7 @@ int main(){
     /* Creo il thread alieni */
     pthread_mutex_lock(&malieni);
     for(i=0;i<nnemici;i++){
+        ida++;
         if(pthread_create(&talieni, NULL, alieni, NULL)){
             endwin();
             exit;
