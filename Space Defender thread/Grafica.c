@@ -164,7 +164,7 @@ void cancellasprite(int y,int x,char c){
             for(i=0;i<3;i++){
                 for(j=0;j<3;j++){
                     
-                    mvaddch(y+i,x+j,'o');
+                    mvaddch(y+i,x+j,' ');
                 }
             }
         }
@@ -172,7 +172,7 @@ void cancellasprite(int y,int x,char c){
         else if(c=='G'){
             for(i=0;i<6;i++){
                 for(j=0;j<7;j++){
-                    mvaddch(y+i,x+j,'o');
+                    mvaddch(y+i,x+j,' ');
                 }
             }
         }
