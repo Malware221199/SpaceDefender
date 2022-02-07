@@ -71,6 +71,7 @@ void *alieni(void *arg){
 */
 void *giocatore(void *arg)
 {
+    pthread_mutex_unlock(&mgiocatore);
   int maxb=10; /*massimo proiettili disponibili*/
 
   pthread_mutex_lock(&mgiocatore);

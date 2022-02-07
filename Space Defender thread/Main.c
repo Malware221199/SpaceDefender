@@ -65,6 +65,7 @@ int main(){
 
 	/* Avvio la funzione Area */
     pthread_mutex_lock(&malieni);
+    pthread_mutex_lock(&mgiocatore);
     area();	
     /* Attendo la terminazione dei thread */
     pthread_join (talieni, NULL);		
