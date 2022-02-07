@@ -36,7 +36,7 @@ int main(){
     pthread_mutex_init(&mbulletg, NULL); 
     pthread_mutex_init(&mbulletn, NULL); 
     //pthread_mutex_init(&mstampa, NULL); 
-    
+    pthread_mutex_lock(&malieni);
 
         
 
