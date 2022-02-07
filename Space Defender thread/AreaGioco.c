@@ -212,7 +212,7 @@ void area(void){
             /*Giocatore*/
             pthread_mutex_lock(&mgiocatore);
             //cancellasprite(G.old_cord.y,G.old_cord.x,Giocatore.c);
-            stampasprite(G.cord.y,G.cord.x,Giocatore.c);
+            stampasprite(G.cord.y,G.cord.x,'G');
             pthread_mutex_unlock(&mgiocatore);
 
             /*Bullet giocatore*/
