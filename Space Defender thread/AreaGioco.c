@@ -17,6 +17,7 @@ save G;
 
 void *alieni(void *arg){
     ida++;
+    mvprintw(0,15,"%d",ida);
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
     
