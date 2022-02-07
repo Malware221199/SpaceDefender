@@ -45,7 +45,7 @@ void *alieni(void *arg){
         //pthread_mutex_unlock(&malieni);
 
         //pthread_mutex_lock(&malieni);
-        //A[ida].cord.x=-1;
+        //A[ida].cord.x-=1;
         
         /* Movimento X */
         //Alieni.x -= deltax;
@@ -72,16 +72,19 @@ void *giocatore(void *arg)
 {
   int maxb=10; /*massimo proiettili disponibili*/
 
-  
+  pthread_mutex_lock(&mgiocatore);
   G.cord.x = 2;       /* Coordinata X iniziale */
   G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
   G.id=1;   /* Numero dell elemento */
+  pthread_mutex_unlock(&mgiocatore);
 
   
   
   while(!collision){
+      pthread_mutex_lock(&mgiocatore);
       G.old_cord.x=G.cord.x;
       G.old_cord.y=G.cord.y;
+      pthread_mutex_unlock(&mgiocatore);
 
 
     /* Lettura dei tasti cursore */
@@ -89,11 +92,15 @@ void *giocatore(void *arg)
     c = getch();
 
     if (c==UP && Giocatore.y > 0){
-      G.cord.y-=1;				
+        pthread_mutex_lock(&mgiocatore);
+        G.cord.y-=1;
+        pthread_mutex_unlock(&mgiocatore);				
     }
 
     if(c==DW  && Giocatore.y < MAXY - 1){
-      G.cord.y+=1;		
+        pthread_mutex_lock(&mgiocatore);
+        G.cord.y+=1;
+        pthread_mutex_unlock(&mgiocatore);		
     }
 
     if(c==SPC){
