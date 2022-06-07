@@ -93,12 +93,14 @@ void *giocatore(void *arg)
     pthread_mutex_unlock(&mgiocatore);
 
     if(c==SPC){
-      /* Creo il thread bullet giocatore */
-        if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
-            endwin();
-            exit;
+        for(i=0;i<2;i++)
+        {
+            /* Creo il thread bullet giocatore */
+            if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
+                endwin();
+                exit;
+            }
         }
-
     }
 
   }
