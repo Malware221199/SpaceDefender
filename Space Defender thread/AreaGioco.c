@@ -170,13 +170,13 @@ void *bulletn(void *arg){
     int myidbn;
     
     pthread_mutex_lock(&initbulletn);
-    BG[idbn].id =idbn; /* Numero dell elemento */
+    BN[idbn].id =idbn; /* Numero dell elemento */
     myidbn=idbn;
     idbn++;
     pthread_mutex_unlock(&initbulletn);
     pthread_mutex_lock(&malieni);
-    BG[myidbn].cord.x = A[myidbn].cord.x+3;  /* Coordinata X iniziale */
-    BG[myidbn].cord.y = A[myidbn].cord.y+1;  /* Coordinata Y iniziale */
+    BN[myidbn].cord.x = A[myidbn].cord.x+3;  /* Coordinata X iniziale */
+    BN[myidbn].cord.y = A[myidbn].cord.y+1;  /* Coordinata Y iniziale */
     pthread_mutex_unlock(&malieni);
     
     
