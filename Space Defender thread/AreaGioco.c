@@ -66,18 +66,17 @@ void *giocatore(void *arg)
 
   int maxb=10; /*massimo proiettili disponibili*/
 
-  
+  pthread_mutex_lock(&mgiocatore);
   G.cord.x = 2;       /* Coordinata X iniziale */
   G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
   G.id=1;   /* Numero dell elemento */
+  pthread_mutex_unlock(&mgiocatore);
   
 
   
   
   while(!collision){
       
-      G.old_cord.x=G.cord.x;
-      G.old_cord.y=G.cord.y;
       
 
 
@@ -86,15 +85,15 @@ void *giocatore(void *arg)
     c = getch();
 
     if (c==UP && G.cord.y > 0){
-        
+        pthread_mutex_lock(&mgiocatore);
         G.cord.y-=1;
-        			
+        pthread_mutex_unlock(&mgiocatore);			
     }
 
     if(c==DW  && G.cord.y < MAXY - 1){
-        
+        pthread_mutex_lock(&mgiocatore);
         G.cord.y+=1;
-        		
+        pthread_mutex_unlock(&mgiocatore);		
     }
 
     if(c==SPC){
@@ -201,9 +200,11 @@ void area(void){
 
     int i=0, j=0, k=0, vite=3, alienimorti=0;
         clear();
+
         G.cord.x = 2;       /* Coordinata X iniziale */
         G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
         G.id=1;   /* Numero dell elemento */
+
         do {
             
             /*Alieni*/
@@ -213,7 +214,12 @@ void area(void){
             }
             /*Giocatore*/
             cancellasprite(G.old_cord.y,G.old_cord.x,'G');
+            pthread_mutex_lock(&mgiocatore);
             stampasprite(G.cord.y,G.cord.x,'G');
+            G.old_cord.x=G.cord.x;
+            G.old_cord.y=G.cord.y;
+            pthread_mutex_unlock(&mgiocatore);
+
 
             /*Bullet giocatore*/
             //cancellasprite(BG[Bulletg.id].old_cord.y,BG[Bulletg.id].old_cord.x,Bulletg.c);
