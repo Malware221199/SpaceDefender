@@ -175,8 +175,8 @@ void *bulletn(void *arg){
     idbn++;
     pthread_mutex_unlock(&initbulletn);
     pthread_mutex_lock(&malieni);
-    BG[myidbn].cord.x = A.cord.x+3;  /* Coordinata X iniziale */
-    BG[myidbn].cord.y = A.cord.y+1;  /* Coordinata Y iniziale */
+    BG[myidbn].cord.x = A[myidbn].cord.x+3;  /* Coordinata X iniziale */
+    BG[myidbn].cord.y = A[myidbn].cord.y+1;  /* Coordinata Y iniziale */
     pthread_mutex_unlock(&malieni);
     
     
