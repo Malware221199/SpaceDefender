@@ -15,14 +15,16 @@ save G;
 */
 
 void *alieni(void *arg){
-    ida++;
+    
+
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
-    
-    Alieni.c ='A';	/* Carattere identificativo */
+    pthread_mutex_lock(&initalieni);
     A[ida].id =ida; /* Numero dell elemento */
+    ida++;
+    pthread_mutex_unlock(&initalieni);
 
-    
+    pthread_mutex_lock(&malieni);
     if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
     if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
     if(ida==4||ida==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
@@ -32,17 +34,12 @@ void *alieni(void *arg){
 
     if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
     else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
-    
+    pthread_mutex_unlock(&malieni);
 
     while(!collision){
-        
-        A[1].old_cord.x=A[1].cord.x;
-        A[1].old_cord.y=A[1].cord.y;
-        
-
-        
+        pthread_mutex_lock(&malieni);
         A[1].cord.x-=1;
-        
+        pthread_mutex_unlock(&malieni);
 
         //if (random() < RAND_MAX/10){
         //idbn++;
@@ -210,7 +207,11 @@ void area(void){
             /*Alieni*/
             for(i=0;i<nnemici;i++){
             cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
+            pthread_mutex_lock(&malieni);
             stampasprite(A[i].cord.y,A[i].cord.x,'A');
+            A[i].old_cord.x=A[i].cord.x;
+            A[i].old_cord.y=A[i].cord.y;
+            pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
             cancellasprite(G.old_cord.y,G.old_cord.x,'G');
