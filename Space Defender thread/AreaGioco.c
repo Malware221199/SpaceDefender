@@ -252,7 +252,7 @@ void area(void){
             if(vite < 1) {
                 collision=1;
                 clear();
-                stampasprite(MAXY/2-2,MAXX/2-25,'O');
+                //stampasprite(MAXY/2-2,MAXX/2-25,'O');
                 refresh();
                 usleep(4000000);
                 pthread_join (tbulletg, NULL);
