@@ -167,7 +167,7 @@ void *bulletg(void *arg){
 ---------------------------------------------------------------------- 
 */
 void *bulletn(void *arg){
-    int ida=*((int *)i);
+    int ida=*((int *)arg);
     int deltax=1;		/* Spostamento orizzontale */
     int myidbn;
     
