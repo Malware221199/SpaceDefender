@@ -45,6 +45,7 @@ void *alieni(void *arg){
 
         if (random() < RAND_MAX/10){
             int *i= malloc(sizeof(*i));
+            *i=myida;
             if(pthread_create(&tbulletn, NULL, bulletn, (void *)i)){
                 endwin();
                 exit;
