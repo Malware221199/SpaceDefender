@@ -132,22 +132,22 @@ void *bulletg(void *arg){
         pthread_mutex_lock(&mbulletg);
         if(BG[myidbg].id%2==0){
             /* Movimento Y */
-            BG[myidbg].y += deltay;
+            BG[myidbg].cord.y += deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(BG[myidbg].y + deltay < 0 || BG[myidbg].y + deltay > MAXY-1) deltay = -deltay;
+            if(BG[myidbg].cord.y + deltay < 0 || BG[myidbg].cord.y + deltay > MAXY-1) deltay = -deltay;
            
         }
         else{
             /* Movimento Y */
-            BG[myidbg].y -= deltay;
+            BG[myidbg].cord.y -= deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(BG[myidbg].y - deltay < 0 || BG[myidbg].y - deltay > MAXY-1) deltay = -deltay;
+            if(BG[myidbg].cord.y - deltay < 0 || BG[myidbg].cord.y - deltay > MAXY-1) deltay = -deltay;
             
         }
         
         
         /* Movimento X */
-        BG[myidbg].x += deltax;
+        BG[myidbg].cord.x += deltax;
         pthread_mutex_unlock(&mbulletg);
         /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
