@@ -221,13 +221,14 @@ void area(void){
 
 
             /*Bullet giocatore*/
-            cancellasprite(BG[Bulletg.id].old_cord.y,BG[Bulletg.id].old_cord.x,Bulletg.c);
+            for(i=0;i<30;i++){
+            cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
             pthread_mutex_lock(&mbulletg);
-            stampasprite(BG[Bulletg.id].cord.y,BG[Bulletg.id].cord.x,Bulletg.c);
-            BG[myidbg].old_cord.x=Bulletg.x;
-            BG[myidbg].old_cord.y=Bulletg.y;
-            BG[myidbg].id=Bulletg.id;
+            stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
+            BG[i].old_cord.x=BG.cord.x;
+            BG[i].old_cord.y=BG.cord.y;
             pthread_mutex_unlock(&mbulletg);
+            }
 
             /*Bullet nemici*/
             //cancellasprite(BN[Bulletn.id].old_cord.y,BN[Bulletn.id].old_cord.x,Bulletn.c);
