@@ -89,7 +89,7 @@ void *giocatore(void *arg)
         G.cord.y-=1; 			
     }
     
-    if(c==DW  && G.cord.y < MAXY - 1){
+    if(c==DW  && G.cord.y < MAXY - 7){
         G.cord.y+=1;		
     }
     pthread_mutex_unlock(&mgiocatore);
