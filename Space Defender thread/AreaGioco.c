@@ -120,8 +120,8 @@ void *bulletg(void *arg){
     idbg++;
     pthread_mutex_unlock(&initbulletg);
     pthread_mutex_lock(&mgiocatore);
-    BG[myidbg].x = G.cord.x+7;  /* Coordinata X iniziale */
-    BG[myidbg].y = G.cord.y+2;  /* Coordinata Y iniziale */
+    BG[myidbg].cord.x = G.cord.x+7;  /* Coordinata X iniziale */
+    BG[myidbg].cord.y = G.cord.y+2;  /* Coordinata Y iniziale */
     pthread_mutex_unlock(&mgiocatore);
     
     
