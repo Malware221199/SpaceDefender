@@ -36,7 +36,9 @@ int main(){
     pthread_mutex_init(&mgiocatore, NULL); 
     pthread_mutex_init(&mbulletg, NULL); 
     pthread_mutex_init(&mbulletn, NULL); 
-    pthread_mutex_init(&initalieni, NULL); 
+    pthread_mutex_init(&initalieni, NULL);
+    pthread_mutex_init(&initbulletg, NULL);
+    pthread_mutex_init(&initbulletn, NULL); 
     
 
         
