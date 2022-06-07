@@ -19,26 +19,28 @@ void *alieni(void *arg){
 
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
+    int myida;
     pthread_mutex_lock(&initalieni);
     A[ida].id =ida; /* Numero dell elemento */
+    myida=ida;
     ida++;
     pthread_mutex_unlock(&initalieni);
 
     pthread_mutex_lock(&malieni);
-    if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
-    if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
-    if(ida==4||ida==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
-    if(ida==6||ida==7) A[ida].cord.x= MAXX-(GSA+DA)*4;
-    if(ida==8||ida==9) A[ida].cord.x= MAXX-(GSA+DA)*5;
+    if(myida==0||myida==1) A[myida].cord.x= MAXX-(GSA+DA);
+    if(myida==2||myida==3) A[myida].cord.x= MAXX-(GSA+DA)*2;
+    if(myida==4||myida==5) A[myida].cord.x= MAXX-(GSA+DA)*3;
+    if(myida==6||myida==7) A[myida].cord.x= MAXX-(GSA+DA)*4;
+    if(myida==8||myida==9) A[myida].cord.x= MAXX-(GSA+DA)*5;
     
 
-    if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
-    else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
+    if(A[myida].id%2==0) A[myida].cord.y=(MAXY/4);
+    else if (A[myida].id%2==1) A[myida].cord.y=MAXY-(MAXY/4)-3;
     pthread_mutex_unlock(&malieni);
 
     while(!collision){
         pthread_mutex_lock(&malieni);
-        A[1].cord.x-=1;
+        A[myida].cord.x-=1;
         pthread_mutex_unlock(&malieni);
 
         //if (random() < RAND_MAX/10){
@@ -206,12 +208,12 @@ void area(void){
             
             /*Alieni*/
             for(i=0;i<nnemici;i++){
-            cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
-            pthread_mutex_lock(&malieni);
-            stampasprite(A[i].cord.y,A[i].cord.x,'A');
-            A[ida].old_cord.x=A[ida].cord.x;
-            A[ida].old_cord.y=A[ida].cord.y;
-            pthread_mutex_unlock(&malieni);
+                cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
+                pthread_mutex_lock(&malieni);
+                stampasprite(A[i].cord.y,A[i].cord.x,'A');
+                A[i].old_cord.x=A[i].cord.x;
+                A[i].old_cord.y=A[i].cord.y;
+                pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
             cancellasprite(G.old_cord.y,G.old_cord.x,'G');
