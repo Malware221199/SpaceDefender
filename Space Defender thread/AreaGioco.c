@@ -209,8 +209,8 @@ void area(void){
             cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
             pthread_mutex_lock(&malieni);
             stampasprite(A[i].cord.y,A[i].cord.x,'A');
-            A[i].old_cord.x=A[i].cord.x;
-            A[i].old_cord.y=A[i].cord.y;
+            A[ida].old_cord.x=A[ida].cord.x;
+            A[ida].old_cord.y=A[ida].cord.y;
             pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
