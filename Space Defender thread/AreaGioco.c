@@ -300,7 +300,7 @@ void area(void){
                 pthread_join (tbulletn, NULL);	
             }
 
-            if(alienimorti>=nemici) {
+            if(alienimorti>=1) {
                 collision=1;
                 clear();
                 stampasprite(MAXY/2-2,MAXX/2-18,'W');
