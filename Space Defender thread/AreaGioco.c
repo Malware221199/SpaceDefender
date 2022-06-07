@@ -303,12 +303,12 @@ void area(void){
             }
 
             if(alienimorti>=nnemici) {
-                
+
                 collision=1;
                 clear();
                 stampasprite(MAXY/2-2,MAXX/2-18,'W');
                 refresh();
-                usleep(4000000);
+                usleep(400000);
                 pthread_join (tbulletg, NULL);
                 pthread_join (tbulletn, NULL);	
             }
