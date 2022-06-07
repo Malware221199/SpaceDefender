@@ -291,7 +291,7 @@ void area(void){
                 for(i=0;i<30;i++){
                     for(j=0;j<6;j++){
                             for(k=0;k<6;k++){
-                                if(BN[i].cord.x == (G.cord.x)+k && BG[i].cord.y == (G.cord.y)+j){
+                                if(BN[i].cord.x == (G.cord.x)-k && BG[i].cord.y == (G.cord.y)+j){
                                     
                                     cancellasprite(G.cord.y,G.cord.x,'G');
                                     G.cord.y=DEADYB;
