@@ -43,10 +43,12 @@ void *alieni(void *arg){
         A[myida].cord.x-=1;
         pthread_mutex_unlock(&malieni);
 
-        //if (random() < RAND_MAX/10){
-        //idbn++;
-        //bulletn;
-        //}
+        if (random() < RAND_MAX/10){
+            if(pthread_create(&tbulletn, NULL, bulletn, NULL)){
+                endwin();
+                exit;
+            }
+        }
     
         /* Inserisco una pausa per rallentare il movimento */
         usleep(DELAYM);
@@ -164,23 +166,31 @@ void *bulletg(void *arg){
 ---------------------------------------------------------------------- 
 */
 void *bulletn(void *arg){
-    //int deltax=1;		/* Spostamento orizzontale */
-    //Bulletn.x = Alieni.x-1;  /* Coordinata X iniziale */
-    //Bulletn.y = Alieni.y+1;  /* Coordinata Y iniziale */
-    //Bulletn.c ='H';	/* Carattere identificativo */
-    //Bulletn.id =idbn; /* Numero dell elemento */
+    int deltax=1;		/* Spostamento orizzontale */
+    int myidbn;
     
-    //while(!collision){
-        //BN[Bulletg.id].old_cord.x=Bulletn.x;
-        //BN[Bulletg.id].old_cord.y=Bulletn.y;
-        //BN[Bulletg.id].id=Bulletn.id;
+    pthread_mutex_lock(&initbulletn);
+    BG[idbn].id =idbn; /* Numero dell elemento */
+    myidbn=idbn;
+    idbn++;
+    pthread_mutex_unlock(&initbulletn);
+    pthread_mutex_lock(&malieni);
+    BG[myidbn].cord.x = A.cord.x+3;  /* Coordinata X iniziale */
+    BG[myidbn].cord.y = A.cord.y+1;  /* Coordinata Y iniziale */
+    pthread_mutex_unlock(&malieni);
+    
+    
 
+    while(!collision){
+       
+
+        pthread_mutex_lock(&mbulletn);
         /* Movimento X */
-        //Bulletn.x -= deltax;
-
+        BN[myidbn].cord.x += deltax;
+        pthread_mutex_unlock(&mbulletn);
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(100000);
-    //}
+        usleep(50000);
+    }
 }
 
 
