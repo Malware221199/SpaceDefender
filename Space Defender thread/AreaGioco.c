@@ -225,8 +225,8 @@ void area(void){
             cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
             pthread_mutex_lock(&mbulletg);
             stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
-            BG[i].old_cord.x=BG.cord.x;
-            BG[i].old_cord.y=BG.cord.y;
+            BG[i].old_cord.x=BG[i].cord.x;
+            BG[i].old_cord.y=BG[i].cord.y;
             pthread_mutex_unlock(&mbulletg);
             }
 
