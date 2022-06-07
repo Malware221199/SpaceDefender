@@ -34,7 +34,7 @@ void *alieni(void *arg){
     else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
     
 
-    //while(!collision){
+    while(!collision){
         
         A[1].old_cord.x=A[1].cord.x;
         A[1].old_cord.y=A[1].cord.y;
@@ -51,7 +51,7 @@ void *alieni(void *arg){
     
         /* Inserisco una pausa per rallentare il movimento */
         usleep(DELAYM);
-        //}
+        }
 }
 
 
@@ -201,6 +201,9 @@ void area(void){
 
     int i=0, j=0, k=0, vite=3, alienimorti=0;
         clear();
+        G.cord.x = 2;       /* Coordinata X iniziale */
+        G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
+        G.id=1;   /* Numero dell elemento */
         do {
             
             /*Alieni*/
