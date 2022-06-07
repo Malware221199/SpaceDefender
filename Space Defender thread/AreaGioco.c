@@ -16,9 +16,6 @@ save G;
 
 void *alieni(void *arg){
     ida++;
-    
-    mvprintw(0,15,"%d",ida);
-    mvprintw(0,30,"%d",nnemici);
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
     
@@ -72,7 +69,7 @@ void *giocatore(void *arg)
   
   G.cord.x = 2;       /* Coordinata X iniziale */
   G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
-  G.id=1;   /* Numero dell elemento */
+  G.id=0;   /* Numero dell elemento */
   
 
   
