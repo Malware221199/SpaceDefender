@@ -44,7 +44,8 @@ void *alieni(void *arg){
         pthread_mutex_unlock(&malieni);
 
         if (random() < RAND_MAX/10){
-            if(pthread_create(&tbulletn, NULL, bulletn, NULL)){
+            int *i= malloc(sizeof(*i));
+            if(pthread_create(&tbulletn, NULL, bulletn, (void *)i)){
                 endwin();
                 exit;
             }
@@ -166,6 +167,7 @@ void *bulletg(void *arg){
 ---------------------------------------------------------------------- 
 */
 void *bulletn(void *arg){
+    int ida=*((int *)i);
     int deltax=1;		/* Spostamento orizzontale */
     int myidbn;
     
@@ -175,8 +177,8 @@ void *bulletn(void *arg){
     idbn++;
     pthread_mutex_unlock(&initbulletn);
     pthread_mutex_lock(&malieni);
-    BN[myidbn].cord.x = A[myidbn].cord.x+3;  /* Coordinata X iniziale */
-    BN[myidbn].cord.y = A[myidbn].cord.y+1;  /* Coordinata Y iniziale */
+    BN[myidbn].cord.x = A[ida].cord.x+3;  /* Coordinata X iniziale */
+    BN[myidbn].cord.y = A[ida].cord.y+1;  /* Coordinata Y iniziale */
     pthread_mutex_unlock(&malieni);
     
     
@@ -191,6 +193,7 @@ void *bulletn(void *arg){
         /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
     }
+    free(arg);
 }
 
 
