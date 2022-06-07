@@ -89,7 +89,7 @@ void *giocatore(void *arg)
         G.cord.y-=1; 			
     }
     
-    if(c==DW  && G.cord.y < MAXY - 7){
+    if(c==DW  && G.cord.y < MAXY - 5){
         G.cord.y+=1;		
     }
     pthread_mutex_unlock(&mgiocatore);
@@ -258,7 +258,27 @@ void area(void){
             Collisioni
             ---------------------------------------------------------------------- 
             */
-
+           
+            /*Collisioni Bullet giocatore*/
+            int exit=0;
+                for(i=0;i<11;i++){
+                    for(j=0;j<GSA;j++){
+                        for(k=0;k<GSA;k++){
+                            if(BG[i].cord.x == (A[i].cord.x)+k && BG[i].cord.y == (A[i].cord.y)+j){
+                                
+                                cancellasprite(A[i].cord.y,A[i].cord.x,'A');
+                                BG[i].cord.y=DEADYB;
+                                BG[i].cord.x=DEADXB;
+                                A[i].cord.y=DEADYA;
+                                A[i].cord.x=DEADXA;
+                                if(exit==0){
+                                    alienimorti++;
+                                    exit=1;
+                                }      
+                            }
+                        }
+                    }
+                }
            
             
             /* Visualizzo le vite rimaste al giocatore */

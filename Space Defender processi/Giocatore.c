@@ -30,7 +30,7 @@ void giocatore(int pipeout)
       giocatore.y-=1;				
     }
 
-    if(c==DW  && giocatore.y < MAXY - 1){
+    if(c==DW  && giocatore.y < MAXY - 5){
       giocatore.y+=1;		
     }
 
