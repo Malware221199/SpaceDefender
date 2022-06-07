@@ -186,7 +186,7 @@ void *bulletn(void *arg){
 
         pthread_mutex_lock(&mbulletn);
         /* Movimento X */
-        BN[myidbn].cord.x += deltax;
+        BN[myidbn].cord.x -= deltax;
         pthread_mutex_unlock(&mbulletn);
         /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
