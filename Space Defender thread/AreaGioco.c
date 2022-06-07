@@ -292,8 +292,8 @@ void area(void){
                     for(j=0;j<6;j++){
                             for(k=0;k<6;k++){
                                 if(BN[i].cord.x == (G.cord.x)-k && BN[i].cord.y == (G.cord.y)+j){
-                                    A[i].cord.y=DEADYA;
-                                    A[i].cord.x=DEADXA;
+                                    BN[i].cord.y=DEADYA;
+                                    BN[i].cord.x=DEADXA;
                                     if(exit==0){
                                         vite--;
                                         exit=1;
