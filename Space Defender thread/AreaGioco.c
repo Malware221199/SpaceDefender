@@ -16,7 +16,7 @@ save G;
 
 void *alieni(void *arg){
     ida++;
-    //pthread_mutex_unlock(&malieni);
+    
     mvprintw(0,15,"%d",ida);
     mvprintw(0,30,"%d",nnemici);
     int deltax=1;		/* Spostamento orizzontale */
@@ -25,7 +25,7 @@ void *alieni(void *arg){
     Alieni.c ='A';	/* Carattere identificativo */
     A[ida].id =ida; /* Numero dell elemento */
 
-    //pthread_mutex_lock(&malieni);
+    
     if(ida==0||ida==1) A[ida].cord.x= MAXX-(GSA+DA);
     if(ida==2||ida==3) A[ida].cord.x= MAXX-(GSA+DA)*2;
     if(ida==4||ida==5) A[ida].cord.x= MAXX-(GSA+DA)*3;
@@ -35,18 +35,17 @@ void *alieni(void *arg){
 
     if(A[ida].id%2==0) A[ida].cord.y=(MAXY/4);
     else if (A[ida].id%2==1) A[ida].cord.y=MAXY-(MAXY/4)-3;
-    //pthread_mutex_unlock(&malieni);
+    
 
     while(!collision){
-        //pthread_mutex_lock(&malieni);
+        
         A[1].old_cord.x=A[1].cord.x;
         A[1].old_cord.y=A[1].cord.y;
-        //pthread_mutex_unlock(&malieni);
+        
 
-        //pthread_mutex_lock(&malieni);
+        
         A[1].cord.x-=1;
         
-        //pthread_mutex_unlock(&malieni);
 
         //if (random() < RAND_MAX/10){
         //idbn++;
@@ -67,22 +66,22 @@ void *alieni(void *arg){
 */
 void *giocatore(void *arg)
 {
-   // pthread_mutex_unlock(&mgiocatore);
+
   int maxb=10; /*massimo proiettili disponibili*/
 
-  //pthread_mutex_lock(&mgiocatore);
+  
   G.cord.x = 2;       /* Coordinata X iniziale */
   G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
   G.id=1;   /* Numero dell elemento */
-  pthread_mutex_unlock(&mgiocatore);
+  
 
   
   
   while(!collision){
-      //pthread_mutex_lock(&mgiocatore);
+      
       G.old_cord.x=G.cord.x;
       G.old_cord.y=G.cord.y;
-      //pthread_mutex_unlock(&mgiocatore);
+      
 
 
     /* Lettura dei tasti cursore */
@@ -90,15 +89,15 @@ void *giocatore(void *arg)
     c = getch();
 
     if (c==UP && G.cord.y > 0){
-        //pthread_mutex_lock(&mgiocatore);
+        
         G.cord.y-=1;
-        //pthread_mutex_unlock(&mgiocatore);				
+        			
     }
 
     if(c==DW  && G.cord.y < MAXY - 1){
-        //pthread_mutex_lock(&mgiocatore);
+        
         G.cord.y+=1;
-        //pthread_mutex_unlock(&mgiocatore);		
+        		
     }
 
     if(c==SPC){
@@ -208,29 +207,21 @@ void area(void){
         do {
             
             /*Alieni*/
-            //pthread_mutex_lock(&malieni);
             for(i=0;i<nnemici;i++){
             cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
             stampasprite(A[i].cord.y,A[i].cord.x,'A');
-            //pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
-            //pthread_mutex_lock(&mgiocatore);
             cancellasprite(G.old_cord.y,G.old_cord.x,'G');
             stampasprite(G.cord.y,G.cord.x,'G');
-            //pthread_mutex_unlock(&mgiocatore);
 
             /*Bullet giocatore*/
-            //pthread_mutex_lock(&mbulletg);
             //cancellasprite(BG[Bulletg.id].old_cord.y,BG[Bulletg.id].old_cord.x,Bulletg.c);
             //stampasprite(BG[Bulletg.id].cord.y,BG[Bulletg.id].cord.x,Bulletg.c);
-            //pthread_mutex_unlock(&mbulletg);
 
             /*Bullet nemici*/
-            //pthread_mutex_lock(&mbulletn);
             //cancellasprite(BN[Bulletn.id].old_cord.y,BN[Bulletn.id].old_cord.x,Bulletn.c);
             //stampasprite(BN[Bulletn.id].cord.y,BN[Bulletn.id].cord.x,Bulletn.c);
-            //pthread_mutex_unlock(&mbulletn);
 
             /*
             ----------------------------------------------------------------------
