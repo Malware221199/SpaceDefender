@@ -82,32 +82,22 @@ void *giocatore(void *arg)
     /* Lettura dei tasti cursore */
   	char c;
     c = getch();
-
+    pthread_mutex_lock(&mgiocatore);
     if (c==UP && G.cord.y > 0){
-        pthread_mutex_lock(&mgiocatore);
-        G.cord.y-=1;
-        pthread_mutex_unlock(&mgiocatore);			
+        G.cord.y-=1; 			
     }
-
+    
     if(c==DW  && G.cord.y < MAXY - 1){
-        pthread_mutex_lock(&mgiocatore);
-        G.cord.y+=1;
-        pthread_mutex_unlock(&mgiocatore);		
+        G.cord.y+=1;		
     }
+    pthread_mutex_unlock(&mgiocatore);
 
     if(c==SPC){
-        idbg++;
       /* Creo il thread bullet giocatore */
-        //if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
-        //endwin();
-        //exit;
-        //}
-        //idbg++;
-      /* Creo il thread bullet giocatore */
-        //if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
-        //endwin();
-        //exit;
-       // }
+        if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
+            endwin();
+            exit;
+        }
 
     }
 
@@ -120,42 +110,48 @@ void *giocatore(void *arg)
 ---------------------------------------------------------------------- 
 */
 void *bulletg(void *arg){
-    //int deltax=1;		/* Spostamento orizzontale */
-    //int deltay=1;		/* Spostamento verticale */
-    //Bulletg.x = Giocatore.x+7;  /* Coordinata X iniziale */
-    //Bulletg.y = Giocatore.y+2;  /* Coordinata Y iniziale */
-    //Bulletg.c ='B';	/* Carattere identificativo */
-    //Bulletg.id =idbg; /* Numero dell elemento */
+    int deltax=1;		/* Spostamento orizzontale */
+    int deltay=1;		/* Spostamento verticale */
+    int myidbg;
+    
+    pthread_mutex_lock(&initbulletg);
+    BG[idbg].id =idbg; /* Numero dell elemento */
+    myidbg=idbg;
+    idbg++;
+    pthread_mutex_unlock(&initbulletg);
+    pthread_mutex_lock(&mgiocatore);
+    BG[myidbg].x = G.cord.x+7;  /* Coordinata X iniziale */
+    BG[myidbg].y = G.cord.y+2;  /* Coordinata Y iniziale */
+    pthread_mutex_unlock(&mgiocatore);
+    
     
 
-    //while(!collision){
-        //BG[Bulletg.id].old_cord.x=Bulletg.x;
-        //BG[Bulletg.id].old_cord.y=Bulletg.y;
-       // BG[Bulletg.id].id=Bulletg.id;
+    while(!collision){
+       
 
-    
-        //if(Bulletg.id%2==0){
+        pthread_mutex_lock(&mbulletg);
+        if(BG[myidbg].id%2==0){
             /* Movimento Y */
-            //Bulletg.y += deltay;
+            BG[myidbg].y += deltay;
             /* Se supero area Y schermo inverte il movimento */
-            //if(Bulletg.y + deltay < 0 || Bulletg.y + deltay > MAXY-1) deltay = -deltay;
+            if(BG[myidbg].y + deltay < 0 || BG[myidbg].y + deltay > MAXY-1) deltay = -deltay;
            
-        //}
-        //else{
+        }
+        else{
             /* Movimento Y */
-           // Bulletg.y -= deltay;
+            BG[myidbg].y -= deltay;
             /* Se supero area Y schermo inverte il movimento */
-            //if(Bulletg.y - deltay < 0 || Bulletg.y - deltay > MAXY-1) deltay = -deltay;
+            if(BG[myidbg].y - deltay < 0 || BG[myidbg].y - deltay > MAXY-1) deltay = -deltay;
             
-        //}
+        }
         
         
         /* Movimento X */
-        //Bulletg.x += deltax;
-
+        BG[myidbg].x += deltax;
+        pthread_mutex_unlock(&mbulletg);
         /* Inserisco una pausa per rallentare il movimento */
-        //usleep(50000);
-    //}
+        usleep(50000);
+    }
 }
 
 
@@ -225,8 +221,13 @@ void area(void){
 
 
             /*Bullet giocatore*/
-            //cancellasprite(BG[Bulletg.id].old_cord.y,BG[Bulletg.id].old_cord.x,Bulletg.c);
-            //stampasprite(BG[Bulletg.id].cord.y,BG[Bulletg.id].cord.x,Bulletg.c);
+            cancellasprite(BG[Bulletg.id].old_cord.y,BG[Bulletg.id].old_cord.x,Bulletg.c);
+            pthread_mutex_lock(&mbulletg);
+            stampasprite(BG[Bulletg.id].cord.y,BG[Bulletg.id].cord.x,Bulletg.c);
+            BG[myidbg].old_cord.x=Bulletg.x;
+            BG[myidbg].old_cord.y=Bulletg.y;
+            BG[myidbg].id=Bulletg.id;
+            pthread_mutex_unlock(&mbulletg);
 
             /*Bullet nemici*/
             //cancellasprite(BN[Bulletn.id].old_cord.y,BN[Bulletn.id].old_cord.x,Bulletn.c);
