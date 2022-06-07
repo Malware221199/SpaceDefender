@@ -52,14 +52,12 @@ int main(){
     refresh();
         
     /* Creo il thread alieni */
-    pthread_mutex_lock(&malieni);
     for(i=0;i<nnemici;i++){
         if(pthread_create(&talieni, NULL, alieni, NULL)){
             endwin();
             exit;
         }
     }
-    pthread_mutex_unlock(&malieni);
      /* Creo il thread giocatore */
     if(pthread_create(&tgiocatore, NULL, giocatore, NULL)){
         endwin();
@@ -73,14 +71,16 @@ int main(){
 	pthread_join (tgiocatore, NULL);	
 
 	/* Elimino mutex */
-    pthread_mutex_destroy (&malieni);
-    pthread_mutex_destroy (&mgiocatore);
-    pthread_mutex_destroy (&mbulletg); 
-    pthread_mutex_destroy (&mbulletn); 				
+    pthread_mutex_destroy(&malieni);
+    pthread_mutex_destroy(&mgiocatore);
+    pthread_mutex_destroy(&mbulletg); 
+    pthread_mutex_destroy(&mbulletn);
+    pthread_mutex_destroy(&initalieni);
+    pthread_mutex_destroy(&initbulletg);
+    pthread_mutex_destroy(&initbulletn);  				
 
     /* Ripristino la modalità di funzionamento usuale */
     endwin();
-    //}
 }
 
 
