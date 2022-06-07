@@ -96,3 +96,4 @@ pthread_mutex_t	malieni;
 pthread_mutex_t	mgiocatore;
 pthread_mutex_t	mbulletg;
 pthread_mutex_t	mbulletn;
+pthread_mutex_t	initalieni;
