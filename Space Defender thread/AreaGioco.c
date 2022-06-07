@@ -286,7 +286,28 @@ void area(void){
                     }
                 }
            
-            
+            /*Collisioni Bullet nemico*/
+            int exit=0;
+                for(i=0;i<30;i++){
+                    for(j=0;j<6;j++){
+                            for(k=0;k<6;k++){
+                                if(BN[i].cord.x == (G.cord.x)+k && BG[i].cord.y == (G.cord.y)+j){
+                                    
+                                    cancellasprite(G.cord.y,G.cord.x,'G');
+                                    G.cord.y=DEADYB;
+                                    G.cord.x=DEADXB;
+                                    A[i].cord.y=DEADYA;
+                                    A[i].cord.x=DEADXA;
+                                    if(exit==0){
+                                        vite--;
+                                        exit=1;
+                                    }      
+                                }
+                            }
+                        }
+                }
+
+
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
