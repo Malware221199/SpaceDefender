@@ -206,7 +206,7 @@ void *bulletn(void *arg){
 
 void area(void){
 
-    int i=0, j=0, k=0, vite=3, alienimorti=0;
+    int i=0, j=0, k=0, x=0, vite=3, alienimorti=0;
         clear();
 
         G.cord.x = 2;       /* Coordinata X iniziale */
@@ -262,19 +262,21 @@ void area(void){
             /*Collisioni Bullet giocatore*/
             int exit=0;
                 for(i=0;i<11;i++){
-                    for(j=0;j<GSA;j++){
-                        for(k=0;k<GSA;k++){
-                            if(BG[i].cord.x == (A[i].cord.x)+k && BG[i].cord.y == (A[i].cord.y)+j){
-                                
-                                cancellasprite(A[i].cord.y,A[i].cord.x,'A');
-                                BG[i].cord.y=DEADYB;
-                                BG[i].cord.x=DEADXB;
-                                A[i].cord.y=DEADYA;
-                                A[i].cord.x=DEADXA;
-                                if(exit==0){
-                                    alienimorti++;
-                                    exit=1;
-                                }      
+                    for(x=0;x<30;x++){
+                        for(j=0;j<GSA;j++){
+                            for(k=0;k<GSA;k++){
+                                if(BG[x].cord.x == (A[i].cord.x)+k && BG[x].cord.y == (A[i].cord.y)+j){
+                                    
+                                    cancellasprite(A[i].cord.y,A[i].cord.x,'A');
+                                    BG[x].cord.y=DEADYB;
+                                    BG[x].cord.x=DEADXB;
+                                    A[i].cord.y=DEADYA;
+                                    A[i].cord.x=DEADXA;
+                                    if(exit==0){
+                                        alienimorti++;
+                                        exit=1;
+                                    }      
+                                }
                             }
                         }
                     }
