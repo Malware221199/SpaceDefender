@@ -244,8 +244,14 @@ void area(void){
             }
 
             /*Bullet nemici*/
-            //cancellasprite(BN[Bulletn.id].old_cord.y,BN[Bulletn.id].old_cord.x,Bulletn.c);
-            //stampasprite(BN[Bulletn.id].cord.y,BN[Bulletn.id].cord.x,Bulletn.c);
+            for(i=0;i<30;i++){
+            cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
+            pthread_mutex_lock(&mbulletn);
+            stampasprite(BN[i].cord.y,BN[i].cord.x,'H');
+            BN[i].old_cord.x=BN[i].cord.x;
+            BN[i].old_cord.y=BN[i].cord.y;
+            pthread_mutex_unlock(&mbulletn);
+            }
 
             /*
             ----------------------------------------------------------------------
