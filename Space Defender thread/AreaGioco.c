@@ -287,7 +287,7 @@ void area(void){
                 }
            
             /*Collisioni Bullet nemico*/
-            int exit=0;
+                exit=0;
                 for(i=0;i<30;i++){
                     for(j=0;j<6;j++){
                             for(k=0;k<6;k++){
