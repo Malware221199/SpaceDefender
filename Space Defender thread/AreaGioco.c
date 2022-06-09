@@ -313,11 +313,10 @@ void area(void){
                                     A[i].cord.y=DEADYA;
                                     A[i].cord.x=DEADXA;
                                     killA[i]=true;
-                                    //if(exit==0){
-                                    //    alienimorti++;
-                                    //    exit=1;
-                                    //}
-                                    alienimorti++;      
+                                    if(exit==0){
+                                        alienimorti++;
+                                        exit=1;
+                                    }    
                                 }
                             }
                         }
@@ -348,6 +347,7 @@ void area(void){
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
+            mvaddstr(0,40,"%d-%d",alienimorti,nnemici);
             
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
