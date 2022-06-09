@@ -4,10 +4,12 @@ pthread_t tbulletn;
 int idbg=0;     /* id proiettili giocatore*/
 int idbn=0;     /* id proiettili nemici*/
 int collision=0;
+bool killA[11],killG,killBG[NMB],killBN[NMB];
 save A[11];
-save BG[30];
-save BN[95];
+save BG[NMB];
+save BN[NMB];
 save G;
+
 /*
 ----------------------------------------------------------------------
  Funzione 'Alieni'
@@ -38,7 +40,7 @@ void *alieni(void *arg){
     else if (A[myida].id%2==1) A[myida].cord.y=MAXY-(MAXY/4)-3;
     pthread_mutex_unlock(&malieni);
 
-    while(!collision){
+    while(!killA[myida]){
         pthread_mutex_lock(&malieni);
         /* Movimento X */
         A[myida].cord.x-=1;
@@ -73,6 +75,7 @@ void *alieni(void *arg){
         /* Inserisco una pausa per rallentare il movimento */
         usleep(difficolta);
         }
+        killA[myida]=false;
 }
 
 
@@ -96,7 +99,7 @@ void *giocatore(void *arg)
 
   
   
-  while(!collision){
+  while(!killG){
       
       
 
@@ -125,10 +128,9 @@ void *giocatore(void *arg)
             }
              /* Inserisco una pausa per rallentare il movimento */
         }
-        usleep(1000000);
     }
-
   }
+killG=false;
 }
 
 /*
@@ -142,7 +144,7 @@ void *bulletg(void *arg){
     int myidbg;
     
     pthread_mutex_lock(&initbulletg);
-    if(idbg>=30)idbg=0;
+    if(idbg>=NMB)idbg=0;
     BG[idbg].id =idbg; /* Numero dell elemento */
     myidbg=idbg;
     idbg++;
@@ -154,7 +156,7 @@ void *bulletg(void *arg){
     
     
 
-    while(!collision){
+    while(!killBG[myidbg]){
        
 
         pthread_mutex_lock(&mbulletg);
@@ -180,6 +182,7 @@ void *bulletg(void *arg){
         /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
     }
+    killBG[myidbg]=false;
 }
 
 
@@ -194,7 +197,7 @@ void *bulletn(void *arg){
     int myidbn;
     
     pthread_mutex_lock(&initbulletn);
-    if(idbn>=30)idbn=0;
+    if(idbn>=NMB)idbn=0;
     BN[idbn].id =idbn; /* Numero dell elemento */
     myidbn=idbn;
     idbn++;
@@ -206,7 +209,7 @@ void *bulletn(void *arg){
     
     
 
-    while(!collision){
+    while(!killBN[myidbn]){
        
 
         pthread_mutex_lock(&mbulletn);
@@ -216,6 +219,7 @@ void *bulletn(void *arg){
         /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
     }
+    killBN[myidbn]=false;
     free(arg);
 }
 
@@ -293,11 +297,13 @@ void area(void){
                             for(k=0;k<GSA;k++){
                                 if(BG[x].cord.x == (A[i].cord.x)+k && BG[x].cord.y == (A[i].cord.y)+j){
                                     
-                                    cancellasprite(A[i].cord.y,A[i].cord.x,'A');
+                                    //cancellasprite(A[i].cord.y,A[i].cord.x,'A');
                                     BG[x].cord.y=DEADYB;
                                     BG[x].cord.x=DEADXB;
+                                    killBG[x]=true;
                                     A[i].cord.y=DEADYA;
                                     A[i].cord.x=DEADXA;
+                                    killA[i]=true;
                                     if(exit==0){
                                         alienimorti++;
                                         exit=1;
