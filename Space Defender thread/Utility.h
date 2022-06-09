@@ -85,10 +85,10 @@ typedef struct
   int id;   /* Numero dell elemento */
 }save;
 
-struct position Alieni;
-struct position Giocatore;
-struct position Bulletg;
-struct position Bulletn;
+//struct position Alieni;
+//struct position Giocatore;
+//struct position Bulletg;
+//struct position Bulletn;
 
 /* Mutex per la gestione dei thread */
 pthread_mutex_t	malieni;
