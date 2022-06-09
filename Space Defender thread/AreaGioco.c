@@ -48,14 +48,14 @@ void *alieni(void *arg){
             
             A[myida].cord.y -= deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(A[myida].cord.y - deltay < 1 || A[myida].cord.y - deltay > MAXY/2-GSA-1) deltay *=-1;
+            if(A[myida].cord.y - deltay < 1 || A[myida].cord.y - deltay > MAXY/2-GSA) deltay *=-1;
            
         }
         else if(myida%2==1){
 
             A[myida].cord.y += deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(A[myida].cord.y + deltay < MAXY/2+1  || A[myida].cord.y + deltay > (MAXY-GSA-1)) deltay *=-1;
+            if(A[myida].cord.y + deltay < MAXY/2  || A[myida].cord.y + deltay > (MAXY-GSA-1)) deltay *=-1;
             
         }
             
@@ -71,7 +71,7 @@ void *alieni(void *arg){
         }
     
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(DELAYM);
+        usleep(difficolta);
         }
 }
 
@@ -123,6 +123,8 @@ void *giocatore(void *arg)
                 endwin();
                 exit;
             }
+             /* Inserisco una pausa per rallentare il movimento */
+            usleep(difficolta);
         }
     }
 
