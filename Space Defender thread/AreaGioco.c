@@ -243,7 +243,18 @@ void area(void){
         G.cord.x = 2;       /* Coordinata X iniziale */
         G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
         G.id=1;   /* Numero dell elemento */
-        for(i=0;i<11;i++) killA[i]=false;
+        //for(i=0;i<=11;i++) killA[i]=false;
+        killA[0]=false;
+        killA[1]=false;
+        killA[2]=false;
+        killA[3]=false;
+        killA[4]=false;
+        killA[5]=false;
+        killA[6]=false;
+        killA[7]=false;
+        killA[8]=false;
+        killA[9]=false;
+
         for(i=0;i<NMB;i++) killBG[i]=false;
         for(i=0;i<NMB;i++) killBN[i]=false;
         killG=false;
