@@ -41,7 +41,7 @@ void *alieni(void *arg){
     else if (A[myida].id%2==1) A[myida].cord.y=MAXY-(MAXY/4)-3;
     pthread_mutex_unlock(&malieni);
 
-    while(!killA[myida]){
+    while(1){
         pthread_mutex_lock(&malieni);
         /* Movimento X */
         A[myida].cord.x-=1;
