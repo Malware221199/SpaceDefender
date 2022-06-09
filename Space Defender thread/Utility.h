@@ -41,7 +41,7 @@
 */
 extern int nnemici;
 extern int difficolta;
-extern int ida;
+//extern int ida;
 
 
 /*
