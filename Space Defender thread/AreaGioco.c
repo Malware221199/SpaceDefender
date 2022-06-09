@@ -43,7 +43,7 @@ void *alieni(void *arg){
         /* Movimento X */
         A[myida].cord.x-=1;
         /* Movimento Y */
-        if(A[myida].cord.y%2==0){
+        if(myida%2==0){
             if(A[myida].cord.y%2==0){
             
             A[myida].cord.y += deltay;
