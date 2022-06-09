@@ -48,14 +48,14 @@ void *alieni(void *arg){
             
             A[myida].cord.y -= deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(A[myida].cord.y - deltay < 0 || A[myida].cord.y - deltay > MAXY/2-GSA) deltay *=-1;
+            if(A[myida].cord.y - deltay < 1 || A[myida].cord.y - deltay > MAXY/2-GSA-1) deltay *=-1;
            
         }
         else if(myida%2==1){
 
             A[myida].cord.y += deltay;
             /* Se supero area Y schermo inverte il movimento */
-            if(A[myida].cord.y + deltay < MAXY/2  || A[myida].cord.y + deltay > (MAXY-GSA)) deltay *=-1;
+            if(A[myida].cord.y + deltay < MAXY/2+1  || A[myida].cord.y + deltay > (MAXY-GSA-1)) deltay *=-1;
             
         }
             
