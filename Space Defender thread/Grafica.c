@@ -3,7 +3,7 @@
 void stampasprite(int y,int x,char c){
     int i;
     switch(c){
-        case 'A':
+        case 'A':/* Visualizzo l'alieno*/
             attron(COLOR_PAIR(1));
             for(i=0;i<3;i++)
                 mvaddstr(y+i,x,sprite_alieno[i]);
