@@ -10,10 +10,6 @@ save A[11];
 save BG[NMB];
 save BN[NMB];
 save G;
- for(i=0;i<11;i++) killA[i]=false;
-        for(i=0;i<NMB;i++) killBG[i]=false;
-        for(i=0;i<NMB;i++) killBN[i]=false;
-        killG=false;
 
 /*
 ----------------------------------------------------------------------
@@ -44,7 +40,7 @@ void *alieni(void *arg){
     if(A[myida].id%2==0) A[myida].cord.y=(MAXY/4);
     else if (A[myida].id%2==1) A[myida].cord.y=MAXY-(MAXY/4)-3;
     pthread_mutex_unlock(&malieni);
-
+    while(1)printf("%d",killA[myida]);
     while(!killA[myida]){
         pthread_mutex_lock(&malieni);
         /* Movimento X */
