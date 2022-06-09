@@ -142,6 +142,7 @@ void *bulletg(void *arg){
     int myidbg;
     
     pthread_mutex_lock(&initbulletg);
+    if(idbg>=30)idbg=0;
     BG[idbg].id =idbg; /* Numero dell elemento */
     myidbg=idbg;
     idbg++;
@@ -193,6 +194,7 @@ void *bulletn(void *arg){
     int myidbn;
     
     pthread_mutex_lock(&initbulletn);
+    if(idbn>=30)idbn=0;
     BN[idbn].id =idbn; /* Numero dell elemento */
     myidbn=idbn;
     idbn++;
