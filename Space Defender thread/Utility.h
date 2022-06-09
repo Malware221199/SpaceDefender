@@ -66,13 +66,6 @@ void cancellasprite(int y,int x,char c);
 ----------------------------------------------------------------------
 */
 /* Struttura adoperata per veicolare le coordinate*/
-struct position {
-  char c; 	/* Identificatore dell'entità che invia i dati */
-  int  x;	 /* Coordinata X */
-  int  y;	 /* Coordinata Y */
-  int  id;  /* Numero dell elemento */
-  
-};
 typedef struct 
 {
   int x;    /* Coordinata X */
@@ -83,12 +76,9 @@ typedef struct
   cord cord;
   cord old_cord;
   int id;   /* Numero dell elemento */
+  bool alive;
 }save;
 
-//struct position Alieni;
-//struct position Giocatore;
-//struct position Bulletg;
-//struct position Bulletn;
 
 /* Mutex per la gestione dei thread */
 pthread_mutex_t	malieni;
