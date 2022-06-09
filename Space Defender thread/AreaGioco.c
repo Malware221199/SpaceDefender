@@ -125,7 +125,7 @@ void *giocatore(void *arg)
             }
              /* Inserisco una pausa per rallentare il movimento */
         }
-        usleep(difficolta);
+        usleep(1000000);
     }
 
   }
