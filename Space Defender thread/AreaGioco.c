@@ -23,10 +23,11 @@ void *alieni(void *arg){
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
     int myida;
-    for(i=0;i<=11;i++) killA[i]=false;
+    
     pthread_mutex_lock(&initalieni);
     A[ida].id =ida; /* Numero dell elemento */
     myida=ida;
+    killA[myida]=false;
     ida++;
     pthread_mutex_unlock(&initalieni);
 
@@ -145,12 +146,13 @@ void *bulletg(void *arg){
     int deltay=1;		/* Spostamento verticale */
     int myidbg;
     int i;
-    for(i=0;i<NMB;i++) killBG[i]=false;
+    killBG[i]=false;
     
     pthread_mutex_lock(&initbulletg);
     if(idbg>=NMB)idbg=0;
     BG[idbg].id =idbg; /* Numero dell elemento */
     myidbg=idbg;
+    killBG[myidbg]=false;
     idbg++;
     pthread_mutex_unlock(&initbulletg);
     pthread_mutex_lock(&mgiocatore);
@@ -200,12 +202,12 @@ void *bulletn(void *arg){
     int deltax=1;		/* Spostamento orizzontale */
     int myidbn;
     int i;
-    for(i=0;i<NMB;i++) killBN[i]=false;
     
     pthread_mutex_lock(&initbulletn);
     if(idbn>=NMB)idbn=0;
     BN[idbn].id =idbn; /* Numero dell elemento */
     myidbn=idbn;
+    killBN[myidbn]=false;
     idbn++;
     pthread_mutex_unlock(&initbulletn);
     pthread_mutex_lock(&malieni);
@@ -296,7 +298,7 @@ void area(void){
             ---------------------------------------------------------------------- 
             */
            
-            /*Collisioni Bullet giocatore*/
+            /*Collisioni Bullet giocatore con nemico*/
             int exit=0;
                 for(i=0;i<11;i++){
                     for(x=0;x<30;x++){
@@ -321,7 +323,7 @@ void area(void){
                     }
                 }
            
-            /*Collisioni Bullet nemico*/
+            /*Collisioni Bullet nemico con giocatore*/
                 exit=0;
                 for(i=0;i<30;i++){
                     for(j=0;j<6;j++){
@@ -329,6 +331,7 @@ void area(void){
                                 if(BN[i].cord.x == (G.cord.x)-k && BN[i].cord.y == (G.cord.y)+j){
                                     BN[i].cord.y=DEADYA;
                                     BN[i].cord.x=DEADXA;
+                                    killBN[i]=true;
                                     if(exit==0){
                                         vite--;
                                         exit=1;
