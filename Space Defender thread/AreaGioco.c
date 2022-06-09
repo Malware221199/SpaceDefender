@@ -1,6 +1,7 @@
 #include "Utility.h"
 pthread_t tbulletg;
 pthread_t tbulletn;
+int ida=0;
 int idbg=0;     /* id proiettili giocatore*/
 int idbn=0;     /* id proiettili nemici*/
 int collision=0;
