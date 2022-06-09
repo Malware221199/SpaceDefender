@@ -90,6 +90,7 @@ void *giocatore(void *arg)
 {
 
   int maxb=10; /*massimo proiettili disponibili*/
+  killG=false;
 
   pthread_mutex_lock(&mgiocatore);
   G.cord.x = 2;       /* Coordinata X iniziale */
@@ -143,6 +144,7 @@ void *bulletg(void *arg){
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
     int myidbg;
+    for(i=0;i<NMB;i++) killBG[i]=false;
     
     pthread_mutex_lock(&initbulletg);
     if(idbg>=NMB)idbg=0;
@@ -196,6 +198,7 @@ void *bulletn(void *arg){
     int ida=*((int *)arg);
     int deltax=1;		/* Spostamento orizzontale */
     int myidbn;
+    for(i=0;i<NMB;i++) killBN[i]=false;
     
     pthread_mutex_lock(&initbulletn);
     if(idbn>=NMB)idbn=0;
@@ -243,9 +246,6 @@ void area(void){
         G.cord.x = 2;       /* Coordinata X iniziale */
         G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
         G.id=1;   /* Numero dell elemento */
-        for(i=0;i<=11;i++) killA[i]=false;
-        for(i=0;i<NMB;i++) killBG[i]=false;
-        for(i=0;i<NMB;i++) killBN[i]=false;
         killG=false;
 
         do {
