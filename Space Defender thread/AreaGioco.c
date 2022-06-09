@@ -144,6 +144,7 @@ void *bulletg(void *arg){
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
     int myidbg;
+    int i;
     for(i=0;i<NMB;i++) killBG[i]=false;
     
     pthread_mutex_lock(&initbulletg);
@@ -198,6 +199,7 @@ void *bulletn(void *arg){
     int ida=*((int *)arg);
     int deltax=1;		/* Spostamento orizzontale */
     int myidbn;
+    int i;
     for(i=0;i<NMB;i++) killBN[i]=false;
     
     pthread_mutex_lock(&initbulletn);
