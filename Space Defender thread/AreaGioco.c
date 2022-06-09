@@ -313,10 +313,11 @@ void area(void){
                                     A[i].cord.y=DEADYA;
                                     A[i].cord.x=DEADXA;
                                     killA[i]=true;
-                                    if(exit==0){
-                                        alienimorti++;
-                                        exit=1;
-                                    }      
+                                    //if(exit==0){
+                                    //    alienimorti++;
+                                    //    exit=1;
+                                    //}
+                                    alienimorti++;      
                                 }
                             }
                         }
@@ -340,6 +341,8 @@ void area(void){
                             }
                         }
                 }
+
+            /*Collisioni Bullet giocatore con limite schermo*/
 
 
             /* Visualizzo le vite rimaste al giocatore */
