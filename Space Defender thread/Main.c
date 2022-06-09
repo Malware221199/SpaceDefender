@@ -1,6 +1,6 @@
 #include "Utility.h"
 
-int nnemici=2,i;
+int nnemici=6,i;
 int difficolta=DELAYM;
 int ida=0;
 
