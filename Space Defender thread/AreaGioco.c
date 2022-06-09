@@ -50,15 +50,15 @@ void *alieni(void *arg){
             /* Se supero area Y schermo inverte il movimento */
             if(A[myida].cord.y + deltay < 0 || A[myida].cord.y + deltay > MAXY/2) deltay = -deltay;
            
-        }
-        else{
+            }
+            else{
             /* Movimento Y */
             A[myida].cord.y -= deltay;
             /* Se supero area Y schermo inverte il movimento */
             if(A[myida].cord.y - deltay < MAXY/2 || A[myida].cord.y - deltay > MAXY) deltay = -deltay;
             
-        }
-            
+            }
+        }    
         pthread_mutex_unlock(&malieni);
 
         if (random() < RAND_MAX/10){
