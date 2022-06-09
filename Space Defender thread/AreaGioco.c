@@ -364,7 +364,7 @@ void area(void){
                 pthread_join (tbulletn, NULL);	
             }
 
-            if(alienimorti>nnemici) {
+            if(alienimorti>=nnemici) {
 
                 collision=1;
                 clear();
