@@ -357,7 +357,7 @@ void area(void){
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
-            mvprintw(0,40,"%d",collisione(BN[i].cord, DB, DB,G.cord,GSG,GSG));
+            mvprintw(0,40,"%d",collisione(BN[0].cord, DB, DB,G.cord,GSG,GSG));
             
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
