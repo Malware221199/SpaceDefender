@@ -45,26 +45,6 @@ extern int nnemici;
 extern int difficolta;
 //extern int ida;
 
-
-/*
-----------------------------------------------------------------------
- Funzioni
-----------------------------------------------------------------------
-*/
-void *alieni(void *arg);
-void *giocatore(void *arg);
-void *bulletg(void *arg);
-void *bulletn(void *arg);
-void areaGioco(void *arg);
-int menu(int *nnemici,int *difficolta);
-int opzioni(int *nnemici,int *difficolta);
-void difficulty(int *difficolta);
-void nemici(int *nnemici);
-void stampasprite(int y,int x,char c);
-void cancellasprite(int y,int x,char c);
-bool collisione(cord c1,int lar1, int lun1,cord c2,int lar2,int lun2);
-bool fuorischermo(cord c, int lar, int lun);
-
 /*
 ----------------------------------------------------------------------
  Strutture
@@ -93,3 +73,24 @@ pthread_mutex_t	mbulletn;
 pthread_mutex_t	initalieni;
 pthread_mutex_t	initbulletg;
 pthread_mutex_t	initbulletn;
+
+/*
+----------------------------------------------------------------------
+ Funzioni
+----------------------------------------------------------------------
+*/
+void *alieni(void *arg);
+void *giocatore(void *arg);
+void *bulletg(void *arg);
+void *bulletn(void *arg);
+void areaGioco(void *arg);
+int menu(int *nnemici,int *difficolta);
+int opzioni(int *nnemici,int *difficolta);
+void difficulty(int *difficolta);
+void nemici(int *nnemici);
+void stampasprite(int y,int x,char c);
+void cancellasprite(int y,int x,char c);
+bool collisione(cord c1,int lar1, int lun1,cord c2,int lar2,int lun2);
+bool fuorischermo(cord c, int lar, int lun);
+
+
