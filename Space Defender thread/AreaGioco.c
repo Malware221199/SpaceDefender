@@ -390,7 +390,6 @@ void area(){
  for(i=0;i<NMB;i++) killBG[i]=true;
  for(i=0;i<NMB;i++) killBN[i]=true;
  killG=true;
- while(1) printf("oidocrooooop");
 
 
 }
