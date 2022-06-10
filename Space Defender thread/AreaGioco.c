@@ -334,14 +334,22 @@ void area(void){
 
             /*Collisioni Bullet giocatore con limite schermo*/
             for(i=0;i<NMB;i++){
-                if(BG[i].cord.x==MAXX)
+                if(BG[i].cord.alive && fuorischermo(BG[i].cord,DB,DB))
+                {
                     killBG[i]=true;
+                    BG[i].cord.alive=false;
+                }
+
             }
 
             /*Collisioni Bullet nemico con limite schermo*/
             for(i=0;i<NMB;i++){
-                if(BN[i].cord.x==0)
+                if(BN[i].cord.alive && fuorischermo(BN[i].cord,DB,DB))
+                {
                     killBN[i]=true;
+                    BN[i].cord.alive=false;
+                }
+
             }
 
 
