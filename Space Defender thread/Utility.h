@@ -62,7 +62,6 @@ typedef struct
 {
   cord cord;
   cord old_cord;
-  int id;   /* Numero dell elemento */
 }save;
 
 
