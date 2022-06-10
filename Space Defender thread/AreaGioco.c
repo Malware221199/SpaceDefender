@@ -394,7 +394,7 @@ void area(void){
  for(i=0;i<11;i++) killA[i]=true;
  for(i=0;i<NMB;i++) killBG[i]=true;
  for(i=0;i<NMB;i++) killBN[i]=true;
- killG[i]=true; 
+ killG=true; 
 
 
 }
