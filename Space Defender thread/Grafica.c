@@ -1,5 +1,4 @@
 #include "Grafica.h"
-#include "Utility.h"
 
 void stampasprite(int y,int x,char c){
     int i;
