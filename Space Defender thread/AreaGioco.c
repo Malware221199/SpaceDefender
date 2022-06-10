@@ -321,7 +321,7 @@ void area(void){
                     pthread_mutex_lock(&mbulletn);
                     pthread_mutex_lock(&mgiocatore);
                     //while(1) printf("%d",BN[i].cord.alive);
-                    if(BN[i].cord.alive && collisione(BN[i].cord, DB, DB,G.cord,GSG,GSG)){
+                    if(BN[i].cord.alive && collisione(G.cord,GSG,GSG,BN[i].cord, DB, DB)){
                         
                         killBN[i]=true;
                         BN[i].cord.alive=false;
@@ -357,7 +357,7 @@ void area(void){
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
-            mvprintw(0,40,"%d",collisione(BN[0].cord, DB, DB,G.cord,GSG,GSG));
+            mvprintw(0,40,"%d",nnemici);
             
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
