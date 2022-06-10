@@ -65,7 +65,7 @@ int main(){
 	/* Avvio la funzione Area */
     area();	
     /* Attendo la terminazione dei thread */
-    pthread_join (talieni, NULL);		
+    //pthread_join (talieni, NULL);		
 	pthread_join (tgiocatore, NULL);	
     }while(1);
 	/* Elimino mutex */
