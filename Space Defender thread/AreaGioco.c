@@ -347,6 +347,12 @@ void area(void){
                     killBG[i]=true;
             }
 
+            /*Collisioni Bullet nemico con limite schermo*/
+            for(i=0;i<NMB;i++){
+                if(BN[i].cord.x==0)
+                    killBN[i]=true;
+            }
+
 
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
