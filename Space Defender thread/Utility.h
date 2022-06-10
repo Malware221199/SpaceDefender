@@ -23,6 +23,8 @@
 #define DA 	    2     /* Distanza alieni*/
 #define MAXX	    80
 #define MAXY 	    24
+#define DB 	    1     /* Dimensione bullet*/
+
 
 
 #define DEADYA 	-10         /*Coordinata morta y alieno*/
@@ -60,6 +62,8 @@ void difficulty(int *difficolta);
 void nemici(int *nnemici);
 void stampasprite(int y,int x,char c);
 void cancellasprite(int y,int x,char c);
+bool collisione(cord c1,int lar1, int lun1,cord c2,int lar2,int lun2);
+bool fuorischermo(cord c, int lar, int lun);
 
 /*
 ----------------------------------------------------------------------
@@ -71,13 +75,13 @@ typedef struct
 {
   int x;    /* Coordinata X */
   int y;    /* Coordinata Y */
+  bool alive;
 }cord;
 typedef struct 
 {
   cord cord;
   cord old_cord;
   int id;   /* Numero dell elemento */
-  bool alive;
 }save;
 
 
