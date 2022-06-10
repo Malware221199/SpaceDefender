@@ -2,7 +2,7 @@
 
 int nnemici=6,i;
 int difficolta=DELAYM;
-//int ida=0;
+
 
 /*
 ----------------------------------------------------------------------
@@ -11,7 +11,7 @@ int difficolta=DELAYM;
 */
 
 int main(){
-    pthread_t talieni;
+    pthread_t talieni[11];
     pthread_t tgiocatore;
 
     setlocale(LC_ALL, "");
@@ -51,7 +51,7 @@ int main(){
         
     /* Creo il thread alieni */
     for(i=0;i<nnemici;i++){
-        if(pthread_create(&talieni, NULL, alieni, NULL)){
+        if(pthread_create(&talieni[i], NULL, alieni, NULL)){
             endwin();
             exit;
         }
@@ -66,9 +66,9 @@ int main(){
     area();	
     /* Attendo la terminazione dei thread */
     
-    //pthread_join (talieni, NULL);		
+    for(i=0;i<nnemici;i++) pthread_join (talieni[i], NULL);		
 	pthread_join (tgiocatore, NULL);
-    while(1) printf("oidocrooooop");	
+
     }while(1);
 	/* Elimino mutex */
     pthread_mutex_destroy(&malieni);
