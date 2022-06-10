@@ -65,6 +65,7 @@ int main(){
 	/* Avvio la funzione Area */
     area();	
     /* Attendo la terminazione dei thread */
+    while(1) printf("oidocrooooop");
     //pthread_join (talieni, NULL);		
 	pthread_join (tgiocatore, NULL);	
     }while(1);
