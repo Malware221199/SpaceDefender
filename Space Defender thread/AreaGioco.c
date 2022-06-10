@@ -271,7 +271,7 @@ void area(void){
 
 
             /*Bullet giocatore*/
-            for(i=0;i<30;i++){
+            for(i=0;i<NMB;i++){
             if(BG[i].old_cord.alive) cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
             pthread_mutex_lock(&mbulletg);
             if(BG[i].cord.alive) stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
@@ -280,7 +280,7 @@ void area(void){
             }
 
             /*Bullet nemici*/
-            for(i=0;i<30;i++){
+            for(i=0;i<NMB;i++){
             if(BN[i].old_cord.alive) cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
             pthread_mutex_lock(&mbulletn);
             if(BN[i].cord.alive) stampasprite(BN[i].cord.y,BN[i].cord.x,'H');
@@ -390,6 +390,12 @@ void area(void){
 
     /* Il ciclo si ripete finchè le vite del giocatore terminano o gli alieni terminano */
     } while(!collision);
+
+ for(i=0;i<11;i++) killA[i]=true;
+ for(i=0;i<NMB;i++) killBG[i]=true;
+ for(i=0;i<NMB;i++) killBN[i]=true;
+ killG[i]=true; 
+
 
 }
 bool collisione(cord c1,int lar1, int lun1,cord c2,int lar2,int lun2)
