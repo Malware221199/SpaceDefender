@@ -198,17 +198,3 @@ void cancellasprite(int y,int x,char c){
 
 }
 
-bool collisione(cord c1,int lar1, int lun1,cord c2,int lar2,int lun2)
-{
-    return(
-        c1.x < c2.x + lar2 && c1.x + lar1 > c2.x && c1.y < c2.y = lun2 && c1.y + lun1 >c2.y;
-    )
-}
-
-bool fuorischermo(cord c, int lar, int lun)
-{
-    return(
-        c.y + lun > MAXY || c.y < 0 || c.x + lar > MAXX || c.x < 0;
-    )
-
-}
