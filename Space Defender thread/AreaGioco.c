@@ -262,16 +262,14 @@ void area(void){
                 cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
                 pthread_mutex_lock(&malieni);
                 stampasprite(A[i].cord.y,A[i].cord.x,'A');
-                A[i].old_cord.x=A[i].cord.x;
-                A[i].old_cord.y=A[i].cord.y;
+                A[i].old_cord=A[i].cord;
                 pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
             cancellasprite(G.old_cord.y,G.old_cord.x,'G');
             pthread_mutex_lock(&mgiocatore);
             stampasprite(G.cord.y,G.cord.x,'G');
-            G.old_cord.x=G.cord.x;
-            G.old_cord.y=G.cord.y;
+            G.old_cord=G.cord;
             pthread_mutex_unlock(&mgiocatore);
 
 
@@ -280,8 +278,7 @@ void area(void){
             cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
             pthread_mutex_lock(&mbulletg);
             stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
-            BG[i].old_cord.x=BG[i].cord.x;
-            BG[i].old_cord.y=BG[i].cord.y;
+            BG[i].old_cord=BG[i].cord;
             pthread_mutex_unlock(&mbulletg);
             }
 
@@ -290,8 +287,7 @@ void area(void){
             cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
             pthread_mutex_lock(&mbulletn);
             stampasprite(BN[i].cord.y,BN[i].cord.x,'H');
-            BN[i].old_cord.x=BN[i].cord.x;
-            BN[i].old_cord.y=BN[i].cord.y;
+            BN[i].old_cord=BN[i].cord;
             pthread_mutex_unlock(&mbulletn);
             }
 
