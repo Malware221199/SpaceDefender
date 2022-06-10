@@ -25,6 +25,7 @@ void *alieni(void *arg){
     int myida;
     
     pthread_mutex_lock(&initalieni);
+    if(ida==nnemici)ida=0;
     myida=ida;
     killA[myida]=false;
     ida++;
