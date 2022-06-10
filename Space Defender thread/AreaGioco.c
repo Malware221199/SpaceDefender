@@ -148,7 +148,6 @@ void *bulletg(void *arg){
     int deltay=1;		/* Spostamento verticale */
     int myidbg;
     int i;
-    killBG[i]=false;
     
     pthread_mutex_lock(&initbulletg);
     if(idbg>=NMB)idbg=0;
