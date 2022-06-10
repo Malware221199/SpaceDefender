@@ -325,22 +325,19 @@ void area(void){
                 
            
             /*Collisioni Bullet nemico con giocatore*/
-                exit=0;
                 for(i=0;i<30;i++){
-                    for(j=0;j<6;j++){
-                            for(k=0;k<6;k++){
-                                if(BN[i].cord.x == (G.cord.x)-k && BN[i].cord.y == (G.cord.y)+j){
-                                    BN[i].cord.y=DEADYA;
-                                    BN[i].cord.x=DEADXA;
-                                    killBN[i]=true;
-                                    if(exit==0){
-                                        vite--;
-                                        exit=1;
-                                    }      
-                                }
-                            }
-                        }
+                    pthread_mutex_lock(&mbulletn);
+                    pthread_mutex_lock(&mgiocatore);
+                    if(BN[i].cord.alive && collisione(BN[i].cord, DB, DB,G.cord,GSG,GSG)){
+                        
+                        killBN[i]=true;
+                        BN[i].cord.alive=false;  
+                    }
+                pthread_mutex_unlock(&mbulletn);
+                pthread_mutex_unlock(&mgiocatore);
                 }
+                        
+                
 
             /*Collisioni Bullet giocatore con limite schermo*/
             for(i=0;i<NMB;i++){
