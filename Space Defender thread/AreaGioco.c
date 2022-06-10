@@ -256,7 +256,7 @@ void area(void){
             
             /*Alieni*/
             for(i=0;i<nnemici;i++){
-                if(A[i].oldcord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
+                if(A[i].old_cord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
                 pthread_mutex_lock(&malieni);
                 if(A[i].cord.alive) stampasprite(A[i].cord.y,A[i].cord.x,'A');
                 A[i].old_cord=A[i].cord;
@@ -272,7 +272,7 @@ void area(void){
 
             /*Bullet giocatore*/
             for(i=0;i<30;i++){
-            if(BG[i].oldcord.alive) cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
+            if(BG[i].old_cord.alive) cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
             pthread_mutex_lock(&mbulletg);
             if(BG[i].cord.alive) stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
             BG[i].old_cord=BG[i].cord;
@@ -281,7 +281,7 @@ void area(void){
 
             /*Bullet nemici*/
             for(i=0;i<30;i++){
-            if(BN[i].oldcord.alive) cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
+            if(BN[i].old_cord.alive) cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
             pthread_mutex_lock(&mbulletn);
             if(BN[i].cord.alive) stampasprite(BN[i].cord.y,BN[i].cord.x,'H');
             BN[i].old_cord=BN[i].cord;
