@@ -25,7 +25,6 @@ void *alieni(void *arg){
     int myida;
     
     pthread_mutex_lock(&initalieni);
-    A[ida].id =ida; /* Numero dell elemento */
     myida=ida;
     killA[myida]=false;
     ida++;
@@ -40,8 +39,8 @@ void *alieni(void *arg){
     if(myida==8||myida==9) A[myida].cord.x= MAXX-(GSA+DA)*5;
     
 
-    if(A[myida].id%2==0) A[myida].cord.y=(MAXY/4);
-    else if (A[myida].id%2==1) A[myida].cord.y=MAXY-(MAXY/4)-3;
+    if(myida%2==0) A[myida].cord.y=(MAXY/4);
+    else if (myida%2==1) A[myida].cord.y=MAXY-(MAXY/4)-3;
     pthread_mutex_unlock(&malieni);
     while(!killA[myida]){
         pthread_mutex_lock(&malieni);
@@ -98,7 +97,6 @@ void *giocatore(void *arg)
   G.cord.alive=true;
   G.cord.x = 2;       /* Coordinata X iniziale */
   G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
-  G.id=1;   /* Numero dell elemento */
   pthread_mutex_unlock(&mgiocatore);
   
 
@@ -208,7 +206,6 @@ void *bulletn(void *arg){
     pthread_mutex_lock(&initbulletn);
     BN[myidbn].cord.alive=true;
     if(idbn>=NMB)idbn=0;
-    BN[idbn].id =idbn; /* Numero dell elemento */
     myidbn=idbn;
     killBN[myidbn]=false;
     idbn++;
