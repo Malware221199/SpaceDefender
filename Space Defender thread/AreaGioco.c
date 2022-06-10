@@ -274,7 +274,7 @@ void area(void){
             for(i=0;i<30;i++){
             cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
             pthread_mutex_lock(&mbulletg);
-            stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
+            if(BG[i].cord.alive) stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
             BG[i].old_cord=BG[i].cord;
             pthread_mutex_unlock(&mbulletg);
             }
@@ -283,7 +283,7 @@ void area(void){
             for(i=0;i<30;i++){
             cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
             pthread_mutex_lock(&mbulletn);
-            stampasprite(BN[i].cord.y,BN[i].cord.x,'H');
+            if(BN[i].cord.alive) stampasprite(BN[i].cord.y,BN[i].cord.x,'H');
             BN[i].old_cord=BN[i].cord;
             pthread_mutex_unlock(&mbulletn);
             }
