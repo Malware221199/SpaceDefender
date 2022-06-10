@@ -20,6 +20,7 @@
 #define SPC			32		/* Cursore spazio */
 #define ENTER		10	  /* Cursore invio */
 #define GSA 	  3     /* Grandezza sprite alieno*/
+#define GSG 	  6     /* Grandezza sprite giocatore*/
 #define DA 	    2     /* Distanza alieni*/
 #define MAXX	    80
 #define MAXY 	    24
