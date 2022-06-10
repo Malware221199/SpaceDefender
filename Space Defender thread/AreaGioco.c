@@ -320,6 +320,7 @@ void area(void){
                 for(i=0;i<NMB;i++){
                     pthread_mutex_lock(&mbulletn);
                     pthread_mutex_lock(&mgiocatore);
+                    while(1) printf("%d",BN[i].cord.alive);
                     if(BN[i].cord.alive && collisione(BN[i].cord, DB, DB,G.cord,GSG,GSG)){
                         
                         killBN[i]=true;
