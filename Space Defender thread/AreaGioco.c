@@ -32,6 +32,7 @@ void *alieni(void *arg){
     pthread_mutex_unlock(&initalieni);
 
     pthread_mutex_lock(&malieni);
+    A[myida].cord.alive=true;
     if(myida==0||myida==1) A[myida].cord.x= MAXX-(GSA+DA);
     if(myida==2||myida==3) A[myida].cord.x= MAXX-(GSA+DA)*2;
     if(myida==4||myida==5) A[myida].cord.x= MAXX-(GSA+DA)*3;
@@ -94,6 +95,7 @@ void *giocatore(void *arg)
   killG=false;
 
   pthread_mutex_lock(&mgiocatore);
+  G.cord.alive=true;
   G.cord.x = 2;       /* Coordinata X iniziale */
   G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
   G.id=1;   /* Numero dell elemento */
@@ -149,6 +151,7 @@ void *bulletg(void *arg){
     killBG[i]=false;
     
     pthread_mutex_lock(&initbulletg);
+    BG[myidbg].cord.alive=true;
     if(idbg>=NMB)idbg=0;
     BG[idbg].id =idbg; /* Numero dell elemento */
     myidbg=idbg;
@@ -204,6 +207,7 @@ void *bulletn(void *arg){
     int i;
     
     pthread_mutex_lock(&initbulletn);
+    BN[myidbn].cord.alive=true;
     if(idbn>=NMB)idbn=0;
     BN[idbn].id =idbn; /* Numero dell elemento */
     myidbn=idbn;
@@ -244,13 +248,13 @@ void *bulletn(void *arg){
 
 void area(void){
 
-    int i=0, j=0, k=0, x=0, vite=3, alienimorti=0;
+        int i=0, j=0, k=0, x=0, vite=3, alienimorti=0;
         clear();
 
-        G.cord.x = 2;       /* Coordinata X iniziale */
-        G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
-        G.id=1;   /* Numero dell elemento */
-        killG=false;
+        for(i=0;i<11;i++) A[i].old_cord.alive=false;
+        for(i=0;i<NMB;i++) BG[i].old_cord.alive=false;
+        for(i=0;i<NMB;i++) BN[i].old_cord.alive=false;
+        G.old_cord.alive=false;
 
         do {
             
@@ -299,29 +303,26 @@ void area(void){
             */
            
             /*Collisioni Bullet giocatore con nemico*/
-            int exit=0;
+            
                 for(i=0;i<11;i++){
-                    for(x=0;x<30;x++){
-                        for(j=0;j<GSA;j++){
-                            for(k=0;k<GSA;k++){
-                                if(BG[x].cord.x == (A[i].cord.x)+k && BG[x].cord.y == (A[i].cord.y)+j){
-                                    
-                                    //cancellasprite(A[i].cord.y,A[i].cord.x,'A');
-                                    BG[x].cord.y=DEADYB;
-                                    BG[x].cord.x=DEADXB;
-                                    killBG[x]=true;
-                                    A[i].cord.y=DEADYA;
-                                    A[i].cord.x=DEADXA;
-                                    killA[i]=true;
-                                    if(exit==0){
-                                        alienimorti++;
-                                        exit=1;
-                                    }    
-                                }
+                    pthread_mutex_lock(&mbulletg);
+                    pthread_mutex_lock(&malieni);
+                    if(A[i].cord.alive){
+                        for(j=0;j<NMB;j++){
+                            if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA))
+                            {
+                                killBG[j]=true;
+                                BG[j].cord.alive=false;
+                                killA[i]=true;
+                                A[i].cord.alive=false;
                             }
+                            
                         }
                     }
+                    pthread_mutex_unlock(&mbulletg);
+                    pthread_mutex_unlock(&malieni);
                 }
+                
            
             /*Collisioni Bullet nemico con giocatore*/
                 exit=0;
