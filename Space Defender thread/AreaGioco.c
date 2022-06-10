@@ -321,7 +321,6 @@ void area(){
                 for(i=0;i<NMB;i++){
                     pthread_mutex_lock(&mbulletn);
                     pthread_mutex_lock(&mgiocatore);
-                    //while(1) printf("%d",BN[i].cord.alive);
                     if(BN[i].cord.alive && collisione(G.cord,GSG,GSG-1,BN[i].cord, DB, DB)){
                         
                         killBN[i]=true;
@@ -394,7 +393,8 @@ void area(){
  for(i=0;i<11;i++) killA[i]=true;
  for(i=0;i<NMB;i++) killBG[i]=true;
  for(i=0;i<NMB;i++) killBN[i]=true;
- killG=true; 
+ killG=true;
+ while(1) printf("oidocrooooop");
 
 
 }
