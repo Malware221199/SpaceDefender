@@ -342,6 +342,10 @@ void area(void){
                 }
 
             /*Collisioni Bullet giocatore con limite schermo*/
+            for(i=0;i<NMB;i++){
+                if(BN[i].cord.x==MAXX)
+                    killBN[i]=true;
+            }
 
 
             /* Visualizzo le vite rimaste al giocatore */
