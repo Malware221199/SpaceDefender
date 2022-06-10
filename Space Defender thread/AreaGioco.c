@@ -168,7 +168,7 @@ void *bulletg(void *arg){
        
 
         pthread_mutex_lock(&mbulletg);
-        if(BG[myidbg].id%2==0){
+        if(myidbg%2==0){
             /* Movimento Y */
             BG[myidbg].cord.y += deltay;
             /* Se supero area Y schermo inverte il movimento */
