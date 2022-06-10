@@ -204,7 +204,6 @@ void *bulletn(void *arg){
     int i;
     
     pthread_mutex_lock(&initbulletn);
-    BN[myidbn].cord.alive=true;
     if(idbn>=NMB)idbn=0;
     myidbn=idbn;
     killBN[myidbn]=false;
@@ -213,6 +212,7 @@ void *bulletn(void *arg){
     pthread_mutex_lock(&malieni);
     BN[myidbn].cord.x = A[ida].cord.x+3;  /* Coordinata X iniziale */
     BN[myidbn].cord.y = A[ida].cord.y+1;  /* Coordinata Y iniziale */
+    BN[myidbn].cord.alive=true;
     pthread_mutex_unlock(&malieni);
     
     
@@ -307,6 +307,7 @@ void area(void){
                                 BG[j].cord.alive=false;
                                 killA[i]=true;
                                 A[i].cord.alive=false;
+                                alienimorti++;
                             }
                             
                         }
