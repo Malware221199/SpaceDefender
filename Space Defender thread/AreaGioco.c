@@ -258,7 +258,7 @@ void area(void){
             for(i=0;i<nnemici;i++){
                 cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
                 pthread_mutex_lock(&malieni);
-                stampasprite(A[i].cord.y,A[i].cord.x,'A');
+                if(A[i].cord.alive) stampasprite(A[i].cord.y,A[i].cord.x,'A');
                 A[i].old_cord=A[i].cord;
                 pthread_mutex_unlock(&malieni);
             }
