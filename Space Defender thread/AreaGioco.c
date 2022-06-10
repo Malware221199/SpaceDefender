@@ -151,16 +151,16 @@ void *bulletg(void *arg){
     killBG[i]=false;
     
     pthread_mutex_lock(&initbulletg);
-    BG[myidbg].cord.alive=true;
     if(idbg>=NMB)idbg=0;
-    BG[idbg].id =idbg; /* Numero dell elemento */
     myidbg=idbg;
     killBG[myidbg]=false;
     idbg++;
     pthread_mutex_unlock(&initbulletg);
+
     pthread_mutex_lock(&mgiocatore);
     BG[myidbg].cord.x = G.cord.x+7;  /* Coordinata X iniziale */
     BG[myidbg].cord.y = G.cord.y+2;  /* Coordinata Y iniziale */
+    BG[myidbg].cord.alive=true;
     pthread_mutex_unlock(&mgiocatore);
     
     
@@ -325,13 +325,14 @@ void area(void){
                 
            
             /*Collisioni Bullet nemico con giocatore*/
-                for(i=0;i<30;i++){
+                for(i=0;i<NMB;i++){
                     pthread_mutex_lock(&mbulletn);
                     pthread_mutex_lock(&mgiocatore);
                     if(BN[i].cord.alive && collisione(BN[i].cord, DB, DB,G.cord,GSG,GSG)){
                         
                         killBN[i]=true;
-                        BN[i].cord.alive=false;  
+                        BN[i].cord.alive=false;
+                        vite--;  
                     }
                 pthread_mutex_unlock(&mbulletn);
                 pthread_mutex_unlock(&mgiocatore);
