@@ -40,7 +40,7 @@ int main(){
     
 
         
-
+    do{
     if ( menu(&nnemici,&difficolta) == 0){   /* Entro nella funzione Menu*/
         clear();
         refresh();
@@ -67,7 +67,7 @@ int main(){
     /* Attendo la terminazione dei thread */
     pthread_join (talieni, NULL);		
 	pthread_join (tgiocatore, NULL);	
-
+    }while(1)
 	/* Elimino mutex */
     pthread_mutex_destroy(&malieni);
     pthread_mutex_destroy(&mgiocatore);
@@ -79,6 +79,7 @@ int main(){
 
     /* Ripristino la modalità di funzionamento usuale */
     endwin();
+    
 }
 
 
