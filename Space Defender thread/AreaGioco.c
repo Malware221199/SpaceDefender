@@ -369,9 +369,7 @@ void area(){
                 clear();
                 stampasprite(MAXY/2-2,MAXX/2-25,'O');
                 refresh();
-                usleep(4000000);
-                pthread_join (tbulletg, NULL);
-                pthread_join (tbulletn, NULL);	
+                //usleep(4000000);
             }
 
             if(alienimorti>=nnemici) {
@@ -380,9 +378,7 @@ void area(){
                 clear();
                 stampasprite(MAXY/2-2,MAXX/2-18,'W');
                 refresh();
-                usleep(400000);
-                pthread_join (tbulletg, NULL);
-                pthread_join (tbulletn, NULL);	
+                //usleep(400000);
             }
 
 
