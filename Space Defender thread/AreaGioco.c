@@ -78,7 +78,7 @@ void *alieni(void *arg){
         usleep(difficolta);
         }
         killA[myida]=false;
-        A[myida].cord.alive=false;
+        //A[myida].cord.alive=false;
 }
 
 
@@ -135,7 +135,7 @@ void *giocatore(void *arg)
     }
   }
 killG=false;
-G.cord.alive=false;
+//G.cord.alive=false;
 }
 
 /*
@@ -191,7 +191,7 @@ void *bulletg(void *arg){
         usleep(50000);
     }
     killBG[myidbg]=false;
-    BG[myidbg].cord.alive=false;
+    //BG[myidbg].cord.alive=false;
 }
 
 
@@ -232,7 +232,7 @@ void *bulletn(void *arg){
         usleep(50000);
     }
     killBN[myidbn]=false;
-    BN[myidbn].cord.alive=false;
+    //BN[myidbn].cord.alive=false;
 
     free(arg);
 }
@@ -250,8 +250,8 @@ void *bulletn(void *arg){
 
 void area(){
 
-        int i=0, j=0, x=0, vite=3, alienimorti=0;
-        int collision=0;
+        int i=0, j=0, x=0, ;
+        int collision=0,vite=3, alienimorti=0;
         clear();
 
         for(i=0;i<11;i++) A[i].old_cord.alive=false;
