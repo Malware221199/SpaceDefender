@@ -11,7 +11,7 @@ int menu(int *nnemici,int *difficolta){
   char scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
   bool esci=false;
-  while(esci==false){
+  while(!esci){
     clear();
     refresh();
     int i;
