@@ -67,7 +67,7 @@ int main(){
         for(i=0;i<nnemici;i++) pthread_join (talieni[i], NULL);		
         pthread_join (tgiocatore, NULL);
     }
-    else if (menu(&nnemici,&difficolta) == 0) quit==true;
+    else if (menu(&nnemici,&difficolta) == 0) quit=true;
 
     }while(!quit);
 	/* Elimino mutex */
