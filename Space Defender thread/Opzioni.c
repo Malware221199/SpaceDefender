@@ -88,13 +88,13 @@ int opzioni(int *nnemici,int *difficolta){
 
       case 1: /*Nemici*/
         nemici(nnemici);
-        //esci=false;
+        esci=false;
 
       break;
 
       case 2: /*Difficolta*/
         difficulty(difficolta);
-        //esci=false;
+        esci=false;
       break;
     
       default:
