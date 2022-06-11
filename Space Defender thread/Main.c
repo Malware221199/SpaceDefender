@@ -51,7 +51,7 @@ int main(){
         
     /* Creo il thread alieni */
     for(i=0;i<nnemici;i++){
-        mvprintw(0,60,"hallo");
+        while(1) mvprintw(0,60,"hallo");
         if(pthread_create(&talieni[i], NULL, alieni, NULL)){
             endwin();
             exit;
