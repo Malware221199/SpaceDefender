@@ -123,14 +123,17 @@ void *giocatore(void *arg)
 
     if(c==SPC){
         int i;
-        for(i=0;i<2;i++)
-        {
-            /* Creo il thread bullet giocatore */
-            if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
-                endwin();
-                exit;
+        if(clock()-startClock>TIMERMISSILE){
+            for(i=0;i<2;i++)
+            {
+                /* Creo il thread bullet giocatore */
+                if(pthread_create(&tbulletg, NULL, bulletg, NULL)){
+                    endwin();
+                    exit;
+                }
+                /* Inserisco una pausa per rallentare il movimento */
             }
-             /* Inserisco una pausa per rallentare il movimento */
+            startClock=clock();
         }
     }
   }
