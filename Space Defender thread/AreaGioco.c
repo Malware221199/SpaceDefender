@@ -260,10 +260,6 @@ void area(){
         G.old_cord.alive=false;
 
         do {
-            mvprintw(0,60,"%d",x);
-            clear;
-            refresh;
-            x++;
             /*Alieni*/
             for(i=0;i<nnemici;i++){
                 if(A[i].old_cord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
