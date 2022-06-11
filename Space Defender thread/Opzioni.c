@@ -76,7 +76,7 @@ int opzioni(int *nnemici,int *difficolta){
       break;
     }
       
-  }
+  
 
   switch (altezza){
     
@@ -98,7 +98,7 @@ int opzioni(int *nnemici,int *difficolta){
     default:
     break;
   }
-
+  }
 }
 /*
 ----------------------------------------------------------------------
