@@ -64,6 +64,7 @@ typedef struct
 {
   cord cord;
   cord old_cord;
+  int liv;
 }save;
 
 
