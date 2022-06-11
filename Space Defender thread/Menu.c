@@ -12,6 +12,8 @@ int menu(int *nnemici,int *difficolta){
   int altezza=0;    /* altezza cursore */                          
   bool esci=false;
   while(esci==false){
+    clear();
+    refresh();
     int i;
     stampasprite(1,MAXX/2-20,'S');  /* stampo sprite 'space' */
     stampasprite(8,MAXX/2-29,'D');  /* stampo sprite 'defender' */
