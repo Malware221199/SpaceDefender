@@ -1,6 +1,7 @@
 #include "Utility.h"
 
-int nnemici=2,i;
+int nnemici=2,i;\
+bool exit=false;
 int difficolta=DELAYM;
 
 
@@ -44,7 +45,7 @@ int main(){
     if ( menu(&nnemici,&difficolta) == 0){   /* Entro nella funzione Menu*/
         clear();
         refresh();
-        return 0;        /*Esce dal programma se nella funzione 'Menu' si seleziona 'Esci'*/
+        exit=true;        /*Esce dal programma se nella funzione 'Menu' si seleziona 'Esci'*/
     }
     clear();
     refresh();
@@ -69,7 +70,7 @@ int main(){
     for(i=0;i<nnemici;i++) pthread_join (talieni[i], NULL);		
 	pthread_join (tgiocatore, NULL);
 
-    }while(1);
+    }while(!exit);
 	/* Elimino mutex */
     pthread_mutex_destroy(&malieni);
     pthread_mutex_destroy(&mgiocatore);
