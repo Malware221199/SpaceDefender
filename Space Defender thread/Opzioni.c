@@ -5,13 +5,14 @@
 ----------------------------------------------------------------------
 */
 int opzioni(int *nnemici,int *difficolta){
+  bool esci=false;
   while(!esci){
     clear();              /* cancello la pagina */
     refresh();            /* refresho la pagina */
     int Opzioni[3] = {0,1,2};  /*stringa opzioni */
     char scelta;       /* variabile scelta */
     int altezza=0;    /* altezza cursore */                          
-    bool esci=false;
+    
     while(!false){
       clear();
       refresh();
