@@ -190,12 +190,12 @@ void difficulty(int *difficolta) {
       if(i==1){
         if(i == altezza){
         attron(COLOR_PAIR(1));
-        stampasprite(MAXY-6,MAXX/2-11,'M');
+        stampasprite(MAXY-6,MAXX/2-9,'M');
         attroff(COLOR_PAIR(1));
         }
         else{
         attron(COLOR_PAIR(3));
-        stampasprite(MAXY-6,MAXX/2-11,'M');
+        stampasprite(MAXY-6,MAXX/2-9,'M');
         attroff(COLOR_PAIR(3));
         }
       }
