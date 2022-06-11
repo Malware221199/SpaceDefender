@@ -4,7 +4,7 @@ pthread_t tbulletn;
 int ida=0;
 int idbg=0;     /* id proiettili giocatore*/
 int idbn=0;     /* id proiettili nemici*/
-int startClock;
+int startClock=0;
 bool killA[11],killG,killBG[NMB],killBN[NMB];
 save A[11];
 save BG[NMB];
