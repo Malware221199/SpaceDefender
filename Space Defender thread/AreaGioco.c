@@ -387,10 +387,26 @@ void area(){
     /* Il ciclo si ripete finchè le vite del giocatore terminano o gli alieni terminano */
     } while(!collision);
 
- for(i=0;i<11;i++) killA[i]=true;
- for(i=0;i<NMB;i++) killBG[i]=true;
- for(i=0;i<NMB;i++) killBN[i]=true;
+for(i=0;i<11;i++) 
+{
+    killA[i]=true;
+    A[i].cord.alive=false;
+
+}
+for(i=0;i<NMB;i++) 
+{
+    killBG[i]=true;
+    BG[i].cord.alive=false;
+
+}
+ for(i=0;i<NMB;i++)
+{
+    killBN[i]=true;
+    BN[i].cord.alive=false;
+
+}
  killG=true;
+ G.cord.alive=false;
  
 
 
