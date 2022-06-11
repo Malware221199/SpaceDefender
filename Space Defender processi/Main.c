@@ -1,9 +1,7 @@
 #include "Utility.h"
 
 bool quit=false;
-int ida;
-int nnemici=2;
-int difficolta = DELAYM;
+
 
 /*
 ----------------------------------------------------------------------
@@ -19,6 +17,9 @@ int main(){
     curs_set(0);		/* Nasconde il cursore */
     getmaxyx(stdscr, MAXY, MAXX);
     srand(time(NULL));
+    int ida;
+    int nnemici=2;
+    int difficolta = DELAYM;
     clear();
     refresh();
     pipe(p);    			/* Creazione pipe */
