@@ -308,7 +308,9 @@ void area(){
                     if(A[i].cord.alive){
                         for(j=0;j<NMB;j++){
                             if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==1)
-                            {
+                            {   
+                                killBG[j]=true;
+                                BG[j].cord.alive=false;
                                 A[i].liv=2;
                             }
                             else if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==2)
