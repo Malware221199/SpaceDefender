@@ -307,7 +307,11 @@ void area(){
                     pthread_mutex_lock(&malieni);
                     if(A[i].cord.alive){
                         for(j=0;j<NMB;j++){
-                            if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA))
+                            if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==1)
+                            {
+                                A[i].liv=2;
+                            }
+                            else if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==2)
                             {
                                 killBG[j]=true;
                                 BG[j].cord.alive=false;
