@@ -28,9 +28,10 @@ int main(){
     init_pair(3,COLOR_MAGENTA,COLOR_BLACK);   /* Colore trappola */
     init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
     attron(COLOR_PAIR(4));
-    quit=menu(&nnemici,&difficolta);
+    
 
     do{
+        quit=menu(&nnemici,&difficolta);
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
             refresh();
