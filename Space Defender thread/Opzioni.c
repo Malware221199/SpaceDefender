@@ -13,7 +13,7 @@ int opzioni(int *nnemici,int *difficolta){
     char scelta;       /* variabile scelta */
     int altezza=0;    /* altezza cursore */                          
     
-    while(!false){
+    while(!esci){
       clear();
       refresh();
       int i;
