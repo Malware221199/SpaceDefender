@@ -92,39 +92,32 @@ void *alieni(void *arg){
 void *giocatore(void *arg)
 {
 
-  int maxb=10; /*massimo proiettili disponibili*/
-  killG=false;
+    int maxb=10,i; /*massimo proiettili disponibili*/
+    killG=false;
 
-  pthread_mutex_lock(&mgiocatore);
-  G.cord.alive=true;
-  G.cord.x = 2;       /* Coordinata X iniziale */
-  G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
-  pthread_mutex_unlock(&mgiocatore);
-  
-
-  
-  
-  while(!killG){
-      
-      
-
-
-    /* Lettura dei tasti cursore */
-  	char c;
-    c = getch();
     pthread_mutex_lock(&mgiocatore);
-    if (c==UP && G.cord.y > 0){
-        G.cord.y-=1; 			
-    }
-    
-    if(c==DW  && G.cord.y < MAXY - 5){
-        G.cord.y+=1;		
-    }
+    G.cord.alive=true;
+    G.cord.x = 2;       /* Coordinata X iniziale */
+    G.cord.y = MAXY/2-2;   /* Coordinata Y iniziale */
     pthread_mutex_unlock(&mgiocatore);
+  
+    while(!killG){
+      
+        /* Lettura dei tasti cursore */
+        char c;
+        c = getch();
+        pthread_mutex_lock(&mgiocatore);
+        if (c==UP && G.cord.y > 0){
+            G.cord.y-=1; 			
+        }
+        
+        if(c==DW  && G.cord.y < MAXY - 5){
+            G.cord.y+=1;		
+        }
+        pthread_mutex_unlock(&mgiocatore);
 
-    if(c==SPC){
-        int i;
-        if(clock()-startClock>TIMERMISSILE){
+        if(c==SPC && clock()-startClock>TIMERMISSILE){
+            
             for(i=0;i<2;i++)
             {
                 /* Creo il thread bullet giocatore */
@@ -137,9 +130,7 @@ void *giocatore(void *arg)
             startClock=clock();
         }
     }
-  }
-killG=false;
-//G.cord.alive=false;
+    killG=false;
 }
 
 /*
