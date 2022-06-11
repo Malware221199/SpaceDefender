@@ -49,12 +49,12 @@ int opzioni(int *nnemici,int *difficolta){
         if(i==2){
           if(i == altezza){
           attron(COLOR_PAIR(1));
-          stampasprite(MAXY-3,MAXX/2-10,'P');
+          stampasprite(MAXY-3,MAXX/2-17,'P');
           attroff(COLOR_PAIR(1));
           }
           else{
           attron(COLOR_PAIR(3));
-          stampasprite(MAXY-3,MAXX/2-10,'P');
+          stampasprite(MAXY-3,MAXX/2-17,'P');
           attroff(COLOR_PAIR(3));
           }
         }
@@ -203,12 +203,12 @@ void difficulty(int *difficolta) {
       if(i==2){
         if(i == altezza){
         attron(COLOR_PAIR(1));
-        stampasprite(MAXY-3,MAXX/2-17,'F');
+        stampasprite(MAXY-3,MAXX/2-10,'F');
         attroff(COLOR_PAIR(1));
         }
         else{
         attron(COLOR_PAIR(3));
-        stampasprite(MAXY-3,MAXX/2-17,'F');
+        stampasprite(MAXY-3,MAXX/2-10,'F');
         attroff(COLOR_PAIR(3));
         }
       }
