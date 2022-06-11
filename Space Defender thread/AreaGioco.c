@@ -250,7 +250,7 @@ void *bulletn(void *arg){
 
 void area(){
 
-        int i=0, j=0, x=0, ;
+        int i=0, j=0, x=0;
         int collision=0,vite=3, alienimorti=0;
         clear();
 
