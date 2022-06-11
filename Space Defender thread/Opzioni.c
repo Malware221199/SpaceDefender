@@ -10,8 +10,10 @@ int opzioni(int *nnemici,int *difficolta){
   int Opzioni[3] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
-  bool esci;
+  bool esci=false;
   while(esci==false){
+    clear();
+    refresh();
     int i;
     stampasprite(1,MAXX/2-20,'S');  /* stampo sprite 'space' */
     stampasprite(8,MAXX/2-29,'D');  /* stampo sprite 'defender' */
