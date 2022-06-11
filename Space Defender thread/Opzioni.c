@@ -86,10 +86,13 @@ int opzioni(int *nnemici,int *difficolta){
 
     case 1: /*Nemici*/
       nemici(nnemici);
+      esci=false;
+
     break;
 
     case 2: /*Difficolta*/
       difficulty(difficolta);
+      esci=false;
     break;
   
     default:
@@ -162,7 +165,7 @@ void difficulty(int *difficolta) {
   int proiettili[4] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
   int i,altezza=0;    /* altezza cursore */                          
-  bool esci;
+  bool esci=false;
   while(esci==false){
     stampasprite(1,MAXX/2-20,'S');  /* stampo sprite 'space' */
     stampasprite(8,MAXX/2-29,'D');  /* stampo sprite 'defender' */
@@ -232,15 +235,18 @@ void difficulty(int *difficolta) {
   switch (altezza){
 
     case 0: /*Difficile*/
-        *difficolta=DELAYV;  
+        *difficolta=DELAYV;
+        esci=true;  
     break;
 
     case 1: /*Medio*/
-        *difficolta=DELAYM; 
+        *difficolta=DELAYM;
+        esci=true; 
     break;
 
     case 2: /*Facile*/
-        *difficolta=DELAYL; 
+        *difficolta=DELAYL;
+        esci=true; 
     break;
   
     default:
