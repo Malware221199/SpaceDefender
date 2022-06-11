@@ -87,7 +87,7 @@ void *giocatore(void *arg);
 void *bulletg(void *arg);
 void *bulletn(void *arg);
 void area();
-int menu(int *nnemici,int *difficolta);
+bool menu(int *nnemici,int *difficolta);
 int opzioni(int *nnemici,int *difficolta);
 void difficulty(int *difficolta);
 void nemici(int *nnemici);

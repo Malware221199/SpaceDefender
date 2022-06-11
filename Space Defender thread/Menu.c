@@ -86,7 +86,7 @@ int menu(int *nnemici,int *difficolta){
   switch (altezza){
     
     case 0: /*Gioca */
-      return 1;
+      return false;
     break;
 
     case 1: /*Opzioni*/
@@ -94,7 +94,7 @@ int menu(int *nnemici,int *difficolta){
     break;
 
     case 2: /*Esci*/
-      return 0;
+      return true;
     break;
   
     default:
