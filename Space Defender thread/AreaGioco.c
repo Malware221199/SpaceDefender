@@ -365,6 +365,16 @@ void area(){
 
             }
 
+            /*Collisioni nemico con limite schermo*/
+             for(i=0;i<11;i++){
+                    pthread_mutex_lock(&malieni);
+                    if(A[i].cord.alive && fuorischermo(A[i].cord, GSA, GSA))
+                    {
+                        vite=0;
+                    }
+                    pthread_mutex_unlock(&malieni);
+                }
+
 
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
