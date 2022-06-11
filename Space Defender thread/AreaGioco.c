@@ -251,7 +251,7 @@ void *bulletn(void *arg){
 
 void area(){
 
-        int i=0, j=0, vite=3, alienimorti=0;
+        int i=0, j=0, x=0, vite=3, alienimorti=0;
         clear();
 
         for(i=0;i<11;i++) A[i].old_cord.alive=false;
@@ -260,7 +260,10 @@ void area(){
         G.old_cord.alive=false;
 
         do {
-            mvprintw(0,60,"hallo1");
+            mvprintw(0,60,"%d",x);
+            clear;
+            refresh;
+            x++;
             /*Alieni*/
             for(i=0;i<nnemici;i++){
                 if(A[i].old_cord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
