@@ -71,8 +71,8 @@ int main(){
             /* Termino i processi Alieni e Giocatore */
             kill(pidA,1);	
             kill(pidG,1);	
-
-            }while(!quit)
+        }
+    }while(!quit)
     /* Ripristino la modalità di funzionamento usuale */
     endwin();
 
