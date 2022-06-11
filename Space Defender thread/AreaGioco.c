@@ -374,6 +374,20 @@ void area(){
                     }
                     pthread_mutex_unlock(&malieni);
                 }
+            
+            /*Collisioni nemico con giocatore*/
+             for(i=0;i<11;i++){
+                    pthread_mutex_lock(&malieni);
+                    pthread_mutex_lock(&mgiocatore);
+
+                    if(A[i].cord.alive && collisione(G.cord,GSG,GSG-1,A[i].cord, GSA, GSA))
+                    {
+                        vite=0;
+                    }
+                    pthread_mutex_unlock(&malieni);
+                    pthread_mutex_unlock(&mgiocatore);
+                }
+
 
 
             /* Visualizzo le vite rimaste al giocatore */
