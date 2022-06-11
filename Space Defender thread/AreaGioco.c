@@ -404,6 +404,7 @@ void area(){
                 collision=1;
                 clear();
                 stampasprite(MAXY/2-2,MAXX/2-25,'O');
+                mvprintw(MAXY-3,MAXX/2-15,">Premi un tasto per continuare<");
                 refresh();
                 //usleep(4000000);
             }
