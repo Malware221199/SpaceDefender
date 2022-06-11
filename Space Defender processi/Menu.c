@@ -5,7 +5,7 @@
  Funzione 'Menu'
 ----------------------------------------------------------------------
 */
-int menu(int *nnemici,int *difficolta){
+bool menu(int *nnemici,int *difficolta){
   while(1){
   int menu[3] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
@@ -81,7 +81,7 @@ int menu(int *nnemici,int *difficolta){
   switch (altezza){
     
     case 0: /*Gioca */
-      return 1;
+      return false;
     break;
 
     case 1: /*Opzioni*/
@@ -89,7 +89,7 @@ int menu(int *nnemici,int *difficolta){
     break;
 
     case 2: /*Esci*/
-      return 0;
+      return true;
     break;
   
     default:
