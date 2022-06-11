@@ -79,6 +79,7 @@ void *alieni(void *arg){
         usleep(difficolta);
         }
         killA[myida]=false;
+        A[myida].cord.alive=false;
 }
 
 
@@ -135,6 +136,7 @@ void *giocatore(void *arg)
     }
   }
 killG=false;
+G.cord.alive=false;
 }
 
 /*
@@ -190,6 +192,7 @@ void *bulletg(void *arg){
         usleep(50000);
     }
     killBG[myidbg]=false;
+    BG[myidbg].cord.alive=false;
 }
 
 
@@ -210,6 +213,7 @@ void *bulletn(void *arg){
     killBN[myidbn]=false;
     idbn++;
     pthread_mutex_unlock(&initbulletn);
+
     pthread_mutex_lock(&malieni);
     BN[myidbn].cord.x = A[ida].cord.x+3;  /* Coordinata X iniziale */
     BN[myidbn].cord.y = A[ida].cord.y+1;  /* Coordinata Y iniziale */
@@ -229,6 +233,8 @@ void *bulletn(void *arg){
         usleep(50000);
     }
     killBN[myidbn]=false;
+    BN[myidbn].cord.alive=false;
+
     free(arg);
 }
 
@@ -294,7 +300,7 @@ void area(){
             Collisioni
             ---------------------------------------------------------------------- 
             */
-           mvprintw(0,80,"hallo2");
+
             /*Collisioni Bullet giocatore con nemico*/
             
                 for(i=0;i<11;i++){
