@@ -4,7 +4,6 @@ pthread_t tbulletn;
 int ida=0;
 int idbg=0;     /* id proiettili giocatore*/
 int idbn=0;     /* id proiettili nemici*/
-int collision=0;
 bool killA[11],killG,killBG[NMB],killBN[NMB];
 save A[11];
 save BG[NMB];
@@ -252,6 +251,7 @@ void *bulletn(void *arg){
 void area(){
 
         int i=0, j=0, x=0, vite=3, alienimorti=0;
+        int collision=0;
         clear();
 
         for(i=0;i<11;i++) A[i].old_cord.alive=false;
