@@ -264,9 +264,9 @@ void area(){
                 pthread_mutex_unlock(&malieni);
             }
             /*Giocatore*/
-            cancellasprite(G.old_cord.y,G.old_cord.x,'G');
+            if(G.old_cord.alive)cancellasprite(G.old_cord.y,G.old_cord.x,'G');
             pthread_mutex_lock(&mgiocatore);
-            stampasprite(G.cord.y,G.cord.x,'G');
+            if(G.cord.alive)stampasprite(G.cord.y,G.cord.x,'G');
             G.old_cord=G.cord;
             pthread_mutex_unlock(&mgiocatore);
 
