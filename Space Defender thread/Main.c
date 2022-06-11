@@ -42,33 +42,32 @@ int main(){
 
         
     do{
-    if ( menu(&nnemici,&difficolta) == 0){   /* Entro nella funzione Menu*/
+    if ( menu(&nnemici,&difficolta) == 1){   /* Entro nella funzione Menu*/
+        
         clear();
         refresh();
-        quit=true;        /*Esce dal programma se nella funzione 'Menu' si seleziona 'Esci'*/
-    }
-    clear();
-    refresh();
-        
-    /* Creo il thread alieni */
-    for(i=0;i<nnemici;i++){
-        if(pthread_create(&talieni[i], NULL, alieni, NULL)){
+            
+        /* Creo il thread alieni */
+        for(i=0;i<nnemici;i++){
+            if(pthread_create(&talieni[i], NULL, alieni, NULL)){
+                endwin();
+                exit;
+            }
+        }
+        /* Creo il thread giocatore */
+        if(pthread_create(&tgiocatore, NULL, giocatore, NULL)){
             endwin();
             exit;
         }
-    }
-     /* Creo il thread giocatore */
-    if(pthread_create(&tgiocatore, NULL, giocatore, NULL)){
-        endwin();
-        exit;
-    }
 
-	/* Avvio la funzione Area */
-    area();	
-    /* Attendo la terminazione dei thread */
-    
-    for(i=0;i<nnemici;i++) pthread_join (talieni[i], NULL);		
-	pthread_join (tgiocatore, NULL);
+        /* Avvio la funzione Area */
+        area();	
+        /* Attendo la terminazione dei thread */
+        
+        for(i=0;i<nnemici;i++) pthread_join (talieni[i], NULL);		
+        pthread_join (tgiocatore, NULL);
+    }
+    else if (menu(&nnemici,&difficolta) == 0) quit==true;
 
     }while(!quit);
 	/* Elimino mutex */
