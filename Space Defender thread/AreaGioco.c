@@ -254,7 +254,7 @@ void area(){
         G.old_cord.alive=false;
 
         do {
-            
+            mvprintw(0,60,"hallo1");
             /*Alieni*/
             for(i=0;i<nnemici;i++){
                 if(A[i].old_cord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
@@ -294,7 +294,7 @@ void area(){
             Collisioni
             ---------------------------------------------------------------------- 
             */
-           
+           mvprintw(0,80,"hallo2");
             /*Collisioni Bullet giocatore con nemico*/
             
                 for(i=0;i<11;i++){
