@@ -26,7 +26,7 @@
 #define MAXX	    80
 #define MAXY 	    24
 #define DB 	    1     /* Dimensione bullet*/
-#define TIMERMISSILE	    10000
+#define TIMERMISSILE	    100000000000000
 
 
 
