@@ -129,6 +129,9 @@ void *giocatore(void *arg)
             }
             startClock=clock();
         }
+    
+    
+    
     }
     killG=false;
 }
@@ -250,6 +253,7 @@ void area(){
         clear();
 
         for(i=0;i<11;i++) A[i].old_cord.alive=false;
+        for(i=0;i<11;i++) A[i].liv=1;
         for(i=0;i<NMB;i++) BG[i].old_cord.alive=false;
         for(i=0;i<NMB;i++) BN[i].old_cord.alive=false;
         G.old_cord.alive=false;
@@ -259,7 +263,8 @@ void area(){
             for(i=0;i<nnemici;i++){
                 if(A[i].old_cord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
                 pthread_mutex_lock(&malieni);
-                if(A[i].cord.alive) stampasprite(A[i].cord.y,A[i].cord.x,'A');
+                if(A[i].cord.alive && A[i].liv==1) stampasprite(A[i].cord.y,A[i].cord.x,'a');
+                else if(A[i].cord.alive && A[i].liv==2) stampasprite(A[i].cord.y,A[i].cord.x,'A');
                 A[i].old_cord=A[i].cord;
                 pthread_mutex_unlock(&malieni);
             }
