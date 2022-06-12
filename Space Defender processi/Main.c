@@ -1,7 +1,7 @@
 #include "Utility.h"
 
 bool quit=false;
-int ida;
+int ida,i;
 int nnemici=2;
 int difficolta = DELAYM;
 
