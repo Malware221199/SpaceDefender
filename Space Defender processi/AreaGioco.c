@@ -37,7 +37,6 @@ void area(int pipein,int nnemici){
             /* Cancello il precedente carattere visualizzato */
             cancellasprite(A[dato_letto.id].y,A[dato_letto.id].x,dato_letto.c);
 
-
             /* Aggiorno le coordinate relative alla nuova posizione */
             A[dato_letto.id]=dato_letto;
             //mvprintw(0,40,"%d",A[dato_letto.id].liv);
@@ -191,10 +190,10 @@ void area(int pipein,int nnemici){
     } while(!collision);
 
     /* Termino i processi Alieni e Giocatore*/
-            kill(G,1);
-            kill(A,1);
-            kill(BG,1);
-            kill(BN,1);
+        kill(G,1);
+        for(i=0;i<11;i++)   kill(A[i].pid,1);
+        for(i=0;i<NMB;i++)   kill(BG[i],1);
+        for(i=0;i<NMB;i++)   kill(BN[i],1);
     
 }
 
