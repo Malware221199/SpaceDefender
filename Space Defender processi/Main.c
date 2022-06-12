@@ -69,11 +69,7 @@ int main(){
                     area(p[0],nnemici);  /* invocazione funzione area di gioco */  
                 }
             }
-            /* Termino i processi Alieni e Giocatore */	
-            kill(pidG,1);
-            for(i=0;i<11;i++) kill(alieni[i].pid,1);
-            for(i=0;i<30;i++) kill(bulletg[i].pid,1);
-            for(i=0;i<30;i++) kill(bulletn[i].pid,1);
+            
             /* Ripristino la modalità di funzionamento usuale */
             endwin();	
         }
