@@ -65,17 +65,10 @@ void cancellasprite(int y,int x,char c);
  Strutture
 ----------------------------------------------------------------------
 */
-/* Struttura adoperata per veicolare le coordinate*/
-struct position {
-  char c; 	/* Identificatore dell'entità che invia i dati */
-  int  x;	 /* Coordinata X */
-  int  y;	 /* Coordinata Y */
-  int  id;  /* Numero dell elemento */
-  int pid;  /*Pid processo*/
-};
 /* Struttura adoperata per salvare le coordinate*/
 typedef struct 
 {
+  char c;    /* Identificatore dell'entità che invia i dati */
   int x;    /* Coordinata X */
   int y;    /* Coordinata Y */
   int id;   /* Numero dell elemento */
