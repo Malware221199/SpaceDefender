@@ -58,7 +58,7 @@ void bulletn(int pipeout,int id,int ay,int ax){
     int deltax=1;		/* Spostamento orizzontale */
     Bulletn.x = ax-1;  /* Coordinata X iniziale */
     Bulletn.y = ay+1;  /* Coordinata Y iniziale */
-   Bulletn.c ='H';	/* Carattere identificativo */
+    Bulletn.c ='H';	/* Carattere identificativo */
     Bulletn.id =id; /* Numero dell elemento */
     Bulletn.pid=getpid(); /*Pid processo*/
     Bulletn.alive=true;
@@ -77,6 +77,6 @@ void bulletn(int pipeout,int id,int ay,int ax){
         write(pipeout,&Bulletn,sizeof(Bulletn));
 
             /* Inserisco una pausa per rallentare il movimento */
-        usleep(100000);
+        usleep(50000);
     }
 }
