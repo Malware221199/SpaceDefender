@@ -64,7 +64,7 @@ void area(int pipein,int nnemici){
                 G=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+                if(G.alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
 
             }
 
@@ -82,16 +82,19 @@ void area(int pipein,int nnemici){
                 BG[dato_letto.id]=dato_letto;
                 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+                if(BG[dato_letto.id].alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
             
                 
                 /* Collisioni proiettili con MAXX*/
-                if (BG[dato_letto.id].x>MAXX){
-                    kill(BG[dato_letto.id].pid,1);
+                if(BG[dato_letto.id].alive && fuorischermo(BG[dato_letto.id],DB,DB))
+                {   
                     cancellasprite(BG[dato_letto.id].y,BG[dato_letto.id].x,'B');
-                    BG[dato_letto.id].x=DEADXB;
-                    BG[dato_letto.id].y=DEADYB;
+                    killBG[i]=true;
+                    BG[dato_letto.id].cord.alive=false;
                 }
+
+                    cancellasprite(BG[dato_letto.id].y,BG[dato_letto.id].x,'B');
+                   
                 /* Collisioni proiettili con alieni*/
                  for(i=0;i<11;i++){
                     
@@ -128,7 +131,7 @@ void area(int pipein,int nnemici){
                 cancellasprite(BN[dato_letto.id].y,BN[dato_letto.id].x,dato_letto.c);
                 
                 /*Aggiorno le coordinate relative alla nuova posizione */
-                BN[dato_letto.id]=dato_letto;
+                if(BG[dato_letto.id].alive) BN[dato_letto.id]=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
