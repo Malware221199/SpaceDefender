@@ -133,12 +133,17 @@ void area(int pipein,int nnemici){
         }
 
         /*Collisioni Bullet nemico con giocatore*/
-
+        for(i=0;i<NMB;i++){
+            if(BN[i].alive && collisione(G,GSG,GSG-1,BN[i], DB, DB)){
+                kill(BG[i].pid,1);
+                BN[i].alive=false;
+                vite--;  
+            }
+        }
 
         /*Collisioni Bullet giocatore con limite schermo*/
         for(i=0;i<NMB;i++){
-            if(BG[i].alive && fuorischermo(BG[i],DB,DB))
-            {   
+            if(BG[i].alive && fuorischermo(BG[i],DB,DB)){   
                 cancellasprite(BG[i].y,BG[i].x,'B');
                 kill(BG[i].pid,1);
                 BG[i].alive=false;
