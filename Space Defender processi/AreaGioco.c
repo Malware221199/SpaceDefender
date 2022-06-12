@@ -192,9 +192,9 @@ void area(int pipein,int nnemici){
 
     /* Termino i processi Alieni e Giocatore*/
             kill(G,1);
-            kill(A.pid,1);
-            kill(BG.pid,1);
-            kill(BN.pid,1);
+            kill(A,1);
+            kill(BG,1);
+            kill(BN,1);
     
 }
 
