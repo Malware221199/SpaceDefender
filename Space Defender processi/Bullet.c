@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------- 
 */
 void bulletg(int pipeout,int id,int cgy,int cgx){
-    struct position Bullet;
+    save Bullet;
     int deltax=1;		/* Spostamento orizzontale */
     int deltay=1;		/* Spostamento verticale */
     Bullet.x = cgx+7;  /* Coordinata X iniziale */
@@ -53,7 +53,7 @@ void bulletg(int pipeout,int id,int cgy,int cgx){
 ---------------------------------------------------------------------- 
 */
 void bulletn(int pipeout,int id,int ay,int ax){
-    struct position Bulletn;
+    save Bulletn;
     int deltax=1;		/* Spostamento orizzontale */
     Bulletn.x = ax-1;  /* Coordinata X iniziale */
     Bulletn.y = ay+1;  /* Coordinata Y iniziale */
