@@ -38,7 +38,9 @@ void area(int pipein,int nnemici){
                 if(A[dato_letto.id].alive && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
                 else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
 
-                
+                /*Collisioni nemico con limite schermo*/
+
+                //if(A[dato_letto.id].alive && fuorischermo(A[dato_letto.id], GSA, GSA)) vite=0;
                 
             }
 
@@ -144,9 +146,9 @@ void area(int pipein,int nnemici){
 
             }
             /*Collisioni nemico con limite schermo*/
-
-                if(A[dato_letto.id].alive && fuorischermo(A[dato_letto.id], GSA, GSA)) vite=0;
-
+            for(i=0;i<11;i++){
+                if(A[i].alive && fuorischermo(A[i], GSA, GSA)) vite=0;
+            }
 
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
