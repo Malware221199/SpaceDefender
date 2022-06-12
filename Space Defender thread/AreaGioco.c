@@ -248,192 +248,191 @@ void *bulletn(void *arg){
 
 void area(){
 
-        int i=0, j=0, x=0;
-        int collision=0,vite=3, alienimorti=0;
-        clear();
+    int i=0, j=0, x=0;
+    int collision=0,vite=3, alienimorti=0;
+    clear();
 
-        for(i=0;i<11;i++) A[i].old_cord.alive=false;
-        for(i=0;i<11;i++) A[i].liv=1;
-        for(i=0;i<NMB;i++) BG[i].old_cord.alive=false;
-        for(i=0;i<NMB;i++) BN[i].old_cord.alive=false;
-        G.old_cord.alive=false;
+    for(i=0;i<11;i++) A[i].old_cord.alive=false;
+    for(i=0;i<11;i++) A[i].liv=1;
+    for(i=0;i<NMB;i++) BG[i].old_cord.alive=false;
+    for(i=0;i<NMB;i++) BN[i].old_cord.alive=false;
+    G.old_cord.alive=false;
 
-        do {
-            /*
-            ----------------------------------------------------------------------
-            Gesione Alieni
-            ---------------------------------------------------------------------- 
-            */
-            for(i=0;i<nnemici;i++){
-                if(A[i].old_cord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
-                pthread_mutex_lock(&malieni);
-                if(A[i].cord.alive && A[i].liv==1) stampasprite(A[i].cord.y,A[i].cord.x,'a');
-                else if(A[i].cord.alive && A[i].liv==2) stampasprite(A[i].cord.y,A[i].cord.x,'A');
-                A[i].old_cord=A[i].cord;
-                pthread_mutex_unlock(&malieni);
-            }
-            /*
-            ----------------------------------------------------------------------
-            Gesione Giocatore
-            ---------------------------------------------------------------------- 
-            */
-            if(G.old_cord.alive)cancellasprite(G.old_cord.y,G.old_cord.x,'G');
-            pthread_mutex_lock(&mgiocatore);
-            if(G.cord.alive)stampasprite(G.cord.y,G.cord.x,'G');
-            G.old_cord=G.cord;
-            pthread_mutex_unlock(&mgiocatore);
+    do {
+        /*
+        ----------------------------------------------------------------------
+        Gesione Alieni
+        ---------------------------------------------------------------------- 
+        */
+        for(i=0;i<nnemici;i++){
+            if(A[i].old_cord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
+            pthread_mutex_lock(&malieni);
+            if(A[i].cord.alive && A[i].liv==1) stampasprite(A[i].cord.y,A[i].cord.x,'a');
+            else if(A[i].cord.alive && A[i].liv==2) stampasprite(A[i].cord.y,A[i].cord.x,'A');
+            A[i].old_cord=A[i].cord;
+            pthread_mutex_unlock(&malieni);
+        }
+        /*
+        ----------------------------------------------------------------------
+        Gesione Giocatore
+        ---------------------------------------------------------------------- 
+        */
+        if(G.old_cord.alive)cancellasprite(G.old_cord.y,G.old_cord.x,'G');
+        pthread_mutex_lock(&mgiocatore);
+        if(G.cord.alive)stampasprite(G.cord.y,G.cord.x,'G');
+        G.old_cord=G.cord;
+        pthread_mutex_unlock(&mgiocatore);
 
 
-            /*
-            ----------------------------------------------------------------------
-            Gesione proiettili giocatore
-            ---------------------------------------------------------------------- 
-            */
-            for(i=0;i<NMB;i++){
-            if(BG[i].old_cord.alive) cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
+        /*
+        ----------------------------------------------------------------------
+        Gesione proiettili giocatore
+        ---------------------------------------------------------------------- 
+        */
+        for(i=0;i<NMB;i++){
+        if(BG[i].old_cord.alive) cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
+        pthread_mutex_lock(&mbulletg);
+        if(BG[i].cord.alive) stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
+        BG[i].old_cord=BG[i].cord;
+        pthread_mutex_unlock(&mbulletg);
+        }
+
+        /*
+        ----------------------------------------------------------------------
+        Gesione proiettili nemico
+        ---------------------------------------------------------------------- 
+        */
+        for(i=0;i<NMB;i++){
+        if(BN[i].old_cord.alive) cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
+        pthread_mutex_lock(&mbulletn);
+        if(BN[i].cord.alive) stampasprite(BN[i].cord.y,BN[i].cord.x,'H');
+        BN[i].old_cord=BN[i].cord;
+        pthread_mutex_unlock(&mbulletn);
+        }
+
+        /*
+        ----------------------------------------------------------------------
+        Collisioni
+        ---------------------------------------------------------------------- 
+        */
+
+        /*Collisioni Bullet giocatore con nemico*/
+        for(i=0;i<11;i++){
             pthread_mutex_lock(&mbulletg);
-            if(BG[i].cord.alive) stampasprite(BG[i].cord.y,BG[i].cord.x,'B');
-            BG[i].old_cord=BG[i].cord;
+            pthread_mutex_lock(&malieni);
+            if(A[i].cord.alive){
+                for(j=0;j<NMB;j++){
+                    if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==1)
+                    {   
+                        killBG[j]=true;
+                        BG[j].cord.alive=false;
+                        A[i].liv=2;
+                    }
+                    else if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==2)
+                    {
+                        killBG[j]=true;
+                        BG[j].cord.alive=false;
+                        killA[i]=true;
+                        A[i].cord.alive=false;
+                        alienimorti++;
+                    }
+                    
+                }
+            }
             pthread_mutex_unlock(&mbulletg);
-            }
-
-            /*
-            ----------------------------------------------------------------------
-            Gesione proiettili nemico
-            ---------------------------------------------------------------------- 
-            */
-            for(i=0;i<NMB;i++){
-            if(BN[i].old_cord.alive) cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
+            pthread_mutex_unlock(&malieni);
+        }
+            
+        
+        /*Collisioni Bullet nemico con giocatore*/
+        for(i=0;i<NMB;i++){
             pthread_mutex_lock(&mbulletn);
-            if(BN[i].cord.alive) stampasprite(BN[i].cord.y,BN[i].cord.x,'H');
-            BN[i].old_cord=BN[i].cord;
+            pthread_mutex_lock(&mgiocatore);
+            if(BN[i].cord.alive && collisione(G.cord,GSG,GSG-1,BN[i].cord, DB, DB)){
+                
+                killBN[i]=true;
+                BN[i].cord.alive=false;
+                vite--;  
+            }
             pthread_mutex_unlock(&mbulletn);
-            }
-
-            /*
-            ----------------------------------------------------------------------
-            Collisioni
-            ---------------------------------------------------------------------- 
-            */
-
-            /*Collisioni Bullet giocatore con nemico*/
-            
-                for(i=0;i<11;i++){
-                    pthread_mutex_lock(&mbulletg);
-                    pthread_mutex_lock(&malieni);
-                    if(A[i].cord.alive){
-                        for(j=0;j<NMB;j++){
-                            if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==1)
-                            {   
-                                killBG[j]=true;
-                                BG[j].cord.alive=false;
-                                A[i].liv=2;
-                            }
-                            else if(BG[j].cord.alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==2)
-                            {
-                                killBG[j]=true;
-                                BG[j].cord.alive=false;
-                                killA[i]=true;
-                                A[i].cord.alive=false;
-                                alienimorti++;
-                            }
-                            
-                        }
-                    }
-                    pthread_mutex_unlock(&mbulletg);
-                    pthread_mutex_unlock(&malieni);
-                }
-                
-           
-            /*Collisioni Bullet nemico con giocatore*/
-                for(i=0;i<NMB;i++){
-                    pthread_mutex_lock(&mbulletn);
-                    pthread_mutex_lock(&mgiocatore);
-                    if(BN[i].cord.alive && collisione(G.cord,GSG,GSG-1,BN[i].cord, DB, DB)){
-                        
-                        killBN[i]=true;
-                        BN[i].cord.alive=false;
-                        vite--;  
-                    }
-                pthread_mutex_unlock(&mbulletn);
-                pthread_mutex_unlock(&mgiocatore);
-                }
-                        
-                
-
-            /*Collisioni Bullet giocatore con limite schermo*/
-            for(i=0;i<NMB;i++){
-                if(BG[i].cord.alive && fuorischermo(BG[i].cord,DB,DB))
-                {
-                    killBG[i]=true;
-                    BG[i].cord.alive=false;
-                }
-
-            }
-
-            /*Collisioni Bullet nemico con limite schermo*/
-            for(i=0;i<NMB;i++){
-                if(BN[i].cord.alive && fuorischermo(BN[i].cord,DB,DB))
-                {
-                    killBN[i]=true;
-                    BN[i].cord.alive=false;
-                }
-
-            }
-
-            /*Collisioni nemico con limite schermo*/
-             for(i=0;i<11;i++){
-                    pthread_mutex_lock(&malieni);
-                    if(A[i].cord.alive && fuorischermo(A[i].cord, GSA, GSA))
-                    {
-                        vite=0;
-                    }
-                    pthread_mutex_unlock(&malieni);
-                }
-            
-            /*Collisioni nemico con giocatore*/
-             for(i=0;i<11;i++){
-                    pthread_mutex_lock(&malieni);
-                    pthread_mutex_lock(&mgiocatore);
-
-                    if(A[i].cord.alive && collisione(G.cord,GSG,GSG-1,A[i].cord, GSA, GSA))
-                    {
-                        vite=0;
-                    }
-                    pthread_mutex_unlock(&malieni);
-                    pthread_mutex_unlock(&mgiocatore);
-                }
-
-
-
-            /* Visualizzo le vite rimaste al giocatore */
-            cancellasprite(0,1,'V');
-            for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
-            mvprintw(0,40,"%d",alienimorti);
+            pthread_mutex_unlock(&mgiocatore);
+        }
+                    
             
 
-            /* Aggiorno lo schermo di output per visualizzare le modifiche */
+        /*Collisioni Bullet giocatore con limite schermo*/
+        for(i=0;i<NMB;i++){
+            if(BG[i].cord.alive && fuorischermo(BG[i].cord,DB,DB))
+            {
+                killBG[i]=true;
+                BG[i].cord.alive=false;
+            }
+
+        }
+
+        /*Collisioni Bullet nemico con limite schermo*/
+        for(i=0;i<NMB;i++){
+            if(BN[i].cord.alive && fuorischermo(BN[i].cord,DB,DB))
+            {
+                killBN[i]=true;
+                BN[i].cord.alive=false;
+            }
+
+        }
+
+        /*Collisioni nemico con limite schermo*/
+        for(i=0;i<11;i++){
+            pthread_mutex_lock(&malieni);
+            if(A[i].cord.alive && fuorischermo(A[i].cord, GSA, GSA))
+            {
+                vite=0;
+            }
+            pthread_mutex_unlock(&malieni);
+        }
+        
+        /*Collisioni nemico con giocatore*/
+        for(i=0;i<11;i++){
+            pthread_mutex_lock(&malieni);
+            pthread_mutex_lock(&mgiocatore);
+
+            if(A[i].cord.alive && collisione(G.cord,GSG,GSG-1,A[i].cord, GSA, GSA))
+            {
+                vite=0;
+            }
+            pthread_mutex_unlock(&malieni);
+            pthread_mutex_unlock(&mgiocatore);
+        }
+
+
+
+        /* Visualizzo le vite rimaste al giocatore */
+        cancellasprite(0,1,'V');
+        for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
+        mvprintw(0,40,"%d",alienimorti);
+        
+
+        /* Aggiorno lo schermo di output per visualizzare le modifiche */
+        refresh();
+
+        /* Esce quando terminano le vite del Giocatore */
+        if(vite < 1) {
+            collision=1;
+            clear();
+            stampasprite(MAXY/2-2,MAXX/2-25,'O');
+            mvprintw(MAXY-3,MAXX/2-15,">Premi un tasto per continuare<");
             refresh();
+            //usleep(4000000);
+        }
 
-            /* Esce quando terminano le vite del Giocatore */
-            if(vite < 1) {
-                collision=1;
-                clear();
-                stampasprite(MAXY/2-2,MAXX/2-25,'O');
-                mvprintw(MAXY-3,MAXX/2-15,">Premi un tasto per continuare<");
-                refresh();
-                //usleep(4000000);
-            }
+        if(alienimorti>=nnemici) {
 
-            if(alienimorti>=nnemici) {
-
-                collision=1;
-                clear();
-                stampasprite(MAXY/2-2,MAXX/2-18,'W');
-                mvprintw(MAXY-3,MAXX/2-15,">Premi un tasto per continuare<");
-                refresh();
-                //usleep(400000);
-            }
+            collision=1;
+            clear();
+            stampasprite(MAXY/2-2,MAXX/2-18,'W');
+            mvprintw(MAXY-3,MAXX/2-15,">Premi un tasto per continuare<");
+            refresh();
+            //usleep(400000);
+        }
 
 
 
