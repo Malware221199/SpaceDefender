@@ -6,7 +6,7 @@
 */
 void giocatore(int pipeout)
 {
-  struct position giocatore;
+  save giocatore;
   int idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
 
   

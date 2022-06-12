@@ -6,7 +6,7 @@
 */
 
 void alieni(int pipeout, int id,int nnemici, int difficolta){
-struct position Alieni;
+save Alieni;
 int idbn=0;
 int prova=0;
 int deltax=1;		/* Spostamento orizzontale */
@@ -27,18 +27,6 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
   write(pipeout,&Alieni,sizeof(Alieni));
 
   while(1){
-
-    /* Movimento Y */
-    /*Alieni.y += deltay;
-    int ciao;
-    ciao++;
-    mvprintw(0,60,"ciao %d",ciao);
-    
-
-    if(ciao < 0 || ciao > 4){
-      ciao = -ciao;
-      deltay = -deltay;
-    }*/
     
     /* Movimento X */
     Alieni.x -= deltax;
