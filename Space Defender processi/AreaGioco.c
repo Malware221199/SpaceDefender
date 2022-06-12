@@ -196,9 +196,9 @@ void area(int pipein,int nnemici){
     } while(!collision);
 
     /* Termino i processi Alieni e Giocatore*/
-        for(i=0;i<nnemici;i++)    kill(A[i].pid,1);
-        for(i=0;i<NMB;i++)   kill(BG[i],1);
-        for(i=0;i<NMB;i++)   kill(BN[i],1);
+        for(i=0;i<11;i++)   if(A[i].alive) kill(A[i].pid,1);
+        for(i=0;i<NMB;i++)  if(BG[i].alive) kill(BG[i],1);
+        for(i=0;i<NMB;i++)  if(BN[i].alive) kill(BN[i],1);
     
 }
 
