@@ -96,21 +96,23 @@ void area(int pipein,int nnemici){
                 }
                 /* Collisioni proiettili con alieni*/
                  for(i=0;i<11;i++){
-                    if(A[A[i].id].alive){
+                    int savepid;
+                    savepid=A[i].id;
+                    if(A[savepid].alive){
                        
-                        if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[A[i].id],GSA,GSA) && A[A[i].id].liv==1)
+                        if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[savepid],GSA,GSA) && A[savepid].liv==1)
                         {   
                             
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
-                            A[A[i].id].liv=2;
+                            A[savepid].liv=2;
                         }
-                        else if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[A[i].id],GSA,GSA) && A[A[i].id].liv==2)
+                        else if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[savepid],GSA,GSA) && A[savepid].liv==2)
                         {
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
-                            A[A[i].id].alive=false;
-                            kill(A[A[i].id].pid,1);
+                            A[savepid].alive=false;
+                            kill(A[savepid].pid,1);
                             alienimorti++;
                         }
                             
