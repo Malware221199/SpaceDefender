@@ -169,7 +169,7 @@ void area(int pipein,int nnemici){
     } while(!collision);
 
 }
-
+/*
 bool collisione(cord c1,int lar1, int lun1,cord c2,int lar2,int lun2)
 {
     return(
@@ -186,4 +186,4 @@ bool fuorischermo(cord c, int lar, int lun)
         c.y + lun > MAXY || c.y < 0 || c.x + lar > MAXX || c.x < 0
     );
 
-}		
+}	*/	
