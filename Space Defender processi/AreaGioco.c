@@ -98,13 +98,13 @@ void area(int pipein,int nnemici){
                     
                     if(A[i].alive){
                        
-                        if(BG[dato_letto.id].alive && A[i],alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==1)
+                        if(BG[dato_letto.id].alive && A[i].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==1)
                         {   
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
                             A[i].liv=2;
                         }
-                        else if(BG[dato_letto.id].alive && A[i],alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==2)
+                        else if(BG[dato_letto.id].alive && A[i].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==2)
                         {   
                             cancellasprite(A[i].y,A[i].x,'A');
                             BG[dato_letto.id].alive=false;
