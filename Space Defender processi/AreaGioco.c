@@ -101,14 +101,14 @@ void area(int pipein,int nnemici){
                  for(i=0;i<11;i++){
                     if(A[i].alive){
                        
-                        if(BG[dato_letto.id].alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==1)
+                        if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==1)
                         {   
                             
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
                             A[i].liv=2;
                         }
-                        else if(bulletg[dato_letto.id].alive && collisione(BG[j].cord, DB, DB,A[i].cord,GSA,GSA) && A[i].liv==2)
+                        else if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==2)
                         {
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
