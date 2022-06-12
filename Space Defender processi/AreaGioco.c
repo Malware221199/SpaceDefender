@@ -33,7 +33,7 @@ void area(int pipein,int nnemici){
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
                 A[dato_letto.id]=dato_letto;
-                mvprintw(0,40,"%d",A[dato_letto.id].liv);
+                //mvprintw(0,40,"%d",A[dato_letto.id].liv);
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 if(A[dato_letto.id].alive && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
                 else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
@@ -98,13 +98,13 @@ void area(int pipein,int nnemici){
                     
                     if(A[i].alive){
                        
-                        if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==1)
+                        if(BG[dato_letto.id].alive && A[i],alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==1)
                         {   
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
                             A[i].liv=2;
                         }
-                        else if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==2)
+                        else if(BG[dato_letto.id].alive && A[i],alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==2)
                         {   
                             cancellasprite(A[i].y,A[i].x,'A');
                             BG[dato_letto.id].alive=false;
@@ -138,7 +138,7 @@ void area(int pipein,int nnemici){
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
-            //mvprintw(0,40,"%d",alienimorti);
+            mvprintw(0,40,"%d",alienimorti);
             
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
