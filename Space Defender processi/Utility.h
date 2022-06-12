@@ -20,7 +20,7 @@
 #define GSA 	  3     /* Grandezza sprite alieno*/
 #define DA 	    2     /* Distanza alieni*/
 #define DB 	    1     /* Dimensione bullet*/
-
+#define NMB	30              /* Numero massimo proiettili */
 #define DEADYA 	-10         /*Coordinata morta y alieno*/
 #define DEADXA 	-10         /*Coordinata morta x alieno*/
 #define DEADYB 	-15        /*Coordinata morta y proiettile*/
