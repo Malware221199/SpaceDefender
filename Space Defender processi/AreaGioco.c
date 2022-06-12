@@ -40,7 +40,7 @@ void area(int pipein,int nnemici){
 
                 /*Collisioni nemico con limite schermo*/
 
-                if(A[dato_letto].alive && fuorischermo(A[dato_letto], GSA, GSA)) vite=0;
+                if(A[dato_letto.id].alive && fuorischermo(A[dato_letto.id], GSA, GSA)) vite=0;
                 
             }
 
