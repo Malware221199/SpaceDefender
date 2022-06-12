@@ -96,7 +96,7 @@ void area(int pipein,int nnemici){
                 }
                 /* Collisioni proiettili con alieni*/
                  for(i=0;i<11;i++){
-                    if(A[i].alive){
+                    if(A[A[i].id].alive){
                        
                         if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[A[i].id],GSA,GSA) && A[A[i].id].liv==1)
                         {   
@@ -165,12 +165,12 @@ void area(int pipein,int nnemici){
     /* Il ciclo si ripete finchè le vite del giocatore terminano o gli alieni terminano */
     } while(!collision);
 
-    /* Termino i processi Alieni e Giocatore */	
+    /* Termino i processi Alieni e Giocatore
             kill(G.pid,1);
             for(i=0;i<11;i++) kill(A[i].pid,1);
             for(i=0;i<30;i++) kill(BG[i].pid,1);
             for(i=0;i<30;i++) kill(BN[i].pid,1);
-
+    */
 }
 
 bool collisione(save c1,int lar1, int lun1,save c2,int lar2,int lun2)
