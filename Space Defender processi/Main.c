@@ -2,7 +2,7 @@
 
 bool quit=false;
 int ida,i;
-int nnemici=2;
+int nnemici=1;
 int difficolta = DELAYM;
 
 /*
