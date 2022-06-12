@@ -69,8 +69,8 @@ int main(){
                     area(p[0],nnemici);  /* invocazione funzione area di gioco */  
                 }
             }
-            kill(G,1);
-            for(i=0;i<11;i++)   kill(A[i],1);
+            kill(pidG,1);
+            for(i=0;i<11;i++)   kill(pidA[i],1);
             /* Ripristino la modalità di funzionamento usuale */
             endwin();	
         }
