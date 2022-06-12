@@ -81,11 +81,8 @@ void area(int pipein,int nnemici){
                 cancellasprite(BG[dato_letto.id].y,BG[dato_letto.id].x,dato_letto.c);
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
-                BG[dato_letto.id].id=dato_letto.id;
-                BG[dato_letto.id].y=dato_letto.y;
-                BG[dato_letto.id].x=dato_letto.x;
-                BG[dato_letto.id].pid=dato_letto.pid;
-
+                BG[dato_letto.id]=dato_letto;
+                
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
             
@@ -101,19 +98,19 @@ void area(int pipein,int nnemici){
                  for(i=0;i<11;i++){
                     if(A[i].alive){
                        
-                        if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==1)
+                        if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[A[i].id],GSA,GSA) && A[A[i].id].liv==1)
                         {   
                             
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
-                            A[i].liv=2;
+                            A[A[i].id].liv=2;
                         }
-                        else if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==2)
+                        else if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[A[i].id],GSA,GSA) && A[A[i].id].liv==2)
                         {
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
-                            A[i].alive=false;
-                            kill(A[i].pid,1);
+                            A[A[i].id].alive=false;
+                            kill(A[A[i].id].pid,1);
                             alienimorti++;
                         }
                             
@@ -131,10 +128,7 @@ void area(int pipein,int nnemici){
                 cancellasprite(BN[dato_letto.id].y,BN[dato_letto.id].x,dato_letto.c);
                 
                 /*Aggiorno le coordinate relative alla nuova posizione */
-                BN[dato_letto.id].id=dato_letto.id;
-                BN[dato_letto.id].y=dato_letto.y;
-                BN[dato_letto.id].x=dato_letto.x;
-                BN[dato_letto.id].pid=dato_letto.pid;
+                BN[dato_letto.id]=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
