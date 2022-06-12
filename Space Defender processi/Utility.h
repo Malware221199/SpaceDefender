@@ -57,8 +57,8 @@ void difficulty(int *difficolta);
 void nemici(int *nnemici);
 void stampasprite(int y,int x,char c);
 void cancellasprite(int y,int x,char c);
-//bool collisione(cord c1,int lar1, int lun1,cord c2,int lar2,int lun2);
-//bool fuorischermo(cord c, int lar, int lun);
+bool collisione(save c1,int lar1, int lun1,save c2,int lar2,int lun2);
+bool fuorischermo(save c, int lar, int lun);
 
 /*
 ----------------------------------------------------------------------
@@ -73,5 +73,7 @@ typedef struct
   int y;    /* Coordinata Y */
   int id;   /* Numero dell elemento */
   int pid;  /*Pid processo*/
+  bool alive; 
+  int liv;
 }save;
 
