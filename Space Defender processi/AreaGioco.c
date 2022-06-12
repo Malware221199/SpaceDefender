@@ -62,12 +62,6 @@ void area(int pipein,int nnemici){
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
             if(G.alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
 
-            /*Collisioni nemico con giocatore*/
-            for(i=0;i<11;i++)
-            {
-                if(A[i].alive && collisione(G,GSG,GSG-1,A[i], GSA, GSA)) vite=0;
-            }
-
         }
 
             /*
@@ -87,7 +81,8 @@ void area(int pipein,int nnemici){
             if(BG[dato_letto.id].alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
         
         }
-            /*
+
+        /*
         ----------------------------------------------------------------------
         Gesione proiettili nemico
         ---------------------------------------------------------------------- 
@@ -112,25 +107,30 @@ void area(int pipein,int nnemici){
         */
              
         /*Collisioni Bullet giocatore con nemico*/
-            for(i=0;i<11;i++){
-                 if(A[i].alive){
-                    for(j=0;j<NMB;j++){
-                        if(BG[j].alive && A[i].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==1){   
-                            BG[j].alive=false;
-                            kill(BG[j].pid,1);
-                            A[i].liv=2;
-                        }
-                        else if(BG[j].alive && A[i].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==2){   
-                            cancellasprite(A[i].y,A[i].x,'A');
-                            BG[j].alive=false;
-                            kill(BG[j].pid,1);
-                            A[i].alive=false;
-                            kill(A[i].pid,1);
-                            alienimorti++;
-                        }
-                    }    
-                }
+        for(i=0;i<11;i++){
+                if(A[i].alive){
+                for(j=0;j<NMB;j++){
+                    if(BG[j].alive && A[i].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==1){   
+                        BG[j].alive=false;
+                        kill(BG[j].pid,1);
+                        A[i].liv=2;
+                    }
+                    else if(BG[j].alive && A[i].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==2){   
+                        cancellasprite(A[i].y,A[i].x,'A');
+                        BG[j].alive=false;
+                        kill(BG[j].pid,1);
+                        A[i].alive=false;
+                        kill(A[i].pid,1);
+                        alienimorti++;
+                    }
+                }    
             }
+        }
+
+        /*Collisioni nemico con giocatore*/
+        for(i=0;i<11;i++){
+            if(A[i].alive && collisione(G,GSG,GSG-1,A[i], GSA, GSA)) vite=0;
+        }
 
         /*Collisioni Bullet nemico con giocatore*/
 
