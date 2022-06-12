@@ -8,7 +8,6 @@
 void alieni(int pipeout, int id,int nnemici, int difficolta){
 save Alieni;
 int idbn=0;
-int prova=0;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
 if(id==0||id==1) Alieni.x= MAXX-(GSA+DA);
@@ -22,6 +21,8 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
   Alieni.c ='A';	/* Carattere identificativo */
   Alieni.id =id; /* Numero dell elemento */
   Alieni.pid= getpid();
+  Alieni.alive=true;
+  Alieni.liv=1;
 
   /* Comunico le coordinate iniziali al processo padre */
   write(pipeout,&Alieni,sizeof(Alieni));
