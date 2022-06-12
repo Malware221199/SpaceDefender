@@ -89,11 +89,9 @@ void area(int pipein,int nnemici){
                 if(BG[dato_letto.id].alive && fuorischermo(BG[dato_letto.id],DB,DB))
                 {   
                     cancellasprite(BG[dato_letto.id].y,BG[dato_letto.id].x,'B');
-                    killBG[i]=true;
-                    BG[dato_letto.id].cord.alive=false;
+                    BG[dato_letto.id].alive=false;
                 }
 
-                    cancellasprite(BG[dato_letto.id].y,BG[dato_letto.id].x,'B');
                    
                 /* Collisioni proiettili con alieni*/
                  for(i=0;i<11;i++){
