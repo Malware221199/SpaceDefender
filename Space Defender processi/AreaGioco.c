@@ -44,10 +44,6 @@ void area(int pipein,int nnemici){
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
             if(A[dato_letto.id].alive && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
             else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
-
-            /*Collisioni nemico con limite schermo*/
-
-            //if(A[dato_letto.id].alive && fuorischermo(A[dato_letto.id], GSA, GSA)) vite=0;
             
         }
 
@@ -90,40 +86,6 @@ void area(int pipein,int nnemici){
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
             if(BG[dato_letto.id].alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
         
-            
-            /*Collisioni Bullet giocatore con limite schermo*/
-            if(BG[dato_letto.id].alive && fuorischermo(BG[dato_letto.id],DB,DB))
-            {   
-                cancellasprite(BG[dato_letto.id].y,BG[dato_letto.id].x,'B');
-                BG[dato_letto.id].alive=false;
-            }
-
-                
-            /*Collisioni Bullet giocatore con nemico*/
-                for(i=0;i<11;i++){
-                
-                
-                if(A[i].alive){
-                    
-                    if(BG[dato_letto.id].alive && A[i].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==1)
-                    {   
-                        BG[dato_letto.id].alive=false;
-                        kill(BG[dato_letto.id].pid,1);
-                        A[i].liv=2;
-                    }
-                    else if(BG[dato_letto.id].alive && A[i].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==2)
-                    {   
-                        cancellasprite(A[i].y,A[i].x,'A');
-                        BG[dato_letto.id].alive=false;
-                        kill(BG[dato_letto.id].pid,1);
-                        A[i].alive=false;
-                        kill(A[i].pid,1);
-                        alienimorti++;
-                    }
-                        
-                    
-                }
-            }
         }
             /*
         ----------------------------------------------------------------------
@@ -139,17 +101,58 @@ void area(int pipein,int nnemici){
 
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
             if(BN[dato_letto.id].alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+        }
 
+
+
+        /*
+        ----------------------------------------------------------------------
+        Collisioni
+        ---------------------------------------------------------------------- 
+        */
+             
+        /*Collisioni Bullet giocatore con nemico*/
+            for(i=0;i<11;i++){
+                 if(A[i].alive){
+                    for(j=0;j<NMB;j++){
+                        if(BG[j].alive && A[i].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==1){   
+                            BG[j].alive=false;
+                            kill(BG[j].pid,1);
+                            A[i].liv=2;
+                        }
+                        else if(BG[j].alive && A[i].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==2){   
+                            cancellasprite(A[i].y,A[i].x,'A');
+                            BG[j].alive=false;
+                            kill(BG[j].pid,1);
+                            A[i].alive=false;
+                            kill(A[i].pid,1);
+                            alienimorti++;
+                        }
+                    }    
+                }
+            }
 
         /*Collisioni Bullet nemico con giocatore*/
 
-        }
 
+        /*Collisioni Bullet giocatore con limite schermo*/
+        for(i=0;i<NMB;i++){
+            if(BG[i].alive && fuorischermo(BG[i],DB,DB))
+            {   
+                cancellasprite(BG[i].y,BG[i].x,'B');
+                kill(BG[i].pid,1);
+                BG[i].alive=false;
+
+            }
+        }
         /*Collisioni nemico con limite schermo*/
         for(i=0;i<11;i++){
             if(A[i].alive && fuorischermo(A[i], GSA, GSA)) vite=0;
         }
             
+
+
+
 
         /* Visualizzo le vite rimaste al giocatore */
         cancellasprite(0,1,'V');
