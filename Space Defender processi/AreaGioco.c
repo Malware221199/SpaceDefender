@@ -140,6 +140,7 @@ void area(int pipein,int nnemici){
             /* Visualizzo le vite rimaste al giocatore */
             cancellasprite(0,1,'V');
             for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
+            mvprintw(0,40,"%d",alienimorti);
             
 
             /* Aggiorno lo schermo di output per visualizzare le modifiche */
