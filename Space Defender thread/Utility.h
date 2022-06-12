@@ -27,9 +27,6 @@
 #define MAXY 	    24
 #define DB 	    1     /* Dimensione bullet*/
 #define TIMERMISSILE	    1000000
-
-
-
 #define DEADYA 	-10         /*Coordinata morta y alieno*/
 #define DEADXA 	-10         /*Coordinata morta x alieno*/
 #define DEADYB 	-15        /*Coordinata morta y proiettile*/
