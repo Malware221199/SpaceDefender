@@ -32,13 +32,11 @@ void area(int pipein,int nnemici){
 
 
                 /* Aggiorno le coordinate relative alla nuova posizione */
-                A[dato_letto.id].id=dato_letto.id;
-                A[dato_letto.id].y=dato_letto.y;
-                A[dato_letto.id].x=dato_letto.x;
-                A[dato_letto.id].pid=dato_letto.pid;
-
+                A[dato_letto.id]=dato_letto;
+               
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-                stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+                if(A[dato_letto.id].alive && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
+                else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
 
                 /* Collisioni Alieni*/
                 if(A[dato_letto.id].x<10){
