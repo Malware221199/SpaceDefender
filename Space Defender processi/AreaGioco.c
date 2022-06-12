@@ -62,7 +62,7 @@ void area(int pipein,int nnemici){
                 /*Collisioni nemico con giocatore*/
                 for(i=0;i<11;i++)
                 {
-                    if(A[i].cord.alive && collisione(G,GSG,GSG-1,A[i], GSA, GSA)) vite=0;
+                    if(A[i].alive && collisione(G,GSG,GSG-1,A[i], GSA, GSA)) vite=0;
                 }
 
             }
