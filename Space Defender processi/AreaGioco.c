@@ -105,6 +105,7 @@ void area(int pipein,int nnemici){
                             
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
+                            A[i].alive=false;
                             A[i].liv=2;
                         }
                         else if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==2)
