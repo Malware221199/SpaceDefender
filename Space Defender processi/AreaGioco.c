@@ -13,14 +13,14 @@ void area(int pipein,int nnemici){
     save BN[30];
     save G;
     save dato_letto;
-    
+
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
-    for(i=0;i<11;i++) A[i].alive=false;
+    for(i=0;i<11;i++) A[i].alive=true;
     for(i=0;i<11;i++) A[i].liv=1;
-    for(i=0;i<NMB;i++) BG[i].alive=false;
-    for(i=0;i<NMB;i++) BN[i].alive=false;
-    G.alive=false;
+    for(i=0;i<NMB;i++) BG[i].alive=true;
+    for(i=0;i<NMB;i++) BN[i].alive=true;
+    G.alive=true;
 
     
 
