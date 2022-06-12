@@ -259,7 +259,11 @@ void area(){
         G.old_cord.alive=false;
 
         do {
-            /*Alieni*/
+            /*
+            ----------------------------------------------------------------------
+            Gesione Alieni
+            ---------------------------------------------------------------------- 
+            */
             for(i=0;i<nnemici;i++){
                 if(A[i].old_cord.alive) cancellasprite(A[i].old_cord.y,A[i].old_cord.x,'A');
                 pthread_mutex_lock(&malieni);
@@ -268,7 +272,11 @@ void area(){
                 A[i].old_cord=A[i].cord;
                 pthread_mutex_unlock(&malieni);
             }
-            /*Giocatore*/
+            /*
+            ----------------------------------------------------------------------
+            Gesione Giocatore
+            ---------------------------------------------------------------------- 
+            */
             if(G.old_cord.alive)cancellasprite(G.old_cord.y,G.old_cord.x,'G');
             pthread_mutex_lock(&mgiocatore);
             if(G.cord.alive)stampasprite(G.cord.y,G.cord.x,'G');
@@ -276,7 +284,11 @@ void area(){
             pthread_mutex_unlock(&mgiocatore);
 
 
-            /*Bullet giocatore*/
+            /*
+            ----------------------------------------------------------------------
+            Gesione proiettili giocatore
+            ---------------------------------------------------------------------- 
+            */
             for(i=0;i<NMB;i++){
             if(BG[i].old_cord.alive) cancellasprite(BG[i].old_cord.y,BG[i].old_cord.x,'B');
             pthread_mutex_lock(&mbulletg);
@@ -285,7 +297,11 @@ void area(){
             pthread_mutex_unlock(&mbulletg);
             }
 
-            /*Bullet nemici*/
+            /*
+            ----------------------------------------------------------------------
+            Gesione proiettili nemico
+            ---------------------------------------------------------------------- 
+            */
             for(i=0;i<NMB;i++){
             if(BN[i].old_cord.alive) cancellasprite(BN[i].old_cord.y,BN[i].old_cord.x,'H');
             pthread_mutex_lock(&mbulletn);

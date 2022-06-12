@@ -10,8 +10,8 @@ void area(int pipein,int nnemici){
 
     struct position giocatore, dato_letto;
     save alieni[11];
-    save bulletg[94];
-    save bulletn[95];
+    save bulletg[30];
+    save bulletn[30];
 
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
@@ -168,4 +168,22 @@ void area(int pipein,int nnemici){
     /* Il ciclo si ripete finchè le vite del giocatore terminano o gli alieni terminano */
     } while(!collision);
 
-}	
+}
+
+bool collisione(cord c1,int lar1, int lun1,cord c2,int lar2,int lun2)
+{
+    return(
+        c1.x < c2.x + lar2 &&
+        c1.x + lar1 > c2.x &&
+        c1.y < c2.y + lun2 &&
+        c1.y + lun1 >c2.y
+    );
+}
+
+bool fuorischermo(cord c, int lar, int lun)
+{
+    return(
+        c.y + lun > MAXY || c.y < 0 || c.x + lar > MAXX || c.x < 0
+    );
+
+}		
