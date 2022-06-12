@@ -167,12 +167,12 @@ void area(int pipein,int nnemici){
 
     /* Il ciclo si ripete finchè le vite del giocatore terminano o gli alieni terminano */
     } while(!collision);
-    
+
     /* Termino i processi Alieni e Giocatore */	
             kill(pidG,1);
-            for(i=0;i<11;i++) kill(alieni[alieni[i].id].pid,1);
-            for(i=0;i<30;i++) kill(bulletg[bulletg[i].id].pid,1);
-            for(i=0;i<30;i++) kill(bulletn[bulletn[i].id].pid,1);
+            for(i=0;i<11;i++) kill(alieni[i].pid,1);
+            for(i=0;i<30;i++) kill(bulletg[i].pid,1);
+            for(i=0;i<30;i++) kill(bulletn[i].pid,1);
 
 }
 /*
