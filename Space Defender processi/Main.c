@@ -70,7 +70,7 @@ int main(){
                 }
             }
             kill(pidG,1);
-            for(i=0;i<11;i++)   kill(pidA[i],1);
+            //for(i=0;i<11;i++)   kill(pidA[i],1);
             /* Ripristino la modalità di funzionamento usuale */
             endwin();	
         }
