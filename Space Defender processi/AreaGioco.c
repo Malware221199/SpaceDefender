@@ -17,7 +17,7 @@ void area(int pipein,int nnemici){
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
     for(i=0;i<11;i++) A[i].alive=false;
-    //for(i=0;i<11;i++) A[i].liv=1;
+    for(i=0;i<11;i++) A[i].liv=1;
     for(i=0;i<NMB;i++) BG[i].alive=false;
     for(i=0;i<NMB;i++) BN[i].alive=false;
     G.alive=false;
@@ -38,7 +38,8 @@ void area(int pipein,int nnemici){
             cancellasprite(A[dato_letto.id].y,A[dato_letto.id].x,dato_letto.c);
 
             /* Aggiorno le coordinate relative alla nuova posizione */
-            A[dato_letto.id]=dato_letto;
+            A[dato_letto.id].x=dato_letto.x;
+            A[dato_letto.id].y=dato_letto.y;
             //mvprintw(0,40,"%d",A[dato_letto.id].liv);
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
             if(A[dato_letto.id].alive && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
