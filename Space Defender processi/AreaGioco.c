@@ -107,7 +107,7 @@ void area(int pipein,int nnemici){
                        
                         if(BG[dato_letto.id].alive && collisione(BG[dato_letto.id], DB, DB,A[i],GSA,GSA) && A[i].liv==1)
                         {   
-                            while(1) printf("halloo");
+                            //while(1) printf("halloo");
                             BG[dato_letto.id].alive=false;
                             kill(BG[dato_letto.id].pid,1);
                             A[i].alive=false;
