@@ -15,6 +15,7 @@ void giocatore(int pipeout)
   giocatore.c='G';	    /* Carattere identificativo giocatore*/
   giocatore.id=1;   /* Numero dell elemento */
   giocatore.pid=getpid();  /*Pid processo*/
+  giocatore.alive=true;
 
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */

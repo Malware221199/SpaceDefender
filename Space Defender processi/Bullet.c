@@ -13,6 +13,7 @@ void bulletg(int pipeout,int id,int cgy,int cgx){
     Bullet.c ='B';	/* Carattere identificativo */
     Bullet.id =id; /* Numero dell elemento */
     Bullet.pid=getpid(); /*Pid processo*/
+    Bullet.alive=true;
     
 
     
@@ -60,6 +61,7 @@ void bulletn(int pipeout,int id,int ay,int ax){
    Bulletn.c ='H';	/* Carattere identificativo */
     Bulletn.id =id; /* Numero dell elemento */
     Bulletn.pid=getpid(); /*Pid processo*/
+    Bulletn.alive=true;
     
 
     
