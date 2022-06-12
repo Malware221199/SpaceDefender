@@ -43,6 +43,23 @@ int pidBN;	      /* Pid processo figlio 'Bullet nemico' */
 
 /*
 ----------------------------------------------------------------------
+ Strutture
+----------------------------------------------------------------------
+*/
+/* Struttura adoperata per salvare le coordinate*/
+typedef struct 
+{
+  char c;    /* Identificatore dell'entità che invia i dati */
+  int x;    /* Coordinata X */
+  int y;    /* Coordinata Y */
+  int id;   /* Numero dell elemento */
+  int pid;  /*Pid processo*/
+  bool alive; 
+  int liv;
+}save;
+
+/*
+----------------------------------------------------------------------
  Funzioni
 ----------------------------------------------------------------------
 */
@@ -60,20 +77,5 @@ void cancellasprite(int y,int x,char c);
 bool collisione(save c1,int lar1, int lun1,save c2,int lar2,int lun2);
 bool fuorischermo(save c, int lar, int lun);
 
-/*
-----------------------------------------------------------------------
- Strutture
-----------------------------------------------------------------------
-*/
-/* Struttura adoperata per salvare le coordinate*/
-typedef struct 
-{
-  char c;    /* Identificatore dell'entità che invia i dati */
-  int x;    /* Coordinata X */
-  int y;    /* Coordinata Y */
-  int id;   /* Numero dell elemento */
-  int pid;  /*Pid processo*/
-  bool alive; 
-  int liv;
-}save;
+
 
