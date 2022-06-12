@@ -22,7 +22,7 @@ if(id==8||id==9) Alieni.x= MAXX-(GSA+DA)*5;
   Alieni.id =id; /* Numero dell elemento */
   Alieni.pid= getpid();
   Alieni.alive=true;
-  Alieni.liv=1;
+ // Alieni.liv=1;
 
   /* Comunico le coordinate iniziali al processo padre */
   write(pipeout,&Alieni,sizeof(Alieni));
