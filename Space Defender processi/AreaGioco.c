@@ -129,7 +129,7 @@ void area(int pipein,int nnemici){
                 cancellasprite(BN[dato_letto.id].y,BN[dato_letto.id].x,dato_letto.c);
                 
                 /*Aggiorno le coordinate relative alla nuova posizione */
-                if(BG[dato_letto.id].alive) BN[dato_letto.id]=dato_letto;
+                if(BN[dato_letto.id].alive) BN[dato_letto.id]=dato_letto;
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
