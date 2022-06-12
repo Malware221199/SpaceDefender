@@ -38,17 +38,10 @@ void area(int pipein,int nnemici){
                 if(A[dato_letto.id].alive && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
                 else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
 
-                /* Collisioni Alieni*/
-                if(A[dato_letto.id].x<10){
-                    vite--;
-                    kill(A[dato_letto.id].pid,1);
-                    cancellasprite(A[dato_letto.id].y,A[dato_letto.id].x,dato_letto.c);
-                    A[dato_letto.id].y=DEADYA;
-                    A[dato_letto.id].x=DEADXA;
-                    alienimorti++;
-                    
-                    
-                }
+                /*Collisioni nemico con limite schermo*/
+
+                if(A[dato_letto].alive && fuorischermo(A[dato_letto], GSA, GSA)) vite=0;
+                
             }
 
              /*
@@ -65,6 +58,12 @@ void area(int pipein,int nnemici){
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 if(G.alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+
+                /*Collisioni nemico con giocatore*/
+                for(i=0;i<11;i++)
+                {
+                    if(A[i].cord.alive && collisione(G,GSG,GSG-1,A[i], GSA, GSA)) vite=0;
+                }
 
             }
 
@@ -85,7 +84,7 @@ void area(int pipein,int nnemici){
                 if(BG[dato_letto.id].alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
             
                 
-                /* Collisioni proiettili con MAXX*/
+                /*Collisioni Bullet giocatore con limite schermo*/
                 if(BG[dato_letto.id].alive && fuorischermo(BG[dato_letto.id],DB,DB))
                 {   
                     cancellasprite(BG[dato_letto.id].y,BG[dato_letto.id].x,'B');
@@ -93,7 +92,7 @@ void area(int pipein,int nnemici){
                 }
 
                    
-                /* Collisioni proiettili con alieni*/
+                /*Collisioni Bullet giocatore con nemico*/
                  for(i=0;i<11;i++){
                     
                     
@@ -133,6 +132,18 @@ void area(int pipein,int nnemici){
 
                 /* Visualizzo il carattere dell'entità sulle nuove coordinate */
                 if(BN[dato_letto.id].alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+
+
+            /*Collisioni Bullet nemico con giocatore*/
+
+
+
+            /*Collisioni Bullet nemico con limite schermo*/
+
+
+
+
+
             }
 
 
