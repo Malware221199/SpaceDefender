@@ -143,15 +143,13 @@ void area(int pipein,int nnemici){
 
         /*Collisioni Bullet nemico con giocatore*/
 
-
-
-        /*Collisioni Bullet nemico con limite schermo*/
-
-
-
-
-
         }
+
+        /*Collisioni nemico con limite schermo*/
+        for(i=0;i<11;i++){
+            if(A[i].alive && fuorischermo(A[i], GSA, GSA)) vite=0;
+        }
+            
 
         /* Visualizzo le vite rimaste al giocatore */
         cancellasprite(0,1,'V');
