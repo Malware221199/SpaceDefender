@@ -170,9 +170,9 @@ void area(int pipein,int nnemici){
 
     /* Termino i processi Alieni e Giocatore */	
             kill(pidG,1);
-            for(i=0;i<11;i++) kill(alieni[i].pid,1);
-            for(i=0;i<30;i++) kill(bulletg[i].pid,1);
-            for(i=0;i<30;i++) kill(bulletn[i].pid,1);
+            for(i=0;i<=11;i++) kill(alieni[i].pid,1);
+            for(i=0;i<=30;i++) kill(bulletg[i].pid,1);
+            for(i=0;i<=30;i++) kill(bulletn[i].pid,1);
 
 }
 /*
