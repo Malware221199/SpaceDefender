@@ -1,7 +1,9 @@
 #include "Utility.h"
 
 bool quit=false;
-
+int ida;
+int nnemici=2;
+int difficolta = DELAYM;
 
 /*
 ----------------------------------------------------------------------
@@ -17,9 +19,6 @@ int main(){
     curs_set(0);		/* Nasconde il cursore */
     getmaxyx(stdscr, MAXY, MAXX);
     srand(time(NULL));
-    int ida;
-    int nnemici=2;
-    int difficolta = DELAYM;
     clear();
     refresh();
     pipe(p);    			/* Creazione pipe */
@@ -70,9 +69,11 @@ int main(){
                     area(p[0],nnemici);  /* invocazione funzione area di gioco */  
                 }
             }
-            /* Termino i processi Alieni e Giocatore */
-            kill(pidA,1);	
+            /* Termino i processi Alieni e Giocatore */	
             kill(pidG,1);
+            for(i=0;i<11;i++) kill(alieni[alieni[i].id].pid,1);
+            for(i=0;i<30;i++) kill(bulletg[i].pid,1);
+            for(i=0;i<30;i++) kill(bulletn[i].pid,1);
             /* Ripristino la modalità di funzionamento usuale */
             endwin();	
         }
