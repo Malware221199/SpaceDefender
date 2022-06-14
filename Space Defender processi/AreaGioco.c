@@ -43,13 +43,10 @@ void area(int pipein,int nnemici, int x){
             A[dato_letto.id].id=dato_letto.id;
             A[dato_letto.id].pid=dato_letto.pid;
             A[dato_letto.id].alive=dato_letto.alive;
-            //if(x>=1) while(1) printf("x=%d y=%d",A[1].x,A[1].y);
 
-
-            //mvprintw(0,40,"%d",A[dato_letto.id].liv);
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-            /*if(A[dato_letto.id].alive  && A[dato_letto.id].liv==1)*/ stampasprite(dato_letto.y,dato_letto.x,'a');
-            //else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
+            if(A[dato_letto.id].alive  && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
+            else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
             
         }
 
@@ -113,7 +110,7 @@ void area(int pipein,int nnemici, int x){
         */
              
         /*Collisioni Bullet giocatore con nemico*/
-        /*for(i=0;i<nnemici;i++){
+        for(i=0;i<nnemici;i++){
                 if(A[i].alive){
                 for(j=0;j<NMB;j++){
                     if(BG[j].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==1){   
@@ -139,7 +136,7 @@ void area(int pipein,int nnemici, int x){
         }
 
         /*Collisioni Bullet nemico con giocatore*/
-        /*for(i=0;i<NMB;i++){
+        for(i=0;i<NMB;i++){
             if(BN[i].alive && collisione(G,GSG,GSG-1,BN[i], DB, DB)){
                 kill(BN[i].pid,1);
                 BN[i].alive=false;
@@ -148,7 +145,7 @@ void area(int pipein,int nnemici, int x){
         }
 
         /*Collisioni Bullet giocatore con limite schermo*/
-        /*for(i=0;i<NMB;i++){
+        for(i=0;i<NMB;i++){
             if(BG[i].alive && fuorischermo(BG[i],DB,DB)){   
                 cancellasprite(BG[i].y,BG[i].x,'B');
                 kill(BG[i].pid,1);
@@ -158,16 +155,7 @@ void area(int pipein,int nnemici, int x){
         }
         /*Collisioni nemico con limite schermo*/
         for(i=0;i<nnemici;i++){
-            if(A[i].alive && fuorischermo(A[i], GSA, GSA)){
-            //vite=0;
-
-
-            if(x>=1) while (1){printf("i=%d x=%d y=%d",i, A[i].x, A[i].y);};
-            }
-            
-        }
-
-
+            if(A[i].alive && fuorischermo(A[i], GSA, GSA)) vite=0;
 
         /* Visualizzo le vite rimaste al giocatore */
         cancellasprite(0,1,'V');
@@ -202,9 +190,9 @@ void area(int pipein,int nnemici, int x){
     /* Il ciclo si ripete finchè le vite del giocatore terminano o gli alieni terminano */
     } while(!collision);
 
-    /* Termino i processi Alieni e Giocatore*/
-        //for(i=0;i<NMB;i++)  if(BG[i].alive) kill(BG[i].pid,1);
-        //for(i=0;i<NMB;i++)  if(BN[i].alive) kill(BN[i].pid,1);
+    /*Termino i processi Alieni e Giocatore*/
+        for(i=0;i<NMB;i++)  if(BG[i].alive) kill(BG[i].pid,1);
+        for(i=0;i<NMB;i++)  if(BN[i].alive) kill(BN[i].pid,1);
     
 }
 
