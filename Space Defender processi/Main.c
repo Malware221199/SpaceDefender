@@ -37,8 +37,6 @@ int main(){
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
             refresh();
-                
-            }
             pidG=fork();           
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
             x++;
