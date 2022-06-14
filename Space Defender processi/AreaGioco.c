@@ -158,11 +158,9 @@ void area(int pipein,int nnemici, int x){
         /*Collisioni nemico con limite schermo*/
         for(i=0;i<nnemici;i++){
             if(A[i].alive && fuorischermo(A[i], GSA, GSA)){//vite=0;
-            A[i].x=10;
-            A[i].y=10;
-            }
 
-            if(x>=1) while (1){printf("i=%d x=%d y=%d",i, A[i].x, A[i].y);};
+
+            //if(x>=1) while (1){printf("i=%d x=%d y=%d",i, A[i].x, A[i].y);};
         }
             
 
