@@ -39,6 +39,7 @@ int deltay=1;		/* Spostamento verticale */
     }
     if (random() < RAND_MAX/10){
       idbn++;
+      if(idbn>=NMB)idbn=0;
       pidBN[idbn]=fork();
       if(pidBN[idbn]==0) {
       BN[idbn].x = new_alieno.x-1;
