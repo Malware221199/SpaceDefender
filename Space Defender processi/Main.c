@@ -59,7 +59,7 @@ int main(){
                     save new_alieno;
                     
                     close(p[0]); /* chiusura del descrittore di lettura */
-                    if(x>=1) while(1) printf("ciao");
+                    
                     new_alieno.id=1;//ida;
                     new_alieno.pid= getpid();
                     new_alieno.x=70; //MAXX-(GSA+DA);
