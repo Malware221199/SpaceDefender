@@ -36,11 +36,7 @@
 ----------------------------------------------------------------------
 */
 int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
-int p[2];				/* Descrittori pipe */
-int pidA;
-int pidG;  
-int pidBG;	      /* Pid processo figlio 'Bullet uno' */
-int pidBN;	      /* Pid processo figlio 'Bullet nemico' */
+int p[2];				/* Descrittori pipe */ 
 
 /*
 ----------------------------------------------------------------------
@@ -58,12 +54,6 @@ typedef struct
   bool alive; 
   int liv;
 }save;
-
-save G;
-save A[11];
-save BG[30];
-save BN[30];
-save dato_letto;
 
 /*
 ----------------------------------------------------------------------

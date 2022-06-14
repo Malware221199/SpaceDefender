@@ -1,12 +1,5 @@
 #include "Utility.h"
 
-bool quit=false;
-int ida,i;
-int nnemici=2;
-int difficolta = DELAYM;
-
-
-
 /*
 ----------------------------------------------------------------------
  Funzione 'Main'
@@ -30,7 +23,11 @@ int main(){
     init_pair(3,COLOR_MAGENTA,COLOR_BLACK);   /* Colore trappola */
     init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
     attron(COLOR_PAIR(4));
-    
+    bool quit=false;
+    int ida,i;
+    int nnemici=2;
+    int difficolta = DELAYM;
+    pid_t pidA[11],pidG;
 
     do{
         quit=menu(&nnemici,&difficolta);
@@ -48,18 +45,20 @@ int main(){
 
             for(ida=0;ida<nnemici;ida++){
 
-                pidA = fork();/* Creo il primo processo figlio 'Alieni' */
+                pidA[ida] = fork();/* Creo il primo processo figlio 'Alieni' */
             
            
                 /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
-                if(pidA==0) {
+                if(pidA[ida]==0) {
                     
                     /* ed eseguo quindi la relativa funzione di gestione */
+                    save new_alieno;
+
                     close(p[0]); /* chiusura del descrittore di lettura */
-                    A[ida].id=ida;
-                    A[ida].pid= getpid();
+                    new_alieno.id=ida;
+                    new_alieno.pid= getpid();
                     
-                    alieni(p[1],A[ida],difficolta); /* invocazione funzione alieni */
+                    alieni(p[1],new_alieno,difficolta); /* invocazione funzione alieni */
                 
                 }
             }
