@@ -162,7 +162,7 @@ void area(int pipein,int nnemici, int x){
             A[i].y=MAXY/2;
             }
 
-            if(x>=1) while (1){printf("i=%d x=%d y=%d",i, A[i].x, A[i].y);};
+            //if(x>=1) while (1){printf("i=%d x=%d y=%d",i, A[i].x, A[i].y);};
         }
             
 
