@@ -25,11 +25,11 @@ if(A.id==8||A.id==9) A.x= MAXX-(GSA+DA)*5;
   write(pipeout,&A,sizeof(A));
 
   while(1){
-    
+
     /* Movimento X */
     A.x -= deltax;
     
-      if (random() < RAND_MAX/10){
+     /* if (random() < RAND_MAX/10){
         idbn++;
         pidBN=fork();
         if(pidBN==0) {
@@ -39,7 +39,7 @@ if(A.id==8||A.id==9) A.x= MAXX-(GSA+DA)*5;
         BN[idbn].pid=getpid();
         bulletn(p[1],BN[idbn]);
         }
-      }
+      }*/
     
 
     /* Comunico le coordinate correnti al processo padre */
