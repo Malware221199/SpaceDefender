@@ -36,7 +36,9 @@
 ----------------------------------------------------------------------
 */
 int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
-int p[2];				/* Descrittori pipe */  
+int p[2];				/* Descrittori pipe */
+int pidA;
+int pidG;  
 int pidB1;	      /* Pid processo figlio 'Bullet uno' */
 int pidB2;	      /* Pid processo figlio 'Bullet due' */
 int pidBN;	      /* Pid processo figlio 'Bullet nemico' */
