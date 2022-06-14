@@ -32,7 +32,7 @@ void stampasprite(int y,int x,char c){
 
         case 'H':/* Visualizzo il proiettile nemico*/
             attron(COLOR_PAIR(4));
-            mvprintw(y,x,"-");
+            mvprintw(y,x,"<");
             attroff(COLOR_PAIR(4));
         break;
 
