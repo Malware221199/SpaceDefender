@@ -8,6 +8,8 @@ void giocatore(int pipeout)
 {
   int i,idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
   save G;
+  save BG[NMB];
+  pid_t pidBG[NMB];
   G.x = 2;       /* Coordinata X iniziale */
   G.y = MAXY/2-2;   /* Coordinata Y iniziale */
   G.c='G';	    /* Carattere identificativo giocatore*/
@@ -33,11 +35,11 @@ void giocatore(int pipeout)
       G.y+=1;		
     }
 
-    /*if(c==SPC){
+    if(c==SPC){
       for(i=0;i<2;i++){
-        pidBG=fork();
         idb++;
-        if(pidBG==0) {
+        pidBG[idb]=fork();
+        if(pidBG[idb]==0) {
           BG[idb].x=G.x+7;
           BG[idb].y=G.y+2;
           BG[idb].id=idb;
@@ -46,7 +48,7 @@ void giocatore(int pipeout)
           bulletg(p[1],BG[idb]);
         }
       }
-    }*/
+    }
 
     /* Comunico al processo padre le coordinate del giocatore */
     write(pipeout,&G,sizeof(G)); 
