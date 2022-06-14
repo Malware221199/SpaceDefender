@@ -37,7 +37,7 @@ int deltay=1;		/* Spostamento verticale */
         if(new_alieno.y + deltay < MAXY/2  || new_alieno.y + deltay > (MAXY-GSA-1)) deltay *=-1;
         
     }
-    if (random() < RAND_MAX/20){
+    if (random() < RAND_MAX/15){
       idbn++;
       if(idbn>=NMB)idbn=0;
       pidBN[idbn]=fork();
