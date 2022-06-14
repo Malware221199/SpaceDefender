@@ -42,7 +42,7 @@ void area(int pipein,int nnemici){
             A[dato_letto.id].y=dato_letto.y;
             A[dato_letto.id].id=dato_letto.id;
             A[dato_letto.id].pid=dato_letto.pid;
-            //A[dato_letto.id].alive=dato_letto.alive;
+            A[dato_letto.id].alive=dato_letto.alive;
 
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
             if(A[dato_letto.id].alive  && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
