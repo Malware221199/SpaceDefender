@@ -29,14 +29,14 @@
 #define DELAYV 	200000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
 #define DELAYM 	400000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	500000	    /* Ritardo nel movimento delle navicelle nemiche lento */
+#define MAXX 80
+#define MAXY 24
 
 /*
 ----------------------------------------------------------------------
  Variabili
 ----------------------------------------------------------------------
 */
-int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
-
 
 /*
 ----------------------------------------------------------------------
