@@ -41,8 +41,8 @@ void area(int pipein,int nnemici){
 
             //mvprintw(0,40,"%d",A[dato_letto.id].liv);
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-            if(A[dato_letto.id].alive  && A[dato_letto.id].liv==1) stampasprite(dato_letto.y,dato_letto.x,'a');
-            else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
+            /*if(A[dato_letto.id].alive  && A[dato_letto.id].liv==1)*/ stampasprite(dato_letto.y,dato_letto.x,'a');
+            //else if(A[dato_letto.id].alive && A[dato_letto.id].liv==2) stampasprite(dato_letto.y,dato_letto.x,'A');
             
         }
 
