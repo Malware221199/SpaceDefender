@@ -6,7 +6,7 @@
 */
 
 void alieni(int pipeout,save new_alieno, int difficolta){
-save BN;
+save BN[NMB];
 int idbn=0;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
