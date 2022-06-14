@@ -30,7 +30,7 @@ int deltay=1;		/* Spostamento verticale */
         if(new_alieno.y - deltay < 1 || new_alieno.y - deltay > MAXY/2-GSA) deltay *=-1;
         
     }
-    else if(new_alieno.id==1){
+    else if(new_alieno.id%2==1){
 
         new_alieno.y += deltay;
         /* Se supero area Y schermo inverte il movimento */
