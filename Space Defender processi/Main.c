@@ -19,7 +19,6 @@ int main(){
     start_color();
     noecho();			/* Imposta modalità della tastiera */
     curs_set(0);		/* Nasconde il cursore */
-    srand(time(NULL));
     clear();
     refresh();
     
