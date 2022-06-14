@@ -22,7 +22,6 @@ int main(){
     srand(time(NULL));
     clear();
     refresh();
-   
     bkgd(COLOR_PAIR(1));
     init_pair(1,COLOR_RED,COLOR_BLACK);  /* Colore vespa */
     init_pair(2,COLOR_GREEN,COLOR_BLACK);   /* Colore contadino */
@@ -33,7 +32,6 @@ int main(){
     int x=0;
     do{
          pipe(p);    			/* Creazione pipe */
-       
         quit=menu(&nnemici,&difficolta);
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
@@ -48,7 +46,7 @@ int main(){
                 giocatore(p[1]); /* invocazione funzione giocatore */  
             }
 
-            //for(ida=0;ida<nnemici;ida++){
+            for(ida=0;ida<nnemici;ida++){
 
                 pidA = fork();/* Creo il primo processo figlio 'Alieni' */
                 
@@ -61,10 +59,10 @@ int main(){
                     
                     close(p[0]); /* chiusura del descrittore di lettura */
                     
-                    new_alieno.id=1;//ida;
+                    new_alieno.id=ida;
                     new_alieno.pid= getpid();
-                    new_alieno.x=70; //MAXX-(GSA+DA);
-                    new_alieno.y=12;//(MAXY/4);
+                    new_alieno.x=MAXX-(GSA+DA);
+                    new_alieno.y=(MAXY/4);
                     new_alieno.c ='A';	/* Carattere identificativo */
                     new_alieno.alive=true;
                     new_alieno.liv=1;
@@ -72,7 +70,7 @@ int main(){
                     alieni(p[1],new_alieno,difficolta); /* invocazione funzione alieni */
                 
                 }
-            //}
+            }
 
             /* Sono ancora nel processo padre */
             close(p[1]); /* chiusura del descrittore di scrittura */
