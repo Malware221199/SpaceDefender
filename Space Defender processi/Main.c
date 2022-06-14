@@ -37,9 +37,6 @@ int main(){
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
             refresh();
-            if(x>=1){
-                kill(pidG,1);
-            for(i=0;i<nnemici;i++) kill(pidA[i],1);
                 
             }
             pidG=fork();           
