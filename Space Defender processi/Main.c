@@ -55,6 +55,7 @@ int main(){
                     /* ed eseguo quindi la relativa funzione di gestione */
                     close(p[0]); /* chiusura del descrittore di lettura */
                     A[ida].id=ida;
+                    A[ida].pid= getpid();
                     
                     alieni(p[1],A[ida],difficolta); /* invocazione funzione alieni */
                 
