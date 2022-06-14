@@ -38,6 +38,7 @@ void giocatore(int pipeout)
     if(c==SPC){
       for(i=0;i<2;i++){
         idb++;
+        if(idb>=NMB)idb=0;
         pidBG[idb]=fork();
         if(pidBG[idb]==0) {
           BG[idb].x=G.x+7;
