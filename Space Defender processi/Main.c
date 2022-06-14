@@ -49,11 +49,11 @@ int main(){
                 close(p[0]); /* chiusura del descrittore di lettura */
                 
                 alieni(p[1],ida,A[ida],difficolta); /* invocazione funzione alieni */
+                while(1)    printf("ciao"); 
 
                     
             }
-            else {	
-                while(1)    printf("ciao"); 	
+            else {		
                 /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
                 G.pid=fork();           
                 /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
