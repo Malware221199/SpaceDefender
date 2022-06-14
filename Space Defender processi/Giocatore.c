@@ -35,9 +35,9 @@ void giocatore(int pipeout)
     }
 
     if(c==SPC){
-      idb++;
       for(i=0;i<2;i++){
         pidBG=fork();
+        idb++;
         if(pidBG==0) {
           BG[idb].x=G.x+7;
           BG[idb].y=G.y+2;
