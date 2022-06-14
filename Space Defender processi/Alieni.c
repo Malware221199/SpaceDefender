@@ -6,7 +6,7 @@
 */
 
 void alieni(int pipeout,save A, int difficolta){
-int idbn=0;
+int idbn=0,x=0;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
 if(A.id==0||A.id==1) A.x= MAXX-(GSA+DA);
@@ -25,7 +25,9 @@ if(A.id==8||A.id==9) A.x= MAXX-(GSA+DA)*5;
   write(pipeout,&A,sizeof(A));
 
   while(1){
-    
+
+    mvprintw(0,60,"a: %d",x);
+    x++;
     /* Movimento X */
     A.x -= deltax;
     
