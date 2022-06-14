@@ -53,6 +53,6 @@ int deltay=1;		/* Spostamento verticale */
     
 
 		/* Inserisco una pausa per rallentare il movimento */
-    usleep(difficolta/3);
+    usleep(difficolta);
   }
 }
