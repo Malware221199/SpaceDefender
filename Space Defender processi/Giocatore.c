@@ -37,22 +37,17 @@ void giocatore(int pipeout)
 
     if(c==SPC){
       idb++;
-      pidB1=fork();
-      
-      if(pidB1==0) {
-        close(p[0]); /* chiusura del descrittore di lettura */
-        bulletg(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
-      }	
-      idb++;
-    
-      pidB2=fork();
-      
-      if(pidB2==0) {
-       
-        close(p[0]); /* chiusura del descrittore di lettura */
-        bulletg(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */ 
+      for(i=0;i<2;i++){
+        pidBG=fork();
+        if(pidBG==0) {
+          BG[idb].x=G.x+7;
+          BG[idb].y=G.y+2;
+          BG[idb].id=idb;
+          BG[idb].pid=getpid();
+
+          bulletg(p[1],BG[idb]); /* invocazione funzione bullet */ 
         }
-      
+      }
     }
 
     /* Comunico al processo padre le coordinate del giocatore */
