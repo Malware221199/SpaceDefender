@@ -184,22 +184,13 @@ void cancellasprite(int y,int x,char c){
             }
         }
 
-        else if(c=='B'){
-            
-            mvprintw(y,x," ");
-        }
+        else if(c=='B') mvprintw(y,x," ");
 
         
-        else if(c=='H'){
-            
-            mvprintw(y,x," ");
-        }
+        else if(c=='H') mvprintw(y,x," ");
 
 
-        else if(c=='V'){
-            
-            mvprintw(y,x,"      ");
-        }
+        else if(c=='V') mvprintw(y,x,"      ");
 
 
 }
