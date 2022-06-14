@@ -76,8 +76,8 @@ int main(){
             area(p[0],nnemici, x);  /* invocazione funzione area di gioco */  
         
             /*Termino i processi*/
-            //kill(pidG,1);
-            //kill(pidA,1);
+            kill(pidG,1);
+            kill(pidA,1);
         }
     }while(!quit);
     /* Ripristino la modalità di funzionamento usuale */
