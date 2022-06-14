@@ -32,6 +32,7 @@ int main(){
     
     int x=-1;
     do{
+        if(x>=1) while(1) printf("ciao");
         quit=menu(&nnemici,&difficolta);
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
