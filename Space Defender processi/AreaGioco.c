@@ -8,7 +8,7 @@
 
 void area(int pipein,int nnemici, int x){
 
-    int x=0,i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
+    int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
     save G;
     save A[11];
