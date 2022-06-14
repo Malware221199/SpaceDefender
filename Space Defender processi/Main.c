@@ -55,7 +55,7 @@ int main(){
             else {		
                 /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
                 G.pid=fork();
-                                
+                while(1)    print("ciao");            
                 /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
                 if(G.pid==0) {
 
