@@ -43,6 +43,7 @@ void area(int pipein,int nnemici, int x){
             A[dato_letto.id].id=dato_letto.id;
             A[dato_letto.id].pid=dato_letto.pid;
             A[dato_letto.id].alive=dato_letto.alive;
+            while(1) printf("%d",dato_letto.id):
 
 
             //mvprintw(0,40,"%d",A[dato_letto.id].liv);
