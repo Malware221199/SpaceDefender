@@ -6,20 +6,19 @@
 */
 void giocatore(int pipeout)
 {
-  save giocatore;
   int i,idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
 
   
-  giocatore.x = 2;       /* Coordinata X iniziale */
-  giocatore.y = MAXY/2-2;   /* Coordinata Y iniziale */
-  giocatore.c='G';	    /* Carattere identificativo giocatore*/
-  giocatore.id=1;   /* Numero dell elemento */
-  giocatore.pid=getpid();  /*Pid processo*/
-  giocatore.alive=true;
+  G.x = 2;       /* Coordinata X iniziale */
+  G.y = MAXY/2-2;   /* Coordinata Y iniziale */
+  G.c='G';	    /* Carattere identificativo giocatore*/
+  G.id=1;   /* Numero dell elemento */
+  G.pid=getpid();  /*Pid processo*/
+  G.alive=true;
 
 
   /* Comunico al processo padre le coordinate iniziali del giocatore */
-  write(pipeout,&giocatore,sizeof(giocatore));
+  write(pipeout,&G,sizeof(G));
   
   /* Lettura dei tasti cursore */
   while(1)
@@ -27,12 +26,12 @@ void giocatore(int pipeout)
   		char c;
     c = getch();
 
-    if (c==UP && giocatore.y > 0){
-      giocatore.y-=1;				
+    if (c==UP && G.y > 0){
+      G.y-=1;				
     }
 
-    if(c==DW  && giocatore.y < MAXY - 5){
-      giocatore.y+=1;		
+    if(c==DW  && G.y < MAXY - 5){
+      G.y+=1;		
     }
 
     if(c==SPC){
@@ -51,7 +50,7 @@ void giocatore(int pipeout)
     }
 
     /* Comunico al processo padre le coordinate del giocatore */
-    write(pipeout,&giocatore,sizeof(giocatore)); 
+    write(pipeout,&G,sizeof(G)); 
 
   }
 }
