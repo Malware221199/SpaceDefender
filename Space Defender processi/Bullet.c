@@ -37,7 +37,7 @@ void bulletg(int pipeout,save BG){
         write(pipeout,&BG,sizeof(BG));
 
             /* Inserisco una pausa per rallentare il movimento */
-        usleep(5000);
+        usleep(10000);
     }
 }
 /*
@@ -58,6 +58,6 @@ void bulletn(int pipeout,save BN){
         BN.x -= deltax;
 
         /* Inserisco una pausa per rallentare il movimento */
-        usleep(5000);
+        usleep(10000);
     }
 }
