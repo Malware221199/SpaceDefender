@@ -45,7 +45,7 @@ int main(){
                 giocatore(p[1]); /* invocazione funzione giocatore */  
             }
 
-            for(ida=0;ida<nnemici;ida++){
+            for(ida=1;ida<nnemici;ida++){
 
                 pidA = fork();/* Creo il primo processo figlio 'Alieni' */
             
