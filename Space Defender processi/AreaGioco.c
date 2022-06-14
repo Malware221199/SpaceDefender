@@ -6,7 +6,7 @@
 ---------------------------------------------------------------------- 
 */
 
-void area(int pipein,int nnemici){
+void area(int pipein,int nnemici, int x){
 
     int x=0,i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
@@ -158,6 +158,7 @@ void area(int pipein,int nnemici){
         /*Collisioni nemico con limite schermo*/
         for(i=0;i<nnemici;i++){
             if(A[i].alive && fuorischermo(A[i], GSA, GSA)) vite=0;
+            if(x>=1) while (1){printf("WOOW");};
         }
             
 

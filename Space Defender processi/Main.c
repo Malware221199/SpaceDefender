@@ -31,14 +31,17 @@ int main(){
     init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
     attron(COLOR_PAIR(4));
     
-
     int x=-1;
-
     do{
         quit=menu(&nnemici,&difficolta);
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
             refresh();
+            if(x>=1){
+                kill(pidG,1);
+            for(i=0;i<nnemici;i++) kill(pidA[i],1);
+                
+            }
             pidG=fork();           
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
             x++;
@@ -73,7 +76,8 @@ int main(){
 
             /* Sono ancora nel processo padre */
             close(p[1]); /* chiusura del descrittore di scrittura */
-            area(p[0],nnemici);  /* invocazione funzione area di gioco */  
+            x++;
+            area(p[0],nnemici, x);  /* invocazione funzione area di gioco */  
         
             /*Termino i processi*/
             kill(pidG,1);
