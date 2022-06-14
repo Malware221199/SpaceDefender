@@ -112,7 +112,7 @@ void area(int pipein,int nnemici, int x){
         */
              
         /*Collisioni Bullet giocatore con nemico*/
-        for(i=0;i<nnemici;i++){
+        /*for(i=0;i<nnemici;i++){
                 if(A[i].alive){
                 for(j=0;j<NMB;j++){
                     if(BG[j].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==1){   
@@ -138,7 +138,7 @@ void area(int pipein,int nnemici, int x){
         }
 
         /*Collisioni Bullet nemico con giocatore*/
-        for(i=0;i<NMB;i++){
+        /*for(i=0;i<NMB;i++){
             if(BN[i].alive && collisione(G,GSG,GSG-1,BN[i], DB, DB)){
                 kill(BN[i].pid,1);
                 BN[i].alive=false;
@@ -147,7 +147,7 @@ void area(int pipein,int nnemici, int x){
         }
 
         /*Collisioni Bullet giocatore con limite schermo*/
-        for(i=0;i<NMB;i++){
+        /*for(i=0;i<NMB;i++){
             if(BG[i].alive && fuorischermo(BG[i],DB,DB)){   
                 cancellasprite(BG[i].y,BG[i].x,'B');
                 kill(BG[i].pid,1);
