@@ -13,7 +13,7 @@ void area(int pipein,int nnemici){
     save G;
     save A[11];
     save BG[30];
-    save BN[30];
+    save BN[100];
     save dato_letto;
 
     for(i=0;i<11;i++) A[i].alive=false;
