@@ -47,7 +47,7 @@ int main(){
 
             for(ida=0;ida<nnemici;ida++){
 
-                pidA[ida] = fork();/* Creo il primo processo figlio 'Alieni' */
+                pidA= fork();/* Creo il primo processo figlio 'Alieni' */
                 
 
                 /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
