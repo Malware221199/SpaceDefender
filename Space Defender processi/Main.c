@@ -73,6 +73,7 @@ int main(){
             /* Sono ancora nel processo padre */
             close(p[1]); /* chiusura del descrittore di scrittura */
             x++;
+            printf("ciao");
             area(p[0],nnemici, x);  /* invocazione funzione area di gioco */  
         
             /*Termino i processi*/
