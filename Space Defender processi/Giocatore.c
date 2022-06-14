@@ -6,7 +6,7 @@
 */
 void giocatore(int pipeout)
 {
-  int i,x=0,idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
+  int i,idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
   
   G.x = 2;       /* Coordinata X iniziale */
   G.y = MAXY/2-2;   /* Coordinata Y iniziale */
@@ -22,8 +22,7 @@ void giocatore(int pipeout)
   /* Lettura dei tasti cursore */
   while(1)
   {
-    mvprintw(0,60,"a: %d",x);
-    x++;
+    
   		char c;
     c = getch();
 
