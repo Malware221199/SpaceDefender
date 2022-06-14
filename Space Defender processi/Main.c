@@ -29,7 +29,6 @@ int main(){
     init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
     attron(COLOR_PAIR(4));
     
-    int x=0;
     do{
          pipe(p);    			/* Creazione pipe */
         quit=menu(&nnemici,&difficolta);
@@ -74,7 +73,6 @@ int main(){
 
             /* Sono ancora nel processo padre */
             close(p[1]); /* chiusura del descrittore di scrittura */
-            x++;
             area(p[0],nnemici, x);  /* invocazione funzione area di gioco */  
         
             /*Termino i processi*/
