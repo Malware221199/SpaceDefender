@@ -38,7 +38,7 @@ if(A.id==8||A.id==9) A.x= MAXX-(GSA+DA)*5;
         BN[idbn].y = A.y+1;
         BN[idbn].id=idbn;
         BN[idbn].pid=getpid();
-        bulletn(p[1],BN[idbn],A);
+        bulletn(p[1],BN[idbn]);
         }
       }
     
