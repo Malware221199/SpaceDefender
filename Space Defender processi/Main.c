@@ -22,7 +22,7 @@ int main(){
     srand(time(NULL));
     clear();
     refresh();
-    pipe(p);    			/* Creazione pipe */
+   
     bkgd(COLOR_PAIR(1));
     init_pair(1,COLOR_RED,COLOR_BLACK);  /* Colore vespa */
     init_pair(2,COLOR_GREEN,COLOR_BLACK);   /* Colore contadino */
@@ -32,6 +32,7 @@ int main(){
     
     int x=0;
     do{
+         pipe(p);    			/* Creazione pipe */
        
         quit=menu(&nnemici,&difficolta);
         if (!quit){   /* Entro nella funzione Menu*/
