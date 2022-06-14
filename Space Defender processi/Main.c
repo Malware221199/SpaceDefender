@@ -29,6 +29,8 @@ int main(){
     int difficolta = DELAYM;
     pid_t pidA[11],pidG;
 
+    int x=0;
+
     do{
         quit=menu(&nnemici,&difficolta);
         if (!quit){   /* Entro nella funzione Menu*/
@@ -37,7 +39,12 @@ int main(){
             pidG=fork();           
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
             if(pidG==0) {
-
+                x++;
+                if(x==1) while (1)
+                {
+                    printf("WOOW");
+                };
+                
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
                 giocatore(p[1]); /* invocazione funzione giocatore */  

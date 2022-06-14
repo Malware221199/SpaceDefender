@@ -46,6 +46,6 @@ if(A.id==8||A.id==9) A.x= MAXX-(GSA+DA)*5;
     write(pipeout,&A,sizeof(A));
 
 		/* Inserisco una pausa per rallentare il movimento */
-    usleep(difficolta);
+    usleep(10);
   }
 }
