@@ -92,7 +92,7 @@ void area(int pipein,int nnemici){
         */
         else if(dato_letto.c=='H'){
             /*Cancello il precedente carattere visualizzato */
-            cancellasprite(BN[dato_letto.id].y,BN[dato_letto.id].x,'B');
+            cancellasprite(BN[dato_letto.id].y,BN[dato_letto.id].x,dato_letto.c);
             
             /*Aggiorno le coordinate relative alla nuova posizione */
             BN[dato_letto.id]=dato_letto;
@@ -133,7 +133,17 @@ void area(int pipein,int nnemici){
 
         /*Collisioni nemico con giocatore*/
         for(i=0;i<nnemici;i++){
-            if(/*A[i].alive && */collisione(G,GSG,GSG-1,A[i], GSA, GSA)) vite=0;
+            if(A[i].alive && collisione(G,GSG,GSG-1,A[i], GSA, GSA)) vite=0;
+        }
+
+        /*Collisioni Bullet nemico con limite schermo*/
+        for(i=0;i<NMB;i++){
+            if(BN[i].alive && fuorischermo(BN[i],DB,DB))
+            {   
+                kill(BN[i].pid,1);
+                BN[i].alive=false;
+            }
+
         }
 
         /*Collisioni Bullet nemico con giocatore*/
