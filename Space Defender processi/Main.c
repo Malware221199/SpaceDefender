@@ -35,9 +35,9 @@ int main(){
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
             refresh();
-            pidG=fork();           
+            G.pid=fork();           
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
-            if(pidG==0) {
+            if(G.pid==0) {
 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
