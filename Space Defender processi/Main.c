@@ -12,7 +12,7 @@ int main(){
     int ida,i;
     int nnemici=2;
     int difficolta = DELAYM;
-    pid_t pidA,pidG;
+    pid_t pidA[11],pidG;
 
     setlocale(LC_ALL, "");
     initscr();			/* Inizializza schermo di output */
