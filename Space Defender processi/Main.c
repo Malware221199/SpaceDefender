@@ -30,16 +30,16 @@ int main(){
     init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
     attron(COLOR_PAIR(4));
     
-    int x=-1;
+    int x=0;
     do{
-        if(x>=1) while(1) printf("ciao");
+       
         quit=menu(&nnemici,&difficolta);
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
             refresh();
             pidG=fork();           
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
-            if(x>=1) while(1) printf("ciao");
+           
             if(pidG==0) {
                 
                 /* ed eseguo quindi la relativa funzione di gestione */
@@ -50,7 +50,7 @@ int main(){
             //for(ida=0;ida<nnemici;ida++){
 
                 pidA = fork();/* Creo il primo processo figlio 'Alieni' */
-                if(x>=1) while(1) printf("ciao");
+                
 
                 /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
                 if(pidA==0) {
