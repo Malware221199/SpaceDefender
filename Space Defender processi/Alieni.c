@@ -20,6 +20,22 @@ int deltay=1;		/* Spostamento verticale */
 
     /* Movimento X */
     new_alieno.x -= deltax;
+
+    /* Movimento Y */   
+    if(myida%2==0){
+        
+        A[myida].cord.y -= deltay;
+        /* Se supero area Y schermo inverte il movimento */
+        if(A[myida].cord.y - deltay < 1 || A[myida].cord.y - deltay > MAXY/2-GSA) deltay *=-1;
+        
+    }
+    else if(myida%2==1){
+
+        A[myida].cord.y += deltay;
+        /* Se supero area Y schermo inverte il movimento */
+        if(A[myida].cord.y + deltay < MAXY/2  || A[myida].cord.y + deltay > (MAXY-GSA-1)) deltay *=-1;
+        
+    }
     
     if (random() < RAND_MAX/10){
       idbn++;
