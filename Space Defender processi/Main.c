@@ -41,14 +41,14 @@ int main(){
                 if(!A[ida].pid)
                     break; 
             }
-            while(1) printf("ciao");
+           
             /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
             if(A[ida].pid==0) {
                 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
                 
-                alieni(p[1],ida,nnemici,difficolta); /* invocazione funzione alieni */
+                alieni(p[1],ida,A[ida],difficolta); /* invocazione funzione alieni */
 
                     
             }

@@ -69,7 +69,7 @@ save dato_letto;
  Funzioni
 ----------------------------------------------------------------------
 */
-void alieni(int pipeout,int id,int nnemici,int difficolta);
+void alieni(int pipeout,int id,save A,int difficolta);
 void giocatore(int pipeout);
 void bulletg(int pipeout,int id,int cgy,int cgx);
 void bulletn(int pipeout,int id,int ay,int ax);
