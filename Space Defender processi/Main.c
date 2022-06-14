@@ -71,7 +71,7 @@ int main(){
             }
             kill(pidG,1);
             /* Ripristino la modalità di funzionamento usuale */
-            endwin();	
+            endwin();
         }
     }while(!quit);
     /* Ripristino la modalità di funzionamento usuale */

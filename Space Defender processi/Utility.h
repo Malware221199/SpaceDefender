@@ -60,6 +60,12 @@ typedef struct
   int liv;
 }save;
 
+save A[11];
+save BG[30];
+save BN[30];
+save G;
+save dato_letto;
+
 /*
 ----------------------------------------------------------------------
  Funzioni

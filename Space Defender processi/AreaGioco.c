@@ -8,12 +8,6 @@
 
 void area(int pipein,int nnemici){
 
-    save A[11];
-    save BG[30];
-    save BN[30];
-    save G;
-    save dato_letto;
-
     int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
     for(i=0;i<11;i++) A[i].alive=false;
@@ -202,6 +196,8 @@ void area(int pipein,int nnemici){
         for(i=0;i<NMB;i++)  if(BN[i].alive) kill(BN[i],1);
     
 }
+
+
 
 bool collisione(save c1,int lar1, int lun1,save c2,int lar2,int lun2)
 {
