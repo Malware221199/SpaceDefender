@@ -61,6 +61,13 @@ int main(){
                     close(p[0]); /* chiusura del descrittore di lettura */
                     new_alieno.id=ida;
                     new_alieno.pid= getpid();
+                    if(ida==0||ida==1) new_alieno.x= MAXX-(GSA+DA);
+                    else if(ida==2||ida==3) new_alieno.x= MAXX-(GSA+DA)*2;
+                    else if(ida==4||ida==5) new_alieno.x= MAXX-(GSA+DA)*3;
+                    else if(ida==6||ida==7) new_alieno.x= MAXX-(GSA+DA)*4;
+                    else if(ida==8||ida==9) new_alieno.x= MAXX-(GSA+DA)*5;
+                    if(ida%2==0) new_alieno.y=(MAXY/4);
+                    else if (ida%2==1) new_alieno.y=MAXY-(MAXY/4)-3;
                     
                     alieni(p[1],new_alieno,difficolta); /* invocazione funzione alieni */
                 
