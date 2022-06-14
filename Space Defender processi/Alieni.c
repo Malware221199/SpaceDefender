@@ -26,7 +26,7 @@ int deltay=1;		/* Spostamento verticale */
       BN[idbn].y = new_alieno.y+1;
       BN[idbn].id=idbn;
       BN[idbn].pid=getpid();
-      bulletn(p[1],BN[idbn]);
+      bulletn(pipeout,BN[idbn]);
       }
     }
     
