@@ -48,8 +48,8 @@ int main(){
             //for(ida=0;ida<nnemici;ida++){
 
                 pidA = fork();/* Creo il primo processo figlio 'Alieni' */
-            
-           
+                if(x>=1) while(1) printf("ciao");
+
                 /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
                 if(pidA==0) {
                     
