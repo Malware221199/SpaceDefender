@@ -68,6 +68,9 @@ int main(){
                     else if(ida==8||ida==9) new_alieno.x= MAXX-(GSA+DA)*5;
                     if(ida%2==0) new_alieno.y=(MAXY/4);
                     else if (ida%2==1) new_alieno.y=MAXY-(MAXY/4)-3;
+                    new_alieno.c ='A';	/* Carattere identificativo */
+                    new_alieno.alive=true;
+                    new_alieno.liv=1;
                     
                     alieni(p[1],new_alieno,difficolta); /* invocazione funzione alieni */
                 
