@@ -45,7 +45,7 @@ int main(){
                 giocatore(p[1]); /* invocazione funzione giocatore */  
             }
 
-            for(ida=1;ida<nnemici;ida++){
+            //for(ida=0;ida<nnemici;ida++){
 
                 pidA = fork();/* Creo il primo processo figlio 'Alieni' */
             
@@ -57,7 +57,7 @@ int main(){
                     save new_alieno;
 
                     close(p[0]); /* chiusura del descrittore di lettura */
-                    new_alieno.id=ida;
+                    new_alieno.id=1;//ida;
                     new_alieno.pid= getpid();
                     new_alieno.x= MAXX-(GSA+DA);
                     new_alieno.y=(MAXY/4);
@@ -68,7 +68,7 @@ int main(){
                     alieni(p[1],new_alieno,difficolta); /* invocazione funzione alieni */
                 
                 }
-            }
+            //}
 
             /* Sono ancora nel processo padre */
             close(p[1]); /* chiusura del descrittore di scrittura */
