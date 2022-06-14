@@ -8,6 +8,7 @@
 void alieni(int pipeout,save new_alieno, int difficolta){
 save BN[NMB];
 pid_t pidBN[NMB];
+srand(getpid());
 
 
 int idbn=0;
@@ -36,7 +37,6 @@ int deltay=1;		/* Spostamento verticale */
         if(new_alieno.y + deltay < MAXY/2  || new_alieno.y + deltay > (MAXY-GSA-1)) deltay *=-1;
         
     }
-    
     if (random() < RAND_MAX/10){
       idbn++;
       pidBN[idbn]=fork();
