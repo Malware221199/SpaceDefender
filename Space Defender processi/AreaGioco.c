@@ -59,7 +59,7 @@ void area(int pipein,int nnemici){
             G=dato_letto;
 
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
-            if(G.alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+            stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
 
         }
 
