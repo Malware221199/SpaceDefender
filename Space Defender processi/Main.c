@@ -61,7 +61,6 @@ int main(){
                     new_alieno.pid= getpid();
                     new_alieno.x= MAXX-(GSA+DA);
                     new_alieno.y=(MAXY/4);
-                    
                     new_alieno.c ='A';	/* Carattere identificativo */
                     new_alieno.alive=true;
                     new_alieno.liv=1;
@@ -78,7 +77,7 @@ int main(){
         
             /*Termino i processi*/
             kill(pidG,1);
-            for(i=0;i<nnemici;i++) kill(pidA,1);
+            kill(pidA,1);
         }
     }while(!quit);
     /* Ripristino la modalità di funzionamento usuale */
