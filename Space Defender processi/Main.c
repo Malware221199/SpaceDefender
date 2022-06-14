@@ -40,7 +40,7 @@ int main(){
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
             if(pidG==0) {
                 
-                if(x==1) while (1)
+                if(x>=1) while (1)
                 {
                     printf("WOOW");
                 };x++;
