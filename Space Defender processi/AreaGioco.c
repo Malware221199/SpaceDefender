@@ -8,7 +8,7 @@
 
 void area(int pipein,int nnemici){
 
-    int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
+    int x=0,i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
 
     for(i=0;i<11;i++) A[i].alive=false;
     for(i=0;i<11;i++) A[i].liv=1;
@@ -162,7 +162,8 @@ void area(int pipein,int nnemici){
         cancellasprite(0,1,'V');
         for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
         mvprintw(0,40,"am: %d",alienimorti);
-        mvprintw(0,60,"a: %d",nnemici);
+        mvprintw(0,60,"a: %d",x);
+        x++
         
 
         /* Aggiorno lo schermo di output per visualizzare le modifiche */
