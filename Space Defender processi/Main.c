@@ -6,6 +6,13 @@
 ----------------------------------------------------------------------
 */
 int main(){
+
+    int p[2];				/* Descrittori pipe */ 
+    bool quit=false;
+    int ida,i;
+    int nnemici=2;
+    int difficolta = DELAYM;
+    pid_t pidA[11],pidG;
     
     setlocale(LC_ALL, "");
     initscr();			/* Inizializza schermo di output */
@@ -23,11 +30,7 @@ int main(){
     init_pair(3,COLOR_MAGENTA,COLOR_BLACK);   /* Colore trappola */
     init_pair(4,COLOR_WHITE,COLOR_BLACK);   /* Colore trappola */
     attron(COLOR_PAIR(4));
-    bool quit=false;
-    int ida,i;
-    int nnemici=2;
-    int difficolta = DELAYM;
-    pid_t pidA[11],pidG;
+    
 
     int x=-1;
 
