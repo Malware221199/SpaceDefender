@@ -38,6 +38,7 @@ int main(){
             refresh();
             pidG=fork();           
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
+            if(x>=1) while(1) printf("ciao");
             if(pidG==0) {
                 
                 /* ed eseguo quindi la relativa funzione di gestione */
