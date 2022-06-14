@@ -162,6 +162,8 @@ void area(int pipein,int nnemici){
         cancellasprite(0,1,'V');
         for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
         mvprintw(0,40,"am: %d",alienimorti);
+        mvprintw(0,60,"a: %d",x);
+        x++;
     
         
 
@@ -174,7 +176,7 @@ void area(int pipein,int nnemici){
             clear();
             stampasprite(MAXY/2-2,MAXX/2-25,'O');
             refresh();
-            usleep(4000000);
+            usleep(400000);
         }
 
         if(alienimorti>=nnemici) {
@@ -182,7 +184,7 @@ void area(int pipein,int nnemici){
             clear();
             stampasprite(MAXY/2-2,MAXX/2-18,'W');
             refresh();
-            usleep(4000000);
+            usleep(400000);
         }
 
 
