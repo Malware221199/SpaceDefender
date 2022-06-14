@@ -5,6 +5,8 @@ int ida,i;
 int nnemici=2;
 int difficolta = DELAYM;
 
+
+
 /*
 ----------------------------------------------------------------------
  Funzione 'Main'
