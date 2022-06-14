@@ -49,21 +49,15 @@ void bulletn(int pipeout,save BN){
     int deltax=1;		/* Spostamento orizzontale */
     BN.c ='H';	/* Carattere identificativo */
     BN.alive=true;
-    
-
-    
-
-    /* Comunico le coordinate iniziali al processo padre */
-        write(pipeout,&BN,sizeof(BN));
 
     while(1){
+         /* Comunico le coordinate correnti al processo padre */
+        write(pipeout,&BN,sizeof(BN));
+
         /* Movimento X */
         BN.x -= deltax;
 
-        /* Comunico le coordinate correnti al processo padre */
-        write(pipeout,&BN,sizeof(BN));
-
-            /* Inserisco una pausa per rallentare il movimento */
+        /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);
     }
 }
