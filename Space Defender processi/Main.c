@@ -37,28 +37,26 @@ int main(){
             refresh();
             for(ida=0;ida<nnemici;ida++){
 
-                A[ida].pid = fork();/* Creo il primo processo figlio 'Alieni' */
-                if(!A[ida].pid)
+                pidA = fork();/* Creo il primo processo figlio 'Alieni' */
+                if(!pidA)
                     break; 
             }
            
             /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
-            if(A[ida].pid==0) {
+            if(pidA==0) {
                 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
                 while(1)    printf("ciao"); 
                 
                 alieni(p[1],ida,A[ida],difficolta); /* invocazione funzione alieni */
-                
-
-                    
+            
             }
             else {		
                 /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
-                G.pid=fork();           
+                pidG=fork();           
                 /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
-                if(G.pid==0) {
+                if(pidG==0) {
 
                     /* ed eseguo quindi la relativa funzione di gestione */
                     close(p[0]); /* chiusura del descrittore di lettura */
@@ -70,7 +68,7 @@ int main(){
                     area(p[0],nnemici);  /* invocazione funzione area di gioco */  
                 }
             }
-            kill(G.pid,1);
+            kill(pidG,1);
             /* Ripristino la modalità di funzionamento usuale */
             endwin();
         }
