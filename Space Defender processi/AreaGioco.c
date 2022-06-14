@@ -161,10 +161,6 @@ void area(int pipein,int nnemici){
         for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
         mvprintw(0,40,"am: %d",alienimorti);
     
-        
-
-        /* Aggiorno lo schermo di output per visualizzare le modifiche */
-        refresh();
 
         /* Esce quando terminano le vite del Giocatore */
         if(vite < 1) {
@@ -183,7 +179,8 @@ void area(int pipein,int nnemici){
             usleep(400000);
         }
 
-
+        /* Aggiorno lo schermo di output per visualizzare le modifiche */
+        refresh();
 
     /* Il ciclo si ripete finchè le vite del giocatore terminano o gli alieni terminano */
     } while(!collision);
