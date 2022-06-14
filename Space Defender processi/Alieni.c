@@ -18,7 +18,6 @@ if(A.id==8||A.id==9) A.x= MAXX-(GSA+DA)*5;
   else if (A.id%2==1) A.y=MAXY-(MAXY/4)-3;
   
   A.c ='A';	/* Carattere identificativo */
-  A.pid= getpid();
   A.alive=true;
   A.liv=1;
 
