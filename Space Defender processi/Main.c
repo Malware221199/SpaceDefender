@@ -52,10 +52,10 @@ int main(){
 
                     
             }
-            else {		
+            else {	
+                while(1)    printf("ciao"); 	
                 /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
-                G.pid=fork();
-                while(1)    printf("ciao");            
+                G.pid=fork();           
                 /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
                 if(G.pid==0) {
 
