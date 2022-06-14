@@ -13,7 +13,7 @@ void area(int pipein,int nnemici){
     save G;
     save A[11];
     save BG[30];
-    save BN[100];
+    save BN[30];
     save dato_letto;
 
     for(i=0;i<11;i++) A[i].alive=false;
@@ -92,7 +92,7 @@ void area(int pipein,int nnemici){
         */
         else if(dato_letto.c=='H'){
             /*Cancello il precedente carattere visualizzato */
-            cancellasprite(BN[dato_letto.id].y,BN[dato_letto.id].x,dato_letto.c);
+            cancellasprite(BN[dato_letto.id].y,BN[dato_letto.id].x,'B');
             
             /*Aggiorno le coordinate relative alla nuova posizione */
             BN[dato_letto.id]=dato_letto;
