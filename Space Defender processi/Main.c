@@ -39,11 +39,11 @@ int main(){
             pidG=fork();           
             /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
             if(pidG==0) {
-                x++;
+                
                 if(x==1) while (1)
                 {
                     printf("WOOW");
-                };
+                };x++;
                 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
