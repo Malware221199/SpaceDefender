@@ -45,7 +45,7 @@ void giocatore(int pipeout)
           BG[idb].id=idb;
           BG[idb].pid=getpid();
 
-          bulletg(p[1],BG[idb]);
+          bulletg(pipeout,BG[idb]);
         }
       }
     }
