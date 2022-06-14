@@ -53,28 +53,23 @@ void bulletg(int pipeout,int id,int cgy,int cgx){
  Funzione 'Bullet nemico'
 ---------------------------------------------------------------------- 
 */
-void bulletn(int pipeout,int id,int ay,int ax){
-    save Bulletn;
+void bulletn(int pipeout,save BN){
     int deltax=1;		/* Spostamento orizzontale */
-    Bulletn.x = ax-1;  /* Coordinata X iniziale */
-    Bulletn.y = ay+1;  /* Coordinata Y iniziale */
-    Bulletn.c ='H';	/* Carattere identificativo */
-    Bulletn.id =id; /* Numero dell elemento */
-    Bulletn.pid=getpid(); /*Pid processo*/
-    Bulletn.alive=true;
+    BN.c ='H';	/* Carattere identificativo */
+    BN.alive=true;
     
 
     
 
     /* Comunico le coordinate iniziali al processo padre */
-        write(pipeout,&Bulletn,sizeof(Bulletn));
+        write(pipeout,&BN,sizeof(BN));
 
     while(1){
         /* Movimento X */
-        Bulletn.x -= deltax;
+        BN.x -= deltax;
 
         /* Comunico le coordinate correnti al processo padre */
-        write(pipeout,&Bulletn,sizeof(Bulletn));
+        write(pipeout,&BN,sizeof(BN));
 
             /* Inserisco una pausa per rallentare il movimento */
         usleep(50000);

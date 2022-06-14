@@ -44,11 +44,11 @@ void giocatore(int pipeout)
         bulletg(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */
       }	
       idb++;
-      /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
+    
       pidB2=fork();
-      /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
+      
       if(pidB2==0) {
-        /* ed eseguo quindi la relativa funzione di gestione */
+       
         close(p[0]); /* chiusura del descrittore di lettura */
         bulletg(p[1],idb,giocatore.y,giocatore.x); /* invocazione funzione bullet */ 
         }

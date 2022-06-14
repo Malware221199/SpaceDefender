@@ -74,7 +74,7 @@ save dato_letto;
 void alieni(int pipeout,save A,int difficolta);
 void giocatore(int pipeout);
 void bulletg(int pipeout,int id,int cgy,int cgx);
-void bulletn(int pipeout,int id,int ay,int ax);
+void bulletn(int pipeout,save BN);
 void areaGioco(int pipein,int nnemici);
 bool menu(int *nnemici,int *difficolta);
 int opzioni(int *nnemici,int *difficolta);
