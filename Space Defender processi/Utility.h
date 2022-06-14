@@ -39,8 +39,7 @@ int MAXX,MAXY;  /* Dimensione dello schermo di output (colonne) e (righe)  */
 int p[2];				/* Descrittori pipe */
 int pidA;
 int pidG;  
-int pidB1;	      /* Pid processo figlio 'Bullet uno' */
-int pidB2;	      /* Pid processo figlio 'Bullet due' */
+int pidBG;	      /* Pid processo figlio 'Bullet uno' */
 int pidBN;	      /* Pid processo figlio 'Bullet nemico' */
 
 /*
@@ -73,7 +72,7 @@ save dato_letto;
 */
 void alieni(int pipeout,save A,int difficolta);
 void giocatore(int pipeout);
-void bulletg(int pipeout,int id,int cgy,int cgx);
+void bulletg(int pipeout,save BG);
 void bulletn(int pipeout,save BN);
 void areaGioco(int pipein,int nnemici);
 bool menu(int *nnemici,int *difficolta);
