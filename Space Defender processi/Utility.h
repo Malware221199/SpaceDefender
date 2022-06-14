@@ -54,15 +54,15 @@ typedef struct
   int x;    /* Coordinata X */
   int y;    /* Coordinata Y */
   int id;   /* Numero dell elemento */
-  int pid;  /*Pid processo*/
+  pid_t pid;  /*Pid processo*/
   bool alive; 
   int liv;
 }save;
 
+save G;
 save A[11];
 save BG[30];
 save BN[30];
-save G;
 save dato_letto;
 
 /*
