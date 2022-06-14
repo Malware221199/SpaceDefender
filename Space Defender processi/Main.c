@@ -47,7 +47,7 @@ int main(){
                 
                 /* ed eseguo quindi la relativa funzione di gestione */
                 close(p[0]); /* chiusura del descrittore di lettura */
-                while(1)    printf("ciao"); 
+                //while(1)    printf("ciao"); 
                 
                 alieni(p[1],ida,A[ida],difficolta); /* invocazione funzione alieni */
             
