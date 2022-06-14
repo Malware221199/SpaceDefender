@@ -11,7 +11,7 @@ void bulletg(int pipeout,save BG){
     BG.alive=true;
 
     /* Comunico le coordinate iniziali al processo padre */
-    write(pipeout,&Bullet,sizeof(Bullet));
+    write(pipeout,&BG,sizeof(BG));
 
     while(1){
         if(BG.id%2==0){
