@@ -11,7 +11,6 @@ void giocatore(int pipeout)
   G.x = 2;       /* Coordinata X iniziale */
   G.y = MAXY/2-2;   /* Coordinata Y iniziale */
   G.c='G';	    /* Carattere identificativo giocatore*/
-  G.id=1;   /* Numero dell elemento */
   G.pid=getpid();  /*Pid processo*/
   G.alive=true;
 
@@ -34,7 +33,7 @@ void giocatore(int pipeout)
       G.y+=1;		
     }
 
-    if(c==SPC){
+    /*if(c==SPC){
       for(i=0;i<2;i++){
         pidBG=fork();
         idb++;
@@ -44,10 +43,10 @@ void giocatore(int pipeout)
           BG[idb].id=idb;
           BG[idb].pid=getpid();
 
-          bulletg(p[1],BG[idb]); /* invocazione funzione bullet */ 
+          bulletg(p[1],BG[idb]);
         }
       }
-    }
+    }*/
 
     /* Comunico al processo padre le coordinate del giocatore */
     write(pipeout,&G,sizeof(G)); 

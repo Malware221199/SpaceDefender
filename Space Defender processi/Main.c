@@ -70,7 +70,7 @@ int main(){
         
             /*Termino i processi*/
             kill(G.pid,1);
-            for(i=0;i<11;i++)    kill(A[i].pid,1);
+            for(i=0;i<11;i++)   if(A[i].alive) kill(A[i].pid,1);
         }
     }while(!quit);
     /* Ripristino la modalità di funzionamento usuale */
