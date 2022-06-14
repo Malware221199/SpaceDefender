@@ -21,8 +21,8 @@ int deltay=1;		/* Spostamento verticale */
       idbn++;
       pidBN=fork();
       if(pidBN==0) {
-      BN[idbn].x = A.x-1;
-      BN[idbn].y = A.y+1;
+      BN[idbn].x = new_alieno.x-1;
+      BN[idbn].y = new_alieno.y+1;
       BN[idbn].id=idbn;
       BN[idbn].pid=getpid();
       bulletn(p[1],BN[idbn]);
