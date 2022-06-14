@@ -69,8 +69,6 @@ int main(){
             /*Termino i processi*/
             kill(pidG,1);
             for(i=0;i<11;i++)   if(A[i].alive) kill(A[i].pid,1);
-            /* Ripristino la modalità di funzionamento usuale */
-            endwin();
         }
     }while(!quit);
     /* Ripristino la modalità di funzionamento usuale */
