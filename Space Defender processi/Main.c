@@ -59,8 +59,8 @@ int main(){
                     close(p[0]); /* chiusura del descrittore di lettura */
                     new_alieno.id=1;//ida;
                     new_alieno.pid= getpid();
-                    new_alieno.x= MAXX-(GSA+DA);
-                    new_alieno.y=(MAXY/4);
+                    new_alieno.x=70; //MAXX-(GSA+DA);
+                    new_alieno.y=12;//(MAXY/4);
                     new_alieno.c ='A';	/* Carattere identificativo */
                     new_alieno.alive=true;
                     new_alieno.liv=1;
