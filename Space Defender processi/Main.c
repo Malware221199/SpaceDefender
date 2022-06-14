@@ -35,39 +35,36 @@ int main(){
         if (!quit){   /* Entro nella funzione Menu*/
             clear();
             refresh();
+            pidG=fork();           
+            /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
+            if(pidG==0) {
+
+                /* ed eseguo quindi la relativa funzione di gestione */
+                close(p[0]); /* chiusura del descrittore di lettura */
+                giocatore(p[1]); /* invocazione funzione giocatore */  
+            }
+
             for(ida=0;ida<nnemici;ida++){
 
                 pidA = fork();/* Creo il primo processo figlio 'Alieni' */
-                if(!pidA)
-                    break; 
-            }
-           
-            /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
-            if(pidA==0) {
-                
-                /* ed eseguo quindi la relativa funzione di gestione */
-                close(p[0]); /* chiusura del descrittore di lettura */
-                //while(1)    printf("ciao"); 
-                
-                alieni(p[1],ida,A[ida],difficolta); /* invocazione funzione alieni */
             
-            }
-            else {		
-                /* Altrimenti sono ancora nel processo padre e creo il processo 'Giocatore' */
-                pidG=fork();           
-                /* Se il pid == 0 -> si tratta del processo 'Giocatore' */
-                if(pidG==0) {
-
+           
+                /* Se il pid == 0 -> si tratta del processo 'Generatore processi Alieni' */
+                if(pidA==0) {
+                    
                     /* ed eseguo quindi la relativa funzione di gestione */
                     close(p[0]); /* chiusura del descrittore di lettura */
-                    giocatore(p[1]); /* invocazione funzione giocatore */  
-                }
-                else {
-                    /* Sono ancora nel processo padre */
-                    close(p[1]); /* chiusura del descrittore di scrittura */
-                    area(p[0],nnemici);  /* invocazione funzione area di gioco */  
+                    
+                    alieni(p[1],ida,A[ida],difficolta); /* invocazione funzione alieni */
+                
                 }
             }
+
+            /* Sono ancora nel processo padre */
+            close(p[1]); /* chiusura del descrittore di scrittura */
+            area(p[0],nnemici);  /* invocazione funzione area di gioco */  
+        
+            /*Termino i processi*/
             kill(pidG,1);
             /* Ripristino la modalità di funzionamento usuale */
             endwin();
