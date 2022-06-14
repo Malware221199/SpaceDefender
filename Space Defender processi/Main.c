@@ -79,7 +79,7 @@ int main(){
         
             /*Termino i processi*/
             kill(pidG,1);
-            kill(pidA,1);
+            for(i=0;i<nnemici;i++) kill(pidA[i],1);
         }
     }while(!quit);
     /* Ripristino la modalità di funzionamento usuale */
