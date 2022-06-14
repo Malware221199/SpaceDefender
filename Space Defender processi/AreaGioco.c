@@ -113,7 +113,8 @@ void area(int pipein,int nnemici){
         for(i=0;i<nnemici;i++){
                 if(A[i].alive){
                 for(j=0;j<NMB;j++){
-                    if(BG[j].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==1){   
+                    if(BG[j].alive && collisione(BG[j], DB, DB,A[i],GSA,GSA) && A[i].liv==1){  
+                        cancellasprite(BG[j].y,BG[j].x,'B') 
                         BG[j].alive=false;
                         kill(BG[j].pid,1);
                         A[i].liv=2;
