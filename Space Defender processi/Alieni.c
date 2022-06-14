@@ -10,11 +10,9 @@ int idbn=0;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
 
-
-  /* Comunico le coordinate iniziali al processo padre */
-  write(pipeout,&new_alieno,sizeof(new_alieno));
-
   while(1){
+    /* Comunico le coordinate correnti al processo padre */
+    write(pipeout,&new_alieno,sizeof(new_alieno));
 
     /* Movimento X */
     new_alieno.x -= deltax;
@@ -32,8 +30,7 @@ int deltay=1;		/* Spostamento verticale */
       }*/
     
 
-    /* Comunico le coordinate correnti al processo padre */
-    write(pipeout,&new_alieno,sizeof(new_alieno));
+    
 
 		/* Inserisco una pausa per rallentare il movimento */
     usleep(difficolta/3);
