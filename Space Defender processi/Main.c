@@ -38,7 +38,7 @@ int main(){
             for(ida=0;ida<nnemici;ida++){
 
                 A[ida].pid = fork();/* Creo il primo processo figlio 'Alieni' */
-                printf("ciao");
+                while(1) printf("ciao");
                 if(!A[ida].pid)
                     break; 
             }
