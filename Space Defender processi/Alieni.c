@@ -5,17 +5,11 @@
 ---------------------------------------------------------------------- 
 */
 
-void alieni(int pipeout,save A, int difficolta){
+void alieni(int pipeout,save n, int difficolta){
 int idbn=0;
 int deltax=1;		/* Spostamento orizzontale */
 int deltay=1;		/* Spostamento verticale */
-if(A.id==0||A.id==1) A.x= MAXX-(GSA+DA);
-if(A.id==2||A.id==3) A.x= MAXX-(GSA+DA)*2;
-if(A.id==4||A.id==5) A.x= MAXX-(GSA+DA)*3;
-if(A.id==6||A.id==7) A.x= MAXX-(GSA+DA)*4;
-if(A.id==8||A.id==9) A.x= MAXX-(GSA+DA)*5;
-  if(A.id%2==0) A.y=(MAXY/4);
-  else if (A.id%2==1) A.y=MAXY-(MAXY/4)-3;
+
   
   A.c ='A';	/* Carattere identificativo */
   A.alive=true;
