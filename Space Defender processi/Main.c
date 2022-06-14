@@ -56,23 +56,23 @@ int main(){
                 if(pidA[ida]==0) {
                     
                     /* ed eseguo quindi la relativa funzione di gestione */
-                    save new_alieno;
+                    save new_alieno[11];
 
                     close(p[0]); /* chiusura del descrittore di lettura */
-                    new_alieno.id=ida;
-                    new_alieno.pid= getpid();
-                    if(ida==0||ida==1) new_alieno.x= MAXX-(GSA+DA);
-                    else if(ida==2||ida==3) new_alieno.x= MAXX-(GSA+DA)*2;
-                    else if(ida==4||ida==5) new_alieno.x= MAXX-(GSA+DA)*3;
-                    else if(ida==6||ida==7) new_alieno.x= MAXX-(GSA+DA)*4;
-                    else if(ida==8||ida==9) new_alieno.x= MAXX-(GSA+DA)*5;
-                    if(ida%2==0) new_alieno.y=(MAXY/4);
-                    else if (ida%2==1) new_alieno.y=MAXY-(MAXY/4)-3;
-                    new_alieno.c ='A';	/* Carattere identificativo */
-                    new_alieno.alive=true;
-                    new_alieno.liv=1;
+                    new_alieno[ida].id=ida;
+                    new_alieno[ida].pid= getpid();
+                    if(ida==0||ida==1) new_alieno[ida].x= MAXX-(GSA+DA);
+                    else if(ida==2||ida==3) new_alieno[ida].x= MAXX-(GSA+DA)*2;
+                    else if(ida==4||ida==5) new_alieno[ida].x= MAXX-(GSA+DA)*3;
+                    else if(ida==6||ida==7) new_alieno[ida].x= MAXX-(GSA+DA)*4;
+                    else if(ida==8||ida==9) new_alieno[ida].x= MAXX-(GSA+DA)*5;
+                    if(ida%2==0) new_alieno[ida].y=(MAXY/4);
+                    else if (ida%2==1) new_alieno[ida].y=MAXY-(MAXY/4)-3;
+                    new_alieno[ida].c ='A';	/* Carattere identificativo */
+                    new_alieno[ida].alive=true;
+                    new_alieno[ida].liv=1;
                     
-                    alieni(p[1],new_alieno,difficolta); /* invocazione funzione alieni */
+                    alieni(p[1],new_alieno[ida],difficolta); /* invocazione funzione alieni */
                 
                 }
             }
