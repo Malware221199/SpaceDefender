@@ -7,7 +7,7 @@
 void giocatore(int pipeout)
 {
   save giocatore;
-  int idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
+  int i,idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
 
   
   giocatore.x = 2;       /* Coordinata X iniziale */
