@@ -10,8 +10,10 @@ bool menu(int *nnemici,int *difficolta){
   int menu[3] = {0,1,2};  /*stringa opzioni */
   char scelta;       /* variabile scelta */
   int altezza=0;    /* altezza cursore */                          
-  bool esci;
-  while(esci==false){
+  bool esci=false;
+  while(!esci){
+    clear();
+    refresh();
     int i;
     stampasprite(1,MAXX/2-20,'S');  /* stampo sprite 'space' */
     stampasprite(8,MAXX/2-29,'D');  /* stampo sprite 'defender' */
@@ -73,6 +75,9 @@ bool menu(int *nnemici,int *difficolta){
         break;
       case ENTER:
         esci=true;
+      break;
+
+      default:
       break;
     }
       
