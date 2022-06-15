@@ -32,7 +32,7 @@
 #define DELAYL 	500000	    /* Ritardo nel movimento delle navicelle nemiche lento */
 #define MAXX 80 
 #define MAXY 24
-#define TIMERMISSILE 1000 /* timer missile*/
+#define TIMERMISSILE 100 /* timer missile*/
 
 /*
 ----------------------------------------------------------------------
