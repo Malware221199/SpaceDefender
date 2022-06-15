@@ -6,8 +6,7 @@
 */
 
 void alieni(int pipeout,save new_alieno, int difficolta){
-save BN[NMB];
-pid_t pidBN[NMB];
+save BN;
 srand(getpid());
 
 
@@ -38,16 +37,9 @@ int deltay=1;		/* Spostamento verticale */
         
     }
     if (random() < RAND_MAX/15){
-      idbn++;
-      if(idbn>=NMB)idbn=0;
-      pidBN[idbn]=fork();
-      if(pidBN[idbn]==0) {
-      BN[idbn].x = new_alieno.x-1;
-      BN[idbn].y = new_alieno.y+1;
-      BN[idbn].id=idbn;
-      BN[idbn].pid=getpid();
-      bulletn(pipeout,BN[idbn]);
-      }
+      BN.x = new_alieno.x-1;
+      BN.y = new_alieno.y+1;
+      BN.c='N';
     }
     
 
