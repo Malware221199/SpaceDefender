@@ -36,7 +36,7 @@ void giocatore(int pipeout)
       G.y+=1;		
     }
 
-    if(c==SPC && clock()-startClock>TIMERMISSILE){
+    if(c==SPC /*&& clock()-startClock>TIMERMISSILE*/){
       for(i=0;i<2;i++){
         idb++;
         if(idb>=NMB)idb=0;
@@ -50,7 +50,7 @@ void giocatore(int pipeout)
           bulletg(pipeout,BG[idb]);
         }
       }
-      startClock=clock();
+      //startClock=clock();
     }
 
     /* Comunico al processo padre le coordinate del giocatore */
