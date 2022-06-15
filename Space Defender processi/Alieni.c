@@ -36,7 +36,7 @@ int deltay=1;		/* Spostamento verticale */
         if(new_alieno.y + deltay < MAXY/2  || new_alieno.y + deltay > (MAXY-GSA-1)) deltay *=-1;
         
     }
-    if (random() < RAND_MAX/15){
+    if (random() < RAND_MAX/10){
       BN.x = new_alieno.x-1;
       BN.y = new_alieno.y+1;
       BN.c='N';
