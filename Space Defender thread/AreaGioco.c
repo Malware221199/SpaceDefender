@@ -439,6 +439,7 @@ void area(){
     /* Il ciclo si ripete finchè le vite del giocatore terminano o gli alieni terminano */
     } while(!collision);
 
+/* uccido i processi e imposto l'alive a false*/
 for(i=0;i<11;i++) 
 {
     killA[i]=true;
