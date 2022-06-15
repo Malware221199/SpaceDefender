@@ -408,7 +408,6 @@ void area(){
         /* Visualizzo le vite rimaste al giocatore */
         cancellasprite(0,1,'V');
         for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
-        mvprintw(0,40,"%d",alienimorti);
         
 
         /* Aggiorno lo schermo di output per visualizzare le modifiche */
@@ -421,7 +420,6 @@ void area(){
             stampasprite(MAXY/2-2,MAXX/2-25,'O');
             mvprintw(MAXY-3,MAXX/2-15,">Premi un tasto per continuare<");
             refresh();
-            //usleep(4000000);
         }
 
         if(alienimorti>=nnemici) {
@@ -431,7 +429,6 @@ void area(){
             stampasprite(MAXY/2-2,MAXX/2-18,'W');
             mvprintw(MAXY-3,MAXX/2-15,">Premi un tasto per continuare<");
             refresh();
-            //usleep(400000);
         }
 
 
