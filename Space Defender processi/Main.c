@@ -74,8 +74,8 @@ int main(){
             }
 
             /* Sono ancora nel processo padre */
-            close(p[1]); /* chiusura del descrittore di scrittura */
-            area(p[0],nnemici);  /* invocazione funzione area di gioco */  
+            //close(p[1]); /* chiusura del descrittore di scrittura */
+            area(p[0],p[1],nnemici);  /* invocazione funzione area di gioco */  
         
             /*Termino i processi*/
             kill(pidG,1);

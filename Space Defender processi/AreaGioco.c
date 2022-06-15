@@ -6,7 +6,7 @@
 ---------------------------------------------------------------------- 
 */
 
-void area(int pipein,int nnemici){
+void area(int pipein,int pipeout,int nnemici){
 
     int i=0, j=0,idbn=0, vite=3, collision=0, alienimorti=0;
     pid_t pidBN[NMB];
