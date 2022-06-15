@@ -7,7 +7,6 @@
 void giocatore(int pipeout)
 {
   int i,idb=0, maxb=10; /*ID proiettile,massimo proiettili disponibili*/
-  int startClock=0;
   save G;
   save BG[NMB];
   pid_t pidBG[NMB];
@@ -36,7 +35,7 @@ void giocatore(int pipeout)
       G.y+=1;		
     }
 
-    if(c==SPC /*&& clock()-startClock>TIMERMISSILE*/){
+    if(c==SPC){
       for(i=0;i<2;i++){
         idb++;
         if(idb>=NMB)idb=0;
@@ -50,7 +49,6 @@ void giocatore(int pipeout)
           bulletg(pipeout,BG[idb]);
         }
       }
-      //startClock=clock();
     }
 
     /* Comunico al processo padre le coordinate del giocatore */
