@@ -8,7 +8,8 @@
 
 void area(int pipein,int nnemici){
 
-    int i=0, j=0, k=0, vite=3, collision=0, alienimorti=0;
+    int i=0, j=0,idbn=0, vite=3, collision=0, alienimorti=0;
+    pid_t pidBN[NMB];
 
     save G;
     save A[11];
@@ -99,6 +100,20 @@ void area(int pipein,int nnemici){
 
             /* Visualizzo il carattere dell'entità sulle nuove coordinate */
             if(BN[dato_letto.id].alive) stampasprite(dato_letto.y,dato_letto.x,dato_letto.c);
+        }
+
+         /*
+        ----------------------------------------------------------------------
+        Gesione nuovo proiettile nemico
+        ---------------------------------------------------------------------- 
+        */
+        else if(dato_letto.c=='N'){
+            idbn++;
+            if(idbn>=NMB)idbn=0;
+            pidBN[idbn]=fork();
+            if(pidBN[idbn]==0) {
+                bulletn(pipeout,dato_letto);
+            }
         }
 
 
