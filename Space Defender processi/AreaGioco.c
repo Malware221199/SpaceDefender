@@ -111,6 +111,7 @@ void area(int pipein,int pipeout,int nnemici){
             idbn++;
             if(idbn>=NMB)idbn=0;
             pidBN[idbn]=fork();
+            dato_letto.id=idbn;
             if(pidBN[idbn]==0) {
                 bulletn(pipeout,dato_letto);
             }
