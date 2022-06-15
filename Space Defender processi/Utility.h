@@ -64,7 +64,7 @@ void alieni(int pipeout,save A,int difficolta);
 void giocatore(int pipeout);
 void bulletg(int pipeout,save BG);
 void bulletn(int pipeout,save BN);
-void area(int pipein,int nnemici);
+void area(int pipein,int pipeout,int nnemici);
 bool menu(int *nnemici,int *difficolta);
 int opzioni(int *nnemici,int *difficolta);
 void difficulty(int *difficolta);
