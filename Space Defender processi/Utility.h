@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
-#include <time.h>
 
 
 
@@ -30,9 +29,8 @@
 #define DELAYV 	200000	    /* Ritardo nel movimento delle navicelle nemiche veloce */
 #define DELAYM 	400000	    /* Ritardo nel movimento delle navicelle nemiche medio */
 #define DELAYL 	500000	    /* Ritardo nel movimento delle navicelle nemiche lento */
-#define MAXX 80 
+#define MAXX 80
 #define MAXY 24
-#define TIMERMISSILE 50 /* timer missile*/
 
 /*
 ----------------------------------------------------------------------
