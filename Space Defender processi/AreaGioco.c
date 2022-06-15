@@ -165,6 +165,7 @@ void area(int pipein,int pipeout,int nnemici){
         /*Collisioni Bullet nemico con giocatore*/
         for(i=0;i<NMB;i++){
             if(BN[i].alive && collisione(G,GSG,GSG-1,BN[i], DB, DB)){
+                cancellasprite(BG[i].y,BG[i].x,'B');
                 kill(pidBN[i],1);
                 BN[i].alive=false;
                 vite--;  
@@ -186,7 +187,6 @@ void area(int pipein,int pipeout,int nnemici){
         /* Visualizzo le vite rimaste al giocatore */
         cancellasprite(0,1,'V');
         for(i=0;i<vite;i++) mvaddstr(0,1+i,"❥");
-        mvprintw(0,40,"am: %d",alienimorti);
     
 
         /* Esce quando terminano le vite del Giocatore */
