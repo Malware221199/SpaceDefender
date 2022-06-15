@@ -164,7 +164,7 @@ void area(int pipein,int pipeout,int nnemici){
 
         /*Collisioni Bullet nemico con giocatore*/
         for(i=0;i<NMB;i++){
-            if(BN[i].alive && collisione(G,GSG-1,GSG-1,BN[i], DB, DB)){
+            if(BN[i].alive && collisione(G,GSG+1,GSG-1,BN[i], DB, DB)){
                 cancellasprite(BN[i].y,BN[i].x,'H');
                 kill(pidBN[i],1);
                 BN[i].alive=false;
