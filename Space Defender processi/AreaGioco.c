@@ -156,7 +156,7 @@ void area(int pipein,int pipeout,int nnemici){
         for(i=0;i<NMB;i++){
             if(BN[i].alive && fuorischermo(BN[i],DB,DB))
             {   
-                kill(BN[i].pid,1);
+                kill(pidBN[i],1);
                 BN[i].alive=false;
             }
 
@@ -165,7 +165,7 @@ void area(int pipein,int pipeout,int nnemici){
         /*Collisioni Bullet nemico con giocatore*/
         for(i=0;i<NMB;i++){
             if(BN[i].alive && collisione(G,GSG,GSG-1,BN[i], DB, DB)){
-                kill(BN[i].pid,1);
+                kill(pidBN[i],1);
                 BN[i].alive=false;
                 vite--;  
             }
