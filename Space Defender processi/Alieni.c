@@ -40,6 +40,7 @@ int deltay=1;		/* Spostamento verticale */
       BN.x = new_alieno.x-1;
       BN.y = new_alieno.y+1;
       BN.c='N';
+      write(pipeout,&BN,sizeof(BN));
     }
     
 
